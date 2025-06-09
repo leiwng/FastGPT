@@ -1,0 +1,117 @@
+services:
+
+  fg-mongo1:
+    build:
+      context: .
+      dockerfile: Dockerfile.mongo
+    container_name: fg-mongo1
+    command: mongod --replSet rs0 --bind_ip_all --keyFile /etc/mongodb-keyfile
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: Welcome1
+    ports:
+      - "29019:27017"  # 保持原有端口映射
+    volumes:
+      - fg-mongo1-data:/data/db
+      - /data/leiw/prj/FastGPT/common_services/mongodb-keyfile:/etc/mongodb-keyfile:ro
+    networks:
+      - fg-mongo-net
+
+  fg-mongo2:
+    build:
+      context: .
+      dockerfile: Dockerfile.mongo
+    container_name: fg-mongo2
+    command: mongod --replSet rs0 --bind_ip_all --keyFile /etc/mongodb-keyfile
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: Welcome1
+    ports:
+      - "29020:27017"  # 新增端口映射
+    volumes:
+      - fg-mongo2-data:/data/db
+      - /data/leiw/prj/FastGPT/common_services/mongodb-keyfile:/etc/mongodb-keyfile:ro
+    networks:
+      - fg-mongo-net
+
+  fg-mongo3:
+    build:
+      context: .
+      dockerfile: Dockerfile.mongo
+    container_name: fg-mongo3
+    command: mongod --replSet rs0 --bind_ip_all --keyFile /etc/mongodb-keyfile
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: Welcome1
+    ports:
+      - "29021:27017"  # 新增端口映射
+    volumes:
+      - fg-mongo3-data:/data/db
+      - /data/leiw/prj/FastGPT/common_services/mongodb-keyfile:/etc/mongodb-keyfile:ro
+    networks:
+      - fg-mongo-net
+
+  fg-mongo-init:
+    image: mongo:6.0
+    container_name: fg-mongo-init
+    depends_on:
+      - fg-mongo1
+      - fg-mongo2
+      - fg-mongo3
+    command: >
+      bash -c "until mongosh --host fg-mongo1 --username root --password Welcome1 --authenticationDatabase admin --eval 'db.runCommand({ ping: 1 })' > /dev/null 2>&1; do
+        echo 'Waiting for MongoDB...';
+        sleep 5;
+      done;
+      echo 'Initializing replica set...';
+      mongosh --host fg-mongo1 --username root --password Welcome1 --authenticationDatabase admin --eval 'rs.initiate({
+        _id: \"rs0\",
+        members: [
+          {_id: 0, host: \"fg-mongo1:27017\"},
+          {_id: 1, host: \"fg-mongo2:27017\"},
+          {_id: 2, host: \"fg-mongo3:27017\"}
+        ]
+      })';
+      echo 'Waiting for replica set to stabilize...';
+      sleep 10;
+      echo 'Reconfiguring replica set for external access...';
+      mongosh --host fg-mongo1 --username root --password Welcome1 --authenticationDatabase admin --eval 'rs.reconfig({
+        _id: \"rs0\",
+        version: 2,
+        members: [
+          {_id: 0, host: \"127.0.0.1:29019\"},
+          {_id: 1, host: \"127.0.0.1:29020\"},
+          {_id: 2, host: \"127.0.0.1:29021\"}
+        ]
+      }, {force: false})';
+      echo 'Replica set configured for external access!'"
+    networks:
+      - fg-mongo-net
+
+  # HAProxy负载均衡器 - 使用新端口
+  fg-mongo-haproxy:
+    build:
+      context: .
+      dockerfile: Dockerfile.haproxy
+    container_name: fg-mongo-haproxy
+    ports:
+      - "28018:27017"
+    volumes:
+      - /data/leiw/prj/FastGPT/common_services/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+    networks:
+      - fg-mongo-net
+    depends_on:
+      - fg-mongo1
+      - fg-mongo2
+      - fg-mongo3
+      - fg-mongo-init
+    restart: unless-stopped
+
+networks:
+  fg-mongo-net:
+    driver: bridge
+
+volumes:
+  fg-mongo1-data:
+  fg-mongo2-data:
+  fg-mongo3-data:

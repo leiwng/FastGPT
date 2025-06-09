@@ -1,0 +1,38 @@
+services:
+
+  fg-mongo:
+    image: mongo:8.0.6
+    restart: always
+    volumes:
+      - ./mongodb-data/data:/data/db
+      - ./mongodb-data/dump:/dump
+    expose:
+      - "27017"
+    ports:
+      - "29017:27017"
+
+  fg-redis:
+    image: redis:6
+    healthcheck:
+      test: redis-cli ping
+      interval: 5s
+      timeout: 1s
+      retries: 5
+    expose:
+      - "6379"
+    ports:
+      - "26379:6379"
+
+  fg-postgres:
+    image: ankane/pgvector:latest
+    expose:
+      - "5432"
+    ports:
+      - "25433:5432"
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./postgres-data/data:/var/lib/postgresql/data
+

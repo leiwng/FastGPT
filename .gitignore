@@ -1,3 +1,18 @@
+# venv
+venv
+venv/
+.venv
+.venv/
+
+# ssh keyfile
+common_services/mongodb-keyfile
+
+# common_services data
+common_services/mongodb-data
+common_services/postgres-data
+common_services/mongo
+common_services/mongo-replica
+
 # dependencies
 node_modules/
 # next.js

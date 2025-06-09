@@ -6,7 +6,8 @@ const isDev = process.env.NODE_ENV === 'development';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: process.env.NEXT_PUBLIC_BASE_URL,
+  basePath: process.env.NEXT_PUBLIC_BASE_URL || '',
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_URL || '',
   i18n,
   output: 'standalone',
   reactStrictMode: isDev ? false : true,

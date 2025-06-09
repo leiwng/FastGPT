@@ -1,0 +1,11 @@
+FROM mongo:6.0
+
+# 安装网络调试工具
+RUN apt-get update && apt-get install -y \
+    iputils-ping \
+    netcat-traditional \
+    net-tools \
+    telnet \
+    procps \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
