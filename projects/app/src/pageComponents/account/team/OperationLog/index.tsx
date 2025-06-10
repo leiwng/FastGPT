@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Flex,
   Table,
   TableContainer,
@@ -11,12 +10,11 @@ import {
   Tr,
   HStack
 } from '@chakra-ui/react';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useTranslation } from 'next-i18next';
 import MyBox from '@fastgpt/web/components/common/MyBox';
 import { useScrollPagination } from '@fastgpt/web/hooks/useScrollPagination';
 import { getOperationLogs } from '@/web/support/user/team/operantionLog/api';
-import { TeamPermission } from '@fastgpt/global/support/permission/user/controller';
 import { operationLogMap } from '@fastgpt/service/support/operationLog/constants';
 import { OperationLogEventEnum } from '@fastgpt/global/support/operationLog/constants';
 import { formatTime2YMDHMS } from '@fastgpt/global/common/string/time';
@@ -26,6 +24,8 @@ import MultipleSelect, {
 } from '@fastgpt/web/components/common/MySelect/MultipleSelect';
 import Avatar from '@fastgpt/web/components/common/Avatar';
 import { getTeamMembers } from '@/web/support/user/team/api';
+import { specialProcessors } from './processors';
+import { defaultMetadataProcessor } from './processors/commonProcessor';
 
 function OperationLogTable({ Tabs }: { Tabs: React.ReactNode }) {
   const { t } = useTranslation();
@@ -55,6 +55,15 @@ function OperationLogTable({ Tabs }: { Tabs: React.ReactNode }) {
         label: t(operationLogMap[event].typeLabel),
         value: event
       })),
+    [t]
+  );
+
+  const processMetadataByEvent = useCallback(
+    (event: string, metadata: any) => {
+      const defaultFormat = defaultMetadataProcessor(metadata, t);
+      const specialFormat = specialProcessors[event as OperationLogEventEnum]?.(defaultFormat, t);
+      return specialFormat || defaultFormat;
+    },
     [t]
   );
 
@@ -159,17 +168,7 @@ function OperationLogTable({ Tabs }: { Tabs: React.ReactNode }) {
               <Tbody>
                 {operationLogs?.map((log) => {
                   const i18nData = operationLogMap[log.event];
-                  const metadata = { ...log.metadata };
-
-                  if (log.event === OperationLogEventEnum.ASSIGN_PERMISSION) {
-                    const permissionValue = parseInt(metadata.permission, 10);
-
-                    const permission = new TeamPermission({ per: permissionValue });
-                    metadata.appCreate = permission.hasAppCreatePer ? '✔' : '✘';
-                    metadata.datasetCreate = permission.hasDatasetCreatePer ? '✔' : '✘';
-                    metadata.apiKeyCreate = permission.hasApikeyCreatePer ? '✔' : '✘';
-                    metadata.manage = permission.hasManagePer ? '✔' : '✘';
-                  }
+                  const metadata = processMetadataByEvent(log.event, { ...log.metadata });
 
                   return i18nData ? (
                     <Tr key={log._id} overflow={'unset'}>
@@ -183,7 +182,7 @@ function OperationLogTable({ Tabs }: { Tabs: React.ReactNode }) {
                       </Td>
                       <Td>{formatTime2YMDHMS(log.timestamp)}</Td>
                       <Td>{t(i18nData.typeLabel)}</Td>
-                      <Td>{t(i18nData.content, metadata as any) as string}</Td>
+                      <Td>{t(i18nData.content as any, metadata)}</Td>
                     </Tr>
                   ) : null;
                 })}

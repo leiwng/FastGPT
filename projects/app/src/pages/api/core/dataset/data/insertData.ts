@@ -10,27 +10,30 @@ import { insertData2Dataset } from '@/service/core/dataset/data/controller';
 import { authDatasetCollection } from '@fastgpt/service/support/permission/dataset/auth';
 import { getCollectionWithDataset } from '@fastgpt/service/core/dataset/controller';
 import { pushGenerateVectorUsage } from '@/service/support/wallet/usage/push';
-import { type InsertOneDatasetDataProps } from '@/global/core/dataset/api';
+import type { InsertOneDatasetDataProps } from '@/global/core/dataset/api';
 import { simpleText } from '@fastgpt/global/common/string/tools';
 import { checkDatasetLimit } from '@fastgpt/service/support/permission/teamLimit';
 import { NextAPI } from '@/service/middleware/entry';
 import { WritePermissionVal } from '@fastgpt/global/support/permission/constant';
 import { CommonErrEnum } from '@fastgpt/global/common/error/code/common';
 import { getLLMMaxChunkSize } from '@fastgpt/global/core/dataset/training/utils';
+import { addOperationLog } from '@fastgpt/service/support/operationLog/addOperationLog';
+import { OperationLogEventEnum } from '@fastgpt/global/support/operationLog/constants';
+import { getI18nDatasetType } from '@fastgpt/service/support/operationLog/util';
 
 async function handler(req: NextApiRequest) {
   const { collectionId, q, a, indexes } = req.body as InsertOneDatasetDataProps;
 
   if (!q) {
-    Promise.reject(CommonErrEnum.missingParams);
+    return Promise.reject(CommonErrEnum.missingParams);
   }
 
   if (!collectionId) {
-    Promise.reject(CommonErrEnum.missingParams);
+    return Promise.reject(CommonErrEnum.missingParams);
   }
 
   // 凭证校验
-  const { teamId, tmbId } = await authDatasetCollection({
+  const { teamId, tmbId, collection } = await authDatasetCollection({
     req,
     authToken: true,
     authApiKey: true,
@@ -43,14 +46,12 @@ async function handler(req: NextApiRequest) {
     insertLen: 1
   });
 
-  // auth collection and get dataset
   const [
     {
       dataset: { _id: datasetId, vectorModel, agentModel }
     }
   ] = await Promise.all([getCollectionWithDataset(collectionId)]);
 
-  // format data
   const formatQ = simpleText(q);
   const formatA = simpleText(a);
   const formatIndexes = indexes?.map((item) => ({
@@ -58,7 +59,6 @@ async function handler(req: NextApiRequest) {
     text: simpleText(item.text)
   }));
 
-  // token check
   const token = await countPromptTokens(formatQ + formatA, '');
   const vectorModelData = getEmbeddingModel(vectorModel);
   const llmModelData = getLLMModel(agentModel);
@@ -68,7 +68,6 @@ async function handler(req: NextApiRequest) {
     return Promise.reject(`Content over max chunk size: ${maxChunkSize}`);
   }
 
-  // Duplicate data check
   await hasSameValue({
     teamId,
     datasetId,
@@ -96,6 +95,18 @@ async function handler(req: NextApiRequest) {
     model: vectorModelData.model
   });
 
+  (() => {
+    addOperationLog({
+      tmbId,
+      teamId,
+      event: OperationLogEventEnum.CREATE_DATA,
+      params: {
+        collectionName: collection.name,
+        datasetName: collection.dataset?.name || '',
+        datasetType: getI18nDatasetType(collection.dataset?.type || '')
+      }
+    });
+  })();
   return insertId;
 }
 
