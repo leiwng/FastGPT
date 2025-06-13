@@ -3,6 +3,7 @@ venv
 venv/
 .venv
 .venv/
+projects/app/*.log
 
 # ssh keyfile
 common_services/mongodb-keyfile
