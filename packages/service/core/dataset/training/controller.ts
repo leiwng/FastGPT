@@ -27,23 +27,6 @@ export const lockTrainingDataByTeamId = async (teamId: string): Promise<any> => 
   } catch (error) {}
 };
 
-export const pushDataListToTrainingQueueByCollectionId = async ({
-  collectionId,
-  ...props
-}: Omit<PushDataToTrainingQueueProps, 'datasetId' | 'agentModel' | 'vectorModel' | 'vlmModel'>) => {
-  const {
-    dataset: { _id: datasetId, agentModel, vectorModel, vlmModel }
-  } = await getCollectionWithDataset(collectionId);
-  return pushDataListToTrainingQueue({
-    ...props,
-    datasetId,
-    collectionId,
-    vectorModel,
-    agentModel,
-    vlmModel
-  });
-};
-
 export async function pushDataListToTrainingQueue({
   teamId,
   tmbId,
@@ -53,24 +36,11 @@ export async function pushDataListToTrainingQueue({
   vectorModel,
   vlmModel,
   data,
-  prompt,
   billId,
   mode = TrainingModeEnum.chunk,
   indexSize,
   session
 }: PushDataToTrainingQueueProps): Promise<PushDatasetDataResponse> {
-  const formatTrainingMode = (data: PushDatasetDataChunkProps, mode: TrainingModeEnum) => {
-    if (mode !== TrainingModeEnum.image) return mode;
-    // 检查内容中，是否包含 ![](xxx) 的图片格式
-    const text = (data.q || '') + (data.a || '');
-    const regex = /!\[\]\((.*?)\)/g;
-    const match = text.match(regex);
-    if (match) {
-      return TrainingModeEnum.image;
-    }
-    return mode;
-  };
-
   const vectorModelData = getEmbeddingModel(vectorModel);
   if (!vectorModelData) {
     return Promise.reject(i18nT('common:error_embedding_not_config'));
@@ -148,9 +118,7 @@ export async function pushDataListToTrainingQueue({
           datasetId: datasetId,
           collectionId: collectionId,
           billId,
-          mode: formatTrainingMode(item, mode),
-          prompt,
-          model,
+          mode,
           ...(item.q && { q: item.q }),
           ...(item.a && { a: item.a }),
           ...(item.imageId && { imageId: item.imageId }),

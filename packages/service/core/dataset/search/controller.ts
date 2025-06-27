@@ -178,7 +178,7 @@ export async function searchDatasetData(
 
   // Constants data
   const datasetDataSelectField =
-    '_id datasetId collectionId updateTime q a imageId chunkIndex indexes';
+    '_id datasetId collectionId updateTime q a imageId imageDescMap chunkIndex indexes';
   const datsaetCollectionSelectField =
     '_id name fileId rawLink apiFileId externalFileId externalFileUrl';
 
@@ -506,7 +506,8 @@ export async function searchDatasetData(
             datasetId: data.datasetId,
             q: data.q,
             a: data.a,
-            imageId: data.imageId
+            imageId: data.imageId,
+            imageDescMap: data.imageDescMap
           }),
           chunkIndex: data.chunkIndex,
           datasetId: String(data.datasetId),
@@ -568,17 +569,18 @@ export async function searchDatasetData(
               ...(filterCollectionIdList
                 ? {
                     collectionId: {
-                      $in: filterCollectionIdList.map((id) => new Types.ObjectId(id))
+                      $in: filterCollectionIdList
+                        .filter((id) => !forbidCollectionIdList.includes(id))
+                        .map((id) => new Types.ObjectId(id))
                     }
                   }
-                : {}),
-              ...(forbidCollectionIdList && forbidCollectionIdList.length > 0
-                ? {
-                    collectionId: {
-                      $nin: forbidCollectionIdList.map((id) => new Types.ObjectId(id))
+                : forbidCollectionIdList?.length
+                  ? {
+                      collectionId: {
+                        $nin: forbidCollectionIdList.map((id) => new Types.ObjectId(id))
+                      }
                     }
-                  }
-                : {})
+                  : {})
             }
           },
           {
@@ -647,7 +649,8 @@ export async function searchDatasetData(
                 datasetId: data.datasetId,
                 q: data.q,
                 a: data.a,
-                imageId: data.imageId
+                imageId: data.imageId,
+                imageDescMap: data.imageDescMap
               }),
               chunkIndex: data.chunkIndex,
               indexes: data.indexes,

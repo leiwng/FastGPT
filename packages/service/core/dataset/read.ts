@@ -167,7 +167,7 @@ export const readApiServerFileContent = async ({
 };
 
 export const rawText2Chunks = async ({
-  rawText,
+  rawText = '',
   chunkTriggerType = ChunkTriggerConfigTypeEnum.minSize,
   chunkTriggerMinSize = 1000,
   backupParse,
@@ -199,7 +199,7 @@ export const rawText2Chunks = async ({
       .map((item) => ({
         q: item[0] || '',
         a: item[1] || '',
-        indexes: item.slice(2),
+        indexes: item.slice(2).filter((item) => item.trim()),
         imageIdList
       }))
       .filter((item) => item.q || item.a);
