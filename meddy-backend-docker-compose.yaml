@@ -1,0 +1,88 @@
+services:
+    langgraph-mongo:
+        image: mongo:8.0.6
+        restart: always
+        volumes:
+        - ./mongodb-data/data:/data/db
+        - ./mongodb-data/dump:/dump
+        expose:
+        - "27017"
+        ports:
+        - "27017:27017"
+    langgraph-redis:
+        image: redis:6
+        healthcheck:
+            test: redis-cli ping
+            interval: 5s
+            timeout: 1s
+            retries: 5
+    langgraph-postgres:
+        image: ankane/pgvector:latest
+        ports:
+            - "5433:5432"
+        environment:
+            POSTGRES_DB: postgres
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
+        volumes:
+            - ./langgraph-postgres-data:/var/lib/postgresql/data
+        # healthcheck:
+        #     test: pg_isready -U postgres
+        #     start_period: 10s
+        #     timeout: 1s
+        #     retries: 5
+        #     interval: 5s
+    langgraph-nginx:
+        image: nginx:1.27.4
+        restart: always
+        volumes:
+        - ./conf.d:/etc/nginx/conf.d
+        ports:
+        - "2024:2024"
+        depends_on:
+            - langgraph-api
+            - langgraph-node
+
+    langgraph-node:
+        image: meddy-front-app:latest
+        restart: always
+        volumes:
+        - ./conf.d:/etc/nginx/conf.d
+        ports:
+        - "3000:3000"
+        environment:
+            - NEXT_PUBLIC_API_URL=http://117.50.181.9:2024/yixiaozhu_api
+            - NEXT_PUBLIC_SOCKET_API_URL=http://117.50.181.9:2024/yixiaozhu_api_websocket/
+            - NODE_ENV=production
+        command: npm run start
+    langgraph-api:
+        image: meddy:25-5-27
+        ports:
+            - "8123:8000"
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                    - driver: nvidia
+                      count: all
+                      capabilities: [gpu]
+        depends_on:
+            langgraph-redis:
+                condition: service_healthy
+            # langgraph-postgres:
+            #     condition: service_healthy
+        volumes:
+            - ./langgraph-api-data/static:/deps/my_agent/static
+            - /data/zzl/project/my_agent/magic-pdf.json:/root/magic-pdf.json
+            - /data/zzl/project/my_agent/source_code/api:/deps/my_agent/source_code/api
+            - /data/zzl/project/my_agent/source_code/agent/rag_graph.py:/deps/my_agent/source_code/agent/rag_graph.py
+        env_file:
+            - /data/zzl/project/my_agent/.env
+        environment:
+            REDIS_URI: redis://langgraph-redis:6379
+            LANGSMITH_API_KEY: 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
+            POSTGRES_URI: postgres://postgres:postgres@langgraph-postgres:5432/postgres?sslmode=disable
+            DATABASE_URI: postgres://postgres:postgres@langgraph-postgres:5432/postgres?sslmode=disable
+            MONGO_HOST: langgraph-mongo
+            OLLAMA_URL: http://172.17.0.1:11434/
+            VL_MODEL_PATH: ./source_code/agent/models/Qwen2.5-VL-7B-Instruct
