@@ -1,3 +1,9 @@
+# MinerU
+plugins/model/pdf-mineru/models/
+plugins/model/pdf-mineru/layoutreader_models/
+.venv_bak
+.venv_bak/
+
 # venv
 venv
 venv/

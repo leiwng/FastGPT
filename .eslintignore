@@ -23,3 +23,6 @@ bin/
 scripts/
 deploy/
 docSite/
+
+common_services/
+**/*-data/

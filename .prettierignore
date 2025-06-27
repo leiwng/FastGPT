@@ -8,3 +8,8 @@ docSite/
 pnpm-lock.yaml
 cl100l_base.ts
 dict.json
+
+common_services/postgres-data/
+common_services/mongodb-data/
+common_services/redis-data/
+**/*-data/

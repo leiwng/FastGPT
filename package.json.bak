@@ -37,12 +37,13 @@
     "zhlint": "^0.7.4"
   },
   "lint-staged": {
-    "**/*.scss": "prettier --config ./.prettierrc.js --write",
-    "**/*.{ts,tsx}": [
-      "prettier --config ./.prettierrc.js --write",
-      "eslint --ignore-path .eslintignore --fix"
+    "./**/**/*.{ts,tsx,scss}": [
+      "pnpm format-code"
     ],
-    "**/*.md": "prettier --write"
+    "./**/**/*.{ts,tsx}": [
+      "pnpm lint:fix"
+    ],
+    "./docSite/**/**/*.md": "pnpm format-doc && pnpm gen:llms"
   },
   "resolutions": {
     "mdast-util-gfm-autolink-literal": "2.0.0"
