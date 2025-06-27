@@ -20,7 +20,7 @@ import { delay } from '@fastgpt/service/common/bullmq';
 import { rawText2Chunks, readDatasetSourceRawText } from '@fastgpt/service/core/dataset/read';
 import { getLLMModel } from '@fastgpt/service/core/ai/model';
 import { getLLMMaxChunkSize } from '@fastgpt/global/core/dataset/training/utils';
-import { checkDatasetLimit } from '@fastgpt/service/support/permission/teamLimit';
+import { checkDatasetIndexLimit } from '@fastgpt/service/support/permission/teamLimit';
 import { predictDataLimitLength } from '@fastgpt/global/core/dataset/utils';
 import { getTrainingModeByCollection } from '@fastgpt/service/core/dataset/collection/utils';
 import { pushDataListToTrainingQueue } from '@fastgpt/service/core/dataset/training/controller';
@@ -30,6 +30,7 @@ import { MongoDatasetCollection } from '@fastgpt/service/core/dataset/collection
 import { hashStr } from '@fastgpt/global/common/string/tools';
 import { POST } from '@fastgpt/service/common/api/plusRequest';
 import { pushLLMTrainingUsage } from '@fastgpt/service/support/wallet/usage/controller';
+import { MongoImage } from '@fastgpt/service/common/file/image/schema';
 
 const requestLLMPargraph = async ({
   rawText,
@@ -100,21 +101,13 @@ export const datasetParseQueue = async (): Promise<any> => {
           $inc: { retryCount: -1 }
         }
       )
-        .select({
-          _id: 1,
-          teamId: 1,
-          tmbId: 1,
-          datasetId: 1,
-          collectionId: 1,
-          billId: 1,
-          q: 1
-        })
         .populate<{
           dataset: DatasetSchemaType;
           collection: DatasetCollectionSchemaType;
         }>([
           {
-            path: 'collection'
+            path: 'collection',
+            select: '-qaPrompt'
           },
           {
             path: 'dataset'
@@ -258,7 +251,7 @@ export const datasetParseQueue = async (): Promise<any> => {
 
     // Check dataset limit
     try {
-      await checkDatasetLimit({
+      await checkDatasetIndexLimit({
         teamId: data.teamId,
         insertLen: predictDataLimitLength(trainingMode, chunks)
       });
@@ -299,7 +292,6 @@ export const datasetParseQueue = async (): Promise<any> => {
         vlmModel: dataset.vlmModel,
         indexSize: collection.indexSize,
         mode: trainingMode,
-        prompt: collection.qaPrompt,
         billId: data.billId,
         data: chunks.map((item, index) => ({
           ...item,
@@ -321,6 +313,26 @@ export const datasetParseQueue = async (): Promise<any> => {
           session
         }
       );
+
+      // 8. Remove image ttl
+      const relatedImgId = collection.metadata?.relatedImgId;
+      if (relatedImgId) {
+        await MongoImage.updateMany(
+          {
+            teamId: collection.teamId,
+            'metadata.relatedId': relatedImgId
+          },
+          {
+            // Remove expiredTime to avoid ttl expiration
+            $unset: {
+              expiredTime: 1
+            }
+          },
+          {
+            session
+          }
+        );
+      }
     });
 
     addLog.debug(`[Parse Queue] Finish`, {

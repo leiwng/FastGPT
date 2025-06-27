@@ -12,14 +12,14 @@ import { getCollectionWithDataset } from '@fastgpt/service/core/dataset/controll
 import { pushGenerateVectorUsage } from '@/service/support/wallet/usage/push';
 import type { InsertOneDatasetDataProps } from '@/global/core/dataset/api';
 import { simpleText } from '@fastgpt/global/common/string/tools';
-import { checkDatasetLimit } from '@fastgpt/service/support/permission/teamLimit';
+import { checkDatasetIndexLimit } from '@fastgpt/service/support/permission/teamLimit';
 import { NextAPI } from '@/service/middleware/entry';
 import { WritePermissionVal } from '@fastgpt/global/support/permission/constant';
 import { CommonErrEnum } from '@fastgpt/global/common/error/code/common';
 import { getLLMMaxChunkSize } from '@fastgpt/global/core/dataset/training/utils';
-import { addOperationLog } from '@fastgpt/service/support/operationLog/addOperationLog';
-import { OperationLogEventEnum } from '@fastgpt/global/support/operationLog/constants';
-import { getI18nDatasetType } from '@fastgpt/service/support/operationLog/util';
+import { addAuditLog } from '@fastgpt/service/support/user/audit/util';
+import { AuditEventEnum } from '@fastgpt/global/support/user/audit/constants';
+import { getI18nDatasetType } from '@fastgpt/service/support/user/audit/util';
 
 async function handler(req: NextApiRequest) {
   const { collectionId, q, a, indexes } = req.body as InsertOneDatasetDataProps;
@@ -41,14 +41,16 @@ async function handler(req: NextApiRequest) {
     per: WritePermissionVal
   });
 
-  await checkDatasetLimit({
+  await checkDatasetIndexLimit({
     teamId,
-    insertLen: 1
+    insertLen: 1 + (indexes?.length || 0)
   });
 
   const [
     {
-      dataset: { _id: datasetId, vectorModel, agentModel }
+      dataset: { _id: datasetId, vectorModel, agentModel },
+      indexPrefixTitle,
+      name
     }
   ] = await Promise.all([getCollectionWithDataset(collectionId)]);
 
@@ -84,6 +86,7 @@ async function handler(req: NextApiRequest) {
     q: formatQ,
     a: formatA,
     chunkIndex: 0,
+    indexPrefix: indexPrefixTitle ? `# ${name}` : undefined,
     embeddingModel: vectorModelData.model,
     indexes: formatIndexes
   });
@@ -96,10 +99,10 @@ async function handler(req: NextApiRequest) {
   });
 
   (() => {
-    addOperationLog({
+    addAuditLog({
       tmbId,
       teamId,
-      event: OperationLogEventEnum.CREATE_DATA,
+      event: AuditEventEnum.CREATE_DATA,
       params: {
         collectionName: collection.name,
         datasetName: collection.dataset?.name || '',

@@ -18,7 +18,7 @@ import { BucketNameEnum } from '@fastgpt/global/common/file/constants';
 import type { ClientSession } from '../../../common/mongo';
 import { createOrGetCollectionTags } from './utils';
 import { rawText2Chunks } from '../read';
-import { checkDatasetLimit } from '../../../support/permission/teamLimit';
+import { checkDatasetIndexLimit } from '../../../support/permission/teamLimit';
 import { predictDataLimitLength } from '../../../../global/core/dataset/utils';
 import { mongoSessionRun } from '../../../common/mongo/sessionRun';
 import { createTrainingUsage } from '../../../support/wallet/usage/controller';
@@ -37,11 +37,11 @@ import {
 } from '@fastgpt/global/core/dataset/training/utils';
 import { DatasetDataIndexTypeEnum } from '@fastgpt/global/core/dataset/data/constants';
 import { clearCollectionImages, removeDatasetImageExpiredTime } from '../image/utils';
+import { MongoDatasetCollectionTags } from '../tag/schema';
 
 export const createCollectionAndInsertData = async ({
   dataset,
   rawText,
-  relatedId,
   imageIds,
   createCollectionParams,
   backupParse = false,
@@ -50,7 +50,6 @@ export const createCollectionAndInsertData = async ({
 }: {
   dataset: DatasetSchemaType;
   rawText?: string;
-  relatedId?: string;
   imageIds?: string[];
   createCollectionParams: CreateOneCollectionParams;
 
@@ -105,6 +104,7 @@ export const createCollectionAndInsertData = async ({
       delete formatCreateCollectionParams.chunkSize;
       delete formatCreateCollectionParams.chunkSplitter;
       delete formatCreateCollectionParams.indexSize;
+      delete formatCreateCollectionParams.indexPrefixTitle;
     }
   }
   if (trainingType !== DatasetCollectionDataProcessModeEnum.qa) {
@@ -166,7 +166,7 @@ export const createCollectionAndInsertData = async ({
   })();
 
   // 2. auth limit
-  await checkDatasetLimit({
+  await checkDatasetIndexLimit({
     teamId,
     insertLen: predictDataLimitLength(trainingMode, chunks)
   });
@@ -225,7 +225,6 @@ export const createCollectionAndInsertData = async ({
           vlmModel: dataset.vlmModel,
           indexSize,
           mode: trainingMode,
-          prompt: formatCreateCollectionParams.qaPrompt,
           billId: traingBillId,
           data: chunks.map((item, index) => ({
             ...item,
@@ -258,23 +257,6 @@ export const createCollectionAndInsertData = async ({
       collectionId,
       session
     });
-    if (relatedId) {
-      await MongoImage.updateMany(
-        {
-          teamId,
-          'metadata.relatedId': relatedId
-        },
-        {
-          // Remove expiredTime to avoid ttl expiration
-          $unset: {
-            expiredTime: 1
-          }
-        },
-        {
-          session
-        }
-      );
-    }
 
     return {
       collectionId: String(collectionId),
@@ -298,7 +280,7 @@ export async function createOneCollection({ session, ...props }: CreateOneCollec
     teamId,
     parentId,
     datasetId,
-    tags,
+    tags: tagIdList,
 
     fileId,
     rawLink,
@@ -307,7 +289,18 @@ export async function createOneCollection({ session, ...props }: CreateOneCollec
     apiFileId
   } = props;
   // Create collection tags
-  const collectionTags = await createOrGetCollectionTags({ tags, teamId, datasetId, session });
+  const tags = await MongoDatasetCollectionTags.find({
+    teamId,
+    datasetId,
+    _id: { $in: tagIdList }
+  });
+
+  const collectionTags = await createOrGetCollectionTags({
+    tags: tags.map((item) => item.tag),
+    teamId,
+    datasetId,
+    session
+  });
 
   // Create collection
   const [collection] = await MongoDatasetCollection.create(
