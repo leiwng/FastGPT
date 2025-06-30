@@ -233,8 +233,7 @@ export function usePagination<DataT, ResT = {}>(
               onClick={() => {
                 if (loadText !== t('common:request_more')) return;
                 fetchData(pageNum + 1);
-              }}
-            >
+              }}>
               {loadText}
             </Box>
           )}
@@ -258,6 +257,7 @@ export function usePagination<DataT, ResT = {}>(
 
   return {
     pageNum,
+    setPageNum,
     pageSize,
     total: totalDataLength,
     data,

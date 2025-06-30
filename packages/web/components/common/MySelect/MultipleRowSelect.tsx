@@ -26,7 +26,7 @@ export const MultipleRowSelect = ({
   onSelect,
   ButtonProps,
   changeOnEverySelect = false,
-  rowMinWidth = 'autp'
+  rowMinWidth = 'auto'
 }: MultipleSelectProps & {
   rowMinWidth?: string;
 }) => {
@@ -66,7 +66,7 @@ export const MultipleRowSelect = ({
         if (currentScrollTop !== undefined && MenuRef.current[index]) {
           MenuRef.current[index]!.scrollTop = currentScrollTop;
         }
-      }, [cloneValue, currentScrollTop]);
+      }, [currentScrollTop, index]);
 
       return (
         <>
@@ -81,8 +81,7 @@ export const MultipleRowSelect = ({
             minW={index !== 0 ? minWidth : rowMinWidth}
             maxH={`${maxH}px`}
             overflowY={'auto'}
-            whiteSpace={'nowrap'}
-          >
+            whiteSpace={'nowrap'}>
             {list.map((item) => {
               const hasChildren = item.children && item.children.length > 0;
 
@@ -129,8 +128,7 @@ export const MultipleRowSelect = ({
                         bg: 'primary.50',
                         color: 'primary.600'
                       }
-                    : {})}
-                >
+                    : {})}>
                   {item.label}
                 </Flex>
               );
@@ -143,7 +141,7 @@ export const MultipleRowSelect = ({
         </>
       );
     },
-    [cloneValue]
+    [changeOnEverySelect, cloneValue, emptyTip, maxH, minWidth, onClose, onSelect, rowMinWidth, t]
   );
 
   const onOpenSelect = useCallback(() => {
@@ -157,22 +155,19 @@ export const MultipleRowSelect = ({
         '& div': {
           width: 'auto !important'
         }
-      })}
-    >
+      })}>
       <Menu
         autoSelect={false}
         isOpen={isOpen}
         onOpen={onOpenSelect}
         onClose={onClose}
         strategy={'fixed'}
-        matchWidth
-      >
+        matchWidth>
         <MenuButton
           as={Button}
           ref={ButtonRef}
           width={'100%'}
           px={3}
-          rightIcon={<MyIcon name={'core/chat/chevronDown'} w={4} color={'myGray.500'} />}
           variant={'whitePrimaryOutline'}
           size={'lg'}
           fontSize={'sm'}
@@ -187,9 +182,13 @@ export const MultipleRowSelect = ({
                 color: 'primary.700'
               }
             : {})}
-          {...ButtonProps}
-        >
-          <Box>{label ?? placeholder}</Box>
+          {...ButtonProps}>
+          <Flex alignItems={'center'}>
+            <Box flex="1" overflow="hidden" textOverflow="ellipsis" whiteSpace="nowrap">
+              {label ?? placeholder}
+            </Box>
+            <MyIcon name={'core/chat/chevronDown'} w={4} flexShrink={0} color={'myGray.500'} />
+          </Flex>
         </MenuButton>
         <MenuList
           className={ButtonProps?.className}
@@ -214,8 +213,7 @@ export const MultipleRowSelect = ({
           maxH={'40vh'}
           overflowY={'auto'}
           display={'flex'}
-          userSelect={'none'}
-        >
+          userSelect={'none'}>
           <RenderList list={list} index={0} />
         </MenuList>
       </Menu>
@@ -260,7 +258,7 @@ export const MultipleRowArraySelect = ({
       });
       onSelect(validList);
     },
-    [onSelect]
+    [list, onSelect]
   );
 
   const RenderList = useCallback(
@@ -298,8 +296,7 @@ export const MultipleRowArraySelect = ({
             borderLeft={index !== 0 ? 'base' : 'none'}
             maxH={`${maxH}px`}
             overflowY={'auto'}
-            whiteSpace={'nowrap'}
-          >
+            whiteSpace={'nowrap'}>
             {list.map((item) => {
               const isSelected = item.value === currentNavValue;
               const showCheckbox = !hasChildren;
@@ -319,8 +316,7 @@ export const MultipleRowArraySelect = ({
                     color: 'primary.600'
                   }}
                   onClick={() => handleSelect(item)}
-                  {...(isSelected ? { color: 'primary.600' } : {})}
-                >
+                  {...(isSelected ? { color: 'primary.600' } : {})}>
                   {showCheckbox && <Checkbox isChecked={isChecked} mr={1} />}
                   <Box>{item.label}</Box>
                 </Flex>
@@ -334,13 +330,13 @@ export const MultipleRowArraySelect = ({
         </>
       );
     },
-    [navigationPath, formatValue, onSelect]
+    [navigationPath, maxH, emptyTip, t, formatValue, onChange]
   );
 
   const onOpenSelect = useCallback(() => {
     setNavigationPath([]);
     onOpen();
-  }, []);
+  }, [onOpen]);
 
   return (
     <Box ref={ref} position={'relative'}>
@@ -372,8 +368,7 @@ export const MultipleRowArraySelect = ({
             })}
         {...ButtonProps}
         onClick={() => (isOpen ? onClose() : onOpenSelect())}
-        className="nowheel"
-      >
+        className="nowheel">
         <Box w={'100%'} textAlign={'left'}>
           {label ?? placeholder}
         </Box>
@@ -397,8 +392,7 @@ export const MultipleRowArraySelect = ({
           borderRadius={'md'}
           zIndex={1000}
           minW={'100%'}
-          w={'max-content'}
-        >
+          w={'max-content'}>
           <Flex>
             <RenderList list={list} index={0} />
           </Flex>

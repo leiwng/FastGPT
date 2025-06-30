@@ -13,9 +13,9 @@ import { parsePaginationRequest } from '@fastgpt/service/common/api/pagination';
 import { type PaginationResponse } from '@fastgpt/web/common/fetch/type';
 import { addSourceMember } from '@fastgpt/service/support/user/utils';
 import { replaceRegChars } from '@fastgpt/global/common/string/tools';
-import { addOperationLog } from '@fastgpt/service/support/operationLog/addOperationLog';
-import { OperationLogEventEnum } from '@fastgpt/global/support/operationLog/constants';
-import { getI18nAppType } from '@fastgpt/service/support/operationLog/util';
+import { addAuditLog } from '@fastgpt/service/support/user/audit/util';
+import { AuditEventEnum } from '@fastgpt/global/support/user/audit/constants';
+import { getI18nAppType } from '@fastgpt/service/support/user/audit/util';
 
 async function handler(
   req: NextApiRequest,
@@ -86,14 +86,44 @@ async function handler(
                 $group: {
                   _id: null,
                   messageCount: { $sum: 1 },
-                  goodFeedback: { $sum: { $cond: [{ $eq: ['$userGoodFeedback', true] }, 1, 0] } },
-                  badFeedback: { $sum: { $cond: [{ $eq: ['$userBadFeedback', true] }, 1, 0] } },
+                  goodFeedback: {
+                    $sum: {
+                      $cond: [
+                        {
+                          $ifNull: ['$userGoodFeedback', false]
+                        },
+                        1,
+                        0
+                      ]
+                    }
+                  },
+                  badFeedback: {
+                    $sum: {
+                      $cond: [
+                        {
+                          $ifNull: ['$userBadFeedback', false]
+                        },
+                        1,
+                        0
+                      ]
+                    }
+                  },
                   customFeedback: {
                     $sum: {
                       $cond: [{ $gt: [{ $size: { $ifNull: ['$customFeedbacks', []] } }, 0] }, 1, 0]
                     }
                   },
-                  adminMark: { $sum: { $cond: [{ $eq: ['$adminFeedback', true] }, 1, 0] } }
+                  adminMark: {
+                    $sum: {
+                      $cond: [
+                        {
+                          $ifNull: ['$adminFeedback', false]
+                        },
+                        1,
+                        0
+                      ]
+                    }
+                  }
                 }
               }
             ],
@@ -140,18 +170,18 @@ async function handler(
     ),
     MongoChat.countDocuments(where, { ...readFromSecondary })
   ]);
-
+  console.log(list);
   const listWithSourceMember = await addSourceMember({
-    list: list
+    list
   });
 
   const listWithoutTmbId = list.filter((item) => !item.tmbId);
 
   (async () => {
-    addOperationLog({
+    addAuditLog({
       tmbId,
       teamId,
-      event: OperationLogEventEnum.EXPORT_APP_CHAT_LOG,
+      event: AuditEventEnum.EXPORT_APP_CHAT_LOG,
       params: {
         appName: app.name,
         appType: getI18nAppType(app.type)

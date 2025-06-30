@@ -958,6 +958,7 @@ const ChatBox = ({
         px={[4, 0]}
         pb={3}>
         <Box id="chat-container" maxW={['100%', '92%']} h={'100%'} mx={'auto'}>
+          {/* chat header */}
           {showEmpty && <Empty />}
           {!!welcomeText && <WelcomeBox welcomeText={welcomeText} />}
           {/* variable input */}

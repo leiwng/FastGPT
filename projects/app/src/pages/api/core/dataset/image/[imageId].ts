@@ -1,13 +1,8 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiResponse } from 'next';
 import { jsonRes } from '@fastgpt/service/common/response';
-import { getDownloadStream, getFileById } from '@fastgpt/service/common/file/gridfs/controller';
-import { BucketNameEnum } from '@fastgpt/global/common/file/constants';
-import { CommonErrEnum } from '@fastgpt/global/common/error/code/common';
 import type { ApiRequestProps } from '@fastgpt/service/type/next';
 import { authDatasetImagePreviewUrl } from '@fastgpt/service/core/dataset/image/utils';
 import { getDatasetImageReadData } from '@fastgpt/service/core/dataset/image/controller';
-
-const previewableExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
 
 export default async function handler(
   req: ApiRequestProps<

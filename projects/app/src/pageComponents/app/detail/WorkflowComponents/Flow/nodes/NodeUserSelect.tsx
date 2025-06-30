@@ -154,7 +154,7 @@ const OptionItem = ({
         <MyTooltip label={t('common:Delete')}>
           <MyIcon
             mt={0.5}
-            name={'minus'}
+            name={'circleMinus'}
             w={'0.8rem'}
             cursor={'pointer'}
             color={'myGray.600'}

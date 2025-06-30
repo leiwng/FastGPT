@@ -9,12 +9,11 @@ import { getNextTimeByCronStringAndTimezone } from '@fastgpt/global/common/strin
 import { type PostPublishAppProps } from '@/global/core/app/api';
 import { WritePermissionVal } from '@fastgpt/global/support/permission/constant';
 import { type ApiRequestProps } from '@fastgpt/service/type/next';
-import { AppTypeEnum } from '@fastgpt/global/core/app/constants';
-import { rewriteAppWorkflowToSimple } from '@fastgpt/service/core/app/utils';
-import { addOperationLog } from '@fastgpt/service/support/operationLog/addOperationLog';
-import { OperationLogEventEnum } from '@fastgpt/global/support/operationLog/constants';
-import { getI18nAppType } from '@fastgpt/service/support/operationLog/util';
+import { addAuditLog } from '@fastgpt/service/support/user/audit/util';
+import { AuditEventEnum } from '@fastgpt/global/support/user/audit/constants';
+import { getI18nAppType } from '@fastgpt/service/support/user/audit/util';
 import { i18nT } from '@fastgpt/web/i18n/utils';
+
 async function handler(req: ApiRequestProps<PostPublishAppProps>, res: NextApiResponse<any>) {
   const { appId } = req.query as { appId: string };
   const { nodes = [], edges = [], chatConfig, isPublish, versionName, autoSave } = req.body;
@@ -26,25 +25,22 @@ async function handler(req: ApiRequestProps<PostPublishAppProps>, res: NextApiRe
     authToken: true
   });
 
-  const { nodes: formatNodes } = beforeUpdateAppFormat({
-    nodes,
-    isPlugin: app.type === AppTypeEnum.plugin
+  beforeUpdateAppFormat({
+    nodes
   });
-
-  await rewriteAppWorkflowToSimple(formatNodes);
 
   if (autoSave) {
     await MongoApp.findByIdAndUpdate(appId, {
-      modules: formatNodes,
+      modules: nodes,
       edges,
       chatConfig,
       updateTime: new Date()
     });
 
-    addOperationLog({
+    addAuditLog({
       tmbId,
       teamId,
-      event: OperationLogEventEnum.UPDATE_PUBLISH_APP,
+      event: AuditEventEnum.UPDATE_PUBLISH_APP,
       params: {
         appName: app.name,
         operationName: i18nT('account_team:update'),
@@ -62,7 +58,7 @@ async function handler(req: ApiRequestProps<PostPublishAppProps>, res: NextApiRe
       [
         {
           appId,
-          nodes: formatNodes,
+          nodes: nodes,
           edges,
           chatConfig,
           isPublish,
@@ -77,7 +73,7 @@ async function handler(req: ApiRequestProps<PostPublishAppProps>, res: NextApiRe
     await MongoApp.findByIdAndUpdate(
       appId,
       {
-        modules: formatNodes,
+        modules: nodes,
         edges,
         chatConfig,
         updateTime: new Date(),
@@ -103,10 +99,10 @@ async function handler(req: ApiRequestProps<PostPublishAppProps>, res: NextApiRe
   });
 
   (async () => {
-    addOperationLog({
+    addAuditLog({
       tmbId,
       teamId,
-      event: OperationLogEventEnum.UPDATE_PUBLISH_APP,
+      event: AuditEventEnum.UPDATE_PUBLISH_APP,
       params: {
         appName: app.name,
         operationName: isPublish

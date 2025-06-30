@@ -36,6 +36,7 @@ export type ChunkSettingsType = {
   // Index enhance
   imageIndex?: boolean;
   autoIndexes?: boolean;
+  indexPrefixTitle?: boolean;
 
   // Chunk setting
   chunkSettingMode?: ChunkSettingModeEnum; // 系统参数/自定义参数
@@ -162,6 +163,7 @@ export type DatasetDataSchemaType = DatasetDataFieldType & {
   fullTextToken: string;
   indexes: DatasetDataIndexItemType[];
   rebuilding?: boolean;
+  imageDescMap?: Record<string, string>;
 };
 
 export type DatasetDataTextSchemaType = {
@@ -184,12 +186,11 @@ export type DatasetTrainingSchemaType = {
   expireAt: Date;
   lockTime: Date;
   mode: TrainingModeEnum;
-  model?: string;
-  prompt?: string;
   dataId?: string;
   q: string;
   a: string;
   imageId?: string;
+  imageDescMap?: Record<string, string>;
   chunkIndex: number;
   indexSize?: number;
   weight: number;

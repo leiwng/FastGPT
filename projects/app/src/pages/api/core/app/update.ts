@@ -24,9 +24,9 @@ import { TeamAppCreatePermissionVal } from '@fastgpt/global/support/permission/u
 import { AppErrEnum } from '@fastgpt/global/common/error/code/app';
 import { refreshSourceAvatar } from '@fastgpt/service/common/file/image/controller';
 import { MongoResourcePermission } from '@fastgpt/service/support/permission/schema';
-import { addOperationLog } from '@fastgpt/service/support/operationLog/addOperationLog';
-import { OperationLogEventEnum } from '@fastgpt/global/support/operationLog/constants';
-import { getI18nAppType } from '@fastgpt/service/support/operationLog/util';
+import { addAuditLog } from '@fastgpt/service/support/user/audit/util';
+import { AuditEventEnum } from '@fastgpt/global/support/user/audit/constants';
+import { getI18nAppType } from '@fastgpt/service/support/user/audit/util';
 import { i18nT } from '@fastgpt/web/i18n/utils';
 
 export type AppUpdateQuery = {
@@ -108,9 +108,8 @@ async function handler(req: ApiRequestProps<AppUpdateBody, AppUpdateQuery>) {
   const onUpdate = async (session?: ClientSession) => {
     // format nodes data
     // 1. dataset search limit, less than model quoteMaxToken
-    const { nodes: formatNodes } = beforeUpdateAppFormat({
-      nodes,
-      isPlugin: app.type === AppTypeEnum.plugin
+    beforeUpdateAppFormat({
+      nodes
     });
 
     await refreshSourceAvatar(avatar, app.avatar, session);
@@ -134,8 +133,8 @@ async function handler(req: ApiRequestProps<AppUpdateBody, AppUpdateQuery>) {
         ...(avatar && { avatar }),
         ...(intro !== undefined && { intro }),
         ...(teamTags && { teamTags }),
-        ...(formatNodes && {
-          modules: formatNodes
+        ...(nodes && {
+          modules: nodes
         }),
         ...(edges && {
           edges
@@ -205,10 +204,10 @@ const logAppMove = ({
   app: any;
   targetName: string;
 }) => {
-  addOperationLog({
+  addAuditLog({
     tmbId,
     teamId,
-    event: OperationLogEventEnum.MOVE_APP,
+    event: AuditEventEnum.MOVE_APP,
     params: {
       appName: app.name,
       targetFolderName: targetName,
@@ -235,7 +234,7 @@ const logAppUpdate = ({
     const values: string[] = [];
 
     if (name !== undefined) {
-      names.push(i18nT('common:core.app.name'));
+      names.push(i18nT('common:name'));
       values.push(name);
     }
 
@@ -252,10 +251,10 @@ const logAppUpdate = ({
 
   const { names: newItemNames, values: newItemValues } = getUpdateItems();
 
-  addOperationLog({
+  addAuditLog({
     tmbId,
     teamId,
-    event: OperationLogEventEnum.UPDATE_APP_INFO,
+    event: AuditEventEnum.UPDATE_APP_INFO,
     params: {
       appName: app.name,
       newItemNames: newItemNames,
