@@ -78,8 +78,7 @@ const NodeLoopEnd = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
           copy: true,
           delete: true,
           debug: true
-        }}
-      >
+        }}>
         <Box px={4} pb={4} pt={2}>
           {inputItem && <Reference item={inputItem} nodeId={nodeId} />}
         </Box>

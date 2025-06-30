@@ -39,8 +39,7 @@ function ManageModal({ onClose }: ManageModalProps) {
       onClose={onClose}
       minW="600px"
       title={t('user:team.manage_collaborators')}
-      iconSrc="common/settingLight"
-    >
+      iconSrc="common/settingLight">
       <ModalBody>
         <TableContainer borderRadius="md" minH="400px">
           <Table>
@@ -61,8 +60,7 @@ function ManageModal({ onClose }: ManageModalProps) {
                     key={item.tmbId}
                     _hover={{
                       bg: 'myGray.50'
-                    }}
-                  >
+                    }}>
                     <Td border="none">
                       <Flex alignItems="center">
                         <Avatar src={item.avatar} rounded={'50%'} w="24px" mr={2} />

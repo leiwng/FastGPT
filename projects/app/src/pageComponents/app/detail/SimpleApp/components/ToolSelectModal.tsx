@@ -145,8 +145,7 @@ const ToolSelectModal = ({ onClose, ...props }: Props & { onClose: () => void })
       onClose={onClose}
       maxW={['90vw', '700px']}
       w={'700px'}
-      h={['90vh', '80vh']}
-    >
+      h={['90vh', '80vh']}>
       {/* Header: row and search */}
       <Box px={[3, 6]} pt={4} display={'flex'} justifyContent={'space-between'} w={'full'}>
         <FillRowTabs
@@ -392,8 +391,7 @@ const RenderList = React.memo(function RenderList({
                 span: {
                   display: 'block'
                 }
-              })}
-            >
+              })}>
               <Flex>
                 <Box fontSize={'sm'} my={2} fontWeight={'500'} flex={1} color={'myGray.900'}>
                   {t(item.label as any)}
@@ -430,8 +428,7 @@ const RenderList = React.memo(function RenderList({
                             />
                           )}
                         </Box>
-                      }
-                    >
+                      }>
                       <Flex
                         alignItems={'center'}
                         py={gridStyle.py}
@@ -440,8 +437,7 @@ const RenderList = React.memo(function RenderList({
                         borderRadius={'sm'}
                         whiteSpace={'nowrap'}
                         overflow={'hidden'}
-                        textOverflow={'ellipsis'}
-                      >
+                        textOverflow={'ellipsis'}>
                         <MyAvatar
                           src={template.avatar}
                           w={gridStyle.avatarSize}
@@ -455,8 +451,7 @@ const RenderList = React.memo(function RenderList({
                           fontSize={'sm'}
                           flex={'1 0 0'}
                           ml={3}
-                          className="textEllipsis"
-                        >
+                          className="textEllipsis">
                           {t(template.name as any)}
                         </Box>
 
@@ -467,8 +462,7 @@ const RenderList = React.memo(function RenderList({
                             leftIcon={<MyIcon name={'delete'} w={'16px'} mr={-1} />}
                             onClick={() => onRemoveTool(template)}
                             px={2}
-                            fontSize={'mini'}
-                          >
+                            fontSize={'mini'}>
                             {t('common:Remove')}
                           </Button>
                         ) : template.flowNodeType === 'toolSet' ? (
@@ -480,8 +474,7 @@ const RenderList = React.memo(function RenderList({
                               leftIcon={<MyIcon name={'common/arrowRight'} w={'16px'} mr={-1.5} />}
                               onClick={() => setParentId(template.id)}
                               px={2}
-                              fontSize={'mini'}
-                            >
+                              fontSize={'mini'}>
                               {t('common:Open')}
                             </Button>
                             <Button
@@ -491,8 +484,7 @@ const RenderList = React.memo(function RenderList({
                               isLoading={isLoading}
                               onClick={() => onClickAdd(template)}
                               px={2}
-                              fontSize={'mini'}
-                            >
+                              fontSize={'mini'}>
                               {t('common:Add')}
                             </Button>
                           </Flex>
@@ -503,8 +495,7 @@ const RenderList = React.memo(function RenderList({
                             leftIcon={<MyIcon name={'common/arrowRight'} w={'16px'} mr={-1.5} />}
                             onClick={() => setParentId(template.id)}
                             px={2}
-                            fontSize={'mini'}
-                          >
+                            fontSize={'mini'}>
                             {t('common:Open')}
                           </Button>
                         ) : (
@@ -515,8 +506,7 @@ const RenderList = React.memo(function RenderList({
                             isLoading={isLoading}
                             onClick={() => onClickAdd(template)}
                             px={2}
-                            fontSize={'mini'}
-                          >
+                            fontSize={'mini'}>
                             {t('common:Add')}
                           </Button>
                         )}
@@ -548,8 +538,7 @@ const RenderList = React.memo(function RenderList({
                   justifyContent={'space-between'}
                   alignItems={'center'}
                   borderRadius={'md'}
-                  px={3}
-                >
+                  px={3}>
                   {t(label as any)}
                   <AccordionIcon />
                 </AccordionButton>

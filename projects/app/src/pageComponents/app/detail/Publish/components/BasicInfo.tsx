@@ -52,8 +52,7 @@ function BasicInfo({
           {t('common:support.outlink.Max usage points')}
           <QuestionTip
             ml={1}
-            label={t('common:support.outlink.Max usage points tip')}
-          ></QuestionTip>
+            label={t('common:support.outlink.Max usage points tip')}></QuestionTip>
         </FormLabel>
         <Input
           {...register('limit.maxUsagePoints', {

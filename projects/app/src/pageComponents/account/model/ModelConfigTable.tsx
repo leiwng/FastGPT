@@ -371,8 +371,7 @@ const ModelTable = ({ Tab }: { Tab: React.ReactNode }) => {
                     <HStack
                       spacing={1}
                       cursor={'pointer'}
-                      onClick={() => setShowModelId(!showModelId)}
-                    >
+                      onClick={() => setShowModelId(!showModelId)}>
                       <Box>
                         {showModelId ? t('account:model.model_id') : t('common:model.name')}
                       </Box>
@@ -385,8 +384,7 @@ const ModelTable = ({ Tab }: { Tab: React.ReactNode }) => {
                     <Box
                       cursor={'pointer'}
                       onClick={() => setShowActive(!showActive)}
-                      color={showActive ? 'primary.600' : 'myGray.600'}
-                    >
+                      color={showActive ? 'primary.600' : 'myGray.600'}>
                       {t('account:model.active')}({activeModelLength})
                     </Box>
                   </Th>
@@ -402,8 +400,7 @@ const ModelTable = ({ Tab }: { Tab: React.ReactNode }) => {
                         <CopyBox
                           value={showModelId ? item.model : item.name}
                           color={'myGray.900'}
-                          fontWeight={'500'}
-                        >
+                          fontWeight={'500'}>
                           {showModelId ? item.model : item.name}
                         </CopyBox>
                       </HStack>
@@ -525,8 +522,7 @@ const JsonConfigModal = ({
       iconSrc="modal/edit"
       title={t('account:model.json_config')}
       w={'100%'}
-      h={'100%'}
-    >
+      h={'100%'}>
       <ModalBody display={'flex'} flexDirection={'column'}>
         <Box fontSize={'sm'} color={'myGray.500'}>
           {t('account:model.json_config_tip')}
@@ -592,8 +588,7 @@ const DefaultModelModal = ({
       isOpen
       onClose={onClose}
       title={t('account:default_model_config')}
-      iconSrc="modal/edit"
-    >
+      iconSrc="modal/edit">
       <ModalBody>
         <Box>
           <Box {...labelStyles}>{t('common:model.type.chat')}</Box>
@@ -752,8 +747,7 @@ const DefaultModelModal = ({
               datasetTextLLM: defaultData.datasetTextLLM?.model,
               datasetImageLLM: defaultData.datasetImageLLM?.model
             })
-          }
-        >
+          }>
           {t('common:Confirm')}
         </Button>
       </ModalFooter>

@@ -79,8 +79,7 @@ const FeiShu = ({ appId }: { appId: string }) => {
               }
               target={'_blank'}
               color={'primary.500'}
-              fontSize={'sm'}
-            >
+              fontSize={'sm'}>
               <Flex alignItems={'center'}>
                 <MyIcon name="book" mr="1" w={'1rem'} />
                 {t('common:read_doc')}
@@ -103,8 +102,7 @@ const FeiShu = ({ appId }: { appId: string }) => {
           onClick={() => {
             setEditFeiShuLinkData(defaultFeishuOutLinkForm);
             setIsEdit(false);
-          }}
-        >
+          }}>
           {t('common:add_new')}
         </Button>
       </Flex>
@@ -161,8 +159,7 @@ const FeiShu = ({ appId }: { appId: string }) => {
                     }}
                     size={'sm'}
                     mr={3}
-                    variant={'whitePrimary'}
-                  >
+                    variant={'whitePrimary'}>
                     {t('publish:request_address')}
                   </Button>
                   <MyMenu

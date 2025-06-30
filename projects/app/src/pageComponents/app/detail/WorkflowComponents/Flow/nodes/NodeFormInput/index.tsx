@@ -140,8 +140,7 @@ const NodeFormInput = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
                 size={'sm'}
                 onClick={() => {
                   setEditField(defaultFormInput);
-                }}
-              >
+                }}>
                 {t('common:Add_new_input')}
               </Button>
               {!!editField && (
@@ -209,8 +208,7 @@ const NodeFormInput = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
                       />
                     );
                   }}
-                  zoom={zoom}
-                >
+                  zoom={zoom}>
                   {({ provided }) => (
                     <Tbody {...provided.droppableProps} ref={provided.innerRef}>
                       {inputs.map((item, index) => {
@@ -282,8 +280,7 @@ const TableItem = ({
       style={{
         ...provided.draggableProps.style,
         opacity: snapshot.isDragging ? 0.8 : 1
-      }}
-    >
+      }}>
       <Td>
         <Flex alignItems={'center'} fontSize={'mini'} fontWeight={'medium'} whiteSpace={'nowrap'}>
           {!!icon && <MyIcon name={icon as any} w={'14px'} mr={1} color={'myGray.400'} />}

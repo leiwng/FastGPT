@@ -79,8 +79,7 @@ const RenderResoningContent = React.memo(function RenderResoningContent({
           mt={2}
           borderLeft={'2px solid'}
           borderColor={'myGray.300'}
-          color={'myGray.500'}
-        >
+          color={'myGray.500'}>
           <Markdown source={content} showAnimation={showAnimation} />
         </AccordionPanel>
       </AccordionItem>
@@ -162,8 +161,7 @@ const RenderTool = React.memo(
                   borderRadius={'md'}
                   overflow={'hidden'}
                   maxH={'500px'}
-                  overflowY={'auto'}
-                >
+                  overflowY={'auto'}>
                   {toolParams && toolParams !== '{}' && (
                     <Box mb={3}>
                       <Markdown

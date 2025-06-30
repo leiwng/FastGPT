@@ -84,8 +84,7 @@ const CustomLinkImport = () => {
             {feConfigs?.docUrl && (
               <Link
                 href={getDocPath('/docs/guide/knowledge_base/websync/#选择器如何使用')}
-                target="_blank"
-              >
+                target="_blank">
                 {t('common:core.dataset.website.Selector Course')}
               </Link>
             )}
@@ -108,8 +107,7 @@ const CustomLinkImport = () => {
             px={4}
             py={2}
             borderRadius={'md'}
-            bg={'myGray.100'}
-          >
+            bg={'myGray.100'}>
             <MyIcon name={LinkCollectionIcon} w={'16px'} />
             <Box ml={1} mr={3} wordBreak={'break-all'}>
               {item}
@@ -145,8 +143,7 @@ const CustomLinkImport = () => {
             );
 
             goToNext();
-          })}
-        >
+          })}>
           {t('common:next_step')}
         </Button>
       </Flex>

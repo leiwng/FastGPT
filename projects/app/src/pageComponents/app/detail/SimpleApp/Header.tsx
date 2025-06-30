@@ -220,8 +220,7 @@ const Header = ({
                       isSaved
                         ? publishStatusStyle.published.colorSchema
                         : publishStatusStyle.unPublish.colorSchema
-                    }
-                  >
+                    }>
                     {t(
                       isSaved
                         ? publishStatusStyle.published.text

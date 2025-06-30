@@ -109,8 +109,7 @@ function SelectMember({
       borderRadius="8px"
       border="1px solid"
       borderColor="myGray.200"
-      h={'100%'}
-    >
+      h={'100%'}>
       <Flex flexDirection="column" p="4" h={'100%'} overflow={'auto'}>
         <SearchInput
           placeholder={t('user:search_user')}
@@ -135,8 +134,7 @@ function SelectMember({
                   ...(!isSelected(member) ? { svg: { color: 'myGray.50' } } : {})
                 }}
                 _notLast={{ mb: 2 }}
-                onClick={() => handleToggleSelect(member)}
-              >
+                onClick={() => handleToggleSelect(member)}>
                 <Checkbox
                   isChecked={!!isSelected(member)}
                   icon={<MyIcon name={'common/check'} w={'12px'} />}
@@ -160,8 +158,7 @@ function SelectMember({
         flexDirection="column"
         p="4"
         h={'100%'}
-        overflow={'auto'}
-      >
+        overflow={'auto'}>
         <Box mt={3}>
           {t('common:chosen') + ': ' + Number(selected.member.length + selected.group.length)}{' '}
         </Box>
@@ -175,8 +172,7 @@ function SelectMember({
                 borderRadius={'md'}
                 key={member.type == 'member' ? member.tmbId : member._id}
                 _hover={{ bg: 'myGray.50' }}
-                _notLast={{ mb: 2 }}
-              >
+                _notLast={{ mb: 2 }}>
                 <Avatar src={member.avatar} w="1.5rem" borderRadius={'md'} />
                 <Box w="full">
                   {member.type == 'member'

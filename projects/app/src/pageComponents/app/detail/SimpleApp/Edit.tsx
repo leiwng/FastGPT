@@ -31,16 +31,14 @@ const Edit = ({
       mt={[4, 0]}
       gap={1}
       borderRadius={'lg'}
-      overflowY={['auto', 'unset']}
-    >
+      overflowY={['auto', 'unset']}>
       {renderEdit && (
         <Box
           className={styles.EditAppBox}
           pr={[0, 1]}
           overflowY={'auto'}
           minW={['auto', '580px']}
-          flex={'1'}
-        >
+          flex={'1'}>
           <Box {...cardStyles} boxShadow={'2'}>
             <AppCard appForm={appForm} setPast={setPast} />
           </Box>

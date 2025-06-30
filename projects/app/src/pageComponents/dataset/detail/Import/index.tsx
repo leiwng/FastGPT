@@ -42,8 +42,7 @@ const Render = () => {
       h={'100%'}
       px={[2, 9]}
       py={[2, 5]}
-      borderRadius={'md'}
-    >
+      borderRadius={'md'}>
       <DatasetImportContextProvider>
         <ImportDataset />
       </DatasetImportContextProvider>

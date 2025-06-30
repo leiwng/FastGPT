@@ -51,8 +51,7 @@ const ChatHeader = ({
       minH={['46px', '60px']}
       borderBottom={'sm'}
       color={'myGray.900'}
-      fontSize={'sm'}
-    >
+      fontSize={'sm'}>
       {isPc ? (
         <>
           <PcHeader
@@ -128,8 +127,7 @@ const MobileDrawer = ({
       zIndex={5}
       onClick={() => {
         onCloseDrawer();
-      }}
-    >
+      }}>
       {/* menu */}
       <Box
         w={'100vw'}
@@ -137,8 +135,7 @@ const MobileDrawer = ({
         padding={2}
         onClick={(e) => e.stopPropagation()}
         background={'white'}
-        position={'relative'}
-      >
+        position={'relative'}>
         <LightRowTabs<TabEnum>
           gap={3}
           inlineStyles={{
@@ -166,8 +163,7 @@ const MobileDrawer = ({
         py={3}
         pt={0}
         pb={4}
-        h={'65vh'}
-      >
+        h={'65vh'}>
         {/* history */}
         {currentTab === TabEnum.recently && (
           <Box px={3} overflow={'auto'} h={'100%'}>
@@ -187,8 +183,7 @@ const MobileDrawer = ({
                         }
                       : {
                           onClick: () => onclickApp(item._id)
-                        })}
-                  >
+                        })}>
                     <Avatar src={item.avatar} w={'24px'} borderRadius={'sm'} />
                     <Box ml={2} className={'textEllipsis'}>
                       {item.name}

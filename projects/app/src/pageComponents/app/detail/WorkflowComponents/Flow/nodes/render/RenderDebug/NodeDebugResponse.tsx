@@ -54,8 +54,7 @@ const RenderUserFormInteractive = React.memo(function RenderFormInput({
               onSubmit((data) => {
                 onNext(JSON.stringify(data));
               })()
-            }
-          >
+            }>
             {t('common:next_step')}
           </Button>
         )}
@@ -163,8 +162,7 @@ const NodeDebugResponse = ({ nodeId, debugResult }: NodeDebugResponseProps) => {
                   showResult: !debugResult.showResult
                 }
               })
-            }
-          >
+            }>
             {debugResult.showResult
               ? t('common:core.workflow.debug.Hide result')
               : t('common:core.workflow.debug.Show result')}
@@ -181,8 +179,7 @@ const NodeDebugResponse = ({ nodeId, debugResult }: NodeDebugResponseProps) => {
           zIndex={10}
           w={'420px'}
           maxH={'max(100%,500px)'}
-          border={'base'}
-        >
+          border={'base'}>
           {/* Status header */}
           <Flex h={'54x'} px={3} py={3} alignItems={'center'}>
             <MyIcon mr={1} name={'core/workflow/debugResult'} w={'20px'} color={'primary.600'} />
@@ -195,8 +192,7 @@ const NodeDebugResponse = ({ nodeId, debugResult }: NodeDebugResponseProps) => {
                   <Button
                     size={'sm'}
                     leftIcon={<MyIcon name={'core/chat/stopSpeech'} w={'16px'} />}
-                    variant={'whiteDanger'}
-                  >
+                    variant={'whiteDanger'}>
                     {t('common:core.workflow.Stop debug')}
                   </Button>
                 }
@@ -216,8 +212,7 @@ const NodeDebugResponse = ({ nodeId, debugResult }: NodeDebugResponseProps) => {
                       size={'sm'}
                       leftIcon={<MyIcon name={'core/workflow/debugNext'} w={'16px'} />}
                       variant={'primary'}
-                      onClick={() => onNextNodeDebug(workflowDebugData)}
-                    >
+                      onClick={() => onNextNodeDebug(workflowDebugData)}>
                       {t('common:next_step')}
                     </Button>
                   )}

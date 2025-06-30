@@ -66,8 +66,7 @@ const SettingLLMModel = ({
           display: 'block'
         }
       })}
-      position={'relative'}
-    >
+      position={'relative'}>
       <HStack spacing={1}>
         <Box flex={'1 0 0'}>
           <AIModelSelector

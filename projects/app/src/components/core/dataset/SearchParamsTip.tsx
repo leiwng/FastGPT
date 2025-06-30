@@ -56,8 +56,7 @@ const SearchParamsTip = ({
             backgroundColor: 'myGray.300 !important'
           }
         }
-      }}
-    >
+      }}>
       <Table fontSize={'xs'} overflow={'overlay'}>
         <Thead>
           <Tr bg={'transparent !important'}>

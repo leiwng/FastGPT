@@ -39,8 +39,7 @@ const AppCard = ({ showSaveStatus, isSaved }: { showSaveStatus: boolean; isSaved
           offset={[2, 4]}
           w={'116px'}
           trigger={'hover'}
-          Trigger={children}
-        >
+          Trigger={children}>
           {({ onClose }) => (
             <Box p={1.5}>
               <MyBox
@@ -51,8 +50,7 @@ const AppCard = ({ showSaveStatus, isSaved }: { showSaveStatus: boolean; isSaved
                 rounded={'4px'}
                 _hover={{ color: 'primary.600', bg: 'rgba(17, 24, 36, 0.05)' }}
                 cursor={'pointer'}
-                onClick={onOpenInfoEdit}
-              >
+                onClick={onOpenInfoEdit}>
                 <MyIcon name={'edit'} w={'16px'} mr={2} />
                 <Box fontSize={'sm'}>{t('app:edit_info')}</Box>
               </MyBox>
@@ -64,8 +62,7 @@ const AppCard = ({ showSaveStatus, isSaved }: { showSaveStatus: boolean; isSaved
                 rounded={'4px'}
                 _hover={{ color: 'primary.600', bg: 'rgba(17, 24, 36, 0.05)' }}
                 cursor={'pointer'}
-                onClick={onOpenInfoEdit}
-              >
+                onClick={onOpenInfoEdit}>
                 <MyIcon name={'key'} w={'16px'} mr={2} />
                 <Box fontSize={'sm'}>{t('app:Role_setting')}</Box>
               </MyBox>
@@ -78,8 +75,7 @@ const AppCard = ({ showSaveStatus, isSaved }: { showSaveStatus: boolean; isSaved
                 rounded={'4px'}
                 _hover={{ color: 'primary.600', bg: 'rgba(17, 24, 36, 0.05)' }}
                 cursor={'pointer'}
-                onClick={onOpenImport}
-              >
+                onClick={onOpenImport}>
                 <MyIcon name={'common/importLight'} w={'16px'} mr={2} />
                 <Box fontSize={'sm'}>{t('app:import_configs')}</Box>
               </MyBox>
@@ -90,8 +86,7 @@ const AppCard = ({ showSaveStatus, isSaved }: { showSaveStatus: boolean; isSaved
                 py={1.5}
                 rounded={'4px'}
                 _hover={{ color: 'primary.600', bg: 'rgba(17, 24, 36, 0.05)' }}
-                cursor={'pointer'}
-              >
+                cursor={'pointer'}>
                 <ExportConfigPopover
                   chatConfig={appDetail.chatConfig}
                   appName={appDetail.name}
@@ -110,8 +105,7 @@ const AppCard = ({ showSaveStatus, isSaved }: { showSaveStatus: boolean; isSaved
                     rounded={'4px'}
                     _hover={{ color: 'primary.600', bg: 'rgba(17, 24, 36, 0.05)' }}
                     cursor={'pointer'}
-                    onClick={onOpenTeamTagModal}
-                  >
+                    onClick={onOpenTeamTagModal}>
                     <MyIcon name={'core/dataset/tag'} w={'16px'} mr={2} />
                     <Box fontSize={'sm'}>{t('app:Team_Tags')}</Box>
                   </MyBox>
@@ -131,8 +125,7 @@ const AppCard = ({ showSaveStatus, isSaved }: { showSaveStatus: boolean; isSaved
                     color={'red.600'}
                     _hover={{ bg: 'rgba(17, 24, 36, 0.05)' }}
                     cursor={'pointer'}
-                    onClick={onDelApp}
-                  >
+                    onClick={onDelApp}>
                     <MyIcon name={'delete'} w={'16px'} mr={2} />
                     <Box fontSize={'sm'}>{t('common:Delete')}</Box>
                   </MyBox>
@@ -170,8 +163,7 @@ const AppCard = ({ showSaveStatus, isSaved }: { showSaveStatus: boolean; isSaved
               pl={1}
               ml={-1}
               borderRadius={'xs'}
-              _hover={{ bg: 'myGray.150' }}
-            >
+              _hover={{ bg: 'myGray.150' }}>
               <Box color={'myGray.900'}>{appDetail.name}</Box>
               <MyIcon name={'common/select'} w={'1rem'} color={'myGray.500'} />
             </HStack>
@@ -187,8 +179,7 @@ const AppCard = ({ showSaveStatus, isSaved }: { showSaveStatus: boolean; isSaved
                   isSaved
                     ? publishStatusStyle.published.colorSchema
                     : publishStatusStyle.unPublish.colorSchema
-                }
-              >
+                }>
                 {t(isSaved ? publishStatusStyle.published.text : publishStatusStyle.unPublish.text)}
               </MyTag>
             </Flex>

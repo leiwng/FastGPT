@@ -49,8 +49,7 @@ const EmptyHrefLink = function EmptyHrefLink({ content }: { content: string }) {
         size={'xs'}
         borderRadius={'md'}
         my={1}
-        onClick={() => eventBus.emit(EventNameEnum.sendQuestion, { text: content })}
-      >
+        onClick={() => eventBus.emit(EventNameEnum.sendQuestion, { text: content })}>
         {content}
       </Button>
     </MyTooltip>
@@ -101,8 +100,7 @@ const CiteLink = React.memo(function CiteLink({
         getQuoteDataById(id);
       }}
       trigger={'hover'}
-      gutter={4}
-    >
+      gutter={4}>
       <PopoverTrigger>
         <Button variant={'unstyled'} minH={0} minW={0} h={'auto'}>
           <MyIcon
@@ -126,8 +124,7 @@ const CiteLink = React.memo(function CiteLink({
                 overflow={'hidden'}
                 display={'inline-flex'}
                 height={6}
-                mr={1}
-              >
+                mr={1}>
                 <Flex px={1.5}>
                   <MyIcon name={icon as any} mr={1} flexShrink={0} w={'12px'} />
                   <Box
@@ -135,8 +132,7 @@ const CiteLink = React.memo(function CiteLink({
                     wordBreak={'break-all'}
                     flex={'1 0 0'}
                     fontSize={'mini'}
-                    color={'myGray.900'}
-                  >
+                    color={'myGray.900'}>
                     {sourceData.sourceName}
                   </Box>
                 </Flex>
@@ -154,8 +150,7 @@ const CiteLink = React.memo(function CiteLink({
                     datasetId: datasetCiteData?.collection.datasetId,
                     collectionId: datasetCiteData?.collection._id
                   });
-                }}
-              >
+                }}>
                 {t('common:all_quotes')}
               </Button>
             </Flex>

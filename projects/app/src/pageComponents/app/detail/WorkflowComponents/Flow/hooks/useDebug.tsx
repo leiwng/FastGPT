@@ -248,8 +248,7 @@ export const useDebug = () => {
         iconSrc="core/workflow/debugBlue"
         title={t('common:core.workflow.Debug Node')}
         maxW={['90vw', '35vw']}
-        px={0}
-      >
+        px={0}>
         <Box flex={'1 0 0'} overflow={'auto'} px={6}>
           {variables.length > 0 && (
             <LightRowTabs<TabEnum>

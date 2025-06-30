@@ -445,21 +445,18 @@ const InputTypeConfig = ({
                     borderRadius="md"
                     boxShadow="md"
                     {...provided.draggableProps}
-                    {...provided.dragHandleProps}
-                  >
+                    {...provided.dragHandleProps}>
                     {mergedSelectEnums[rubric.source.index].value}
                   </Box>
                 );
-              }}
-            >
+              }}>
               {({ provided }) => (
                 <Box
                   {...provided.droppableProps}
                   ref={provided.innerRef}
                   display={'flex'}
                   flexDirection={'column'}
-                  gap={4}
-                >
+                  gap={4}>
                   {mergedSelectEnums.map((item, i) => (
                     <Draggable key={i} draggableId={i.toString()} index={i}>
                       {(provided, snapshot) => (
@@ -469,14 +466,12 @@ const InputTypeConfig = ({
                           style={{
                             ...provided.draggableProps.style,
                             opacity: snapshot.isDragging ? 0.8 : 1
-                          }}
-                        >
+                          }}>
                           <Flex
                             alignItems={'center'}
                             position={'relative'}
                             transform={snapshot.isDragging ? `scale(0.5)` : ''}
-                            transformOrigin={'top left'}
-                          >
+                            transformOrigin={'top left'}>
                             <FormLabel flex={'0 0 132px'} fontWeight={'medium'}>
                               {`${t('common:core.module.variable.variable options')} ${i + 1}`}
                             </FormLabel>
@@ -532,8 +527,7 @@ const InputTypeConfig = ({
               fontWeight={'medium'}
               fontSize={'12px'}
               w={'24'}
-              py={2}
-            >
+              py={2}>
               {t('common:core.module.variable add option')}
             </Button>
           </>
@@ -594,16 +588,14 @@ const InputTypeConfig = ({
           variant={'primaryOutline'}
           fontWeight={'medium'}
           onClick={handleSubmit((data) => onSubmitSuccess(data, 'confirm'), onSubmitError)}
-          w={20}
-        >
+          w={20}>
           {t('common:Confirm')}
         </Button>
         {!isEdit && (
           <Button
             fontWeight={'medium'}
             onClick={handleSubmit((data) => onSubmitSuccess(data, 'continue'), onSubmitError)}
-            w={20}
-          >
+            w={20}>
             {t('common:Continue_Adding')}
           </Button>
         )}

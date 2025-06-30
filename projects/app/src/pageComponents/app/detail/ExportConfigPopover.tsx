@@ -83,8 +83,7 @@ const ExportConfigPopover = ({
           <MyIcon name={'export'} w={'16px'} mr={2} />
           <Box fontSize={'sm'}>{t('app:export_configs')}</Box>
         </MyBox>
-      }
-    >
+      }>
       {({ onClose }) => (
         <Box p={1}>
           <Flex
@@ -97,8 +96,7 @@ const ExportConfigPopover = ({
               cursor: 'pointer'
             }}
             borderRadius={'xs'}
-            onClick={() => onExportWorkflow('copy')}
-          >
+            onClick={() => onExportWorkflow('copy')}>
             <MyIcon name={'copy'} w={'1rem'} mr={2} />
             <Box fontSize={'mini'}>{t('common:copy_to_clipboard')}</Box>
           </Flex>
@@ -112,8 +110,7 @@ const ExportConfigPopover = ({
               cursor: 'pointer'
             }}
             borderRadius={'xs'}
-            onClick={() => onExportWorkflow('json')}
-          >
+            onClick={() => onExportWorkflow('json')}>
             <MyIcon name={'configmap'} w={'1rem'} mr={2} />
             <Box fontSize={'mini'}>{t('common:export_to_json')}</Box>
           </Flex>

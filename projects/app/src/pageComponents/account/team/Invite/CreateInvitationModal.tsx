@@ -61,8 +61,7 @@ function CreateInvitationModal({
       isOpen
       iconSrc="common/addLight"
       iconColor="primary.500"
-      title={<Box>{t('account_team:create_invitation_link')}</Box>}
-    >
+      title={<Box>{t('account_team:create_invitation_link')}</Box>}>
       <ModalCloseButton onClick={() => onClose()} />
       <ModalBody>
         <Grid gap={6} templateColumns="max-content 1fr" alignItems="center">
@@ -88,8 +87,7 @@ function CreateInvitationModal({
             <FormLabel required={true}>{t('account_team:used_times_limit')}</FormLabel>
             <RadioGroup
               onChange={(val: '1' | '-1') => setValue('usedTimesLimit', Number(val) as 1 | -1)}
-              value={String(usedTimesLimit)}
-            >
+              value={String(usedTimesLimit)}>
               <HStack gap={6}>
                 <Radio value="1">{t('account_team:1person')}</Radio>
                 <Radio value="-1">{t('account_team:unlimited')}</Radio>

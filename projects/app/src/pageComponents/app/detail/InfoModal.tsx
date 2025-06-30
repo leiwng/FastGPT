@@ -139,8 +139,7 @@ const InfoModal = ({ onClose }: { onClose: () => void }) => {
       isOpen={true}
       onClose={onClose}
       iconSrc="/imgs/workflow/ai.svg"
-      title={t('common:core.app.setting')}
-    >
+      title={t('common:core.app.setting')}>
       <ModalBody>
         <Box fontSize={'sm'}>{t('common:core.app.Name and avatar')}</Box>
         <Flex mt={2} alignItems={'center'}>
@@ -160,8 +159,7 @@ const InfoModal = ({ onClose }: { onClose: () => void }) => {
               placeholder={t('common:core.app.Set a name for your app')}
               {...register('name', {
                 required: true
-              })}
-            ></Input>
+              })}></Input>
           </FormControl>
         </Flex>
         <Box mt={4} mb={1} fontSize={'sm'}>
@@ -199,8 +197,7 @@ const InfoModal = ({ onClose }: { onClose: () => void }) => {
                 onDelOneCollaborator={onDelCollaborator}
                 refreshDeps={[appDetail.inheritPermission]}
                 isInheritPermission={appDetail.inheritPermission}
-                hasParent={!!appDetail.parentId}
-              >
+                hasParent={!!appDetail.parentId}>
                 {({ MemberListCard, onOpenManageModal, onOpenAddMember }) => {
                   return (
                     <>
@@ -208,24 +205,21 @@ const InfoModal = ({ onClose }: { onClose: () => void }) => {
                         alignItems="center"
                         flexDirection="row"
                         justifyContent="space-between"
-                        w="full"
-                      >
+                        w="full">
                         <Box fontSize={'sm'}>{t('common:permission.Collaborator')}</Box>
                         <Flex flexDirection="row" gap="2">
                           <Button
                             size="sm"
                             variant="whitePrimary"
                             leftIcon={<MyIcon w="4" name="common/settingLight" />}
-                            onClick={onOpenManageModal}
-                          >
+                            onClick={onOpenManageModal}>
                             {t('common:permission.Manage')}
                           </Button>
                           <Button
                             size="sm"
                             variant="whitePrimary"
                             leftIcon={<MyIcon w="4" name="support/permission/collaborator" />}
-                            onClick={onOpenAddMember}
-                          >
+                            onClick={onOpenAddMember}>
                             {t('common:Add')}
                           </Button>
                         </Flex>

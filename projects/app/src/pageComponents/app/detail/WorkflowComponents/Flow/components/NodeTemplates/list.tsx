@@ -98,8 +98,7 @@ const NodeTemplateListItem = ({
           )}
         </Box>
       }
-      shouldWrapChildren={false}
-    >
+      shouldWrapChildren={false}>
       <Flex
         w={'100%'}
         alignItems={'center'}
@@ -139,8 +138,7 @@ const NodeTemplateListItem = ({
               : screenToFlowPosition({ x: sliderWidth * 1.5, y: 200 });
 
           handleAddNode({ template, position });
-        }}
-      >
+        }}>
         <MyAvatar
           src={template.avatar}
           w={isPopover ? '1.5rem' : '1.75rem'}
@@ -154,8 +152,7 @@ const NodeTemplateListItem = ({
           fontSize={isPopover ? 'xs' : 'sm'}
           flex={'1 0 0'}
           ml={3}
-          className="textEllipsis"
-        >
+          className="textEllipsis">
           {t(template.name as any)}
         </Box>
 
@@ -174,8 +171,7 @@ const NodeTemplateListItem = ({
             onClick={(e) => {
               e.stopPropagation();
               onUpdateParentId(template.id);
-            }}
-          >
+            }}>
             <MyIcon name="common/arrowRight" w={isPopover ? '16px' : '20px'} />
           </Box>
         )}
@@ -388,23 +384,20 @@ const NodeTemplateList = ({
                 span: {
                   display: 'block'
                 }
-              })}
-            >
+              })}>
               <Box
                 fontSize={isPopover ? '12.8px' : 'sm'}
                 my={2}
                 fontWeight={'500'}
                 flex={1}
-                color={isPopover ? 'myGray.600' : 'myGray.900'}
-              >
+                color={isPopover ? 'myGray.600' : 'myGray.900'}>
                 {t(item.label as any)}
               </Box>
               <Grid
                 gridTemplateColumns={
                   templateType === TemplateTypeEnum.teamPlugin ? ['1fr'] : ['1fr', '1fr 1fr']
                 }
-                rowGap={2}
-              >
+                rowGap={2}>
                 {item.list.map((template) => (
                   <NodeTemplateListItem
                     key={template.id}
@@ -439,8 +432,7 @@ const NodeTemplateList = ({
                   justifyContent={'space-between'}
                   alignItems={'center'}
                   borderRadius={'md'}
-                  px={3}
-                >
+                  px={3}>
                   {t(label as any)}
                   <AccordionIcon />
                 </AccordionButton>

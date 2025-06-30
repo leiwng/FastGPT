@@ -271,8 +271,7 @@ const Upload = () => {
       <Flex justifyContent={'flex-end'} mt={4}>
         <Button
           isLoading={isLoading}
-          onClick={processParamsForm.handleSubmit((data) => startUpload(data))}
-        >
+          onClick={processParamsForm.handleSubmit((data) => startUpload(data))}>
           {totalFilesCount > 0 &&
             `${t('dataset:total_num_files', {
               total: totalFilesCount

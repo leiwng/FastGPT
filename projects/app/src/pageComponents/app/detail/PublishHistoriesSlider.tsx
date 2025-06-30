@@ -65,8 +65,7 @@ const PublishHistoriesSlider = <T extends SimpleAppSnapshotType | WorkflowSnapsh
         px={0}
         showMask={false}
         overflow={'unset'}
-        {...positionStyles}
-      >
+        {...positionStyles}>
         {currentTab === 'myEdit' ? (
           <MyEdit past={past} onSwitchTmpVersion={onSwitchTmpVersion} />
         ) : (
@@ -105,8 +104,7 @@ const MyEdit = <T extends SimpleAppSnapshotType | WorkflowSnapshotsType>({
                 title: t('workflow:workflow.Switch_success'),
                 status: 'success'
               });
-            }}
-          >
+            }}>
             {t('app:version_back')}
           </Button>
         </Box>
@@ -131,8 +129,7 @@ const MyEdit = <T extends SimpleAppSnapshotType | WorkflowSnapshotsType>({
                   title: t('workflow:workflow.Switch_success'),
                   status: 'success'
                 });
-              }}
-            >
+              }}>
               <Box
                 w={'12px'}
                 h={'12px'}
@@ -150,8 +147,7 @@ const MyEdit = <T extends SimpleAppSnapshotType | WorkflowSnapshotsType>({
                     top: '10px',
                     left: '3px'
                   }
-                })}
-              ></Box>
+                })}></Box>
               <Box
                 ml={3}
                 flex={'1 0 0'}
@@ -159,8 +155,7 @@ const MyEdit = <T extends SimpleAppSnapshotType | WorkflowSnapshotsType>({
                 overflow="hidden"
                 textOverflow="ellipsis"
                 whiteSpace="nowrap"
-                color={'myGray.900'}
-              >
+                color={'myGray.900'}>
                 {item.title}
               </Box>
             </Flex>
@@ -247,8 +242,7 @@ const TeamCloud = ({
             _hover={{
               bg: 'primary.50'
             }}
-            onClick={() => editIndex === undefined && onChangeVersion(item)}
-          >
+            onClick={() => editIndex === undefined && onChangeVersion(item)}>
             <MyPopover
               trigger="hover"
               placement={'bottom-end'}
@@ -263,8 +257,7 @@ const TeamCloud = ({
                     h={'24px'}
                   />
                 </Box>
-              }
-            >
+              }>
               {() => (
                 <Flex alignItems={'center'} h={'full'} pl={5} gap={2}>
                   <Box>
@@ -299,8 +292,7 @@ const TeamCloud = ({
                   alignItems="center"
                   overflow="hidden"
                   textOverflow="ellipsis"
-                  whiteSpace="nowrap"
-                >
+                  whiteSpace="nowrap">
                   <Box minWidth={0} overflow="hidden" textOverflow="ellipsis" whiteSpace="nowrap">
                     <Box as={'span'} color={'myGray.900'}>
                       {item.versionName || formatTime2YMDHMS(item.time)}
@@ -311,8 +303,7 @@ const TeamCloud = ({
                       ml={3}
                       flexShrink={0}
                       type="borderSolid"
-                      colorSchema={index === firstPublishedIndex ? 'green' : 'blue'}
-                    >
+                      colorSchema={index === firstPublishedIndex ? 'green' : 'blue'}>
                       {index === firstPublishedIndex
                         ? t('app:app.version_current')
                         : t('app:app.version_past')}

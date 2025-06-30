@@ -55,8 +55,7 @@ const QGConfig = ({
           size={'sm'}
           mr={'-5px'}
           color={'myGray.600'}
-          onClick={onOpen}
-        >
+          onClick={onOpen}>
           {formLabel}
         </Button>
       </MyTooltip>
@@ -104,8 +103,7 @@ const QGConfigModal = ({
         iconSrc="core/chat/QGFill"
         isOpen
         onClose={onClose}
-        width="500px"
-      >
+        width="500px">
         <ModalBody px={[5, 10]} py={[4, 8]} pb={[4, 12]}>
           <Flex justifyContent={'space-between'} alignItems={'center'}>
             <FormLabel flex={'0 0 100px'}>{t('app:core.app.QG.Switch')}</FormLabel>
@@ -152,8 +150,7 @@ const QGConfigModal = ({
                     size="xs"
                     variant={'transparentBase'}
                     leftIcon={<MyIcon name={'edit'} w={'14px'} />}
-                    onClick={onOpenCustomPrompt}
-                  >
+                    onClick={onOpenCustomPrompt}>
                     {t('common:Edit')}
                   </Button>
                 </Flex>
@@ -174,8 +171,7 @@ const QGConfigModal = ({
                     '& .mask': {
                       display: 'block'
                     }
-                  }}
-                >
+                  }}>
                   {customPrompt || QuestionGuidePrompt}
                 </Box>
               </Box>

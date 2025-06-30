@@ -55,8 +55,7 @@ function OrgTreeNode({
             }
           : {
               onClick: () => setSelectedOrg(org)
-            })}
-      >
+            })}>
         <IconButton
           name={isExpanded ? 'common/downArrowFill' : 'common/rightArrowFill'}
           color={'myGray.500'}
@@ -72,8 +71,7 @@ function OrgTreeNode({
           flex={'1 0 0'}
           onClick={() => setSelectedOrg(org)}
           cursor={'pointer'}
-          borderRadius={'xs'}
-        >
+          borderRadius={'xs'}>
           <Avatar src={org.avatar} w={'1.25rem'} borderRadius={'xs'} />
           <Box>{org.name}</Box>
         </HStack>

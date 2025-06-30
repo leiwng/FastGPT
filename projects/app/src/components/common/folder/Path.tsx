@@ -69,8 +69,7 @@ const FolderPath = (props: {
                     color: 'myGray.500',
                     ...clickStyles
                   })}
-              {...(i === concatPaths.length - 1 && !forbidLastClick && clickStyles)}
-            >
+              {...(i === concatPaths.length - 1 && !forbidLastClick && clickStyles)}>
               {item.parentName}
             </Box>
             {i !== concatPaths.length - 1 && (

@@ -61,8 +61,7 @@ const ListItem = ({
         position={'relative'}
         transform={snapshot.isDragging ? `scale(${getZoom()})` : ''}
         transformOrigin={'top left'}
-        mb={2}
-      >
+        mb={2}>
         <Container w={snapshot.isDragging ? '' : 'full'} className="nodrag">
           <Flex mb={4} alignItems={'center'}>
             {ifElseList.length > 1 && <DragIcon provided={provided} />}
@@ -89,8 +88,7 @@ const ListItem = ({
                       return ifElse;
                     })
                   );
-                }}
-              >
+                }}>
                 {conditionItem.condition}
                 <MyIcon ml={1} boxSize={5} name="change" />
               </Flex>
@@ -255,8 +253,7 @@ const ListItem = ({
             }}
             variant={'link'}
             leftIcon={<SmallAddIcon />}
-            color={'primary.600'}
-          >
+            color={'primary.600'}>
             {t('common:core.module.input.add')}
           </Button>
         </Container>
@@ -292,8 +289,7 @@ const ListItem = ({
       style={{
         ...provided.draggableProps.style,
         opacity: snapshot.isDragging ? 0.8 : 1
-      }}
-    >
+      }}>
       {Render}
     </Box>
   );

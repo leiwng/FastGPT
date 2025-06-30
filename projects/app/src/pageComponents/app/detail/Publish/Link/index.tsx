@@ -90,8 +90,7 @@ const Share = ({ appId }: { appId: string; type: PublishChannelEnum }) => {
                 title: t('common:core.app.share.Amount limit tip')
               }
             : {})}
-          onClick={() => setEditLinkData(defaultOutLinkForm)}
-        >
+          onClick={() => setEditLinkData(defaultOutLinkForm)}>
           {t('common:core.app.share.Create link')}
         </Button>
       </Flex>
@@ -158,8 +157,7 @@ const Share = ({ appId }: { appId: string; type: PublishChannelEnum }) => {
                     onClick={() => setSelectedLinkData(item as OutLinkSchema)}
                     size={'sm'}
                     mr={3}
-                    variant={'whitePrimary'}
-                  >
+                    variant={'whitePrimary'}>
                     {t('common:core.app.outLink.Select Mode')}
                   </Button>
                   <MyMenu
@@ -309,15 +307,13 @@ function EditLinkModal({
       title={isEdit ? t('publish:edit_link') : t('publish:create_link')}
       maxW={['90vw', '700px']}
       w={'100%'}
-      h={['90vh', 'auto']}
-    >
+      h={['90vh', 'auto']}>
       <ModalBody
         p={6}
         display={['block', 'flex']}
         flex={['1 0 0', 'auto']}
         overflow={'auto'}
-        gap={4}
-      >
+        gap={4}>
         <Box pr={[0, 4]} flex={1} borderRight={['0px', '1px']} borderColor={['', 'myGray.150']}>
           <Box fontSize={'sm'} fontWeight={'500'} color={'myGray.600'}>
             {t('publish:basic_info')}
@@ -370,8 +366,7 @@ function EditLinkModal({
                   <FormLabel>{t('common:support.outlink.Max usage points')}</FormLabel>
                   <QuestionTip
                     ml={1}
-                    label={t('common:support.outlink.Max usage points tip')}
-                  ></QuestionTip>
+                    label={t('common:support.outlink.Max usage points tip')}></QuestionTip>
                 </Flex>
                 <Input
                   {...register('limit.maxUsagePoints', {
@@ -398,8 +393,7 @@ function EditLinkModal({
                 href={getDocPath('/docs/development/openapi/share')}
                 target={'_blank'}
                 fontSize={'xs'}
-                color={'myGray.500'}
-              >
+                color={'myGray.500'}>
                 {t('publish:token_auth_use_cases')}
               </Link>
             </>
@@ -418,8 +412,7 @@ function EditLinkModal({
               <FormLabel>{t('common:support.outlink.share.Response Quote')}</FormLabel>
               <QuestionTip
                 ml={1}
-                label={t('common:support.outlink.share.Response Quote tips')}
-              ></QuestionTip>
+                label={t('common:support.outlink.share.Response Quote tips')}></QuestionTip>
             </Flex>
             <Switch
               {...register('responseDetail', {
@@ -459,8 +452,7 @@ function EditLinkModal({
               <FormLabel>{t('common:support.outlink.share.show_complete_quote')}</FormLabel>
               <QuestionTip
                 ml={1}
-                label={t('common:support.outlink.share.show_complete_quote_tips')}
-              ></QuestionTip>
+                label={t('common:support.outlink.share.show_complete_quote_tips')}></QuestionTip>
             </Flex>
             <Switch
               {...register('showRawSource', {
@@ -483,8 +475,7 @@ function EditLinkModal({
         </Button>
         <Button
           isLoading={creating || updating}
-          onClick={submitShareChat((data) => (isEdit ? onclickUpdate(data) : onclickCreate(data)))}
-        >
+          onClick={submitShareChat((data) => (isEdit ? onclickUpdate(data) : onclickCreate(data)))}>
           {t('common:Confirm')}
         </Button>
       </ModalFooter>

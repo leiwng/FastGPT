@@ -19,8 +19,7 @@ const ReadFeedbackModal = ({
       isOpen={true}
       onClose={onClose}
       iconSrc="/imgs/modal/readFeedback.svg"
-      title={t('common:core.chat.Feedback Modal')}
-    >
+      title={t('common:core.chat.Feedback Modal')}>
       <ModalBody>{content}</ModalBody>
       <ModalFooter>
         <Button mr={2} onClick={onCloseFeedback}>

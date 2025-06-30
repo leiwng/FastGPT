@@ -180,8 +180,7 @@ const RenderInput = () => {
           rounded={'md'}
           fontSize={'sm'}
           color={'myGray.600'}
-          mb={4}
-        >
+          mb={4}>
           <Markdown source={instruction} />
         </Box>
       )}
@@ -200,8 +199,7 @@ const RenderInput = () => {
                 variant={'whiteBase'}
                 onClick={() => {
                   onOpenSelectFile();
-                }}
-              >
+                }}>
                 {t('chat:select')}
               </Button>
             )}
@@ -265,8 +263,7 @@ const RenderInput = () => {
                   onSubmit(e);
                 }
               })();
-            }}
-          >
+            }}>
             {isDisabledInput ? t('common:Restart') : t('common:Run')}
           </Button>
         </Flex>

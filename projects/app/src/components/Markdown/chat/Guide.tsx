@@ -28,8 +28,7 @@ function MyLink(e: any) {
         cursor={'pointer'}
         onClick={() => {
           eventBus.emit(EventNameEnum.sendQuestion, { text });
-        }}
-      >
+        }}>
         {text}
       </Box>
     </Box>
@@ -51,8 +50,7 @@ const Guide = ({ text }: { text: string }) => {
         a: MyLink,
         p: 'div',
         img: Image
-      }}
-    >
+      }}>
       {formatText}
     </ReactMarkdown>
   );

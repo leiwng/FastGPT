@@ -118,8 +118,7 @@ const NodeDatasetConcat = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
                     type: 'addInput',
                     value: getOneQuoteInputTemplate({ index: quoteList.length + 1 })
                   });
-                }}
-              >
+                }}>
                 {t('common:add_new')}
               </Button>
             </HStack>

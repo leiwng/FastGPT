@@ -45,8 +45,7 @@ const ConfigToolModal = ({
       isCentered
       title={t('common:core.app.ToolCall.Parameter setting')}
       iconSrc="core/app/toolCall"
-      overflow={'auto'}
-    >
+      overflow={'auto'}>
       <ModalBody>
         <HStack mb={4} spacing={1} fontSize={'sm'}>
           <MyIcon name={'common/info'} w={'1.25rem'} />
@@ -56,8 +55,7 @@ const ConfigToolModal = ({
               title={configTool?.name}
               iconSrc={configTool?.avatar}
               text={configTool?.userGuide}
-              link={configTool?.courseUrl}
-            >
+              link={configTool?.courseUrl}>
               {({ onClick }) => (
                 <Box cursor={'pointer'} color={'primary.500'} onClick={onClick}>
                   {t('app:workflow.Input guide')}
@@ -118,8 +116,7 @@ const ConfigToolModal = ({
               }))
             });
             onCloseConfigTool();
-          })}
-        >
+          })}>
           {t('common:Confirm')}
         </Button>
       </ModalFooter>

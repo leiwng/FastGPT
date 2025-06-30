@@ -98,8 +98,7 @@ function MemberTable({ Tabs }: { Tabs: React.ReactNode }) {
             borderRadius={'md'}
             ml={3}
             leftIcon={<MyIcon name="support/permission/collaborator" w={'14px'} />}
-            onClick={onOpenGroupInfo}
-          >
+            onClick={onOpenGroupInfo}>
             {t('user:team.group.create')}
           </Button>
         )}
@@ -136,16 +135,14 @@ function MemberTable({ Tabs }: { Tabs: React.ReactNode }) {
                   </Td>
                   <Td>
                     <MyTooltip
-                      label={group.permission?.hasManagePer ? t('account_team:manage_member') : ''}
-                    >
+                      label={group.permission?.hasManagePer ? t('account_team:manage_member') : ''}>
                       <Box
                         {...(group.permission?.hasManagePer
                           ? {
                               cursor: 'pointer',
                               onClick: () => onManageMember(group)
                             }
-                          : {})}
-                      >
+                          : {})}>
                         <AvatarGroup
                           avatars={group?.members.map((v) => v.avatar)}
                           total={group.count}

@@ -29,8 +29,7 @@ const ImportSettings = ({ onClose }: Props) => {
       iconSrc="common/importLight"
       iconColor="primary.600"
       title={t('app:import_configs')}
-      size={'md'}
-    >
+      size={'md'}>
       <ModalBody>
         <ImportAppConfigEditor value={value} onChange={setValue} rows={16} />
       </ModalBody>
@@ -56,8 +55,7 @@ const ImportSettings = ({ onClose }: Props) => {
               });
             }
           }}
-          fontWeight={'500'}
-        >
+          fontWeight={'500'}>
           {t('common:Save')}
         </Button>
       </ModalFooter>

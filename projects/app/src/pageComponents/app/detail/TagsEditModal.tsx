@@ -60,8 +60,7 @@ const TagsEditModal = ({ onClose }: { onClose: () => void }) => {
       isOpen
       onClose={onClose}
       iconSrc="/imgs/workflow/ai.svg"
-      title={t('common:core.app.Team tags')}
-    >
+      title={t('common:core.app.Team tags')}>
       <ModalBody>
         <Box mb={3} fontWeight="semibold">
           {t('common:team_tag')}
@@ -77,8 +76,7 @@ const TagsEditModal = ({ onClose }: { onClose: () => void }) => {
               py={2}
               flexWrap={'wrap'}
               minH={'50px'}
-              gap={3}
-            >
+              gap={3}>
               {teamTags.map((item, index) => {
                 const key: string = item?.key;
                 if (selectedTags.indexOf(key as never) > -1) {
@@ -110,16 +108,14 @@ const TagsEditModal = ({ onClose }: { onClose: () => void }) => {
                 onChange={(e) => {
                   //@ts-ignore
                   setSelectedTags(e);
-                }}
-              >
+                }}>
                 {filterTeamTags.map((item) => {
                   return (
                     <MenuItemOption
                       key={item.key}
                       value={item.key}
                       borderRadius={'md'}
-                      _hover={{ bg: 'myGray.100' }}
-                    >
+                      _hover={{ bg: 'myGray.100' }}>
                       {item?.label}
                     </MenuItemOption>
                   );

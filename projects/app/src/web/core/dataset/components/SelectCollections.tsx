@@ -140,15 +140,13 @@ const SelectCollections = ({
             }}
           />
         </Box>
-      }
-    >
+      }>
       <ModalBody flex={'1 0 0'} overflow={'auto'}>
         <Grid
           gridTemplateColumns={['repeat(1,1fr)', 'repeat(2,1fr)']}
           gridGap={3}
           userSelect={'none'}
-          mt={2}
-        >
+          mt={2}>
           {collections.map((item) =>
             (() => {
               const selected = selectedDatasetCollectionIds.includes(item._id);
@@ -183,8 +181,7 @@ const SelectCollections = ({
                       setSelectedDatasetCollectionIds(result);
                       onChange && onChange({ parentId, collectionIds: result });
                     }
-                  }}
-                >
+                  }}>
                   <Flex alignItems={'center'} h={'38px'}>
                     <MyIcon name={item.icon as any} w={'18px'} />
                     <Box ml={3} fontSize={'sm'} className="textEllipsis">
@@ -208,8 +205,7 @@ const SelectCollections = ({
           <Button
             isLoading={isResponding}
             isDisabled={type === 'collection' && selectedDatasetCollectionIds.length === 0}
-            onClick={mutate}
-          >
+            onClick={mutate}>
             {type === 'folder' ? t('common:confirm_move') : t('common:Confirm')}
           </Button>
         </ModalFooter>

@@ -66,8 +66,7 @@ const InvoiceTable = () => {
                     rounded={'md'}
                     justify={'center'}
                     align={'center'}
-                    color={item.status === 1 ? 'blue.600' : 'green.600'}
-                  >
+                    color={item.status === 1 ? 'blue.600' : 'green.600'}>
                     <MyIcon name="point" w={'6px'} h={'6px'} />
                     <Box ml={'0.25rem'}>
                       {item.status === 1
@@ -87,8 +86,7 @@ const InvoiceTable = () => {
                     px={'0.75rem'}
                     _hover={{
                       color: 'blue.600'
-                    }}
-                  >
+                    }}>
                     <Flex>
                       <MyIcon name="paragraph" w={'16px'} h={'16px'} />
                       <Box ml={'0.38rem'}>{t('account_bill:detail')}</Box>
@@ -109,8 +107,7 @@ const InvoiceTable = () => {
             mt={'20vh'}
             flexDirection={'column'}
             alignItems={'center'}
-            justifyContent={'center'}
-          >
+            justifyContent={'center'}>
             <MyIcon name="empty" w={'48px'} h={'48px'} color={'transparent'} />
             <Box mt={2} color={'myGray.500'}>
               {t('account_bill:no_invoice_record_tip')}
@@ -145,8 +142,7 @@ function InvoiceDetailModal({
           <MyIcon name="paragraph" w={'20px'} h={'20px'} color={'blue.600'} />
           <Box ml={'0.62rem'}>{t('account_bill:invoice_detail')}</Box>
         </Flex>
-      }
-    >
+      }>
       <ModalBody px={'3.25rem'} py={'2rem'}>
         <Flex w={'100%'} h={'100%'} flexDir={'column'} gap={'1rem'}>
           <LabelItem

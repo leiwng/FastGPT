@@ -250,8 +250,7 @@ const FieldEditModal = ({
       title={isEdit ? t('workflow:edit_input') : t('workflow:add_new_input')}
       maxW={['90vw', '1028px']}
       w={'100%'}
-      isCentered
-    >
+      isCentered>
       <Flex h={'560px'}>
         <Stack gap={4} p={8}>
           <Box alignItems={'center'}>
@@ -266,8 +265,7 @@ const FieldEditModal = ({
                     display={'grid'}
                     gridTemplateColumns={'repeat(3, 1fr)'}
                     gap={4}
-                    mt={5}
-                  >
+                    mt={5}>
                     {list.map((item) => {
                       const isSelected = inputType === item.value[0];
                       return (
@@ -296,8 +294,7 @@ const FieldEditModal = ({
                           }}
                           onClick={() => {
                             setValue('renderTypeList', item.value);
-                          }}
-                        >
+                          }}>
                           <MyIcon
                             name={item.icon as any}
                             w={'20px'}

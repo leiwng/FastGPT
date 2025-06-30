@@ -25,8 +25,7 @@ const RenderFilePreview = ({
       pt={3}
       userSelect={'none'}
       mb={fileList.length > 0 ? 2 : 0}
-      gap={'6px'}
-    >
+      gap={'6px'}>
       {fileList.map((item, index) => {
         const isFile = item.type === ChatFileTypeEnum.file;
         const isImage = item.type === ChatFileTypeEnum.image;
@@ -37,8 +36,7 @@ const RenderFilePreview = ({
             key={index}
             maxW={isFile ? 56 : 14}
             w={isFile ? 'calc(50% - 3px)' : '12.5%'}
-            aspectRatio={isFile ? 4 : 1}
-          >
+            aspectRatio={isFile ? 4 : 1}>
             <Box
               border={'sm'}
               boxShadow={
@@ -52,8 +50,7 @@ const RenderFilePreview = ({
               w={'full'}
               h={'full'}
               alignItems={'center'}
-              pl={isFile ? 1 : 0}
-            >
+              pl={isFile ? 1 : 0}>
               {removeFiles && (
                 <MyIcon
                   name={'closeSolid'}
@@ -98,14 +95,12 @@ const RenderFilePreview = ({
                   inset="0"
                   bg="rgba(255,255,255,0.4)"
                   alignItems="center"
-                  justifyContent="center"
-                >
+                  justifyContent="center">
                   <CircularProgress
                     value={item.process}
                     color="primary.600"
                     bg={'white'}
-                    size={isPc ? '30px' : '35px'}
-                  >
+                    size={isPc ? '30px' : '35px'}>
                     {/* <CircularProgressLabel>{item.process ?? 0}%</CircularProgressLabel> */}
                   </CircularProgress>
                 </Flex>

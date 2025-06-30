@@ -124,8 +124,7 @@ const SelectUsingWayModal = ({ share, onClose }: { share: OutLinkSchema; onClose
       iconSrc="/imgs/modal/usingWay.svg"
       title={t('common:core.app.outLink.Select Using Way')}
       onClose={onClose}
-      maxW={['90vw', '700px']}
-    >
+      maxW={['90vw', '700px']}>
       <ModalBody py={4}>
         <MyRadio
           gridGap={2}
@@ -144,8 +143,7 @@ const SelectUsingWayModal = ({ share, onClose }: { share: OutLinkSchema; onClose
           gridTemplateColumns={['repeat(2,1fr)', 'repeat(3,1fr)']}
           gridGap={4}
           my={5}
-          fontSize={'sm'}
-        >
+          fontSize={'sm'}>
           <Flex {...gridItemStyle}>
             <Box flex={1}>{t('common:core.app.outLink.Show History')}</Box>
             <Switch {...register('showHistory')} />
@@ -193,8 +191,7 @@ const SelectUsingWayModal = ({ share, onClose }: { share: OutLinkSchema; onClose
             bg={'myWhite.500'}
             border={theme.borders.base}
             borderTopLeftRadius={'md'}
-            borderTopRightRadius={'md'}
-          >
+            borderTopRightRadius={'md'}>
             <Box flex={1}>{wayMap[getValues('usingWay')].blockTitle}</Box>
             <MyIcon
               name={'copy'}

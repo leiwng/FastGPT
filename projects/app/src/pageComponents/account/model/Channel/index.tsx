@@ -144,8 +144,7 @@ const ChannelTable = ({ Tab }: { Tab: React.ReactNode }) => {
                     <Td>
                       <MyTag
                         colorSchema={ChannelStautsMap[item.status]?.colorSchema as any}
-                        type="borderFill"
-                      >
+                        type="borderFill">
                         {t(ChannelStautsMap[item.status]?.label as any) ||
                           t('account_model:channel_status_unknown')}
                       </MyTag>

@@ -241,8 +241,7 @@ const CollectionCard = () => {
                         }
                       });
                     }
-                  }}
-                >
+                  }}>
                   <Td minW={'150px'} maxW={['200px', '300px']} draggable py={2}>
                     <Flex alignItems={'center'}>
                       <MyIcon name={collection.icon as any} w={'1.25rem'} mr={2} />
@@ -278,8 +277,7 @@ const CollectionCard = () => {
                         onClick={(e) => {
                           e.stopPropagation();
                           setTrainingStatesCollection({ collectionId: collection._id });
-                        }}
-                      >
+                        }}>
                         <Flex fontWeight={'medium'} alignItems={'center'} gap={1}>
                           {t(collection.statusText as any)}
                           <MyIcon name={'common/maximize'} w={'11px'} />
@@ -314,8 +312,7 @@ const CollectionCard = () => {
                               '& .icon': {
                                 bg: 'myGray.200'
                               }
-                            }}
-                          >
+                            }}>
                             <MyIcon
                               className="icon"
                               name={'more'}

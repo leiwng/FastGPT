@@ -66,8 +66,7 @@ const SideTabs = <ValueType = string,>({
           onClick={() => {
             if (value === item.value) return;
             onChange(item.value);
-          }}
-        >
+          }}>
           <MyIcon mr={2} name={item.icon as IconNameType} w={'20px'} />
           {item.label}
         </Flex>

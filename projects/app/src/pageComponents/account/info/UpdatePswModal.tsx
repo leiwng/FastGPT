@@ -51,8 +51,7 @@ const UpdatePswModal = ({ onClose }: { onClose: () => void }) => {
       isOpen
       onClose={onClose}
       iconSrc="/imgs/modal/password.svg"
-      title={t('account_info:update_password')}
-    >
+      title={t('account_info:update_password')}>
       <ModalBody>
         <Flex alignItems={'center'}>
           <Box flex={'0 0 70px'} fontSize={'sm'}>
@@ -76,8 +75,7 @@ const UpdatePswModal = ({ onClose }: { onClose: () => void }) => {
                 }
                 return true;
               }
-            })}
-          ></Input>
+            })}></Input>
         </Flex>
         <Flex alignItems={'center'} mt={5}>
           <Box flex={'0 0 70px'} fontSize={'sm'}>
@@ -90,8 +88,7 @@ const UpdatePswModal = ({ onClose }: { onClose: () => void }) => {
             {...register('confirmPsw', {
               required: true,
               validate: (val) => (getValues('newPsw') === val ? true : t('user:password.not_match'))
-            })}
-          ></Input>
+            })}></Input>
         </Flex>
       </ModalBody>
       <ModalFooter>

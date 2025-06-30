@@ -192,8 +192,7 @@ const VariableEdit = ({
           mr={'-5px'}
           onClick={() => {
             reset(addVariable());
-          }}
-        >
+          }}>
           {t('common:add_new')}
         </Button>
       </Flex>
@@ -223,8 +222,7 @@ const VariableEdit = ({
                   variables={variables}
                 />
               )}
-              zoom={zoom}
-            >
+              zoom={zoom}>
               {({ provided }) => (
                 <Tbody {...provided.droppableProps} ref={provided.innerRef}>
                   {formatVariables.map((item, index) => (
@@ -258,8 +256,7 @@ const VariableEdit = ({
           onClose={() => reset({})}
           maxW={['90vw', '928px']}
           w={'100%'}
-          isCentered
-        >
+          isCentered>
           <Flex h={'560px'}>
             <Stack gap={4} p={8}>
               <FormLabel color={'myGray.600'} fontWeight={'medium'}>
@@ -301,8 +298,7 @@ const VariableEdit = ({
                           setValue('defaultValue', '');
                         }
                         setValue('type', item.value);
-                      }}
-                    >
+                      }}>
                       <MyIcon
                         name={item.icon as any}
                         w={'20px'}
@@ -313,8 +309,7 @@ const VariableEdit = ({
                         as="span"
                         color={isSelected ? 'myGray.900' : 'inherit'}
                         pr={4}
-                        whiteSpace="nowrap"
-                      >
+                        whiteSpace="nowrap">
                         {item.label}
                       </Box>
                       {item.description && (
@@ -367,8 +362,7 @@ const TableItem = ({
       style={{
         ...provided.draggableProps.style,
         opacity: snapshot.isDragging ? 0.8 : 1
-      }}
-    >
+      }}>
       <Td fontWeight={'medium'}>
         <Flex alignItems={'center'}>
           <MyIcon name={item.icon as any} w={'16px'} color={'myGray.400'} mr={1} />

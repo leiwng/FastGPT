@@ -81,8 +81,7 @@ const Promotion = () => {
               <Box>{t('account_promotion:cashback_ratio')}</Box>
               <QuestionTip
                 ml={1}
-                label={t('account_promotion:cashback_ratio_description')}
-              ></QuestionTip>
+                label={t('account_promotion:cashback_ratio_description')}></QuestionTip>
             </Flex>
             <Box {...titleStyles}>{userInfo?.promotionRate || 15}%</Box>
           </Box>
@@ -97,8 +96,7 @@ const Promotion = () => {
               fontSize={'sm'}
               onClick={() => {
                 copyData(`${location.origin}/?hiId=${userInfo?._id}`);
-              }}
-            >
+              }}>
               {t('account_promotion:copy_invite_link')}
             </Button>
           </Box>

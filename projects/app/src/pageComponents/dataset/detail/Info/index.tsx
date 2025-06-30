@@ -148,8 +148,7 @@ const Info = ({ datasetId }: { datasetId: string }) => {
           pt={3}
           wordBreak={'break-all'}
           fontSize={'xs'}
-          color={'myGray.500'}
-        >
+          color={'myGray.500'}>
           {datasetDetail.intro || t('common:core.dataset.Intro Placeholder')}
         </Box>
       </Box>

@@ -125,8 +125,7 @@ const Logs = () => {
       boxShadow={3.5}
       px={[4, 8]}
       py={[4, 6]}
-      flex={'1 0 0'}
-    >
+      flex={'1 0 0'}>
       <Flex flexDir={['column', 'row']} alignItems={['flex-start', 'center']} gap={3}>
         <Flex alignItems={'center'} gap={2}>
           <Box fontSize={'mini'} fontWeight={'medium'} color={'myGray.900'}>
@@ -202,8 +201,7 @@ const Logs = () => {
                 _hover={{ bg: 'myWhite.600' }}
                 cursor={'pointer'}
                 title={t('common:core.view_chat_detail')}
-                onClick={() => setDetailLogsId(item.id)}
-              >
+                onClick={() => setDetailLogsId(item.id)}>
                 <Td>
                   {/* @ts-ignore */}
                   <Box>{item.sourceName || t(ChatSourceMap[item.source]?.name) || item.source}</Box>
@@ -233,8 +231,7 @@ const Logs = () => {
                       alignItems={'center'}
                       justifyContent={'center'}
                       borderRadius={'md'}
-                      fontWeight={'bold'}
-                    >
+                      fontWeight={'bold'}>
                       <MyIcon
                         mr={1}
                         name={'core/chat/feedback/goodLight'}
@@ -253,8 +250,7 @@ const Logs = () => {
                       alignItems={'center'}
                       justifyContent={'center'}
                       borderRadius={'md'}
-                      fontWeight={'bold'}
-                    >
+                      fontWeight={'bold'}>
                       <MyIcon
                         mr={1}
                         name={'core/chat/feedback/badLight'}

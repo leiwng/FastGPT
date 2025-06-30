@@ -63,16 +63,14 @@ const NodeIfElse = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
               onUpdateIfElseList={onUpdateIfElseList}
               nodeId={nodeId}
             />
-          )}
-        >
+          )}>
           {({ provided }) => (
             <Box {...provided.droppableProps} ref={provided.innerRef}>
               {ifElseList.map((conditionItem, conditionIndex) => (
                 <Draggable
                   key={conditionIndex}
                   draggableId={conditionIndex.toString()}
-                  index={conditionIndex}
-                >
+                  index={conditionIndex}>
                   {(provided, snapshot) => (
                     <ListItem
                       provided={provided}
@@ -127,8 +125,7 @@ const NodeIfElse = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
                 ]
               }
             ]);
-          }}
-        >
+          }}>
           {t('common:core.module.input.Add Branch')}
         </Button>
       </Box>

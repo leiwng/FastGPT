@@ -118,8 +118,7 @@ const TemplateMarket = ({
             '& .buttons': {
               display: 'flex'
             }
-          }}
-        >
+          }}>
           <HStack>
             <Avatar src={item.avatar} borderRadius={'sm'} w={'1.5rem'} h={'1.5rem'} />
             <Box flex={'1 0 0'} color={'myGray.900'} fontWeight={500}>
@@ -136,8 +135,7 @@ const TemplateMarket = ({
             textAlign={'justify'}
             wordBreak={'break-all'}
             fontSize={'xs'}
-            color={'myGray.500'}
-          >
+            color={'myGray.500'}>
             <Box className={'textEllipsis2'}>{item.intro || t('app:templateMarket.no_intro')}</Box>
           </Box>
 
@@ -158,16 +156,14 @@ const TemplateMarket = ({
               height={'40px'}
               bg={'white'}
               zIndex={1}
-              gap={2}
-            >
+              gap={2}>
               {((item.userGuide?.type === 'markdown' && item.userGuide?.content) ||
                 (item.userGuide?.type === 'link' && item.userGuide?.link)) && (
                 <UseGuideModal
                   title={item.name}
                   iconSrc={item.avatar}
                   text={item.userGuide?.content}
-                  link={item.userGuide?.link}
-                >
+                  link={item.userGuide?.link}>
                   {({ onClick }) => (
                     <Button variant={'whiteBase'} h={6} rounded={'sm'} onClick={onClick}>
                       {t('app:templateMarket.template_guide')}
@@ -179,8 +175,7 @@ const TemplateMarket = ({
                 variant={'whiteBase'}
                 h={6}
                 rounded={'sm'}
-                onClick={() => onUseTemplate(item)}
-              >
+                onClick={() => onUseTemplate(item)}>
                 {t('app:templateMarket.Use')}
               </Button>
             </Flex>
@@ -280,8 +275,7 @@ const TemplateMarket = ({
                       ]}
                       gridGap={4}
                       alignItems={'stretch'}
-                      pb={5}
-                    >
+                      pb={5}>
                       {templates.map((item) => (
                         <TemplateCard key={item.templateId} item={item} />
                       ))}
@@ -310,8 +304,7 @@ const TemplateMarket = ({
                       ]}
                       gridGap={4}
                       alignItems={'stretch'}
-                      pb={5}
-                    >
+                      pb={5}>
                       {item.templates.map((item) => (
                         <TemplateCard key={item.templateId} item={item} />
                       ))}

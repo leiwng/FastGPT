@@ -88,8 +88,7 @@ const SystemTools = () => {
                 ]}
                 gridGap={4}
                 alignItems={'stretch'}
-                py={5}
-              >
+                py={5}>
                 {filterPluginsByGroup.map((item) => (
                   <PluginCard key={item.id} item={item} groups={pluginGroups} />
                 ))}

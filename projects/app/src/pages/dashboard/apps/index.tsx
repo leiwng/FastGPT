@@ -170,8 +170,7 @@ const MyApps = ({ MenuIcon }: { MenuIcon: JSX.Element }) => {
           pr={folderDetail ? [3, 2] : [3, 6]}
           pl={6}
           overflowY={'auto'}
-          overflowX={'hidden'}
-        >
+          overflowX={'hidden'}>
           <Flex pt={paths.length > 0 ? 3 : [4, 6]} alignItems={'center'} gap={3}>
             {isPc ? (
               <Box fontSize={'lg'} color={'myGray.900'} fontWeight={500}>

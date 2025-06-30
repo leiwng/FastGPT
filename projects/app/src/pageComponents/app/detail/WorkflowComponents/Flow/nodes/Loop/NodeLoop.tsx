@@ -171,8 +171,7 @@ const NodeLoop = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
           {...(!isFolded && {
             minW: nodeWidth,
             minH: nodeHeight
-          })}
-        >
+          })}>
           <Background />
         </Box>
       </>

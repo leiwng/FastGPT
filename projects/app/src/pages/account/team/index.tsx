@@ -113,8 +113,7 @@ const Team = () => {
           bg={'myGray.25'}
           align={'center'}
           gap={6}
-          justify={'space-between'}
-        >
+          justify={'space-between'}>
           <Flex align={'center'}>
             <Flex gap={2} color={'myGray.900'}>
               <Icon name="support/user/usersLight" w={'1.25rem'} h={'1.25rem'} />
@@ -156,8 +155,7 @@ const Team = () => {
             py={'0.125rem'}
             fontSize={'0.75rem'}
             borderRadius={'1.25rem'}
-            bg={'myGray.150'}
-          >
+            bg={'myGray.150'}>
             {t('account_team:total_team_members', { amount: teamSize })}
           </Box>
         </Flex>
@@ -169,8 +167,7 @@ const Team = () => {
           flex={'1 0 0'}
           display={'flex'}
           flexDirection={'column'}
-          overflow={'auto'}
-        >
+          overflow={'auto'}>
           {teamTab === TeamTabEnum.member && <MemberTable Tabs={Tabs} />}
           {teamTab === TeamTabEnum.org && <OrgManage Tabs={Tabs} />}
           {teamTab === TeamTabEnum.group && <GroupManage Tabs={Tabs} />}

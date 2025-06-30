@@ -37,8 +37,7 @@ const AutoExecConfig = ({
           size={'sm'}
           mr={'-5px'}
           onClick={onOpen}
-          color={'myGray.600'}
-        >
+          color={'myGray.600'}>
           {formLabel}
         </Button>
       </MyTooltip>
@@ -46,8 +45,7 @@ const AutoExecConfig = ({
         title={t('common:core.app.Auto execute')}
         iconSrc="core/app/simpleMode/autoExec"
         isOpen={isOpen}
-        onClose={onClose}
-      >
+        onClose={onClose}>
         <ModalBody>
           <Flex justifyContent={'space-between'} alignItems={'center'}>
             <FormLabel flex={'0 0 100px'}>{t('app:open_auto_execute')}</FormLabel>

@@ -48,8 +48,7 @@ const VariablePopover = ({
         <Button variant={'whiteBase'} size={'sm'} leftIcon={<MyIcon name={'edit'} w={4} />}>
           {t('common:core.module.Variable')}
         </Button>
-      }
-    >
+      }>
       {({ onClose }) => (
         <Box p={4}>
           {hasExternalVariable && (
@@ -62,8 +61,7 @@ const VariablePopover = ({
                 py={1.5}
                 gap={1}
                 fontSize={'mini'}
-                rounded={'sm'}
-              >
+                rounded={'sm'}>
                 <MyIcon name={'common/info'} color={'primary.600'} w={4} />
                 {t('chat:variable_invisable_in_share')}
               </Flex>

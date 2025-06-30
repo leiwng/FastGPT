@@ -119,8 +119,7 @@ const NodeCQNode = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
                     value: agents.concat({ value: '', key })
                   }
                 });
-              }}
-            >
+              }}>
               {t('common:core.module.Add question type')}
             </Button>
           </Box>

@@ -64,8 +64,7 @@ const PromptTextarea = ({
       title={t('common:core.dataset.import.Custom prompt')}
       iconSrc="modal/edit"
       w={'600px'}
-      onClose={onClose}
-    >
+      onClose={onClose}>
       <ModalBody whiteSpace={'pre-wrap'} fontSize={'sm'} px={[3, 6]} pt={[3, 6]}>
         <Textarea ref={ref} rows={8} fontSize={'sm'} defaultValue={defaultValue} />
         <Box>{Prompt_AgentQA.fixedText}</Box>
@@ -76,8 +75,7 @@ const PromptTextarea = ({
             const val = ref.current?.value || Prompt_AgentQA.description;
             onChange(val);
             onClose();
-          }}
-        >
+          }}>
           {t('common:Confirm')}
         </Button>
       </ModalFooter>
@@ -294,8 +292,7 @@ const CollectionChunkForm = ({ form }: { form: UseFormReturn<CollectionChunkForm
                   <Checkbox
                     isDisabled={!feConfigs?.isPlus}
                     isChecked={autoIndexes}
-                    {...register('autoIndexes')}
-                  >
+                    {...register('autoIndexes')}>
                     <FormLabel>{t('dataset:auto_indexes')}</FormLabel>
                   </Checkbox>
                 </MyTooltip>
@@ -309,13 +306,11 @@ const CollectionChunkForm = ({ form }: { form: UseFormReturn<CollectionChunkForm
                       : !datasetDetail?.vlmModel
                         ? t('common:error_vlm_not_config')
                         : ''
-                  }
-                >
+                  }>
                   <Checkbox
                     isDisabled={!feConfigs?.isPlus || !datasetDetail?.vlmModel}
                     isChecked={imageIndex}
-                    {...register('imageIndex')}
-                  >
+                    {...register('imageIndex')}>
                     <FormLabel>{t('dataset:image_auto_parse')}</FormLabel>
                   </Checkbox>
                 </MyTooltip>
@@ -411,14 +406,12 @@ const CollectionChunkForm = ({ form }: { form: UseFormReturn<CollectionChunkForm
                               '& > span': {
                                 display: 'block'
                               }
-                            }}
-                          >
+                            }}>
                             <MyTooltip
                               label={t('common:core.dataset.import.Chunk Range', {
                                 min: minChunkSizeValue,
                                 max: maxChunkSize
-                              })}
-                            >
+                              })}>
                               <MyNumberInput
                                 register={register}
                                 name={'chunkSize'}
@@ -441,14 +434,12 @@ const CollectionChunkForm = ({ form }: { form: UseFormReturn<CollectionChunkForm
                             '& > span': {
                               display: 'block'
                             }
-                          }}
-                        >
+                          }}>
                           <MyTooltip
                             label={t('common:core.dataset.import.Chunk Range', {
                               min: minChunkSizeValue,
                               max: maxChunkSize
-                            })}
-                          >
+                            })}>
                             <MyNumberInput
                               register={register}
                               name={'chunkSize'}
@@ -536,8 +527,7 @@ const CollectionChunkForm = ({ form }: { form: UseFormReturn<CollectionChunkForm
                           '& .mask': {
                             display: 'block'
                           }
-                        }}
-                      >
+                        }}>
                         {qaPrompt}
 
                         <Box
@@ -550,8 +540,7 @@ const CollectionChunkForm = ({ form }: { form: UseFormReturn<CollectionChunkForm
                           left={0}
                           background={
                             'linear-gradient(182deg, rgba(255, 255, 255, 0.00) 1.76%, #FFF 84.07%)'
-                          }
-                        >
+                          }>
                           <Button
                             size="xs"
                             variant={'whiteBase'}
@@ -560,8 +549,7 @@ const CollectionChunkForm = ({ form }: { form: UseFormReturn<CollectionChunkForm
                             position={'absolute'}
                             right={2}
                             bottom={2}
-                            onClick={onOpenCustomPrompt}
-                          >
+                            onClick={onOpenCustomPrompt}>
                             {t('common:core.dataset.import.Custom prompt')}
                           </Button>
                         </Box>

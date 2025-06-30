@@ -74,8 +74,7 @@ const FileSelect = ({
           size={'sm'}
           mr={'-5px'}
           color={'myGray.600'}
-          onClick={onOpen}
-        >
+          onClick={onOpen}>
           {formLabel}
         </Button>
       </MyTooltip>
@@ -83,8 +82,7 @@ const FileSelect = ({
         iconSrc="core/app/simpleMode/file"
         title={t('app:file_upload')}
         isOpen={isOpen}
-        onClose={onClose}
-      >
+        onClose={onClose}>
         <ModalBody>
           <HStack>
             <FormLabel flex={'1 0 0'}>{t('app:document_upload')}</FormLabel>
@@ -108,8 +106,7 @@ const FileSelect = ({
                       ...value,
                       customPdfParse: e.target.checked
                     });
-                  }}
-                >
+                  }}>
                   <FormLabel>{t('app:pdf_enhance_parse')}</FormLabel>
                 </Checkbox>
                 <QuestionTip label={t('app:pdf_enhance_parse_tips')} />
@@ -123,8 +120,7 @@ const FileSelect = ({
                     borderRadius={'md'}
                     px={3}
                     whiteSpace={'wrap'}
-                    ml={1}
-                  >
+                    ml={1}>
                     {t('app:pdf_enhance_parse_price', {
                       price: feConfigs.customPdfParsePrice || 0
                     })}

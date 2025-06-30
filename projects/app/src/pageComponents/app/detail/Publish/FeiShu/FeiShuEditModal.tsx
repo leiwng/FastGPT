@@ -79,8 +79,7 @@ const FeiShuEditModal = ({
     <MyModal
       iconSrc="core/app/publish/lark"
       title={isEdit ? t('publish:edit_feishu_bot') : t('publish:new_feishu_bot')}
-      minW={['auto', '60rem']}
-    >
+      minW={['auto', '60rem']}>
       <ModalBody display={'grid'} gridTemplateColumns={['1fr', '1fr 1fr']} fontSize={'14px'} p={0}>
         <Box p={8} h={['auto', '400px']} borderRight={'base'}>
           <BasicInfo register={register} setValue={setValue} defaultData={defaultData} />
@@ -97,8 +96,7 @@ const FeiShuEditModal = ({
                 target={'_blank'}
                 ml={2}
                 color={'primary.500'}
-                fontSize={'sm'}
-              >
+                fontSize={'sm'}>
                 <Flex alignItems={'center'}>
                   <MyIcon w={'17px'} h={'17px'} name="book" mr="1" />
                   {t('common:read_doc')}
@@ -143,8 +141,7 @@ const FeiShuEditModal = ({
               isLoading={creating || updating}
               onClick={submitShareChat((data) =>
                 isEdit ? onclickUpdate(data) : onclickCreate(data)
-              )}
-            >
+              )}>
               {t('common:Confirm')}
             </Button>
           </Flex>

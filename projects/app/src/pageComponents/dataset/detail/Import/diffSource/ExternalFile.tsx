@@ -157,8 +157,7 @@ const CustomLinkInput = () => {
               externalFileUrl: '',
               externalFileId: ''
             });
-          }}
-        >
+          }}>
           {t('common:add_new')}
         </Button>
         <Button
@@ -178,8 +177,7 @@ const CustomLinkInput = () => {
             );
 
             goToNext();
-          })}
-        >
+          })}>
           {t('common:next_step')}
         </Button>
       </Flex>

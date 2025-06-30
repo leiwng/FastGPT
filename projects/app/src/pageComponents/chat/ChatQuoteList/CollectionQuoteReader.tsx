@@ -165,8 +165,7 @@ const CollectionReader = ({
                       `/dataset/detail?datasetId=${datasetId}&currentTab=dataCard&collectionId=${collectionId}`
                     );
                   }
-                })}
-            >
+                })}>
               {sourceName || t('common:unknow_source')}
             </Box>
             <Box ml={3}>
@@ -196,8 +195,7 @@ const CollectionReader = ({
                     router.push(`/dataset/detail?datasetId=${datasetId}`);
                   }
                 }
-              : {})}
-          >
+              : {})}>
             {t('chat:data_source', {
               name: datasetData.datasetName
             })}
@@ -214,8 +212,7 @@ const CollectionReader = ({
             py={2}
             alignItems={'center'}
             borderBottom={'1px solid'}
-            borderColor={'myGray.150'}
-          >
+            borderColor={'myGray.150'}>
             {/* 引用序号 */}
             <Flex fontSize={'mini'} mr={3} alignItems={'center'} gap={1}>
               <Box as={'span'} color={'myGray.900'}>
@@ -240,8 +237,7 @@ const CollectionReader = ({
                 color={'red.600'}
                 bg={'red.50'}
                 alignItems={'center'}
-                fontSize={'11px'}
-              >
+                fontSize={'11px'}>
                 <MyIcon name="common/info" w={'14px'} mr={1} color={'red.600'} />
                 {t('chat:chat.quote.deleted')}
               </Flex>
@@ -297,8 +293,7 @@ const CollectionReader = ({
           flexDirection={'column'}
           gap={1}
           justifyContent={'center'}
-          alignItems={'center'}
-        >
+          alignItems={'center'}>
           <Box border={'1px dashed'} borderColor={'myGray.400'} p={2} borderRadius={'full'}>
             <MyIcon name="common/fileNotFound" />
           </Box>

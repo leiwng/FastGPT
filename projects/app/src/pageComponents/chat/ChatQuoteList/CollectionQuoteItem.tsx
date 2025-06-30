@@ -72,8 +72,7 @@ const CollectionQuoteItem = ({
           if (hasBeenSearched) {
             setQuoteIndex(quoteIndex);
           }
-        }}
-      >
+        }}>
         {updated && (
           <Flex mt={2}>
             <Box
@@ -82,8 +81,7 @@ const CollectionQuoteItem = ({
               borderRadius={'xs'}
               borderColor={'green.100'}
               px={1}
-              color={'green.600'}
-            >
+              color={'green.600'}>
               {t('common:core.dataset.data.Updated')}
             </Box>
             <Box flex={1} borderBottom={'1px dashed'} borderColor={'green.200'} />
@@ -101,8 +99,7 @@ const CollectionQuoteItem = ({
           bottom={2}
           right={5}
           gap={1.5}
-          visibility={'hidden'}
-        >
+          visibility={'hidden'}>
           <MyTooltip label={t('common:core.dataset.Quote Length')}>
             <Flex
               alignItems={'center'}
@@ -115,8 +112,7 @@ const CollectionQuoteItem = ({
               py={1}
               boxShadow={
                 '0px 1px 2px 0px rgba(19, 51, 107, 0.05), 0px 0px 1px 0px rgba(19, 51, 107, 0.08)'
-              }
-            >
+              }>
               <MyIcon name="common/text/t" w={'14px'} mr={1} color={'myGray.500'} />
               {q.length + (a?.length || 0)}
             </Flex>
@@ -141,8 +137,7 @@ const CollectionQuoteItem = ({
                     dataId,
                     collectionId
                   })
-                }
-              >
+                }>
                 <MyIcon name="common/edit" w={'14px'} color={'myGray.500'} />
               </Flex>
             </MyTooltip>
@@ -161,8 +156,7 @@ const CollectionQuoteItem = ({
                 '0px 1px 2px 0px rgba(19, 51, 107, 0.05), 0px 0px 1px 0px rgba(19, 51, 107, 0.08)'
               }
               cursor={'pointer'}
-              onClick={() => copyData(`${q}${a ? '\n' + a : ''}`)}
-            >
+              onClick={() => copyData(`${q}${a ? '\n' + a : ''}`)}>
               <MyIcon name="copy" w={'14px'} color={'myGray.500'} />
             </Flex>
           </MyTooltip>

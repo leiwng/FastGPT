@@ -287,8 +287,7 @@ const ContextMenu = () => {
             onClick();
             setMenu(null);
           }}
-          {...props}
-        >
+          {...props}>
           <MyIcon name={icon as any} w={'1rem'} ml={1} />
           <Box fontSize={'sm'} fontWeight={'500'}>
             {label}
@@ -324,8 +323,7 @@ const ContextMenu = () => {
         className="context-menu"
         color={'myGray.600'}
         p={1}
-        zIndex={10}
-      >
+        zIndex={10}>
         <ContextMenuItem
           mb={1}
           icon="alignLeft"

@@ -149,8 +149,7 @@ const ButtonEdge = (props: EdgeProps) => {
             borderRadius={'18px'}
             cursor={'pointer'}
             zIndex={defaultZIndex + 1000}
-            onClick={() => onDelConnect(id)}
-          >
+            onClick={() => onDelConnect(id)}>
             <MyIcon name={'core/workflow/closeEdge'} w={'100%'}></MyIcon>
           </Flex>
           {!isToolEdge && (
@@ -162,8 +161,7 @@ const ButtonEdge = (props: EdgeProps) => {
               pointerEvents={'all'}
               w={highlightEdge ? '14px' : '12px'}
               h={highlightEdge ? '14px' : '12px'}
-              zIndex={highlightEdge ? defaultZIndex + 1000 : defaultZIndex}
-            >
+              zIndex={highlightEdge ? defaultZIndex + 1000 : defaultZIndex}>
               <MyIcon
                 name={highlightEdge ? 'core/workflow/edgeArrowBold' : 'core/workflow/edgeArrow'}
                 w={'100%'}

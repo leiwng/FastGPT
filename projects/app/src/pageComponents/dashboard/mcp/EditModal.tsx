@@ -122,23 +122,20 @@ const SelectAppModal = ({
       h={'100%'}
       maxH={'90vh'}
       isCentered
-      isLoading={isLoading}
-    >
+      isLoading={isLoading}>
       <ModalBody flex={'1'}>
         <Grid
           border="1px solid"
           borderColor="myGray.200"
           borderRadius="0.5rem"
           gridTemplateColumns="1fr 1fr"
-          h={'100%'}
-        >
+          h={'100%'}>
           <Flex
             h={'100%'}
             flexDirection="column"
             borderRight="1px solid"
             borderColor="myGray.200"
-            p="4"
-          >
+            p="4">
             <SearchInput
               placeholder={t('dashboard_mcp:search_app')}
               bgColor="myGray.50"
@@ -183,8 +180,7 @@ const SelectAppModal = ({
                           }
                         ]);
                       }
-                    }}
-                  >
+                    }}>
                     <Flex alignItems={'center'} w={'1.25rem'}>
                       {!isFolder && <Checkbox isChecked={selected} />}
                     </Flex>
@@ -212,8 +208,7 @@ const SelectAppModal = ({
                     cursor={'pointer'}
                     _hover={{
                       bg: 'myGray.100'
-                    }}
-                  >
+                    }}>
                     <Avatar src={item.avatar} w="1.5rem" borderRadius={'sm'} />
                     <Box ml="2" flex={'1 0 0'}>
                       {item.toolName}
@@ -320,8 +315,7 @@ const EditMcpModal = ({
         w={'100%'}
         maxW={['90vw', '800px']}
         isOpen
-        onClose={onClose}
-      >
+        onClose={onClose}>
         <ModalBody>
           <Box>
             <FormLabel required mb={0.5}>
@@ -401,8 +395,7 @@ const EditMcpModal = ({
                 return updateMcp(data);
               }
               return createMcp(data);
-            })}
-          >
+            })}>
             {t('common:Confirm')}
           </Button>
         </ModalFooter>

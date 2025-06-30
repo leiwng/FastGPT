@@ -192,8 +192,7 @@ const ModelTest = ({
       title={t('account_model:model_test')}
       w={'100%'}
       maxW={['90vw', '1090px']}
-      isOpen
-    >
+      isOpen>
       <ModalBody>
         <TableContainer h={'100%'} overflowY={'auto'} fontSize={'sm'} maxH={'60vh'}>
           <Table>

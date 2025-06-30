@@ -85,8 +85,7 @@ const OffiAccountEditModal = ({
           ? t('publish:official_account.edit_modal_title')
           : t('publish:official_account.create_modal_title')
       }
-      minW={['auto', '60rem']}
-    >
+      minW={['auto', '60rem']}>
       <ModalBody display={'grid'} gridTemplateColumns={['1fr', '1fr 1fr']} fontSize={'14px'} p={0}>
         <Box p={8} minH={['auto', '400px']} borderRight={'base'}>
           <BasicInfo register={register} setValue={setValue} defaultData={defaultData} />
@@ -103,8 +102,7 @@ const OffiAccountEditModal = ({
                 target={'_blank'}
                 ml={2}
                 color={'primary.500'}
-                fontSize={'sm'}
-              >
+                fontSize={'sm'}>
                 <Flex alignItems={'center'}>
                   <MyIcon name="book" w={'17px'} h={'17px'} mr="1" />
                   {t('common:read_doc')}
@@ -160,8 +158,7 @@ const OffiAccountEditModal = ({
               isLoading={creating || updating}
               onClick={submitShareChat((data) =>
                 isEdit ? onclickUpdate(data) : onclickCreate(data)
-              )}
-            >
+              )}>
               {t('common:Confirm')}
             </Button>
           </Flex>

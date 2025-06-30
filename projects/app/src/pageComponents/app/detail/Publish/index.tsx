@@ -92,8 +92,7 @@ const OutLink = () => {
       overflowY={'auto'}
       overflowX={'hidden'}
       h={'100%'}
-      flexDirection={'column'}
-    >
+      flexDirection={'column'}>
       <Box {...cardStyles} boxShadow={2} px={[4, 8]} py={[4, 6]}>
         <MyRadio
           gridTemplateColumns={[
@@ -127,8 +126,7 @@ const OutLink = () => {
         mt={4}
         px={[4, 8]}
         py={[4, 6]}
-        flex={1}
-      >
+        flex={1}>
         {linkType === PublishChannelEnum.share && (
           <Link appId={appId} type={PublishChannelEnum.share} />
         )}

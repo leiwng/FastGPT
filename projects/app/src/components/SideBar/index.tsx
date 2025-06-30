@@ -42,8 +42,7 @@ const SideBar = (e?: Props) => {
       _hover={{
         '& > div': { visibility: 'visible', opacity: 1 }
       }}
-      {...props}
-    >
+      {...props}>
       <Flex
         position={'absolute'}
         right={0}
@@ -66,8 +65,7 @@ const SideBar = (e?: Props) => {
               visibility: 'hidden',
               opacity: 0
             })}
-        onClick={() => setIsFolded(!isFolded)}
-      >
+        onClick={() => setIsFolded(!isFolded)}>
         <MyIcon
           name={'common/backLight'}
           transform={isFolded ? 'rotate(180deg)' : ''}

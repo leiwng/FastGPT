@@ -62,8 +62,7 @@ const ChatTest = ({ appForm, setRenderEdit }: Props) => {
         h={'full'}
         py={4}
         {...cardStyles}
-        boxShadow={'3'}
-      >
+        boxShadow={'3'}>
         <Flex px={[2, 5]} pb={2}>
           <Box fontSize={['md', 'lg']} fontWeight={'bold'} color={'myGray.900'} mr={3}>
             {t('app:chat_debug')}
@@ -121,8 +120,7 @@ const Render = ({ appForm, setRenderEdit }: Props) => {
       isShowReadRawSource={true}
       isResponseDetail={true}
       // isShowFullText={true}
-      showNodeStatus
-    >
+      showNodeStatus>
       <ChatRecordContextProvider params={chatRecordProviderParams}>
         <ChatTest appForm={appForm} setRenderEdit={setRenderEdit} />
       </ChatRecordContextProvider>

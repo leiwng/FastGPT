@@ -41,8 +41,7 @@ const SendCodeAuthModal = ({
           fadeDuration={1}
           display={'flex'}
           justifyContent={'center'}
-          my={1}
-        >
+          my={1}>
           <MyImage
             borderRadius={'md'}
             w={'100%'}
@@ -72,8 +71,7 @@ const SendCodeAuthModal = ({
             (err) => {
               console.log(err);
             }
-          )}
-        >
+          )}>
           {t('common:Confirm')}
         </Button>
       </ModalFooter>

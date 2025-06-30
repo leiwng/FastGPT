@@ -68,8 +68,7 @@ const ChatTest = ({ currentTool, url }: { currentTool: McpToolConfigType | null;
         h={'full'}
         py={4}
         {...cardStyles}
-        boxShadow={'3'}
-      >
+        boxShadow={'3'}>
         <Flex px={[2, 5]} pb={4}>
           <Box fontSize={['md', 'lg']} fontWeight={'bold'} color={'myGray.900'} mr={3}>
             {t('app:chat_debug')}
@@ -154,8 +153,7 @@ const Render = ({ currentTool, url }: { currentTool: McpToolConfigType | null; u
       isShowReadRawSource={true}
       isResponseDetail={true}
       // isShowFullText={true}
-      showNodeStatus
-    >
+      showNodeStatus>
       <ChatRecordContextProvider params={chatRecordProviderParams}>
         <ChatTest currentTool={currentTool} url={url} />
       </ChatRecordContextProvider>

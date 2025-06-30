@@ -244,8 +244,7 @@ const DatasetImportContextProvider = ({ children }: { children: React.ReactNode 
           <Button
             variant={'whiteBase'}
             leftIcon={<MyIcon name={'common/backFill'} w={'14px'} />}
-            onClick={goToPrevious}
-          >
+            onClick={goToPrevious}>
             {t('common:last_step')}
           </Button>
         )}
@@ -261,8 +260,7 @@ const DatasetImportContextProvider = ({ children }: { children: React.ReactNode 
           bg={'myGray.50'}
           borderWidth={'1px'}
           borderColor={'borderColor.low'}
-          borderRadius={'md'}
-        >
+          borderRadius={'md'}>
           <Box maxW={['100%', '900px']} mx={'auto'}>
             <MyStep />
           </Box>

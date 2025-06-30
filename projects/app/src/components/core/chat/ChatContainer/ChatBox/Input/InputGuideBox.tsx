@@ -59,8 +59,7 @@ export default function InputGuideBox({
       top={-3}
       w={'100%'}
       zIndex={150}
-      transform={'translateY(-100%)'}
-    >
+      transform={'translateY(-100%)'}>
       <Flex alignItems={'center'} fontSize={'sm'} color={'myGray.600'} gap={2} mb={2} px={2}>
         <MyIcon name={'union'} />
         <Box>{t('chat:input_guide')}</Box>
@@ -87,8 +86,7 @@ export default function InputGuideBox({
               display: 'block'
             }
           }}
-          onClick={() => onSelect(item)}
-        >
+          onClick={() => onSelect(item)}>
           <Box fontSize={'sm'} flex={'1 0 0'}>
             <HighlightText rawText={item} matchText={text} />
           </Box>

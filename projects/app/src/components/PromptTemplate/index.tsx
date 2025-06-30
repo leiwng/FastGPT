@@ -35,8 +35,7 @@ const PromptTemplate = ({
                     bg: 'primary.50'
                   }
                 : {})}
-              onClick={() => setSelectTemplateTitle(item)}
-            >
+              onClick={() => setSelectTemplateTitle(item)}>
               <Box color={'myGray.900'}>{t(item.title as any)}</Box>
 
               <Box color={'myGray.500'} fontSize={'xs'} whiteSpace={'pre-wrap'}>
@@ -53,8 +52,7 @@ const PromptTemplate = ({
             if (!selectTemplateTitle) return;
             onSuccess(selectTemplateTitle);
             onClose();
-          }}
-        >
+          }}>
           {t('common:confirm_choice')}
         </Button>
       </ModalFooter>

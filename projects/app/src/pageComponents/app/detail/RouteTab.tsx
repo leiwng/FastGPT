@@ -63,8 +63,7 @@ const RouteTab = () => {
                   bg: 'myGray.200'
                 },
                 onClick: () => setCurrentTab(tab.id)
-              })}
-        >
+              })}>
           {tab.label}
         </Box>
       ))}

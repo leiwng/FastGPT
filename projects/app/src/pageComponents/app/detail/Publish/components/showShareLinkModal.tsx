@@ -24,8 +24,7 @@ function ShowShareLinkModal({ shareLink, onClose, img }: ShowShareLinkModalProps
             bg={'myWhite.500'}
             border="base"
             borderTopLeftRadius={'md'}
-            borderTopRightRadius={'md'}
-          >
+            borderTopRightRadius={'md'}>
             <Box flex={1}>{t('publish:copy_link_hint')}</Box>
             <MyIcon
               name={'copy'}

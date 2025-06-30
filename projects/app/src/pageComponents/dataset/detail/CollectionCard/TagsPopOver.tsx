@@ -122,8 +122,7 @@ const TagsPopOver = ({
             e.stopPropagation();
             setShowTagManage(true);
           }}
-          cursor={'pointer'}
-        >
+          cursor={'pointer'}>
           <Flex>
             {visibleTags.map((item, index) => (
               <Box
@@ -135,8 +134,7 @@ const TagsPopOver = ({
                 fontWeight={'500'}
                 bg={'#F0FBFF'}
                 color={'#0884DD'}
-                borderRadius={'xs'}
-              >
+                borderRadius={'xs'}>
                 {item.tag}
               </Box>
             ))}
@@ -161,8 +159,7 @@ const TagsPopOver = ({
         setCollectionTags(checkedTags.map((tag) => tag.tag));
         setIsUpdateLoading(false);
       }}
-      display={showTagManage || overflowTags.length > 0 ? 'block' : 'none'}
-    >
+      display={showTagManage || overflowTags.length > 0 ? 'block' : 'none'}>
       {({}) => (
         <>
           {showTagManage ? (
@@ -187,8 +184,7 @@ const TagsPopOver = ({
                       cursor={'pointer'}
                       _hover={{ bg: '#1118240D', color: '#2B5FD9' }}
                       borderRadius={'xs'}
-                      onClick={() => onCreateCollectionTag(searchTagKey)}
-                    >
+                      onClick={() => onCreateCollectionTag(searchTagKey)}>
                       <MyIcon name={'common/addLight'} w={'1rem'} />
                       <Box ml={1} py={1}>
                         {t('dataset:tag.add') + ` "${searchTagKey}"`}
@@ -220,8 +216,7 @@ const TagsPopOver = ({
                         } else {
                           setCheckedTags([...checkedTags, item]);
                         }
-                      }}
-                    >
+                      }}>
                       <Checkbox
                         isChecked={tagsList.includes(item.tag)}
                         onChange={(e) => {
@@ -249,8 +244,7 @@ const TagsPopOver = ({
                   fontSize={'11px'}
                   bg={'#F0FBFF'}
                   color={'#0884DD'}
-                  borderRadius={'xs'}
-                >
+                  borderRadius={'xs'}>
                   {tag.tag}
                 </Box>
               ))}

@@ -186,8 +186,7 @@ const NodeVariableUpdate = ({ data, selected }: NodeProps<FlowNodeItemType>) => 
               <MyTooltip
                 label={
                   menuList.current.find((item) => item.renderType === updateItem.renderType)?.label
-                }
-              >
+                }>
                 <Button
                   size={'xs'}
                   bg={'white'}
@@ -210,8 +209,7 @@ const NodeVariableUpdate = ({ data, selected }: NodeProps<FlowNodeItemType>) => 
                         return update;
                       })
                     );
-                  }}
-                >
+                  }}>
                   <MyIcon name={renderTypeData?.icon as any} w={'14px'} />
                 </Button>
               </MyTooltip>
@@ -297,8 +295,7 @@ const NodeVariableUpdate = ({ data, selected }: NodeProps<FlowNodeItemType>) => 
             cursor={'default'}
             alignItems={'center'}
             position={'relative'}
-            mt={4}
-          >
+            mt={4}>
             <Button
               variant={'whiteBase'}
               leftIcon={<SmallAddIcon />}
@@ -314,8 +311,7 @@ const NodeVariableUpdate = ({ data, selected }: NodeProps<FlowNodeItemType>) => 
                     renderType: FlowNodeInputTypeEnum.input
                   }
                 ]);
-              }}
-            >
+              }}>
               {t('common:add_new')}
             </Button>
           </Flex>

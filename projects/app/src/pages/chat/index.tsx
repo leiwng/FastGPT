@@ -155,8 +155,7 @@ const Chat = ({ myApps }: { myApps: AppListItemType[] }) => {
         placement="left"
         autoFocus={false}
         size={'xs'}
-        onClose={onCloseSlider}
-      >
+        onClose={onCloseSlider}>
         <DrawerOverlay backgroundColor={'rgba(255,255,255,0.5)'} />
         <DrawerContent maxWidth={'75vw'}>{Children}</DrawerContent>
       </Drawer>
@@ -184,8 +183,7 @@ const Chat = ({ myApps }: { myApps: AppListItemType[] }) => {
               h={[0, '100%']}
               w={['100%', 0]}
               flex={'1 0 0'}
-              flexDirection={'column'}
-            >
+              flexDirection={'column'}>
               {/* header */}
               <ChatHeader
                 totalRecordsCount={totalRecordsCount}
@@ -296,8 +294,7 @@ const Render = (props: { appId: string; isStandalone?: string }) => {
         isShowReadRawSource={true}
         isResponseDetail={true}
         // isShowFullText={true}
-        showNodeStatus
-      >
+        showNodeStatus>
         <ChatRecordContextProvider params={chatRecordProviderParams}>
           <Chat myApps={myApps} />
         </ChatRecordContextProvider>

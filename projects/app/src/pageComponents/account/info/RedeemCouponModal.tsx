@@ -30,8 +30,7 @@ const RedeemCouponModal = ({
       isOpen
       onClose={onClose}
       iconSrc="support/account/coupon"
-      title={t('account_info:redeem_coupon')}
-    >
+      title={t('account_info:redeem_coupon')}>
       <ModalBody>
         <Box fontWeight={500} color={'myGray.900'} mb={'1'}>
           {t('account_info:redeem_coupon')}

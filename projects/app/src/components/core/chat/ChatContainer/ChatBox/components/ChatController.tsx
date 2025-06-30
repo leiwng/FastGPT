@@ -78,8 +78,7 @@ const ChatController = ({
           borderRight: 'none',
           borderRadius: 'md'
         }
-      })}
-    >
+      })}>
       <MyTooltip label={t('common:Copy')}>
         <MyIcon
           {...controlIconStyle}

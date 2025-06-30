@@ -62,8 +62,7 @@ function ActionButton({
         bg: 'myGray.05',
         color: 'primary.600'
       }}
-      onClick={onClick}
-    >
+      onClick={onClick}>
       <MyIcon name={icon} w="1rem" h="1rem" />
       <Box fontSize={'sm'}>{text}</Box>
     </HStack>
@@ -289,8 +288,7 @@ function OrgTable({ Tabs }: { Tabs: React.ReactNode }) {
                   title={currentOrg.name}
                   fontWeight={500}
                   color={'myGray.900'}
-                  className="textEllipsis3"
-                >
+                  className="textEllipsis3">
                   {currentOrg.name}
                 </Box>
                 {currentOrg?.path !== '' && (

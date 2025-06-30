@@ -34,8 +34,7 @@ const ResumeInherit = ({
             undefined,
             t('common:permission.Resume InheritPermission Confirm')
           )();
-        }}
-      >
+        }}>
         {t('common:click_to_resume')}
       </Box>
 

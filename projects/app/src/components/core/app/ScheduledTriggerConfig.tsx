@@ -77,8 +77,7 @@ const ScheduledTriggerConfig = ({
               size={'sm'}
               mr={'-5px'}
               color={'myGray.600'}
-              onClick={onOpen}
-            >
+              onClick={onOpen}>
               {cronString2Label(value?.cronString ?? '', t)}
             </Button>
           </MyTooltip>
@@ -89,8 +88,7 @@ const ScheduledTriggerConfig = ({
           onClose={onClose}
           iconSrc={'core/app/schedulePlan'}
           title={t('common:core.app.Interval timer config')}
-          overflow={'unset'}
-        >
+          overflow={'unset'}>
           <ModalBody>
             <Flex justifyContent={'space-between'} alignItems={'center'}>
               <FormLabel flex={'0 0 80px'}>{t('common:core.app.schedule.Open schedule')}</FormLabel>

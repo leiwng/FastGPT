@@ -108,8 +108,7 @@ const Workflow = () => {
         onContextMenu={(e) => {
           e.preventDefault();
           return false;
-        }}
-      >
+        }}>
         {/* open module template */}
         <>
           <IconButton
@@ -167,8 +166,7 @@ const Workflow = () => {
                 panOnScroll: true
               }
             : {})}
-          onNodeDragStop={onNodeDragStop}
-        >
+          onNodeDragStop={onNodeDragStop}>
           {!!menu && <ContextMenu />}
           <FlowController />
           <HelperLines horizontal={helperLineHorizontal} vertical={helperLineVertical} />

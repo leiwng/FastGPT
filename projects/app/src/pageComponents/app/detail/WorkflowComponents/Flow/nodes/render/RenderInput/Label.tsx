@@ -91,8 +91,7 @@ const InputLabel = ({ nodeId, input, RightComponent }: Props) => {
                   type: 'delInput',
                   key: input.key
                 });
-              }}
-            >
+              }}>
               <MyIcon name={'common/info'} color={'adora.600'} w={4} mr={1} />
               <Box color={'adora.600'}>{t('app:Filed_is_deprecated')}</Box>
             </Flex>

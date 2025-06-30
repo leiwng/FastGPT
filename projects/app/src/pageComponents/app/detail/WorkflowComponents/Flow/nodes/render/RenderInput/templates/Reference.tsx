@@ -286,14 +286,12 @@ const MultipleReferenceSelector = ({
                     color={'myGray.900'}
                     py={1}
                     px={1.5}
-                    rounded={'sm'}
-                  >
+                    rounded={'sm'}>
                     <Flex
                       alignItems={'center'}
                       flex={'1 0 0'}
                       maxW={'200px'}
-                      className="textEllipsis"
-                    >
+                      className="textEllipsis">
                       {nodeName}
                       <MyIcon
                         name={'common/rightArrowLight'}

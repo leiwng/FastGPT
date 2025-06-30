@@ -67,8 +67,7 @@ function WorkorderButton() {
           borderTopLeftRadius="8px"
           borderBottomLeftRadius="8px"
           border={'1px'}
-          borderColor={'#DFE6F2'}
-        >
+          borderColor={'#DFE6F2'}>
           <Box
             zIndex={10}
             width="1rem"
@@ -85,8 +84,7 @@ function WorkorderButton() {
               cursor: 'pointer',
               bgColor: 'myGray.100'
             }}
-            onClick={() => setOpen.set(false)}
-          >
+            onClick={() => setOpen.set(false)}>
             <Icon name="close" />
           </Box>
           <Flex
@@ -102,8 +100,7 @@ function WorkorderButton() {
             height="100%"
             borderTopLeftRadius="8px"
             borderBottomLeftRadius="8px"
-            onClick={onFeedback}
-          >
+            onClick={onFeedback}>
             <Icon name="feedback" width="24px" height="24px" />
             <Box fontSize="xs" fontWeight="500">
               {t('common:question_feedback')}
@@ -131,8 +128,7 @@ function WorkorderButton() {
             cursor: 'pointer',
             bgColor: 'myGray.100'
           }}
-          onClick={() => setOpen.set(true)}
-        >
+          onClick={() => setOpen.set(true)}>
           <Icon name="core/chat/chevronLeft" width="16px" height="16px" />
         </Flex>
       )}

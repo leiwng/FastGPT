@@ -48,8 +48,7 @@ function MemberItemCard({
         bgColor: 'myGray.50',
         cursor: 'pointer'
       }}
-      onClick={onChange}
-    >
+      onClick={onChange}>
       {isChecked !== undefined && (
         <Checkbox isChecked={isChecked} pointerEvents="none" disabled={isAdded} />
       )}
@@ -69,8 +68,7 @@ function MemberItemCard({
           border="none"
           py={2}
           px={3}
-          fontSize={'xs'}
-        >
+          fontSize={'xs'}>
           {t('user:team.collaborator.added')}
         </Tag>
       )}

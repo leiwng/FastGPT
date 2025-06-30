@@ -46,8 +46,7 @@ const NotSufficientModal = () => {
           <Button
             onClick={() => {
               onRechargeModalOpen();
-            }}
-          >
+            }}>
             {t('common:support.wallet.To read plan')}
           </Button>
         </ModalFooter>
@@ -92,8 +91,7 @@ const RechargeModal = ({
       onClose={onClose}
       isCentered
       minW={'90%'}
-      maxH={'90%'}
-    >
+      maxH={'90%'}>
       <ModalBody px={'52px'}>
         <Flex alignItems={'center'} mb={6}>
           <FormLabel fontSize={'16px'} fontWeight={'medium'}>
@@ -111,12 +109,14 @@ const RechargeModal = ({
           <Flex fontSize={'14px'} ml={5} color={'myGray.900'}>
             <Box>{`${t('common:support.user.team.Dataset usage')}:`}</Box>
             <Box
-              ml={2}
-            >{`${teamPlanStatus?.usedDatasetSize} / ${teamPlanStatus?.datasetMaxSize || t('account_info:unlimited')}`}</Box>
+              ml={
+                2
+              }>{`${teamPlanStatus?.usedDatasetSize} / ${teamPlanStatus?.datasetMaxSize || t('account_info:unlimited')}`}</Box>
             <Box ml={5}>{`${t('common:support.wallet.subscription.AI points usage')}:`}</Box>
             <Box
-              ml={2}
-            >{`${Math.round(teamPlanStatus?.usedPoints || 0)} / ${teamPlanStatus?.totalPoints || t('account_info:unlimited')}`}</Box>
+              ml={
+                2
+              }>{`${Math.round(teamPlanStatus?.usedPoints || 0)} / ${teamPlanStatus?.totalPoints || t('account_info:unlimited')}`}</Box>
           </Flex>
         </Flex>
 
@@ -137,8 +137,7 @@ const RechargeModal = ({
           bg={'myGray.50'}
           border={'1px solid'}
           borderColor={'myGray.200'}
-          rounded={'12px'}
-        >
+          rounded={'12px'}>
           {tab === 'standard' ? (
             <StandardPlan standardPlan={teamPlanStatus?.standard} onPaySuccess={onPaySuccess} />
           ) : (

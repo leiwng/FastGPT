@@ -109,8 +109,7 @@ export const WholeResponseContent = ({
             ? { py: 2, transform: 'translateY(-3px)' }
             : value
               ? { px: 3, py: 2, border: 'base' }
-              : {})}
-        >
+              : {})}>
           <Markdown source={formatValue} />
         </RowRender>
       );
@@ -129,8 +128,7 @@ export const WholeResponseContent = ({
         : {
             flex: '1 0 0',
             overflow: 'auto'
-          })}
-    >
+          })}>
       {/* common info */}
       <>
         <Row
@@ -209,8 +207,7 @@ export const WholeResponseContent = ({
                       borderBottomColor: 'myWhite.700',
                       mb: 2
                     }}
-                    pb={2}
-                  >
+                    pb={2}>
                     <Box fontWeight={'bold'}>{item.obj}</Box>
                     <Box whiteSpace={'pre-wrap'}>{item.value}</Box>
                   </Box>
@@ -387,8 +384,7 @@ export const WholeResponseContent = ({
                           cursor: 'pointer',
                           onClick: () => window.open(file.url)
                         }
-                      : {})}
-                  >
+                      : {})}>
                     <MyIcon name={getFileIcon(file.name) as any} w={'1rem'} />
                     <Box>{file.name}</Box>
                   </HStack>
@@ -484,8 +480,7 @@ const SideTabItem = ({
               index={index}
               value={value}
               onChange={onChange}
-              sideBarItem={sideBarItem}
-            >
+              sideBarItem={sideBarItem}>
               <MyIcon
                 h={'20px'}
                 w={'20px'}
@@ -545,8 +540,7 @@ const SideTabItem = ({
           cursor={'pointer'}
           pl={leftIndex === 0 ? '0.5rem' : `${1.5 * leftIndex + 0.5}rem`}
           borderRadius={'md'}
-          position={'relative'}
-        >
+          position={'relative'}>
           <Avatar
             src={
               sideBarItem.moduleLogo ||
@@ -573,8 +567,7 @@ const SideTabItem = ({
             position={'absolute'}
             right={2}
             top={'50%'}
-            transform={'translateY(-50%)'}
-          >
+            transform={'translateY(-50%)'}>
             {children}
           </Box>
         </Flex>
@@ -707,8 +700,7 @@ export const ResponseBox = React.memo(function ResponseBox({
               bg={isMobile ? 'myGray.100' : ''}
               m={isMobile ? 3 : 0}
               borderRadius={'md'}
-              minW={'12rem'}
-            >
+              minW={'12rem'}>
               <SideTabItem value={value} onChange={onChange} sideBarItem={item} index={0} />
             </Box>
           ))}
@@ -762,8 +754,7 @@ export const ResponseBox = React.memo(function ResponseBox({
                 py={2}
                 borderBottom={'sm'}
                 position={'relative'}
-                height={'40px'}
-              >
+                height={'40px'}>
                 <MyIcon
                   width={4}
                   height={4}
@@ -846,8 +837,7 @@ const WholeResponseModal = ({
           {t('common:core.chat.response.Complete Response')}
           <QuestionTip ml={2} label={t('chat:question_tip')}></QuestionTip>
         </Flex>
-      }
-    >
+      }>
       {!!response?.length ? (
         <ResponseBox response={response} dataId={dataId} chatTime={chatTime} />
       ) : (

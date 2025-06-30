@@ -106,8 +106,7 @@ const WorkflowInitContextProvider = ({ children }: { children: ReactNode }) => {
     <WorkflowInitContext.Provider
       value={{
         nodes
-      }}
-    >
+      }}>
       <WorkflowNodeEdgeContext.Provider value={actionContextValue}>
         {children}
       </WorkflowNodeEdgeContext.Provider>

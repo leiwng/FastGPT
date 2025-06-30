@@ -45,15 +45,13 @@ const SelectMarkCollection = ({
           onClose={onClose}
           setParentId={setParentId}
           isLoading={isFetching}
-          tips={t('common:core.chat.Select dataset Desc')}
-        >
+          tips={t('common:core.chat.Select dataset Desc')}>
           <ModalBody flex={'1 0 0'} overflowY={'auto'}>
             <Grid
               display={'grid'}
               gridTemplateColumns={['repeat(1,1fr)', 'repeat(2,1fr)', 'repeat(3,1fr)']}
               gridGap={3}
-              userSelect={'none'}
-            >
+              userSelect={'none'}>
               {datasets.map((item) =>
                 (() => {
                   return (
@@ -73,8 +71,7 @@ const SelectMarkCollection = ({
                         } else {
                           setAdminMarkData({ ...adminMarkData, datasetId: item._id });
                         }
-                      }}
-                    >
+                      }}>
                       <Flex alignItems={'center'} h={'38px'}>
                         <Avatar src={item.avatar} w={'2rem'} borderRadius={'sm'}></Avatar>
                         <Box ml={3}>{item.name}</Box>
@@ -116,8 +113,7 @@ const SelectMarkCollection = ({
                     ...adminMarkData,
                     datasetId: undefined
                   });
-                }}
-              >
+                }}>
                 {t('common:last_step')}
               </Button>
             </ModalFooter>

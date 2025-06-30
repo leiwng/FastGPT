@@ -42,8 +42,7 @@ const NodeToolParams = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
               leftIcon={<SmallAddIcon />}
               iconSpacing={1}
               size={'sm'}
-              onClick={() => setEditField(defaultEditFormData)}
-            >
+              onClick={() => setEditField(defaultEditFormData)}>
               {t('common:add_new_param')}
             </Button>
             {!!editField && (
@@ -58,8 +57,7 @@ const NodeToolParams = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
             borderRadius={'md'}
             overflow={'hidden'}
             border={'1px solid'}
-            borderColor={'myGray.200'}
-          >
+            borderColor={'myGray.200'}>
             <Table bg={'white'}>
               <Thead>
                 <Tr h={8}>
@@ -81,13 +79,11 @@ const NodeToolParams = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
                     position={'relative'}
                     whiteSpace={'pre-wrap'}
                     wordBreak={'break-all'}
-                    h={10}
-                  >
+                    h={10}>
                     <Td
                       p={0}
                       px={4}
-                      borderBottom={index === inputs.length - 1 ? 'none' : undefined}
-                    >
+                      borderBottom={index === inputs.length - 1 ? 'none' : undefined}>
                       <Flex alignItems={'center'} fontSize={'xs'}>
                         <MyIcon name={'checkCircle'} w={'14px'} mr={1} color={'myGray.600'} />
                         {item.key}
@@ -97,16 +93,14 @@ const NodeToolParams = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
                       p={0}
                       px={4}
                       borderBottom={index === inputs.length - 1 ? 'none' : undefined}
-                      fontSize={'xs'}
-                    >
+                      fontSize={'xs'}>
                       {item.toolDescription}
                     </Td>
                     <Td
                       p={0}
                       px={4}
                       borderBottom={index === inputs.length - 1 ? 'none' : undefined}
-                      whiteSpace={'nowrap'}
-                    >
+                      whiteSpace={'nowrap'}>
                       <Flex alignItems={'center'}>
                         <Flex
                           mr={3}
@@ -121,8 +115,7 @@ const NodeToolParams = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
                             bg: 'myGray.05',
                             color: 'primary.600'
                           }}
-                          onClick={() => setEditField(item)}
-                        >
+                          onClick={() => setEditField(item)}>
                           <MyIcon name={'common/settingLight'} w={'16px'} />
                         </Flex>
                         <Flex
@@ -148,8 +141,7 @@ const NodeToolParams = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
                               type: 'delOutput',
                               key: item.key
                             });
-                          }}
-                        >
+                          }}>
                           <MyIcon name={'delete'} w={'16px'} />
                         </Flex>
                       </Flex>

@@ -160,8 +160,7 @@ const FormLayout = ({ children, setPageType, pageType }: Props) => {
             borderWidth={['1px', '1.5px']}
             borderColor={'myGray.200'}
             alignItems={'center'}
-            justifyContent={'center'}
-          >
+            justifyContent={'center'}>
             <MyImage src={LOGO_ICON} w={['22.5px', '36px']} alt={'icon'} />
           </Flex>
           <Box ml={[3, 5]} fontSize={['lg', 'xl']} fontWeight={'bold'} color={'myGray.900'}>
@@ -190,8 +189,7 @@ const FormLayout = ({ children, setPageType, pageType }: Props) => {
                   borderRadius={'sm'}
                   fontWeight={'medium'}
                   leftIcon={<Avatar src={item.icon as any} w={'20px'} />}
-                  onClick={() => onClickOauth(item)}
-                >
+                  onClick={() => onClickOauth(item)}>
                   {item.label}
                 </Button>
               </Box>

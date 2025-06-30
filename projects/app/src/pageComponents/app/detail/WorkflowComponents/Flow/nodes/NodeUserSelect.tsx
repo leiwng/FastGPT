@@ -62,8 +62,7 @@ const NodeUserSelect = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
                   index={rubric.source.index}
                 />
               )}
-              zoom={zoom}
-            >
+              zoom={zoom}>
               {({ provided }) => (
                 <Box ref={provided.innerRef} {...provided.droppableProps}>
                   {options.map((item, i) => (
@@ -98,8 +97,7 @@ const NodeUserSelect = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
                     value: options.concat({ value: '', key: getNanoid() })
                   }
                 });
-              }}
-            >
+              }}>
               {t('common:core.module.Add_option')}
             </Button>
           </Box>
@@ -151,8 +149,7 @@ const OptionItem = ({
       style={{
         ...provided.draggableProps.style,
         opacity: snapshot.isDragging ? 0.8 : 1
-      }}
-    >
+      }}>
       <HStack spacing={1} {...provided.dragHandleProps}>
         <MyTooltip label={t('common:Delete')}>
           <MyIcon

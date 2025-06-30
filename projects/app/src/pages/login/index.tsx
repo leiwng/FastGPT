@@ -140,8 +140,7 @@ const Login = ({ ChineseRedirectUrl }: { ChineseRedirectUrl: string }) => {
     <>
       {feConfigs.googleClientVerKey && (
         <Script
-          src={`https://www.recaptcha.net/recaptcha/api.js?render=${feConfigs.googleClientVerKey}`}
-        ></Script>
+          src={`https://www.recaptcha.net/recaptcha/api.js?render=${feConfigs.googleClientVerKey}`}></Script>
       )}
 
       <Flex
@@ -150,8 +149,7 @@ const Login = ({ ChineseRedirectUrl }: { ChineseRedirectUrl: string }) => {
         bg={`url(${getWebReqUrl('/icon/login-bg.svg')}) no-repeat`}
         backgroundSize={'cover'}
         userSelect={'none'}
-        h={'100%'}
-      >
+        h={'100%'}>
         {isPc && (
           <Box position={'absolute'} top={'24px'} right={'50px'}>
             <I18nLngSelector />
@@ -168,8 +166,7 @@ const Login = ({ ChineseRedirectUrl }: { ChineseRedirectUrl: string }) => {
           boxShadow={[
             '',
             '0px 32px 64px -12px rgba(19, 51, 107, 0.20), 0px 0px 1px 0px rgba(19, 51, 107, 0.20)'
-          ]}
-        >
+          ]}>
           <Box w={['100%', '380px']} flex={'1 0 0'}>
             {pageType ? (
               DynamicComponent
@@ -187,8 +184,7 @@ const Login = ({ ChineseRedirectUrl }: { ChineseRedirectUrl: string }) => {
               fontWeight={'medium'}
               cursor={'pointer'}
               textAlign={'center'}
-              onClick={onOpen}
-            >
+              onClick={onOpen}>
               {t('common:support.user.login.can_not_login')}
             </Box>
           )}
@@ -246,8 +242,7 @@ function RedirectDrawer({
               fontSize={'1rem'}
               textDecorationLine={'underline'}
               cursor={'pointer'}
-              onClick={disableDrawer}
-            >
+              onClick={disableDrawer}>
               {t('login:no_remind')}
             </Box>
           </Box>
@@ -280,8 +275,7 @@ function CookiesDrawer({ onClose, onAgree }: { onClose: () => void; onAgree: () 
               textDecorationLine={'underline'}
               cursor={'pointer'}
               w={'fit-content'}
-              onClick={() => window.open(getDocPath('/docs/agreement/privacy/'), '_blank')}
-            >
+              onClick={() => window.open(getDocPath('/docs/agreement/privacy/'), '_blank')}>
               {t('login:privacy_policy')}
             </Box>
           </Box>

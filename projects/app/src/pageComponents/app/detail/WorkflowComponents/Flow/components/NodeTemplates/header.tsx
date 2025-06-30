@@ -158,8 +158,7 @@ const NodeTemplateListHeader = ({
               fontSize={'sm'}
               onClick={() => router.push('/dashboard/apps')}
               gap={1}
-              ml={4}
-            >
+              ml={4}>
               <Box>{t('common:create')}</Box>
               <MyIcon name={'common/rightArrowLight'} w={'0.8rem'} />
             </Flex>
@@ -176,8 +175,7 @@ const NodeTemplateListHeader = ({
                 fontSize={'sm'}
                 onClick={() => window.open(feConfigs.systemPluginCourseUrl)}
                 gap={1}
-                ml={4}
-              >
+                ml={4}>
                 <Box>{t('common:plugin.contribute')}</Box>
                 <MyIcon name={'common/rightArrowLight'} w={'0.8rem'} />
               </Flex>

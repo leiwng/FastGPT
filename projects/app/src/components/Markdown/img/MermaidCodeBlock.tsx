@@ -104,8 +104,7 @@ const MermaidBlock = ({ code }: { code: string }) => {
         '& > .export': {
           display: 'block'
         }
-      }}
-    >
+      }}>
       <Box
         overflowX={'auto'}
         ref={ref}

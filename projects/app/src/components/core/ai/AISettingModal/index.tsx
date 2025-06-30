@@ -139,8 +139,7 @@ const AIChatSettingsModal = ({
           )}
         </HStack>
       }
-      w={'500px'}
-    >
+      w={'500px'}>
       <ModalBody overflowY={'auto'} overflowX={'hidden'}>
         <Flex alignItems={'center'}>
           <Box {...LabelStyles} w={'5rem'}>
@@ -164,8 +163,7 @@ const AIChatSettingsModal = ({
           bg={'primary.50'}
           borderRadius={'lg'}
           borderWidth={'1px'}
-          borderColor={'primary.1'}
-        >
+          borderColor={'primary.1'}>
           <Table fontSize={'xs'} overflow={'overlay'}>
             <Thead>
               <Tr bg={'transparent !important'} color={'myGray.600'}>

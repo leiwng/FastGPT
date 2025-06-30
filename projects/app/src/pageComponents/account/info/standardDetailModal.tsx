@@ -66,8 +66,7 @@ const StandDetailModal = ({ onClose }: { onClose: () => void }) => {
       maxW={['90vw', '1200px']}
       iconSrc="modal/teamPlans"
       title={t('account_info:package_details')}
-      isCentered
-    >
+      isCentered>
       <ModalCloseButton onClick={onClose} />
       <ModalBody px={[4, 8]} py={[2, 6]}>
         <TableContainer mt={2} position={'relative'} minH={'300px'}>
@@ -183,8 +182,7 @@ function StatusTag({ status }: { status: packageStatus }) {
       fontWeight={500}
       borderRadius={'sm'}
       bg={styleMap[status]?.bg}
-      color={styleMap[status]?.color}
-    >
+      color={styleMap[status]?.color}>
       {statusText[status]}
     </Box>
   );

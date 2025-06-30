@@ -54,16 +54,14 @@ const ToolSelect = ({
           mr={'-5px'}
           size={'sm'}
           fontSize={'sm'}
-          onClick={onOpenToolsSelect}
-        >
+          onClick={onOpenToolsSelect}>
           {t('common:Choose')}
         </Button>
       </Flex>
       <Grid
         mt={appForm.selectedTools.length > 0 ? 2 : 0}
         gridTemplateColumns={'repeat(2, minmax(0, 1fr))'}
-        gridGap={[2, 4]}
-      >
+        gridGap={[2, 4]}>
         {appForm.selectedTools.map((item) => {
           const toolError = formatToolError(item.pluginData?.error);
 
@@ -100,8 +98,7 @@ const ToolSelect = ({
                     return;
                   }
                   setConfigTool(item);
-                }}
-              >
+                }}>
                 <Avatar src={item.avatar} w={'1.5rem'} h={'1.5rem'} borderRadius={'sm'} />
                 <Box
                   flex={'1 0 0'}
@@ -109,8 +106,7 @@ const ToolSelect = ({
                   gap={2}
                   className={'textEllipsis'}
                   fontSize={'sm'}
-                  color={'myGray.900'}
-                >
+                  color={'myGray.900'}>
                   {item.name}
                 </Box>
                 {toolError && (
@@ -121,8 +117,7 @@ const ToolSelect = ({
                     px={2}
                     rounded={'6px'}
                     fontSize={'xs'}
-                    fontWeight={'medium'}
-                  >
+                    fontWeight={'medium'}>
                     <MyIcon name={'common/errorFill'} w={'14px'} mr={1} />
                     <Box color={'red.600'}>{t(toolError as any)}</Box>
                   </Flex>

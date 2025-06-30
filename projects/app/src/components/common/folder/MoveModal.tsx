@@ -88,8 +88,7 @@ const MoveModal = ({ moveResourceId, title, server, onConfirm, onClose, moveHint
                       }
                     : {
                         onClick: () => setSelectedId(item.id)
-                      })}
-                >
+                      })}>
                   {index !== 0 && (
                     <Flex
                       alignItems={'center'}
@@ -116,8 +115,7 @@ const MoveModal = ({ moveResourceId, title, server, onConfirm, onClose, moveHint
                         }
                         item.open = !item.open;
                         setFolderList([...folderList]);
-                      }}
-                    >
+                      }}>
                       <MyIcon
                         name={
                           requestingIdList.includes(item.id)
@@ -169,8 +167,7 @@ const MoveModal = ({ moveResourceId, title, server, onConfirm, onClose, moveHint
       isOpen
       w={'30rem'}
       title={title}
-      onClose={onClose}
-    >
+      onClose={onClose}>
       <ModalBody flex={'1 0 0'} overflow={'auto'} minH={'400px'}>
         {moveHint && (
           <Box mb={1}>

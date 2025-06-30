@@ -119,8 +119,7 @@ const QuoteItem = ({
         _hover={{ '& .hover-data': { visibility: 'visible' } }}
         h={'100%'}
         display={'flex'}
-        flexDirection={'column'}
-      >
+        flexDirection={'column'}>
         <Flex alignItems={'center'} mb={3} flexWrap={'wrap'} gap={3}>
           {score?.primaryScore && (
             <MyTooltip label={t(SearchScoreTypeMap[score.primaryScore.type]?.desc as any)}>
@@ -133,8 +132,7 @@ const QuoteItem = ({
                 borderWidth={'1px'}
                 borderColor={'primary.200'}
                 alignItems={'center'}
-                fontSize={'sm'}
-              >
+                fontSize={'sm'}>
                 <Box>#{score.primaryScore.index + 1}</Box>
                 <Box borderRightColor={'primary.700'} borderRightWidth={'1px'} h={'14px'} mx={2} />
                 <Box>
@@ -155,8 +153,7 @@ const QuoteItem = ({
                     borderWidth={'1px'}
                     borderRadius={'sm'}
                     mr={'2px'}
-                    {...(scoreTheme[i] && scoreTheme[i])}
-                  >
+                    {...(scoreTheme[i] && scoreTheme[i])}>
                     <Box transform={'scale(0.9)'}>#{item.index + 1}</Box>
                   </Box>
                   <Box transform={'scale(0.9)'}>
@@ -194,8 +191,7 @@ const QuoteItem = ({
           mt={3}
           gap={4}
           color={'myGray.500'}
-          fontSize={'xs'}
-        >
+          fontSize={'xs'}>
           <MyTooltip label={t('common:core.dataset.Quote Length')}>
             <Flex alignItems={'center'}>
               <MyIcon name="common/text/t" w={'14px'} mr={1} color={'myGray.500'} />
@@ -219,8 +215,7 @@ const QuoteItem = ({
                 visibility={'hidden'}
                 display={'flex'}
                 alignItems={'center'}
-                justifyContent={'center'}
-              >
+                justifyContent={'center'}>
                 <MyIcon
                   name={'edit'}
                   w={['16px', '18px']}
@@ -248,8 +243,7 @@ const QuoteItem = ({
               alignItems={'center'}
               visibility={'hidden'}
               color={'primary.500'}
-              href={`/dataset/detail?datasetId=${quoteItem.datasetId}&currentTab=dataCard&collectionId=${quoteItem.collectionId}`}
-            >
+              href={`/dataset/detail?datasetId=${quoteItem.datasetId}&currentTab=dataCard&collectionId=${quoteItem.collectionId}`}>
               {t('common:to_dataset')}
               <MyIcon name={'common/rightArrowLight'} w={'10px'} />
             </Link>

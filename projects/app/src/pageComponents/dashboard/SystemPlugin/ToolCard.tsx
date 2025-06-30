@@ -42,8 +42,7 @@ const PluginCard = ({
       _hover={{
         borderColor: 'primary.300',
         boxShadow: '1.5'
-      }}
-    >
+      }}>
       <HStack>
         <Avatar src={item.avatar} borderRadius={'sm'} w={'1.5rem'} h={'1.5rem'} />
         <Box flex={'1 0 0'} color={'myGray.900'} fontWeight={500}>
@@ -57,8 +56,7 @@ const PluginCard = ({
             pl={2}
             pr={3}
             borderLeftRadius={'sm'}
-            whiteSpace={'nowrap'}
-          >
+            whiteSpace={'nowrap'}>
             <Box ml={1} fontSize={'mini'}>
               {t(type as any)}
             </Box>
@@ -72,8 +70,7 @@ const PluginCard = ({
         textAlign={'justify'}
         wordBreak={'break-all'}
         fontSize={'xs'}
-        color={'myGray.500'}
-      >
+        color={'myGray.500'}>
         <Box className={'textEllipsis2'}>{item.intro || t('app:templateMarket.no_intro')}</Box>
       </Box>
 
@@ -84,8 +81,7 @@ const PluginCard = ({
               title={item.name}
               iconSrc={item.avatar}
               text={item.instructions}
-              link={item.courseUrl}
-            >
+              link={item.courseUrl}>
               {({ onClick }) => (
                 <Flex
                   color={'primary.700'}
@@ -93,8 +89,7 @@ const PluginCard = ({
                   gap={1}
                   cursor={'pointer'}
                   onClick={onClick}
-                  _hover={{ bg: 'myGray.100' }}
-                >
+                  _hover={{ bg: 'myGray.100' }}>
                   <MyIcon name={'book'} w={'14px'} />
                   {t('app:plugin.Instructions')}
                 </Flex>

@@ -106,8 +106,7 @@ const WebsiteConfigModal = ({
       iconSrc="core/dataset/websiteDataset"
       title={t('common:core.dataset.website.Config')}
       onClose={onClose}
-      w={'550px'}
-    >
+      w={'550px'}>
       <ModalBody w={'full'}>
         <Stack w={'75%'} marginX={'auto'}>
           <MyStep />
@@ -120,16 +119,14 @@ const WebsiteConfigModal = ({
               color={'myGray.900'}
               bgColor={'blue.50'}
               padding={'4'}
-              borderRadius={'8px'}
-            >
+              borderRadius={'8px'}>
               {t('common:core.dataset.website.Config Description')}
               {feConfigs?.docUrl && (
                 <Link
                   href={getDocPath('/docs/guide/knowledge_base/websync/')}
                   target="_blank"
                   textDecoration={'underline'}
-                  color={'blue.700'}
-                >
+                  color={'blue.700'}>
                   {t('common:read_course')}
                 </Link>
               )}
@@ -171,8 +168,7 @@ const WebsiteConfigModal = ({
                   });
                 }
                 goToNext();
-              })}
-            >
+              })}>
               {t('common:next_step')}
             </Button>
           </>

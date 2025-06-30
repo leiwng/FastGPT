@@ -62,8 +62,7 @@ const NodePluginConfig = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
           copy: true,
           delete: true
         }}
-        {...data}
-      >
+        {...data}>
         <Container w={'360px'}>
           <Instruction {...componentsProps} />
         </Container>

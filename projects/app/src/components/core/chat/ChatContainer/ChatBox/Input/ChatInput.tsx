@@ -119,8 +119,7 @@ const ChatInput = ({
             transform={'translateY(1px)'}
             onClick={() => {
               onOpenSelectFile();
-            }}
-          >
+            }}>
             <MyTooltip label={selectFileLabel}>
               <MyIcon name={selectFileIcon as any} w={'18px'} color={'myGray.600'} />
             </MyTooltip>
@@ -208,8 +207,7 @@ const ChatInput = ({
           position={'absolute'}
           right={[2, 4]}
           bottom={['10px', '12px']}
-          zIndex={3}
-        >
+          zIndex={3}>
           {/* Voice input icon */}
           {whisperConfig?.open && !inputValue && (
             <MyTooltip label={t('common:core.chat.Record')}>
@@ -225,8 +223,7 @@ const ChatInput = ({
                 _hover={{ bg: '#F5F5F8' }}
                 onClick={() => {
                   VoiceInputRef.current?.onSpeak?.();
-                }}
-              >
+                }}>
                 <MyIcon
                   name={'core/chat/recordFill'}
                   width={['22px', '25px']}
@@ -253,8 +250,7 @@ const ChatInput = ({
                 return onStop();
               }
               return handleSend();
-            }}
-          >
+            }}>
             {isChatting ? (
               <MyIcon
                 animation={'zoomStopIcon 0.4s infinite alternate'}
@@ -329,8 +325,7 @@ const ChatInput = ({
             description: invalidFileName
           });
         }
-      }}
-    >
+      }}>
       <Box
         pt={fileList.length > 0 ? '0' : ['14px', '18px']}
         pb={['14px', '18px']}
@@ -347,8 +342,7 @@ const ChatInput = ({
           : {
               borderTop: '1px solid',
               borderTopColor: 'rgba(0,0,0,0.15)'
-            })}
-      >
+            })}>
         {/* Chat input guide box */}
         {chatInputGuide.open && (
           <InputGuideBox

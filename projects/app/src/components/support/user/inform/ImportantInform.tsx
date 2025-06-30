@@ -38,8 +38,7 @@ const ImportantInform = ({
           borderColor={'borderColor.base'}
           minW={['200px', '400px']}
           alignItems={'flex-start'}
-          mb={3}
-        >
+          mb={3}>
           <MyIcon
             name={'support/user/informLight'}
             w={5}
@@ -55,8 +54,7 @@ const ImportantInform = ({
               lineHeight="24px"
               letterSpacing="0.15px"
               fontFamily="'PingFang SC', sans-serif"
-              color=" #24282C"
-            >
+              color=" #24282C">
               {inform.title}
             </Box>
             <Box
@@ -66,8 +64,7 @@ const ImportantInform = ({
               letterSpacing="0.25px"
               fontFamily="'PingFang SC', sans-serif"
               fontWeight="400"
-              color="#24282C"
-            >
+              color="#24282C">
               <Markdown source={inform?.content} />
             </Box>
           </Box>
@@ -79,8 +76,7 @@ const ImportantInform = ({
             _hover={{
               backgroundColor: 'rgba(17, 24, 36, 0.05)'
             }}
-            onClick={() => onClickClose(inform._id)}
-          >
+            onClick={() => onClickClose(inform._id)}>
             <CloseIcon w={'12px'} />
           </Box>
         </Flex>

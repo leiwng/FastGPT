@@ -130,8 +130,7 @@ const SelectFile = React.memo(function SelectFile() {
                   borderRadius={'md'}
                   border={'base'}
                   borderStyle={'dashed'}
-                  p={1}
-                >
+                  p={1}>
                   <MyImage
                     src={file.icon}
                     w="100%"

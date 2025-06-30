@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "prepare": "husky install",
-    "format-code": "prettier --config \"./.prettierrc.js\" --write \"./projects/**/src/**/*.{ts,tsx,scss}\" \"./packages/**/src/**/*.{ts,tsx,scss}\"",
+    "format-code": "prettier --config \"./.prettierrc.js\" --write \"./**/src/**/*.{ts,tsx,scss}\"",
     "format-doc": "zhlint --dir ./docSite *.md --fix",
     "gen:llms": "node ./docSite/doc-generate-llms.js",
     "gen:theme-typings": "chakra-cli tokens packages/web/styles/theme.ts --out node_modules/.pnpm/node_modules/@chakra-ui/styled-system/dist/theming.types.d.ts",
@@ -14,7 +14,7 @@
     "api:gen": "tsc ./scripts/openapi/index.ts && node ./scripts/openapi/index.js && npx @redocly/cli build-docs ./scripts/openapi/openapi.json -o ./projects/app/public/openapi/index.html",
     "create:i18n": "node ./scripts/i18n/index.js",
     "lint": "eslint \"**/*.{ts,tsx}\" --ignore-path .eslintignore",
-    "lint:fix": "eslint \"projects/**/*.{ts,tsx}\" \"packages/**/*.{ts,tsx}\" --fix --ignore-path .eslintignore",
+    "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix --ignore-path .eslintignore",
     "test": "vitest run",
     "test:workflow": "vitest run workflow"
   },

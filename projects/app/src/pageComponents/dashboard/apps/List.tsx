@@ -140,8 +140,7 @@ const ListItem = () => {
             : ['1fr', 'repeat(2,1fr)', 'repeat(2,1fr)', 'repeat(3,1fr)', 'repeat(4,1fr)']
         }
         gridGap={5}
-        alignItems={'stretch'}
-      >
+        alignItems={'stretch'}>
         {myApps.map((app, index) => {
           return (
             <MyTooltip
@@ -153,8 +152,7 @@ const ListItem = () => {
                   : app.permission.hasWritePer
                     ? t('app:edit_app')
                     : t('app:go_to_chat')
-              }
-            >
+              }>
               <MyBox
                 lineHeight={1.5}
                 h="100%"
@@ -196,8 +194,7 @@ const ListItem = () => {
                 {...getBoxProps({
                   dataId: app._id,
                   isFolder: app.type === AppTypeEnum.folder
-                })}
-              >
+                })}>
                 <HStack>
                   <Avatar src={app.avatar} borderRadius={'sm'} w={'1.5rem'} />
                   <Box flex={'1 0 0'} color={'myGray.900'}>
@@ -214,8 +211,7 @@ const ListItem = () => {
                   textAlign={'justify'}
                   wordBreak={'break-all'}
                   fontSize={'xs'}
-                  color={'myGray.500'}
-                >
+                  color={'myGray.500'}>
                   <Box className={'textEllipsis2'} whiteSpace={'pre-wrap'}>
                     {app.intro || t('common:no_intro')}
                   </Box>

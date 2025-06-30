@@ -173,23 +173,20 @@ function MemberModal({
       h={'100%'}
       maxH={'90vh'}
       isCentered
-      isLoading={loadingGroupsAndOrgs}
-    >
+      isLoading={loadingGroupsAndOrgs}>
       <ModalBody flex={'1'}>
         <Grid
           border="1px solid"
           borderColor="myGray.200"
           borderRadius="0.5rem"
           gridTemplateColumns="1fr 1fr"
-          h={'100%'}
-        >
+          h={'100%'}>
           <Flex
             h={'100%'}
             flexDirection="column"
             borderRight="1px solid"
             borderColor="myGray.200"
-            p="4"
-          >
+            p="4">
             <SearchInput
               placeholder={t('user:search_group_org_user')}
               bgColor="myGray.50"
@@ -211,8 +208,7 @@ function MemberModal({
                         alignItems="center"
                         _hover={HoverBoxStyle}
                         _notLast={{ mb: 1 }}
-                        onClick={() => setFilterClass(item.value as any)}
-                      >
+                        onClick={() => setFilterClass(item.value as any)}>
                         <MyAvatar src={item.icon} w="1.5rem" borderRadius={'50%'} />
                         <Box ml="2" w="full">
                           {item.label}
@@ -291,8 +287,7 @@ function MemberModal({
                       flexDirection={'column'}
                       gap={1}
                       userSelect={'none'}
-                      height={'fit-content'}
-                    >
+                      height={'fit-content'}>
                       {Members}
                     </TeamMemberScrollData>
                   );
@@ -436,8 +431,7 @@ function MemberModal({
                 fontSize={'sm'}
                 px={3}
                 borderRadius={'md'}
-                h={'32px'}
-              >
+                h={'32px'}>
                 {t(perLabel as any)}
                 <ChevronDownIcon fontSize={'md'} />
               </Flex>

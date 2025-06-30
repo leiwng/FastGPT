@@ -129,8 +129,7 @@ const Header = ({ hasTrainingData }: { hasTrainingData: boolean }) => {
                 h={'100%'}
                 fontSize={isWebSite ? 'sm' : 'md'}
                 fontWeight={'500'}
-                color={'myGray.600'}
-              >
+                color={'myGray.600'}>
                 <Flex align={'center'}>
                   {!isWebSite && <MyIcon name="common/list" mr={2} w={'20px'} color={'black'} />}
                   {t(DatasetTypeMap[datasetDetail?.type]?.collectionLabel as any)}({total})
@@ -144,8 +143,7 @@ const Header = ({ hasTrainingData }: { hasTrainingData: boolean }) => {
                       maxW={'300px'}
                       href={datasetDetail.websiteConfig.url}
                       target="_blank"
-                      color={'blue.700'}
-                    >
+                      color={'blue.700'}>
                       {datasetDetail.websiteConfig.url}
                     </Link>
                   </Flex>
@@ -203,8 +201,7 @@ const Header = ({ hasTrainingData }: { hasTrainingData: boolean }) => {
                   _hover={{
                     color: 'primary.500'
                   }}
-                  fontSize={['sm', 'md']}
-                >
+                  fontSize={['sm', 'md']}>
                   <Flex
                     px={3.5}
                     py={2}
@@ -212,8 +209,7 @@ const Header = ({ hasTrainingData }: { hasTrainingData: boolean }) => {
                     cursor={'pointer'}
                     bg={'primary.500'}
                     overflow={'hidden'}
-                    color={'white'}
-                  >
+                    color={'white'}>
                     <Flex h={'20px'} alignItems={'center'}>
                       <MyIcon
                         name={'common/folderImport'}
@@ -321,16 +317,14 @@ const Header = ({ hasTrainingData }: { hasTrainingData: boolean }) => {
                     <HStack gap={2}>
                       <Button
                         onClick={onOpenWebsiteModal}
-                        leftIcon={<Icon name="change" w={'1rem'} />}
-                      >
+                        leftIcon={<Icon name="change" w={'1rem'} />}>
                         {t('dataset:params_config')}
                       </Button>
                       {!hasTrainingData && (
                         <Button
                           variant={'whitePrimary'}
                           onClick={openWebSyncConfirm}
-                          leftIcon={<Icon name="common/confirm/restoreTip" w={'1rem'} />}
-                        >
+                          leftIcon={<Icon name="common/confirm/restoreTip" w={'1rem'} />}>
                           {t('dataset:immediate_sync')}
                         </Button>
                       )}
@@ -346,8 +340,7 @@ const Header = ({ hasTrainingData }: { hasTrainingData: boolean }) => {
                         w: '8px',
                         h: '8px',
                         animation: 'zoomStopIcon 0.5s infinite alternate'
-                      }}
-                    >
+                      }}>
                       {t('common:core.dataset.status.syncing')}
                     </MyTag>
                   )}
@@ -361,8 +354,7 @@ const Header = ({ hasTrainingData }: { hasTrainingData: boolean }) => {
                         w: '8px',
                         h: '8px',
                         animation: 'zoomStopIcon 0.5s infinite alternate'
-                      }}
-                    >
+                      }}>
                       {t('common:core.dataset.status.waiting')}
                     </MyTag>
                   )}
@@ -378,8 +370,7 @@ const Header = ({ hasTrainingData }: { hasTrainingData: boolean }) => {
               ) : (
                 <Button
                   onClick={onOpenWebsiteModal}
-                  leftIcon={<Icon name="common/setting" w={'18px'} />}
-                >
+                  leftIcon={<Icon name="common/setting" w={'18px'} />}>
                   {t('common:core.dataset.Set Website Config')}
                 </Button>
               )}
@@ -393,8 +384,7 @@ const Header = ({ hasTrainingData }: { hasTrainingData: boolean }) => {
                   _hover={{
                     color: 'primary.500'
                   }}
-                  fontSize={['sm', 'md']}
-                >
+                  fontSize={['sm', 'md']}>
                   <Flex
                     px={3.5}
                     py={2}
@@ -402,8 +392,7 @@ const Header = ({ hasTrainingData }: { hasTrainingData: boolean }) => {
                     cursor={'pointer'}
                     bg={'primary.500'}
                     overflow={'hidden'}
-                    color={'white'}
-                  >
+                    color={'white'}>
                     <Flex h={'20px'} alignItems={'center'}>
                       <MyIcon
                         name={'common/folderImport'}
@@ -470,8 +459,7 @@ const Header = ({ hasTrainingData }: { hasTrainingData: boolean }) => {
                     source: ImportDataSourceEnum.apiDataset
                   }
                 })
-              }
-            >
+              }>
               <Flex h={'20px'} alignItems={'center'}>
                 <MyIcon name={'common/folderImport'} mr={2} w={'18px'} h={'18px'} color={'white'} />
               </Flex>

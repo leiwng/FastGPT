@@ -49,8 +49,7 @@ const BillAndInvoice = () => {
                   invoiceTab: e
                 }
               });
-            }}
-          ></FillRowTabs>
+            }}></FillRowTabs>
           {invoiceTab !== InvoiceTabEnum.invoiceHeader && (
             <Button variant={'primary'} px="0" onClick={() => setIsOpenInvoiceModal(true)}>
               <Flex alignItems={'center'} px={'20px'}>

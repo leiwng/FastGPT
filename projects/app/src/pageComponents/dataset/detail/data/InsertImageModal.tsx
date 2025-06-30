@@ -65,8 +65,7 @@ const InsertImageModal = ({
       isOpen
       iconSrc="core/dataset/imageFill"
       title={t('dataset:insert_images')}
-      maxW={['90vw', '605px']}
-    >
+      maxW={['90vw', '605px']}>
       <ModalBody userSelect={'none'}>
         <Box>
           <FileSelector
@@ -90,8 +89,7 @@ const InsertImageModal = ({
                 borderRadius={'md'}
                 border={'base'}
                 borderStyle={'dashed'}
-                p={1}
-              >
+                p={1}>
                 <MyImage src={file.previewUrl} w="100%" h={'100%'} objectFit={'contain'} />
                 <MyIcon
                   name={'closeSolid'}
@@ -122,8 +120,7 @@ const InsertImageModal = ({
         <Button
           isDisabled={selectFiles.length === 0 || inserting}
           variant={'primary'}
-          onClick={onInsertImages}
-        >
+          onClick={onInsertImages}>
           {inserting ? (
             <Box>{t('dataset:uploading_progress', { num: uploadProgress })}</Box>
           ) : (

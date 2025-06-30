@@ -86,8 +86,7 @@ const ImportAppConfigEditor = ({ value, onChange, rows = 16 }: Props) => {
             onDragEnter={handleDragEnter}
             onDragOver={(e) => e.preventDefault()}
             onDrop={handleDrop}
-            onDragLeave={handleDragLeave}
-          >
+            onDragLeave={handleDragLeave}>
             <Flex align={'center'} justify={'center'} flexDir={'column'} gap={'0.62rem'}>
               <MyIcon name={'configmap'} w={'2rem'} color={'primary.500'} />
               <Box color={'primary.600'} fontSize={'sm'}>
@@ -112,8 +111,7 @@ const ImportAppConfigEditor = ({ value, onChange, rows = 16 }: Props) => {
               onDragEnter={handleDragEnter}
               onDragOver={(e) => e.preventDefault()}
               onDrop={handleDrop}
-              onDragLeave={handleDragLeave}
-            >
+              onDragLeave={handleDragLeave}>
               <Textarea
                 bg={'myGray.50'}
                 border={'1px solid'}

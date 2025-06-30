@@ -88,8 +88,7 @@ const ResetPswModal = () => {
                 }
                 return true;
               }
-            })}
-          ></Input>
+            })}></Input>
         </Flex>
         <Flex alignItems={'center'} mt={5}>
           <Box flex={'0 0 70px'} fontSize={'sm'}>
@@ -102,15 +101,13 @@ const ResetPswModal = () => {
             {...register('confirmPsw', {
               required: true,
               validate: (val) => (getValues('newPsw') === val ? true : t('user:password.not_match'))
-            })}
-          ></Input>
+            })}></Input>
         </Flex>
       </ModalBody>
       <ModalFooter>
         <Button
           isLoading={isSubmitting || isFetching}
-          onClick={handleSubmit((data) => onSubmit(data.newPsw), onSubmitErr)}
-        >
+          onClick={handleSubmit((data) => onSubmit(data.newPsw), onSubmitErr)}>
           {t('common:Confirm')}
         </Button>
       </ModalFooter>

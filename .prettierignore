@@ -9,6 +9,11 @@ pnpm-lock.yaml
 cl100l_base.ts
 dict.json
 
+.venv
+.venv/
+.venv_bak
+.venv_bak/
+.vscode
 common_services/postgres-data/
 common_services/mongodb-data/
 common_services/redis-data/

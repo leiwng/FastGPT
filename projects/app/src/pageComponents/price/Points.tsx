@@ -12,8 +12,7 @@ const Points = () => {
       mt={['40px', '100px']}
       flexDirection={'column'}
       alignItems={'center'}
-      position={'relative'}
-    >
+      position={'relative'}>
       <Box id="point-card" fontWeight={'bold'} fontSize={['24px', '36px']} color={'myGray.900'}>
         {t('common:support.wallet.subscription.Ai points')}
       </Box>
@@ -41,8 +40,7 @@ export const AiPointsTable = () => {
         borderWidth={'1px'}
         borderColor={'myGray.150'}
         bg={'rgba(255,255,255,0.9)'}
-        overflow={'hidden'}
-      >
+        overflow={'hidden'}>
         <Box
           flex={1}
           borderRightWidth={'1px'}
@@ -51,8 +49,7 @@ export const AiPointsTable = () => {
           pl={10}
           fontSize={'md'}
           fontWeight={'bold'}
-          color={'myGray.900'}
-        >
+          color={'myGray.900'}>
           {t('common:support.wallet.subscription.ai_model')}
         </Box>
         <Box flex={4} textAlign={'center'}>
@@ -74,8 +71,7 @@ export const AiPointsTable = () => {
         borderWidth={'1px'}
         borderColor={'myGray.150'}
         bg={'rgba(255,255,255,0.9)'}
-        overflow={'hidden'}
-      >
+        overflow={'hidden'}>
         <Box flex={1} borderRightWidth={'1px'} borderRightColor={'myGray.150'} py={8} pl={10}>
           <Box fontSize={'md'} fontWeight={'bold'}>
             {t('common:core.ai.model.Vector Model')}
@@ -103,8 +99,7 @@ export const AiPointsTable = () => {
         borderWidth={'1px'}
         borderColor={'myGray.150'}
         bg={'rgba(255,255,255,0.9)'}
-        overflow={'hidden'}
-      >
+        overflow={'hidden'}>
         <Box flex={1} borderRightWidth={'1px'} borderRightColor={'myGray.150'} py={8} pl={10}>
           <Box fontSize={'md'} fontWeight={'bold'}>
             {t('common:core.app.TTS')}
@@ -130,8 +125,7 @@ export const AiPointsTable = () => {
         borderWidth={'1px'}
         borderColor={'myGray.150'}
         bg={'rgba(255,255,255,0.9)'}
-        overflow={'hidden'}
-      >
+        overflow={'hidden'}>
         <Box flex={1} borderRightWidth={'1px'} borderRightColor={'myGray.150'} py={4} pl={10}>
           <Box fontSize={'md'} fontWeight={'bold'}>
             {t('common:core.app.Whisper')}

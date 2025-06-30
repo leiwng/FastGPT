@@ -173,8 +173,7 @@ const EditChannelModal = ({
         title={t('account_model:edit_channel')}
         onClose={onClose}
         w={'100%'}
-        maxW={['90vw', '800px']}
-      >
+        maxW={['90vw', '800px']}>
         <ModalBody>
           {/* Chnnel name */}
           <Box>
@@ -394,8 +393,7 @@ const MultipleSelect = ({ value = [], list = [], onSelect }: SelectProps) => {
                   onOpen();
                   setSearch('');
                 }
-              })}
-        >
+              })}>
           <MenuButton zIndex={0} position={'absolute'} bottom={0} left={0} right={0} top={0} />
           <Flex
             ref={BoxRef}
@@ -405,8 +403,7 @@ const MultipleSelect = ({ value = [], list = [], onSelect }: SelectProps) => {
             px={2}
             pb={0}
             overflowY={'auto'}
-            maxH={'200px'}
-          >
+            maxH={'200px'}>
             {value.length === 0 ? (
               <Box flex={'1 0 0'} color={'myGray.500'} fontSize={'xs'}>
                 {t('account_model:select_model_placeholder')}
@@ -426,8 +423,7 @@ const MultipleSelect = ({ value = [], list = [], onSelect }: SelectProps) => {
                     onClick={(e) => {
                       e.stopPropagation();
                       copyData(item, t('account_model:copy_model_id_success'));
-                    }}
-                  >
+                    }}>
                     <Box>{item}</Box>
                     <MyIcon
                       ml={0.5}
@@ -474,8 +470,7 @@ const MultipleSelect = ({ value = [], list = [], onSelect }: SelectProps) => {
           }
           zIndex={99}
           maxH={'40vh'}
-          overflowY={'auto'}
-        >
+          overflowY={'auto'}>
           {filterUnSelected.map((item, i) => {
             return (
               <MenuItem
@@ -487,8 +482,7 @@ const MultipleSelect = ({ value = [], list = [], onSelect }: SelectProps) => {
                 whiteSpace={'pre-wrap'}
                 fontSize={'sm'}
                 gap={2}
-                {...menuItemStyles}
-              >
+                {...menuItemStyles}>
                 {item.icon && <MyAvatar src={item.icon} w={'1rem'} borderRadius={'0'} />}
                 <Box flex={'1 0 0'}>{item.label}</Box>
               </MenuItem>

@@ -54,8 +54,7 @@ export const DatasetSelectModal = ({
       paths={paths}
       setParentId={setParentId}
       tips={t('common:dataset.Select Dataset Tips')}
-      onClose={onClose}
-    >
+      onClose={onClose}>
       <Flex h={'100%'} flexDirection={'column'} flex={'1 0 0'}>
         <ModalBody flex={'1 0 0'} overflowY={'auto'} userSelect={'none'}>
           <Grid
@@ -64,8 +63,7 @@ export const DatasetSelectModal = ({
               'repeat(2, minmax(0, 1fr))',
               'repeat(3, minmax(0, 1fr))'
             ]}
-            gridGap={3}
-          >
+            gridGap={3}>
             {selectedDatasets.map((item) =>
               (() => {
                 return (
@@ -75,14 +73,12 @@ export const DatasetSelectModal = ({
                       p={3}
                       border={'base'}
                       boxShadow={'sm'}
-                      bg={'primary.200'}
-                    >
+                      bg={'primary.200'}>
                       <Flex alignItems={'center'} h={'38px'}>
                         <Avatar
                           src={item.avatar}
                           w={['1.25rem', '1.75rem']}
-                          borderRadius={'sm'}
-                        ></Avatar>
+                          borderRadius={'sm'}></Avatar>
                         <Box flex={'1 0 0'} w={0} className="textEllipsis" mx={3} fontSize={'sm'}>
                           {item.name}
                         </Box>
@@ -113,8 +109,7 @@ export const DatasetSelectModal = ({
               'repeat(2, minmax(0, 1fr))',
               'repeat(3, minmax(0, 1fr))'
             ]}
-            gridGap={3}
-          >
+            gridGap={3}>
             {unSelectedDatasets.map((item) =>
               (() => {
                 return (
@@ -124,8 +119,7 @@ export const DatasetSelectModal = ({
                       item.type === DatasetTypeEnum.folder
                         ? t('common:dataset.Select Folder')
                         : item.name
-                    }
-                  >
+                    }>
                     <Card
                       p={3}
                       border={theme.borders.base}
@@ -155,22 +149,19 @@ export const DatasetSelectModal = ({
                             }
                           ]);
                         }
-                      }}
-                    >
+                      }}>
                       <Flex alignItems={'center'} h={'38px'}>
                         <Avatar
                           src={item.avatar}
                           w={['1.25rem', '1.75rem']}
-                          borderRadius={'sm'}
-                        ></Avatar>
+                          borderRadius={'sm'}></Avatar>
                         <Box
                           flex={'1 0 0'}
                           w={0}
                           className="textEllipsis"
                           ml={3}
                           color={'myGray.900'}
-                          fontSize={'sm'}
-                        >
+                          fontSize={'sm'}>
                           {item.name}
                         </Box>
                       </Flex>
@@ -182,8 +173,7 @@ export const DatasetSelectModal = ({
                           activeVectorModel === item.vectorModel.model
                             ? 'primary.600'
                             : 'myGray.500'
-                        }
-                      >
+                        }>
                         {item.type === DatasetTypeEnum.folder ? (
                           <Box color={'myGray.500'}>{t('common:Folder')}</Box>
                         ) : (
@@ -207,8 +197,7 @@ export const DatasetSelectModal = ({
             onClick={() => {
               onClose();
               onChange(selectedDatasets);
-            }}
-          >
+            }}>
             {t('common:Done')}
           </Button>
         </ModalFooter>

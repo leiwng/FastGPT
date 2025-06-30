@@ -93,8 +93,7 @@ const NodeTemplatesPopover = () => {
       closeOnBlur={true}
       closeOnEsc={true}
       autoFocus={true}
-      isLazy
-    >
+      isLazy>
       <PopoverContent
         position="fixed"
         top={`${handleParams.popoverPosition.y}px`}
@@ -102,8 +101,7 @@ const NodeTemplatesPopover = () => {
         width={popoverWidth}
         height={popoverHeight}
         boxShadow="3px 0 20px rgba(0,0,0,0.2)"
-        border={'none'}
-      >
+        border={'none'}>
         <PopoverBody padding={0} h={'full'}>
           <MyBox
             isLoading={templatesIsLoading}
@@ -111,8 +109,7 @@ const NodeTemplatesPopover = () => {
             flexDirection={'column'}
             py={4}
             h={'full'}
-            userSelect="none"
-          >
+            userSelect="none">
             <NodeTemplateListHeader
               isPopover={true}
               templateType={templateType}

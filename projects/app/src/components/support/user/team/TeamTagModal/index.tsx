@@ -98,8 +98,7 @@ const TeamTagsAsync = ({ onClose }: { onClose: () => void }) => {
               {t('user:synchronization.title')}
             </Box>
           </Box>
-        }
-      >
+        }>
         <ModalBody style={{ padding: '10rpx' }}>
           <Flex mt={3} alignItems={'center'}>
             <Box mb={2} fontWeight="semibold">
@@ -157,8 +156,7 @@ const TeamTagsAsync = ({ onClose }: { onClose: () => void }) => {
                 flexWrap: 'wrap',
                 overflow: 'scroll'
               }}
-              spacing={1}
-            >
+              spacing={1}>
               {teamTags.map((item, index) => {
                 return (
                   <Tag key={index} mt={2} size={'md'} colorScheme="red" borderRadius="full">
@@ -179,8 +177,7 @@ const TeamTagsAsync = ({ onClose }: { onClose: () => void }) => {
               ml={4}
               size="md"
               leftIcon={<RepeatIcon />}
-              onClick={handleSubmit((data) => onclickTagAsync(data))}
-            >
+              onClick={handleSubmit((data) => onclickTagAsync(data))}>
               {t('user:synchronization.button')}
             </Button>
           </Flex>

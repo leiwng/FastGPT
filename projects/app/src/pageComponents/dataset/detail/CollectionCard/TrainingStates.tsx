@@ -224,8 +224,7 @@ const ProgressView = ({ trainingDetail }: { trainingDetail: getTrainingDetailRes
                 top: '14px',
                 left: '4px'
               }
-            })}
-          >
+            })}>
             {item.status === TrainingStatus.Ready && (
               <MyIcon name="common/check" w={3} color={'white'} />
             )}
@@ -246,14 +245,12 @@ const ProgressView = ({ trainingDetail }: { trainingDetail: getTrainingDetailRes
             ml={5}
             borderRadius={'8px'}
             flex={1}
-            h={'53px'}
-          >
+            h={'53px'}>
             <Box
               fontSize={'14px'}
               fontWeight={'medium'}
               color={item.status === TrainingStatus.NotStart ? 'myGray.400' : 'myGray.900'}
-              mr={2}
-            >
+              mr={2}>
               {t(item.label as any)}
             </Box>
             {item.status === TrainingStatus.Error && (
@@ -264,8 +261,7 @@ const ProgressView = ({ trainingDetail }: { trainingDetail: getTrainingDetailRes
                 fontSize={'mini'}
                 borderRadius={'md'}
                 h={5}
-                colorSchema={'red'}
-              >
+                colorSchema={'red'}>
                 {t('dataset:training.Error', { count: item.errorCount })}
               </MyTag>
             )}
@@ -373,8 +369,7 @@ const ErrorView = ({
   return (
     <ScrollData
       h={'400px'}
-      isLoading={isLoading || updateLoading || getDataLoading || deleteLoading}
-    >
+      isLoading={isLoading || updateLoading || getDataLoading || deleteLoading}>
       <TableContainer overflowY={'auto'} fontSize={'12px'}>
         <Table variant={'simple'}>
           <Thead>
@@ -401,8 +396,7 @@ const ErrorView = ({
                       color={'myGray.600'}
                       leftIcon={<MyIcon name={'common/confirm/restoreTip'} w={4} />}
                       fontSize={'mini'}
-                      onClick={() => updateData({ datasetId, collectionId, dataId: item._id })}
-                    >
+                      onClick={() => updateData({ datasetId, collectionId, dataId: item._id })}>
                       {t('dataset:dataset.ReTrain')}
                     </Button>
                     <Box w={'1px'} height={'16px'} bg={'myGray.200'} />
@@ -412,8 +406,7 @@ const ErrorView = ({
                       color={'myGray.600'}
                       leftIcon={<MyIcon name={'edit'} w={4} />}
                       fontSize={'mini'}
-                      onClick={() => getData({ datasetId, collectionId, dataId: item._id })}
-                    >
+                      onClick={() => getData({ datasetId, collectionId, dataId: item._id })}>
                       {t('dataset:dataset.Edit_Chunk')}
                     </Button>
                     <Box w={'1px'} height={'16px'} bg={'myGray.200'} />
@@ -425,8 +418,7 @@ const ErrorView = ({
                       fontSize={'mini'}
                       onClick={() => {
                         deleteData({ datasetId, collectionId, dataId: item._id });
-                      }}
-                    >
+                      }}>
                       {t('dataset:dataset.Delete_Chunk')}
                     </Button>
                   </Flex>
@@ -538,8 +530,7 @@ const TrainingStates = ({
       iconSrc="common/running"
       title={t('dataset:dataset.Training Process')}
       minW={['90vw', '712px']}
-      isLoading={!trainingDetail && loading && tab === 'states'}
-    >
+      isLoading={!trainingDetail && loading && tab === 'states'}>
       <ModalBody px={9} minH={['90vh', '500px']}>
         <FillRowTabs
           py={1}

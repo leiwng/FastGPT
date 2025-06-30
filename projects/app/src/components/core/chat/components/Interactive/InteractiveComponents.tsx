@@ -61,8 +61,7 @@ export const SelectOptionsComponent = React.memo(function SelectOptionsComponent
                     }
                   }
                 : {})}
-              onClick={() => onSelect(option.value)}
-            >
+              onClick={() => onSelect(option.value)}>
               {option.value}
             </Button>
           );

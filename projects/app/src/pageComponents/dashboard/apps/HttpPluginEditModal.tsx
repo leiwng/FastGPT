@@ -173,8 +173,7 @@ const HttpPluginEditModal = ({
         title={isEdit ? t('common:plugin.Edit Http Plugin') : t('common:plugin.Import Plugin')}
         w={['90vw', '600px']}
         h={['90vh', '80vh']}
-        position={'relative'}
-      >
+        position={'relative'}>
         <ModalBody flex={'1 0 0'} overflow={'auto'}>
           <>
             <Box color={'myGray.800'} fontWeight={'bold'}>
@@ -220,8 +219,7 @@ const HttpPluginEditModal = ({
               color={'myGray.800'}
               fontWeight={'bold'}
               justifyContent={'space-between'}
-              display={'flex'}
-            >
+              display={'flex'}>
               <Box my={'auto'}>{'OpenAPI Schema'}</Box>
 
               <Box>
@@ -238,8 +236,7 @@ const HttpPluginEditModal = ({
                     size={'sm'}
                     variant={'whitePrimary'}
                     isLoading={isLoadingUrlApi}
-                    onClick={onClickUrlLoadApi}
-                  >
+                    onClick={onClickUrlLoadApi}>
                     {t('common:Import')}
                   </Button>
                 </Flex>
@@ -266,8 +263,7 @@ const HttpPluginEditModal = ({
               borderRadius={'md'}
               overflow={'hidden'}
               borderWidth={'1px'}
-              borderBottom={'none'}
-            >
+              borderBottom={'none'}>
               <TableContainer overflowY={'visible'} overflowX={'unset'}>
                 <Table>
                   <Thead>
@@ -396,8 +392,7 @@ const HttpPluginEditModal = ({
               borderRadius={'md'}
               overflow={'hidden'}
               borderWidth={'1px'}
-              borderBottom={'none'}
-            >
+              borderBottom={'none'}>
               <TableContainer maxH={400} overflowY={'auto'}>
                 <Table bg={'white'}>
                   <Thead bg={'myGray.50'}>
@@ -415,8 +410,7 @@ const HttpPluginEditModal = ({
                           textColor={'gray.600'}
                           w={'auto'}
                           maxW={80}
-                          whiteSpace={'pre-wrap'}
-                        >
+                          whiteSpace={'pre-wrap'}>
                           {item.description}
                         </Td>
                         <Td>{item.method}</Td>
@@ -438,16 +432,14 @@ const HttpPluginEditModal = ({
             <Button
               isDisabled={apiData.pathData.length === 0}
               onClick={handleSubmit((data) => onCreate(data))}
-              isLoading={isCreating}
-            >
+              isLoading={isCreating}>
               {t('common:comfirn_create')}
             </Button>
           ) : (
             <Button
               isDisabled={apiData.pathData.length === 0}
               isLoading={isUpdating}
-              onClick={handleSubmit((data) => updatePlugins(data))}
-            >
+              onClick={handleSubmit((data) => updatePlugins(data))}>
               {t('common:confirm_update')}
             </Button>
           )}

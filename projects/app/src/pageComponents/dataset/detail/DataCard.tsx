@@ -138,8 +138,7 @@ const DataCard = () => {
               className="textEllipsis"
               alignItems={'center'}
               gap={2}
-              display={isPc ? 'flex' : ''}
-            >
+              display={isPc ? 'flex' : ''}>
               {collection?._id && (
                 <RawSourceBox
                   collectionType={collection.type}
@@ -171,8 +170,7 @@ const DataCard = () => {
                       collectionId
                     }
                   });
-                }}
-              >
+                }}>
                 {t('dataset:retain_collection')}
               </Button>
             )}
@@ -184,8 +182,7 @@ const DataCard = () => {
               isDisabled={!collection}
               onClick={() => {
                 setEditDataId('');
-              }}
-            >
+              }}>
               {t('common:dataset.Insert Data')}
             </Button>
           )}
@@ -195,8 +192,7 @@ const DataCard = () => {
               variant={'whitePrimary'}
               size={['sm', 'md']}
               isDisabled={!collection}
-              onClick={openInsertImagesModal}
-            >
+              onClick={openInsertImagesModal}>
               {t('dataset:insert_images')}
             </Button>
           )}
@@ -222,8 +218,7 @@ const DataCard = () => {
                 ml={2}
                 onClick={() => {
                   setErrorModalId(collection._id);
-                }}
-              >
+                }}>
                 <Flex fontWeight={'medium'} alignItems={'center'} gap={1}>
                   {t('dataset:data_error_amount', {
                     errorAmount: collection?.errorCount
@@ -278,16 +273,14 @@ const DataCard = () => {
                 onClick={(e) => {
                   e.stopPropagation();
                   setEditDataId(item._id);
-                }}
-              >
+                }}>
                 {/* Data tag */}
                 <Flex
                   position={'absolute'}
                   zIndex={1}
                   alignItems={'center'}
                   visibility={'hidden'}
-                  className="header"
-                >
+                  className="header">
                   <MyTag
                     px={2}
                     type="borderFill"
@@ -295,16 +288,14 @@ const DataCard = () => {
                     border={'1px'}
                     color={'myGray.200'}
                     bg={'white'}
-                    fontWeight={'500'}
-                  >
+                    fontWeight={'500'}>
                     <Box color={'blue.600'}>#{item.chunkIndex ?? '-'} </Box>
                     <Box
                       ml={1.5}
                       className={'textEllipsis'}
                       fontSize={'mini'}
                       textAlign={'right'}
-                      color={'myGray.500'}
-                    >
+                      color={'myGray.500'}>
                       ID:{item._id}
                     </Box>
                   </MyTag>
@@ -348,8 +339,7 @@ const DataCard = () => {
                   overflow={'hidden'}
                   alignItems={'flex-end'}
                   visibility={'hidden'}
-                  fontSize={'mini'}
-                >
+                  fontSize={'mini'}>
                   <Flex
                     alignItems={'center'}
                     bg={'white'}
@@ -362,8 +352,7 @@ const DataCard = () => {
                     fontSize={'mini'}
                     boxShadow={'1'}
                     py={1}
-                    mr={2}
-                  >
+                    mr={2}>
                     {item.imageSize ? (
                       <>{formatFileSize(item.imageSize)}</>
                     ) : (

@@ -55,8 +55,7 @@ const RawSourceBox = ({
   return (
     <MyTooltip
       label={canPreview ? t('file:click_to_view_raw_source') : ''}
-      shouldWrapChildren={false}
-    >
+      shouldWrapChildren={false}>
       <Box
         color={'myGray.900'}
         fontWeight={'medium'}
@@ -69,14 +68,12 @@ const RawSourceBox = ({
               onClick: read
             }
           : {})}
-        {...props}
-      >
+        {...props}>
         <MyIcon name={icon as any} w={['1rem', '1.25rem']} mr={2} />
         <Box
           maxW={['200px', '300px']}
           className={props.className ?? 'textEllipsis'}
-          wordBreak={'break-all'}
-        >
+          wordBreak={'break-all'}>
           {sourceName || t('common:unknow_source')}
         </Box>
       </Box>

@@ -39,8 +39,7 @@ const SaveAndPublishModal = ({
       iconSrc={'core/workflow/publish'}
       maxW={'400px'}
       isOpen
-      onClose={onClose}
-    >
+      onClose={onClose}>
       <ModalBody>
         <Box mb={2.5} color={'myGray.900'} fontSize={'14px'} fontWeight={'500'}>
           {t('common:Name')}
@@ -62,8 +61,7 @@ const SaveAndPublishModal = ({
           onClick={() => {
             onClose();
           }}
-          variant={'whiteBase'}
-        >
+          variant={'whiteBase'}>
           {t('common:Cancel')}
         </Button>
         <Button
@@ -77,8 +75,7 @@ const SaveAndPublishModal = ({
               isClosable: true
             });
             onClose();
-          })}
-        >
+          })}>
           {t('common:Confirm')}
         </Button>
       </ModalFooter>

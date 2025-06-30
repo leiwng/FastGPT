@@ -47,8 +47,7 @@ const FeedbackModal = ({
       isOpen={true}
       onClose={onClose}
       iconSrc="/imgs/modal/badAnswer.svg"
-      title={t('common:core.chat.Feedback Modal')}
-    >
+      title={t('common:core.chat.Feedback Modal')}>
       <ModalBody>
         <Textarea ref={ref} rows={10} placeholder={t('common:core.chat.Feedback Modal Tip')} />
       </ModalBody>

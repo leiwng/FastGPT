@@ -19,8 +19,7 @@ const SideTag = ({ type, ...props }: { type: `${DatasetTypeEnum}` } & FlexProps)
       borderRadius={'md'}
       fontSize={'xs'}
       alignItems={'center'}
-      {...props}
-    >
+      {...props}>
       <MyIcon name={item.icon as any} w={'0.8rem'} color={'myGray.400'} />
       <Box fontSize={'mini'} ml={1}>
         {t(item.label)}

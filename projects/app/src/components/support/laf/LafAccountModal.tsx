@@ -130,8 +130,7 @@ const LafAccountModal = ({
                 onClick={() => {
                   authLafPat(pat);
                 }}
-                isLoading={isPatLoading}
-              >
+                isLoading={isPatLoading}>
                 {t('common:verification')}
               </Button>
             </>
@@ -143,8 +142,7 @@ const LafAccountModal = ({
                 putUpdateTeam({
                   lafAccount: { token: '', appid: '', pat: '' }
                 });
-              }}
-            >
+              }}>
               {t('common:has_verification')}
             </Button>
           )}
@@ -178,8 +176,7 @@ const LafAccountModal = ({
           onClick={() => {
             initUserInfo();
             onClose();
-          }}
-        >
+          }}>
           {t('common:Close')}
         </Button>
         {appid && (

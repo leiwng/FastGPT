@@ -235,8 +235,7 @@ const RenderHttpMethodAndUrl = React.memo(function RenderHttpMethodAndUrl({
           borderColor={'myGray.200'}
           rounded={'md'}
           bg={'white'}
-          ml={2}
-        >
+          ml={2}>
           <PromptEditor
             placeholder={
               t('common:core.module.input.label.Http Request Url') +
@@ -449,8 +448,7 @@ const RenderHttpTimeout = ({
                   value: Number(e)
                 }
               });
-            }}
-          >
+            }}>
             <NumberInputField autoFocus bg={'white'} px={3} borderRadius={'sm'} />
             <NumberInputStepper>
               <NumberIncrementStepper />
@@ -461,8 +459,7 @@ const RenderHttpTimeout = ({
           <Button
             variant={'whiteBase'}
             color={'myGray.600'}
-            onClick={() => setIsEditTimeout(true)}
-          >{`${timeout?.value} s`}</Button>
+            onClick={() => setIsEditTimeout(true)}>{`${timeout?.value} s`}</Button>
         )}
       </Box>
     </Flex>
@@ -565,8 +562,7 @@ const RenderForm = ({
         overflow={'hidden'}
         borderWidth={'1px'}
         borderBottom={'none'}
-        bg={'white'}
-      >
+        bg={'white'}>
         <TableContainer overflowY={'visible'} overflowX={'unset'}>
           <Table>
             <Thead>
@@ -730,8 +726,7 @@ const RenderBody = ({
                 });
               }}
               cursor={'pointer'}
-              whiteSpace={'nowrap'}
-            >
+              whiteSpace={'nowrap'}>
               {item}
             </Box>
           ))}

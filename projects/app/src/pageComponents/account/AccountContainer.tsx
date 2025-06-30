@@ -149,8 +149,7 @@ const AccountContainer = ({
             p={4}
             h={'100%'}
             flex={'0 0 200px'}
-            borderRight={theme.borders.base}
-          >
+            borderRight={theme.borders.base}>
             <SideTabs<TabEnum>
               flex={1}
               mx={'auto'}

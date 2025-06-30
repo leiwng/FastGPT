@@ -214,8 +214,7 @@ const EditForm = ({
               iconSpacing={1}
               size={'sm'}
               fontSize={'sm'}
-              onClick={onOpenKbSelect}
-            >
+              onClick={onOpenKbSelect}>
               {t('common:Choose')}
             </Button>
             <Button
@@ -224,8 +223,7 @@ const EditForm = ({
               iconSpacing={1}
               size={'sm'}
               fontSize={'sm'}
-              onClick={onOpenDatasetParams}
-            >
+              onClick={onOpenDatasetParams}>
               {t('common:Params')}
             </Button>
           </Flex>
@@ -260,8 +258,7 @@ const EditForm = ({
                         datasetId: item.datasetId
                       }
                     })
-                  }
-                >
+                  }>
                   <Avatar src={item.avatar} w={'1.5rem'} borderRadius={'sm'} />
                   <Box
                     ml={2}
@@ -269,8 +266,7 @@ const EditForm = ({
                     w={0}
                     className={'textEllipsis'}
                     fontSize={'sm'}
-                    color={'myGray.900'}
-                  >
+                    color={'myGray.900'}>
                     {item.name}
                   </Box>
                 </Flex>

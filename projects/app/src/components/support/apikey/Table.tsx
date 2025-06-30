@@ -87,8 +87,7 @@ const ApiKeyTable = ({ tips, appId }: { tips: string; appId?: string }) => {
       display={'flex'}
       flexDirection={'column'}
       h={'100%'}
-      position={'relative'}
-    >
+      position={'relative'}>
       <Box display={['block', 'flex']} alignItems={'center'}>
         <Box flex={1}>
           <Flex alignItems={'flex-end'}>
@@ -101,8 +100,7 @@ const ApiKeyTable = ({ tips, appId }: { tips: string; appId?: string }) => {
                 target={'_blank'}
                 ml={1}
                 color={'primary.500'}
-                fontSize={'sm'}
-              >
+                fontSize={'sm'}>
                 {t('common:read_doc')}
               </Link>
             )}
@@ -119,8 +117,7 @@ const ApiKeyTable = ({ tips, appId }: { tips: string; appId?: string }) => {
           borderRadius={'md'}
           cursor={'pointer'}
           userSelect={'none'}
-          onClick={() => copyData(baseUrl, t('common:support.openapi.Copy success'))}
-        >
+          onClick={() => copyData(baseUrl, t('common:support.openapi.Copy success'))}>
           <Box border={theme.borders.md} px={2} borderRadius={'md'} fontSize={'xs'}>
             {t('common:support.openapi.Api baseurl')}
           </Box>
@@ -138,8 +135,7 @@ const ApiKeyTable = ({ tips, appId }: { tips: string; appId?: string }) => {
                 ...defaultEditData,
                 appId
               })
-            }
-          >
+            }>
             {t('common:new_create')}
           </Button>
         </Box>
@@ -259,8 +255,7 @@ const ApiKeyTable = ({ tips, appId }: { tips: string; appId?: string }) => {
             </Box>
           </Box>
         }
-        onClose={() => setApiKey('')}
-      >
+        onClose={() => setApiKey('')}>
         <ModalBody pt={5}>
           <Flex
             bg={'myGray.100'}
@@ -271,8 +266,7 @@ const ApiKeyTable = ({ tips, appId }: { tips: string; appId?: string }) => {
             cursor={'pointer'}
             borderRadius={'md'}
             userSelect={'all'}
-            onClick={() => copyData(apiKey)}
-          >
+            onClick={() => copyData(apiKey)}>
             <Box flex={1}>{apiKey}</Box>
             <MyIcon ml={1} name={'copy'} w={'16px'}></MyIcon>
           </Flex>
@@ -331,8 +325,7 @@ function EditKeyModal({
     <MyModal
       isOpen={true}
       iconSrc="keyPrimary"
-      title={isEdit ? t('publish:edit_api_key') : t('publish:create_api_key')}
-    >
+      title={isEdit ? t('publish:edit_api_key') : t('publish:create_api_key')}>
       <ModalBody>
         <Flex alignItems={'center'}>
           <FormLabel flex={'0 0 90px'}>{t('common:Name')}</FormLabel>
@@ -351,8 +344,7 @@ function EditKeyModal({
                 {t('common:support.outlink.Max usage points')}
                 <QuestionTip
                   ml={1}
-                  label={t('common:support.outlink.Max usage points tip')}
-                ></QuestionTip>
+                  label={t('common:support.outlink.Max usage points tip')}></QuestionTip>
               </FormLabel>
               <Input
                 {...register('limit.maxUsagePoints', {
@@ -388,8 +380,7 @@ function EditKeyModal({
 
         <Button
           isLoading={creating || updating}
-          onClick={submitShareChat((data) => (isEdit ? onclickUpdate(data) : onclickCreate(data)))}
-        >
+          onClick={submitShareChat((data) => (isEdit ? onclickUpdate(data) : onclickCreate(data)))}>
           {t('common:Confirm')}
         </Button>
       </ModalFooter>

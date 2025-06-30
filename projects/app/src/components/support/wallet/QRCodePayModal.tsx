@@ -160,8 +160,7 @@ const QRCodePayModal = ({
       isOpen
       title={t('common:user.Pay')}
       iconSrc="/imgs/modal/wallet.svg"
-      w={'600px'}
-    >
+      w={'600px'}>
       <ModalBody textAlign={'center'} padding={['16px 24px', '32px 52px']}>
         {tip && <LightTip text={tip} mb={6} textAlign={'left'} />}
         <Box>{t('common:pay_money')}</Box>
@@ -178,8 +177,7 @@ const QRCodePayModal = ({
             display="flex"
             alignItems="center"
             justifyContent="center"
-            gap={1}
-          >
+            gap={1}>
             <MyIcon name={'common/info'} w={4} h={4} />
             {t('common:pay.noclose')}
           </Box>
@@ -193,8 +191,7 @@ const QRCodePayModal = ({
               onClick={() => handlePaymentChange(BillPayWayEnum.wx)}
               color={'myGray.900'}
               leftIcon={<MyIcon name={'common/wechat'} />}
-              sx={getPaymentButtonStyles(selectedPayment === BillPayWayEnum.wx).baseStyle}
-            >
+              sx={getPaymentButtonStyles(selectedPayment === BillPayWayEnum.wx).baseStyle}>
               {t('common:pay.wx_payment')}
             </Button>
           )}
@@ -205,8 +202,7 @@ const QRCodePayModal = ({
               color={'myGray.900'}
               onClick={() => handlePaymentChange(BillPayWayEnum.alipay)}
               leftIcon={<MyIcon name={'common/alipay'} />}
-              sx={getPaymentButtonStyles(selectedPayment === BillPayWayEnum.alipay).baseStyle}
-            >
+              sx={getPaymentButtonStyles(selectedPayment === BillPayWayEnum.alipay).baseStyle}>
               {t('common:pay_alipay_payment')}
             </Button>
           )}
@@ -216,8 +212,7 @@ const QRCodePayModal = ({
               h={10}
               color={'myGray.900'}
               onClick={() => handlePaymentChange(BillPayWayEnum.bank)}
-              sx={getPaymentButtonStyles(selectedPayment === BillPayWayEnum.bank).baseStyle}
-            >
+              sx={getPaymentButtonStyles(selectedPayment === BillPayWayEnum.bank).baseStyle}>
               {t('common:pay_corporate_payment')}
             </Button>
           )}

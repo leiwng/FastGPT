@@ -67,8 +67,7 @@ const TemplateImportModal = ({
       title={t('dataset:template_dataset')}
       isOpen
       w={'500px'}
-      h={'auto'}
-    >
+      h={'auto'}>
       <ModalBody py={6} px={8}>
         <VStack spacing={3} alignItems="stretch">
           <Flex justify={'space-between'} align={'center'} fontSize={'sm'} fontWeight={500}>
@@ -79,8 +78,7 @@ const TemplateImportModal = ({
               gap={0.5}
               href={getDocPath('/docs/guide/knowledge_base/template/')}
               color="primary.600"
-              target="_blank"
-            >
+              target="_blank">
               <MyIcon name={'book'} w={'18px'} />
               {t('common:Instructions')}
             </Link>
@@ -91,8 +89,7 @@ const TemplateImportModal = ({
             w={'100%'}
             h={'48px'}
             leftIcon={<MyIcon name={'common/download'} w={'18px'} />}
-            onClick={handleDownloadTemplate}
-          >
+            onClick={handleDownloadTemplate}>
             {t('dataset:download_csv_template')}
           </Button>
 

@@ -52,8 +52,7 @@ const AppTypeTag = ({ type }: { type: AppTypeEnum }) => {
       pl={2}
       pr={3}
       borderLeftRadius={'sm'}
-      whiteSpace={'nowrap'}
-    >
+      whiteSpace={'nowrap'}>
       <MyIcon name={data.icon as any} w={'0.8rem'} color={'myGray.500'} />
       <Box ml={1} fontSize={'mini'}>
         {data.label}

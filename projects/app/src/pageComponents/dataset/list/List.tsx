@@ -149,8 +149,7 @@ function List() {
               : ['1fr', 'repeat(2,1fr)', 'repeat(3,1fr)', 'repeat(3,1fr)', 'repeat(4,1fr)']
           }
           gridGap={5}
-          alignItems={'stretch'}
-        >
+          alignItems={'stretch'}>
           {formatDatasets.map((dataset, index) => {
             const vectorModelAvatar = getModelProvider(dataset.vectorModel.provider)?.avatar;
 
@@ -165,8 +164,7 @@ function List() {
                         : t('common:folder.open_dataset')}
                     </Box>
                   </Flex>
-                }
-              >
+                }>
                 <MyBox
                   display={'flex'}
                   flexDirection={'column'}
@@ -217,8 +215,7 @@ function List() {
                         }
                       });
                     }
-                  }}
-                >
+                  }}>
                   <HStack>
                     <Avatar src={dataset.avatar} borderRadius={6} w={'28px'} />
                     <Box flex={'1 0 0'} className="textEllipsis3" color={'myGray.900'}>
@@ -244,8 +241,7 @@ function List() {
                     whiteSpace={'pre-wrap'}
                     py={3}
                     fontSize={'xs'}
-                    color={'myGray.500'}
-                  >
+                    color={'myGray.500'}>
                     {dataset.intro ||
                       (dataset.type === DatasetTypeEnum.folder
                         ? t('common:core.dataset.Folder placeholder')
@@ -258,8 +254,7 @@ function List() {
                     justifyContent={'space-between'}
                     fontSize={'sm'}
                     fontWeight={500}
-                    color={'myGray.500'}
-                  >
+                    color={'myGray.500'}>
                     <HStack spacing={3.5}>
                       <UserBox
                         sourceMember={dataset.sourceMember}
@@ -298,8 +293,7 @@ function List() {
                           }}
                           onClick={(e) => {
                             e.stopPropagation();
-                          }}
-                        >
+                          }}>
                           <MyMenu
                             Button={
                               <Box w={'22px'} h={'22px'}>
@@ -397,8 +391,7 @@ function List() {
         <EmptyTip
           pt={'35vh'}
           text={t('common:core.dataset.Empty Dataset Tips')}
-          flexGrow="1"
-        ></EmptyTip>
+          flexGrow="1"></EmptyTip>
       )}
 
       {editedDataset && (

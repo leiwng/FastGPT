@@ -41,8 +41,7 @@ const PriceBox = () => {
       py={['30px', '80px']}
       bg={`linear-gradient(to right, #F8F8FD00, #F7F7FF),url(/imgs/priceBg.svg)`}
       backgroundSize={'cover'}
-      backgroundRepeat={'no-repeat'}
-    >
+      backgroundRepeat={'no-repeat'}>
       {/* standard sub */}
       <VStack>
         <Box fontWeight={'600'} color={'myGray.900'} fontSize={['24px', '36px']}>

@@ -72,8 +72,7 @@ const MyTextarea = React.forwardRef<HTMLTextAreaElement, Props>(function MyTexta
                 }
 
                 onClose();
-              }}
-            >
+              }}>
               {t('common:Confirm')}
             </Button>
           </ModalFooter>
@@ -132,8 +131,7 @@ const Editor = React.memo(function Editor({
           bottom={1}
           right={2}
           cursor={'pointer'}
-          onClick={onOpenModal}
-        >
+          onClick={onOpenModal}>
           <MyTooltip label={t('common:ui.textarea.Magnifying')}>
             <MyIcon name={'common/fullScreenLight'} w={'14px'} color={'myGray.600'} />
           </MyTooltip>

@@ -61,8 +61,7 @@ const StyledButton = ({
       onClick={onClick}
       cursor="pointer"
       px={isMobile ? '6px' : '8px'}
-      h={isMobile ? '24px' : '28px'}
-    >
+      h={isMobile ? '24px' : '28px'}>
       {isMobile ? (
         <MyTooltip label={label} placement="bottom" hasArrow>
           <Flex alignItems="center" justifyContent="center">
@@ -136,8 +135,7 @@ const IframeHtmlCodeBlock = ({
         overflow={'hidden'}
         boxShadow={
           '0px 1px 2px 0px rgba(19, 51, 107, 0.05), 0px 0px 1px 0px rgba(19, 51, 107, 0.08)'
-        }
-      >
+        }>
         <Flex
           py={2}
           px={4}
@@ -154,21 +152,18 @@ const IframeHtmlCodeBlock = ({
               }
             : {
                 bg: 'myGray.800'
-              })}
-        >
+              })}>
           <Box
             flex={1}
             display="flex"
             alignItems="center"
-            color={isPreview ? 'myGray.800' : 'rgba(255, 255, 255, 0.9)'}
-          >
+            color={isPreview ? 'myGray.800' : 'rgba(255, 255, 255, 0.9)'}>
             {codeBoxName}
             <Flex
               cursor="pointer"
               onClick={() => copyData(String(children))}
               alignItems="center"
-              ml={2}
-            >
+              ml={2}>
               <Icon name="copy" width="14px" />
             </Flex>
           </Box>
@@ -218,8 +213,7 @@ const IframeHtmlCodeBlock = ({
                 bg="white"
                 borderBottom="1px solid"
                 borderColor="gray.300"
-                height="60px"
-              >
+                height="60px">
                 <Box fontSize="lg" color="myGray.900">
                   {t('common:FullScreenLight')}
                 </Box>

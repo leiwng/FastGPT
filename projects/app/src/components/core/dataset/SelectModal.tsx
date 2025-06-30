@@ -59,8 +59,7 @@ const DatasetSelectContainer = ({
       h={'80vh'}
       w={'100%'}
       maxW={['90vw', '900px']}
-      isCentered
-    >
+      isCentered>
       <MyBox isLoading={isLoading} h={'100%'}>
         {children}
       </MyBox>

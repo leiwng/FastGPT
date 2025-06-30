@@ -153,8 +153,7 @@ const UsageTableList = ({
                       <Button
                         size={'sm'}
                         variant={'whitePrimary'}
-                        onClick={() => setUsageDetail(item)}
-                      >
+                        onClick={() => setUsageDetail(item)}>
                         {t('account_usage:details')}
                       </Button>
                     </Td>

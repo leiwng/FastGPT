@@ -111,8 +111,7 @@ const LineChartComponent = ({
             x1="0"
             y1="0"
             x2="0"
-            y2="1"
-          >
+            y2="1">
             <stop offset="0%" stopColor={line.color} stopOpacity={0.25} />
             <stop offset="100%" stopColor={line.color} stopOpacity={0.01} />
           </linearGradient>
@@ -132,8 +131,7 @@ const LineChartComponent = ({
       <ResponsiveContainer width="100%" height={'100%'}>
         <AreaChart
           data={data}
-          margin={{ top: 5, right: 30, left: 0, bottom: HeaderRightChildren ? 30 : 15 }}
-        >
+          margin={{ top: 5, right: 30, left: 0, bottom: HeaderRightChildren ? 30 : 15 }}>
           {gradientDefs}
           <XAxis
             dataKey={'x'}

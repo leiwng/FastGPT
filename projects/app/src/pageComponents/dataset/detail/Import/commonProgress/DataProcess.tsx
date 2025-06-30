@@ -59,8 +59,7 @@ function DataProcess() {
                   borderColor={'primary.600'}
                   borderRadius={'md'}
                   boxShadow={shadowLight}
-                  p={4}
-                >
+                  p={4}>
                   {feConfigs.showCustomPdfParse && (
                     <HStack spacing={1}>
                       <Checkbox isChecked={customPdfParseValue} {...register('customPdfParse')}>
@@ -77,8 +76,7 @@ function DataProcess() {
                           borderRadius={'md'}
                           px={3}
                           whiteSpace={'wrap'}
-                          ml={1}
-                        >
+                          ml={1}>
                           {t('dataset:pdf_enhance_parse_price', {
                             price: feConfigs.customPdfParsePrice || 0
                           })}
@@ -104,8 +102,7 @@ function DataProcess() {
             <Button
               onClick={() => {
                 goToNext();
-              }}
-            >
+              }}>
               {t('common:next_step')}
             </Button>
           </Flex>

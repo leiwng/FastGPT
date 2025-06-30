@@ -34,8 +34,7 @@ function OrgMoveModal({
       onClose={onClose}
       title={t('account_team:move_org')}
       iconSrc="common/file/move"
-      iconColor="primary.600"
-    >
+      iconColor="primary.600">
       <ModalBody>
         <OrgTree selectedOrg={selectedOrg} setSelectedOrg={setSelectedOrg} movingOrg={movingOrg} />
       </ModalBody>
@@ -49,8 +48,7 @@ function OrgMoveModal({
               orgId: movingOrg._id,
               targetOrgId: selectedOrg._id
             });
-          }}
-        >
+          }}>
           {t('common:Confirm')}
         </Button>
       </ModalFooter>

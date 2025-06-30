@@ -141,8 +141,7 @@ const ResponseTags = ({
                       'linear-gradient(to bottom, rgba(247,247,247,0), rgba(247, 247, 247, 0.91))'
                   }
                 : {}
-            }
-          >
+            }>
             {sourceList.map((item, index) => {
               return (
                 <MyTooltip key={item.collectionId} label={t('common:core.chat.quote.Read Quote')}>
@@ -163,8 +162,7 @@ const ResponseTags = ({
                       e.stopPropagation();
                       onOpenCiteModal(item);
                     }}
-                    height={6}
-                  >
+                    height={6}>
                     <Flex
                       color={'myGray.500'}
                       bg={'myGray.150'}
@@ -172,8 +170,7 @@ const ResponseTags = ({
                       justifyContent={'center'}
                       fontSize={'10px'}
                       h={'full'}
-                      alignItems={'center'}
-                    >
+                      alignItems={'center'}>
                       {index + 1}
                     </Flex>
                     <Flex px={1.5}>
@@ -182,8 +179,7 @@ const ResponseTags = ({
                         className="textEllipsis3"
                         wordBreak={'break-all'}
                         flex={'1 0 0'}
-                        fontSize={'mini'}
-                      >
+                        fontSize={'mini'}>
                         {item.sourceName}
                       </Box>
                     </Flex>
@@ -217,8 +213,7 @@ const ResponseTags = ({
                 onClick={(e) => {
                   e.stopPropagation();
                   onOpenCiteModal();
-                }}
-              >
+                }}>
                 {t('chat:citations', { num: quoteList.length })}
               </MyTag>
             </MyTooltip>
@@ -231,8 +226,7 @@ const ResponseTags = ({
                     colorSchema="green"
                     cursor={'pointer'}
                     type="borderSolid"
-                    onClick={onOpenContextModal}
-                  >
+                    onClick={onOpenContextModal}>
                     {t('chat:contextual', { num: historyPreviewLength })}
                   </MyTag>
                 </MyTooltip>
@@ -258,8 +252,7 @@ const ResponseTags = ({
                 colorSchema="gray"
                 type="borderSolid"
                 cursor={'pointer'}
-                onClick={onOpenWholeModal}
-              >
+                onClick={onOpenWholeModal}>
                 {t('common:core.chat.response.Read complete response')}
               </MyTag>
             </MyTooltip>

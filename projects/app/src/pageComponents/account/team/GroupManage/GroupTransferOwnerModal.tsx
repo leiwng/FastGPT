@@ -91,8 +91,7 @@ export function ChangeOwnerModal({
       iconSrc="modal/changePer"
       iconColor="primary.600"
       onClose={onClose}
-      title={t('common:permission.change_owner')}
-    >
+      title={t('common:permission.change_owner')}>
       <ModalBody>
         <HStack>
           <Avatar src={group?.avatar} w={'1.75rem'} borderRadius={'md'} />
@@ -138,8 +137,7 @@ export function ChangeOwnerModal({
               borderRadius="md"
               zIndex={10}
               maxH={'300px'}
-              overflow={'auto'}
-            >
+              overflow={'auto'}>
               <MemberScrollData>
                 {members.map((item) => (
                   <Box
@@ -153,8 +151,7 @@ export function ChangeOwnerModal({
                       setSearchKey(item.memberName);
                       setSelectedMember(item);
                       onCloseMemberListMenu();
-                    }}
-                  >
+                    }}>
                     <Flex align="center">
                       <Avatar src={item.avatar} w="1.25rem" />
                       <Box ml="2">{item.memberName}</Box>
@@ -170,8 +167,7 @@ export function ChangeOwnerModal({
               isChecked={keepAdmin}
               onChange={(e) => {
                 setKeepAdmin(e.target.checked);
-              }}
-            >
+              }}>
               {t('account_team:retain_admin_permissions')}
             </Checkbox>
           </Box>

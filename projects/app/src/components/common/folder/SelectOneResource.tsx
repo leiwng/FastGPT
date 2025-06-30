@@ -108,8 +108,7 @@ const SelectOneResource = ({
                           onSelect(item.id);
                         }
                       }
-                    })}
-              >
+                    })}>
                 {index !== 0 && (
                   <Flex
                     alignItems={'center'}
@@ -121,8 +120,7 @@ const SelectOneResource = ({
                     borderRadius={'xs'}
                     _hover={{
                       bg: 'rgba(31, 35, 41, 0.08)'
-                    }}
-                  >
+                    }}>
                     <MyIcon
                       name={
                         requestingIdList.includes(item.id)

@@ -58,8 +58,7 @@ const InformTable = () => {
           overflowY="auto"
           display="flex"
           flexDirection="column"
-          alignItems="center"
-        >
+          alignItems="center">
           {informs.map((item) => (
             <Box
               key={item._id}
@@ -82,8 +81,7 @@ const InformTable = () => {
                   readInform(item._id).then(() => getData(pageNum));
                 }
                 setSelectedInform(item);
-              }}
-            >
+              }}>
               <Flex alignItems="center">
                 <Box {...textStyles.title}>
                   {item.teamId ? `【${item.teamName}】` : ''}
@@ -102,8 +100,7 @@ const InformTable = () => {
                   fontSize="xs"
                   fontWeight="medium"
                   showDot={false}
-                  type="fill"
-                >
+                  type="fill">
                   {item.teamId ? t('account_inform:team') : t('account_inform:system')}
                 </MyTag>
               </Flex>
@@ -127,8 +124,7 @@ const InformTable = () => {
                     my: 0
                   }
                 }}
-                noOfLines={6}
-              >
+                noOfLines={6}>
                 <Markdown source={item.content} />
               </Box>
             </Box>

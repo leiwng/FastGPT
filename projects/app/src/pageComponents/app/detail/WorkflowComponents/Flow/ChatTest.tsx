@@ -77,8 +77,7 @@ const ChatTest = ({ isOpen, nodes = [], edges = [], onClose }: Props) => {
         boxShadow={'3px 0 20px rgba(0,0,0,0.2)'}
         borderRadius={'md'}
         overflow={'hidden'}
-        transition={'.2s ease'}
-      >
+        transition={'.2s ease'}>
         {isPlugin ? (
           <Flex
             alignItems={'flex-start'}
@@ -86,8 +85,7 @@ const ChatTest = ({ isOpen, nodes = [], edges = [], onClose }: Props) => {
             px={3}
             pt={3}
             bg={'myGray.25'}
-            borderBottom={'base'}
-          >
+            borderBottom={'base'}>
             <LightRowTabs<PluginRunBoxTabEnum>
               list={[
                 { label: t('common:Input'), value: PluginRunBoxTabEnum.input },
@@ -114,8 +112,7 @@ const ChatTest = ({ isOpen, nodes = [], edges = [], onClose }: Props) => {
             px={5}
             whiteSpace={'nowrap'}
             bg={'myGray.25'}
-            borderBottom={'1px solid #F4F4F7'}
-          >
+            borderBottom={'1px solid #F4F4F7'}>
             <Flex fontSize={'16px'} fontWeight={'bold'} alignItems={'center'} mr={3}>
               <MyIcon name={'common/paused'} w={'14px'} mr={2.5} />
               {t('common:core.chat.Run test')}
@@ -163,8 +160,7 @@ const ChatTest = ({ isOpen, nodes = [], edges = [], onClose }: Props) => {
               boxShadow={
                 '0px 4px 10px 0px rgba(19, 51, 107, 0.10), 0px 0px 1px 0px rgba(19, 51, 107, 0.10)'
               }
-              borderRadius={'md'}
-            >
+              borderRadius={'md'}>
               <ChatQuoteList
                 rawSearch={datasetCiteData.rawSearch}
                 metadata={datasetCiteData.metadata}
@@ -197,8 +193,7 @@ const Render = (Props: Props) => {
       isShowReadRawSource={true}
       isResponseDetail={true}
       // isShowFullText={true}
-      showNodeStatus
-    >
+      showNodeStatus>
       <ChatRecordContextProvider params={chatRecordProviderParams}>
         <ChatTest {...Props} />
       </ChatRecordContextProvider>

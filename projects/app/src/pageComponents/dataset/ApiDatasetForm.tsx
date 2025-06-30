@@ -127,8 +127,7 @@ const ApiDatasetForm = ({
         ml={2}
         variant={'whiteBase'}
         onClick={openBaseurlSeletModal}
-        isDisabled={!canSelectBaseUrl}
-      >
+        isDisabled={!canSelectBaseUrl}>
         {t('dataset:selectDirectory')}
       </Button>
     </Flex>
@@ -190,8 +189,7 @@ const ApiDatasetForm = ({
               flex={['', '0 0 110px']}
               color={'myGray.900'}
               fontWeight={500}
-              fontSize={'sm'}
-            >
+              fontSize={'sm'}>
               App ID
             </Flex>
             <Input
@@ -207,8 +205,7 @@ const ApiDatasetForm = ({
               flex={['', '0 0 110px']}
               color={'myGray.900'}
               fontWeight={500}
-              fontSize={'sm'}
-            >
+              fontSize={'sm'}>
               App Secret
             </Flex>
             <Input
@@ -224,8 +221,7 @@ const ApiDatasetForm = ({
               flex={['', '0 0 110px']}
               color={'myGray.900'}
               fontWeight={500}
-              fontSize={'sm'}
-            >
+              fontSize={'sm'}>
               Folder Token
             </Flex>
             <Input
@@ -341,8 +337,7 @@ const BaseUrlSelector = ({ selectId, server, onConfirm, onClose }: Props) => {
                     }
                   : {
                       onClick: () => setSelectedId(item.id)
-                    })}
-              >
+                    })}>
                 {index !== 0 && (
                   <Flex
                     alignItems={'center'}
@@ -369,8 +364,7 @@ const BaseUrlSelector = ({ selectId, server, onConfirm, onClose }: Props) => {
                       }
                       item.open = !item.open;
                       setFolderList([...folderList]);
-                    }}
-                  >
+                    }}>
                     <MyIcon
                       name={
                         requestingIdList.includes(item.id)
@@ -421,8 +415,7 @@ const BaseUrlSelector = ({ selectId, server, onConfirm, onClose }: Props) => {
       isOpen
       w={'30rem'}
       title={t('dataset:selectRootFolder')}
-      onClose={onClose}
-    >
+      onClose={onClose}>
       <ModalBody flex={'1 0 0'} overflow={'auto'} minH={'400px'}>
         <RenderList list={folderList} />
       </ModalBody>

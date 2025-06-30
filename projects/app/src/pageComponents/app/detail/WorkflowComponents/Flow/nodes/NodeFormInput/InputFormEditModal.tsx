@@ -131,8 +131,7 @@ const InputFormEditModal = ({
       title={isEdit ? t('workflow:edit_input') : t('workflow:add_new_input')}
       maxW={['90vw', '878px']}
       w={'100%'}
-      isCentered
-    >
+      isCentered>
       <Flex h={'494px'}>
         <Stack gap={4} p={8}>
           <FormLabel color={'myGray.600'} fontWeight={'medium'}>
@@ -166,8 +165,7 @@ const InputFormEditModal = ({
                     }}
                     onClick={() => {
                       setValue('type', item.value);
-                    }}
-                  >
+                    }}>
                     <MyIcon
                       name={item.icon as any}
                       w={'20px'}

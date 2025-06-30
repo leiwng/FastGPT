@@ -14,8 +14,7 @@ const CommunityModal = ({ onClose }: { onClose: () => void }) => {
       isOpen={true}
       onClose={onClose}
       iconSrc="modal/concat"
-      title={t('common:system.Concat us')}
-    >
+      title={t('common:system.Concat us')}>
       <ModalBody textAlign={'center'}>
         <Markdown source={feConfigs?.concatMd || ''} />
       </ModalBody>

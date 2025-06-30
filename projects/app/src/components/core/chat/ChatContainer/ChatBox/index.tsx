@@ -956,8 +956,7 @@ const ChatBox = ({
         w={'100%'}
         overflow={'overlay'}
         px={[4, 0]}
-        pb={3}
-      >
+        pb={3}>
         <Box id="chat-container" maxW={['100%', '92%']} h={'100%'} mx={'auto'}>
           {showEmpty && <Empty />}
           {!!welcomeText && <WelcomeBox welcomeText={welcomeText} />}
@@ -1011,8 +1010,7 @@ const ChatBox = ({
                         onCloseUserLike: onCloseUserLike(item),
                         onAddUserDislike: onAddUserDislike(item),
                         onReadUserDislike: onReadUserDislike(item)
-                      }}
-                    >
+                      }}>
                       {/* custom feedback */}
                       {item.customFeedbacks && item.customFeedbacks.length > 0 && (
                         <Box>
@@ -1023,12 +1021,10 @@ const ChatBox = ({
                           {item.customFeedbacks.map((text, i) => (
                             <Box key={i}>
                               <MyTooltip
-                                label={t('common:core.app.feedback.close custom feedback')}
-                              >
+                                label={t('common:core.app.feedback.close custom feedback')}>
                                 <Checkbox
                                   onChange={onCloseCustomFeedback(item, i)}
-                                  icon={<MyIcon name={'common/check'} w={'12px'} />}
-                                >
+                                  icon={<MyIcon name={'common/check'} w={'12px'} />}>
                                   {text}
                                 </Checkbox>
                               </MyTooltip>
@@ -1091,8 +1087,7 @@ const ChatBox = ({
       display={'flex'}
       flexDirection={'column'}
       h={'100%'}
-      position={'relative'}
-    >
+      position={'relative'}>
       <Script src={getWebReqUrl('/js/html2pdf.bundle.min.js')} strategy="lazyOnload"></Script>
       {/* chat box container */}
       {RenderRecords}

@@ -12,8 +12,7 @@ const Container = ({ children, ...props }: BoxProps) => {
       bg={'myGray.50'}
       border={'1px solid #F0F1F6'}
       borderRadius={'md'}
-      {...props}
-    >
+      {...props}>
       {children}
     </Flex>
   );

@@ -238,8 +238,7 @@ const DashboardContainer = ({
           px={2.5}
           pb={2.5}
           zIndex={100}
-          userSelect={'none'}
-        >
+          userSelect={'none'}>
           {groupList.map((group) => {
             const selected = currentTab === group.groupId;
 
@@ -260,8 +259,7 @@ const DashboardContainer = ({
                     onCloseSidebar();
                   }}
                   {...(group.children.length === 0 &&
-                    selected && { bg: 'primary.100', color: 'primary.600' })}
-                >
+                    selected && { bg: 'primary.100', color: 'primary.600' })}>
                   <Avatar src={group.groupAvatar} w={'1rem'} mr={1.5} />
                   <Box fontWeight={'medium'}>{group.groupName}</Box>
                   <Box flex={1} />
@@ -309,8 +307,7 @@ const DashboardContainer = ({
                               });
                               onCloseSidebar();
                             }
-                          }}
-                        >
+                          }}>
                           {child.typeName}
                         </Flex>
                       );

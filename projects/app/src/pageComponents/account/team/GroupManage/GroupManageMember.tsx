@@ -181,16 +181,14 @@ function GroupEditModal({
       iconColor="primary.600"
       minW="800px"
       h={'100%'}
-      isCentered
-    >
+      isCentered>
       <ModalBody flex={1}>
         <Grid
           border="1px solid"
           borderColor="myGray.200"
           borderRadius="0.5rem"
           gridTemplateColumns="1fr 1fr"
-          h={'100%'}
-        >
+          h={'100%'}>
           <Flex flexDirection="column" p="4" overflowY={'auto'} overflowX={'hidden'}>
             <SearchInput
               placeholder={t('user:search_user')}
@@ -229,8 +227,7 @@ function GroupEditModal({
                     borderRadius={'md'}
                     key={member.tmbId + member.role}
                     _hover={{ bg: 'myGray.50' }}
-                    _notLast={{ mb: 2 }}
-                  >
+                    _notLast={{ mb: 2 }}>
                     <HStack>
                       <Avatar src={member.avatar} w="1.5rem" borderRadius={'md'} />
                       <Box>{member.name}</Box>
@@ -267,8 +264,7 @@ function GroupEditModal({
                                 ml={2}
                                 colorSchema="yellow"
                                 cursor={'pointer'}
-                                onClick={() => handleToggleAdmin(member.tmbId)}
-                              >
+                                onClick={() => handleToggleAdmin(member.tmbId)}>
                                 {t('user:team.group.set_as_admin')}
                               </Tag>
                             )

@@ -83,8 +83,7 @@ export function ChangeOwnerModal({
       iconColor="primary.600"
       onClose={onClose}
       title={t('common:permission.change_owner')}
-      isLoading={loading}
-    >
+      isLoading={loading}>
       <ModalBody>
         <HStack>
           <Avatar src={avatar} w={'1.75rem'} borderRadius={'md'} />
@@ -130,8 +129,7 @@ export function ChangeOwnerModal({
               borderRadius="md"
               zIndex={10}
               maxH={'300px'}
-              overflow={'auto'}
-            >
+              overflow={'auto'}>
               <ScrollData>
                 {memberList.map((item) => (
                   <Box
@@ -145,8 +143,7 @@ export function ChangeOwnerModal({
                       setInputValue(item.memberName);
                       setSelectedMember(item);
                       onCloseMemberListMenu();
-                    }}
-                  >
+                    }}>
                     <Flex align="center">
                       <Avatar src={item.avatar} w="1.25rem" />
                       <Box ml="2">{item.memberName}</Box>

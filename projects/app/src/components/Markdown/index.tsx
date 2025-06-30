@@ -86,8 +86,7 @@ const MarkdownRender = ({
         remarkPlugins={[RemarkMath, [RemarkGfm, { singleTilde: false }], RemarkBreaks]}
         rehypePlugins={[RehypeKatex, [RehypeExternalLinks, { target: '_blank' }]]}
         components={components}
-        urlTransform={urlTransform}
-      >
+        urlTransform={urlTransform}>
         {formatSource}
       </ReactMarkdown>
       {isDisabled && <Box position={'absolute'} top={0} right={0} left={0} bottom={0} />}

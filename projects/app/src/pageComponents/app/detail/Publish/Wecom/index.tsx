@@ -79,8 +79,7 @@ const Wecom = ({ appId }: { appId: string }) => {
           onClick={() => {
             setEditWecomData(defaultOutLinkForm as any); // HACK
             setIsEdit(false);
-          }}
-        >
+          }}>
           {t('common:add_new')}
         </Button>
       </Flex>
@@ -137,8 +136,7 @@ const Wecom = ({ appId }: { appId: string }) => {
                     }}
                     size={'sm'}
                     mr={3}
-                    variant={'whitePrimary'}
-                  >
+                    variant={'whitePrimary'}>
                     {t('publish:request_address')}
                   </Button>
                   <MyMenu

@@ -149,8 +149,7 @@ const SearchButton = (props: ButtonProps) => {
       }
       border={'0.5px solid rgba(0, 0, 0, 0.13)'}
       maxW={['90vw', '550px']}
-      w={'100%'}
-    >
+      w={'100%'}>
       <Input
         flex="1 0 0"
         h={8}
@@ -189,8 +188,7 @@ const SearchButton = (props: ButtonProps) => {
         variant="grayGhost"
         px={2}
         isDisabled={searchedNodeCount <= 1}
-        onClick={goToPreviousMatch}
-      >
+        onClick={goToPreviousMatch}>
         {t('workflow:previous')}
       </Button>
       <Button
@@ -198,8 +196,7 @@ const SearchButton = (props: ButtonProps) => {
         variant="grayGhost"
         px={2}
         isDisabled={searchedNodeCount <= 1}
-        onClick={goToNextMatch}
-      >
+        onClick={goToNextMatch}>
         {t('workflow:next')}
       </Button>
 
@@ -209,8 +206,7 @@ const SearchButton = (props: ButtonProps) => {
         _hover={{ bg: 'myGray.100' }}
         p={'1'}
         cursor="pointer"
-        onClick={clearSearch}
-      >
+        onClick={clearSearch}>
         <MyIcon name="common/closeLight" w="1.2rem" />
       </Flex>
     </Flex>

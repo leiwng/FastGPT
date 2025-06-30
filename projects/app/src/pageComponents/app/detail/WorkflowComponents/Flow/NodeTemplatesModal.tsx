@@ -73,8 +73,7 @@ const NodeTemplatesModal = ({ isOpen, onClose }: ModuleTemplateListProps) => {
         borderRadius={'0 20px 20px 0'}
         transition={'.2s ease'}
         userSelect={'none'}
-        overflow={isOpen ? 'none' : 'hidden'}
-      >
+        overflow={isOpen ? 'none' : 'hidden'}>
         <NodeTemplateListHeader
           onClose={onClose}
           templateType={templateType}

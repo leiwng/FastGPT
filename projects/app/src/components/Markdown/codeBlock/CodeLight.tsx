@@ -314,8 +314,7 @@ const CodeLight = ({
         overflow={'overlay'}
         boxShadow={
           '0px 0px 1px 0px rgba(19, 51, 107, 0.08), 0px 1px 2px 0px rgba(19, 51, 107, 0.05)'
-        }
-      >
+        }>
         <Flex
           className="code-header"
           py={2}
@@ -323,8 +322,7 @@ const CodeLight = ({
           bg={'myGray.600'}
           color={'white'}
           fontSize={'sm'}
-          userSelect={'none'}
-        >
+          userSelect={'none'}>
           <Box flex={1}>{codeBoxName}</Box>
           <Flex cursor={'pointer'} onClick={() => copyData(String(children))} alignItems={'center'}>
             <Icon name={'copy'} width={15} height={15}></Icon>

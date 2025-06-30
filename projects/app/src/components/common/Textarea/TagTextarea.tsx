@@ -60,8 +60,7 @@ const TagTextarea = ({ defaultValues, onUpdate, ...props }: Props) => {
           InputRef.current?.focus();
           setFocus(true);
         }
-      }}
-    >
+      }}>
       <Flex alignItems={'center'} gap={2} flexWrap={'wrap'}>
         {tags.map((tag, i) => (
           <Tag key={tag} colorScheme="primary" onClick={(e) => e.stopPropagation()}>

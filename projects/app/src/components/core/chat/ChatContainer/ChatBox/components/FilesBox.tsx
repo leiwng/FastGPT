@@ -61,8 +61,7 @@ const FilesBlock = ({ files }: { files: UserInputFileItemType[] }) => {
               cursor={'pointer'}
               onClick={() => {
                 window.open(url);
-              }}
-            >
+              }}>
               <MyIcon
                 name={icon as any}
                 flexShrink={0}
@@ -74,8 +73,7 @@ const FilesBlock = ({ files }: { files: UserInputFileItemType[] }) => {
                 fontSize={'xs'}
                 overflow="hidden"
                 textOverflow="ellipsis"
-                whiteSpace="nowrap"
-              >
+                whiteSpace="nowrap">
                 {name || url}
               </Text>
             </Flex>

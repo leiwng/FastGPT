@@ -18,8 +18,7 @@ const FileModeSelector = ({ onClose }: { onClose: () => void }) => {
       onClose={onClose}
       iconSrc="modal/selectSource"
       title={t('common:core.dataset.import.Select source')}
-      w={'600px'}
-    >
+      w={'600px'}>
       <ModalBody px={6} py={4}>
         <LeftRadio
           list={[
@@ -53,8 +52,7 @@ const FileModeSelector = ({ onClose }: { onClose: () => void }) => {
                 source: value
               }
             })
-          }
-        >
+          }>
           {t('common:Confirm')}
         </Button>
       </ModalFooter>

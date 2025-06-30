@@ -243,8 +243,7 @@ const UsageTable = () => {
         h={'full'}
         overflow={'hidden'}
         display={'flex'}
-        flexDirection={'column'}
-      >
+        flexDirection={'column'}>
         {usageTab === UsageTabEnum.detail && (
           <UsageTableList filterParams={filterParams} Tabs={Tabs} Selectors={Selectors} />
         )}

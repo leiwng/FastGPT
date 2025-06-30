@@ -72,8 +72,7 @@ const NavbarPhone = ({ unread }: { unread: number }) => {
         justifyContent={'space-between'}
         backgroundColor={'white'}
         position={'relative'}
-        px={4}
-      >
+        px={4}>
         {navbarList.map((item) => (
           <Flex
             position={'relative'}
@@ -96,8 +95,7 @@ const NavbarPhone = ({ unread }: { unread: number }) => {
             onClick={() => {
               if (item.link === router.asPath) return;
               router.push(item.link);
-            }}
-          >
+            }}>
             <Badge isDot count={item.unread}>
               <MyIcon
                 name={

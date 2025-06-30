@@ -179,8 +179,7 @@ const FileSelector = ({
             onDrop: handleDrop,
             onClick: onOpen
           })}
-      {...props}
-    >
+      {...props}>
       <MyIcon name={'common/uploadFileFill'} w={'32px'} />
       {isMaxSelected ? (
         <>

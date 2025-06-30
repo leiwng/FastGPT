@@ -43,8 +43,7 @@ const OpenAIAccountModal = ({
       isOpen
       onClose={onClose}
       iconSrc="common/openai"
-      title={t('account_thirdParty:openai_account_configuration')}
-    >
+      title={t('account_thirdParty:openai_account_configuration')}>
       <ModalBody>
         <Box fontSize={'sm'} color={'myGray.500'}>
           {t('account_thirdParty:open_api_notice')}

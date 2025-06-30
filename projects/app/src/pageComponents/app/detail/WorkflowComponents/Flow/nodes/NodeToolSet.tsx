@@ -27,8 +27,7 @@ const NodeToolSet = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
               borderColor={'myGray.200'}
               alignItems={'center'}
               py={2}
-              px={3}
-            >
+              px={3}>
               <Box w={'20px'} fontSize={'14px'} color={'myGray.500'} fontWeight={'medium'}>
                 {index + 1 < 10 ? `0${index + 1}` : index + 1}
               </Box>
@@ -38,8 +37,7 @@ const NodeToolSet = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
                   color={'myGray.900'}
                   whiteSpace="nowrap"
                   overflow="hidden"
-                  textOverflow="ellipsis"
-                >
+                  textOverflow="ellipsis">
                   {tool.name}
                 </Box>
                 <Box
@@ -47,8 +45,7 @@ const NodeToolSet = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
                   color={'myGray.500'}
                   whiteSpace="nowrap"
                   overflow="hidden"
-                  textOverflow="ellipsis"
-                >
+                  textOverflow="ellipsis">
                   {tool.description || t('app:tools_no_description')}
                 </Box>
               </Box>

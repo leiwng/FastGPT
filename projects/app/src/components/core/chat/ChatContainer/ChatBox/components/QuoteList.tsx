@@ -83,8 +83,7 @@ const QuoteList = React.memo(function QuoteList({
           border={theme.borders.base}
           _notLast={{ mb: 2 }}
           _hover={{ '& .hover-data': { display: 'flex' } }}
-          bg={i % 2 === 0 ? 'white' : 'myWhite.500'}
-        >
+          bg={i % 2 === 0 ? 'white' : 'myWhite.500'}>
           <QuoteItem
             quoteItem={item}
             canViewSource={showRawSource}

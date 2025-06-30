@@ -45,8 +45,7 @@ const FAQ = () => {
       pb={'10vh'}
       flexDirection={'column'}
       alignItems={'center'}
-      position={'relative'}
-    >
+      position={'relative'}>
       <Box fontWeight={'bold'} fontSize={['24px', '36px']} color={'myGray.900'}>
         {t('common:support.wallet.subscription.FAQ')}
       </Box>
@@ -62,8 +61,7 @@ const FAQ = () => {
             bg={'rgba(255,255,255,0.9)'}
             _hover={{
               borderColor: 'primary.300'
-            }}
-          >
+            }}>
             <Box fontWeight={'bold'} pb={3} color={'myGray.900'}>
               {item.title}
             </Box>

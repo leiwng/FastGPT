@@ -28,8 +28,7 @@ const Badge = ({
               px={'4px'}
               py={'2px'}
               fontSize={'12px'}
-              border={'1px solid white'}
-            >
+              border={'1px solid white'}>
               {count > max ? `${max}+` : count}
             </Box>
           )}

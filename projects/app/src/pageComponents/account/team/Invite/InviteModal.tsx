@@ -87,8 +87,7 @@ const InviteModal = ({ onClose }: { onClose: () => void }) => {
       overflow={'unset'}
       onClose={onClose}
       w={'100%'}
-      maxW={['90vw', '820px']}
-    >
+      maxW={['90vw', '820px']}>
       <ModalBody maxH="500px">
         <Flex alignItems={'center'} justifyContent={'space-between'} mb={4}>
           <HStack>
@@ -138,14 +137,12 @@ const InviteModal = ({ onClose }: { onClose: () => void }) => {
                                 borderRadius="md"
                                 cursor="pointer"
                                 _hover={{ bg: 'myGray.100' }}
-                                p="1.5"
-                              >
+                                p="1.5">
                                 <AvatarGroup max={3} avatars={item.members.map((i) => i.avatar)} />
                               </Box>
                             }
                             trigger="click"
-                            closeOnBlur={true}
-                          >
+                            closeOnBlur={true}>
                             {() => (
                               <Box py="4" maxH="200px">
                                 <Flex mx="4" justifyContent="center" alignItems={'center'}>
@@ -155,8 +152,7 @@ const InviteModal = ({ onClose }: { onClose: () => void }) => {
                                     bg="myGray.200"
                                     px="2"
                                     borderRadius="md"
-                                    fontSize="sm"
-                                  >
+                                    fontSize="sm">
                                     {item.members.length}
                                   </Box>
                                 </Flex>
@@ -169,8 +165,7 @@ const InviteModal = ({ onClose }: { onClose: () => void }) => {
                                   overflow="auto"
                                   alignItems="center"
                                   mx="4"
-                                  maxH={'250px'}
-                                >
+                                  maxH={'250px'}>
                                   {item.members.map((member) => (
                                     <Box key={member.tmbId} justifySelf="start">
                                       <MemberTag name={member.name} avatar={member.avatar} />
@@ -191,8 +186,7 @@ const InviteModal = ({ onClose }: { onClose: () => void }) => {
                               size="sm"
                               variant="outline"
                               onClick={() => onCopy(item.linkId)}
-                              color="myGray.900"
-                            >
+                              color="myGray.900">
                               <Icon name="common/link" w="16px" mr="1" />
                               {t('account_team:copy_link')}
                             </Button>
@@ -204,8 +198,7 @@ const InviteModal = ({ onClose }: { onClose: () => void }) => {
                                   {t('account_team:forbidden')}
                                 </Button>
                               }
-                              closeOnBlur={true}
-                            >
+                              closeOnBlur={true}>
                               {({ onClose: onClosePopover }) => (
                                 <Box p={4}>
                                   <Box fontWeight={400} whiteSpace="pre-wrap">
@@ -222,8 +215,7 @@ const InviteModal = ({ onClose }: { onClose: () => void }) => {
                                       onClick={() => {
                                         onForbid(item.linkId);
                                         onClosePopover();
-                                      }}
-                                    >
+                                      }}>
                                       {t('account_team:confirm_forbidden')}
                                     </Button>
                                   </Flex>

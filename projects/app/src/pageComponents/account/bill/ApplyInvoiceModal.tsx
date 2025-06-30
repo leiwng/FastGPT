@@ -123,8 +123,7 @@ const ApplyInvoiceModal = ({ onClose }: { onClose: () => void }) => {
       w={'43rem'}
       onClose={onClose}
       isLoading={isLoading}
-      title={t('account_bill:support_wallet_apply_invoice')}
-    >
+      title={t('account_bill:support_wallet_apply_invoice')}>
       {isOpenSettleModal ? (
         <>
           <ModalBody>
@@ -151,8 +150,7 @@ const ApplyInvoiceModal = ({ onClose }: { onClose: () => void }) => {
               py={'0.38rem'}
               bg={'blue.50'}
               borderRadius={'sm'}
-              color={'blue.600'}
-            >
+              color={'blue.600'}>
               <MyIcon name="infoRounded" w={'14px'} h={'14px'} />
               <Box ml={2} fontSize={'0.6875rem'}>
                 {t('account_bill:invoice_sending_info')}
@@ -219,8 +217,7 @@ const ApplyInvoiceModal = ({ onClose }: { onClose: () => void }) => {
                       }}
                       _hover={{
                         bg: 'blue.50'
-                      }}
-                    >
+                      }}>
                       <Td>
                         <Checkbox
                           name="check"
@@ -245,8 +242,7 @@ const ApplyInvoiceModal = ({ onClose }: { onClose: () => void }) => {
                   mt={'20vh'}
                   flexDirection={'column'}
                   alignItems={'center'}
-                  justifyContent={'center'}
-                >
+                  justifyContent={'center'}>
                   <MyIcon name="empty" w={'48px'} h={'48px'} color={'transparent'} />
                   <Box mt={2} color={'myGray.500'}>
                     {t('account_bill:no_invoice_record')}
@@ -265,8 +261,7 @@ const ApplyInvoiceModal = ({ onClose }: { onClose: () => void }) => {
                 if (!total) return;
                 setTotalPrice(total);
                 onOpenSettleModal();
-              }}
-            >
+              }}>
               <Flex alignItems={'center'}>
                 <Box px={'1.25rem'} py={'0.5rem'}>
                   {t('account_bill:confirm')}

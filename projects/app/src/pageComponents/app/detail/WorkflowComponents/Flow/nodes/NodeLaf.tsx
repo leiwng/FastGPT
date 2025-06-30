@@ -255,8 +255,7 @@ const NodeLaf = (props: NodeProps<FlowNodeItemType>) => {
                   isLoading={isSyncing}
                   variant={'grayBase'}
                   size={'sm'}
-                  onClick={onSyncParams}
-                >
+                  onClick={onSyncParams}>
                   {t('common:core.module.Laf sync params')}
                 </Button>
                 <Button
@@ -270,8 +269,7 @@ const NodeLaf = (props: NodeProps<FlowNodeItemType>) => {
                     if (!lafFunction) return;
                     const url = `${feConfigs.lafEnv}/app/${lafData?.lafApp?.appid}/function${lafFunction?.path}?templateid=FastGPT_Laf`;
                     window.open(url, '_blank');
-                  }}
-                >
+                  }}>
                   {t('common:plugin.go to laf')}
                 </Button>
               </Flex>

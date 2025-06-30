@@ -98,8 +98,7 @@ const RenderOutput = ({
           className="nodrag"
           cursor={'default'}
           alignItems={'center'}
-          position={'relative'}
-        >
+          position={'relative'}>
           <Box position={'relative'} fontWeight={'medium'} fontSize={'sm'}>
             {t((addOutput.label || 'common:core.workflow.Custom outputs') as any)}
           </Box>
@@ -112,8 +111,7 @@ const RenderOutput = ({
             size={'sm'}
             onClick={() => {
               setEditField(defaultOutput);
-            }}
-          >
+            }}>
             {t('common:add_new')}
           </Button>
         </Flex>
@@ -166,8 +164,7 @@ const RenderOutput = ({
               position={'relative'}
               _notLast={{
                 mb: i !== renderOutputs.length - 1 ? 4 : 0
-              }}
-            >
+              }}>
               <OutputLabel nodeId={nodeId} output={output} />
             </FormLabel>
           ) : null;

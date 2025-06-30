@@ -181,8 +181,7 @@ export const ModelEditModal = ({
       onClose={onClose}
       maxW={['90vw', '80vw']}
       w={'100%'}
-      h={'100%'}
-    >
+      h={'100%'}>
       <ModalBody>
         <Flex gap={4} key={key}>
           <TableContainer flex={'1'}>
@@ -310,8 +309,7 @@ export const ModelEditModal = ({
                           required
                           color={'myGray.600'}
                           fontSize={'md'}
-                          fontWeight={'normal'}
-                        >
+                          fontWeight={'normal'}>
                           {t('common:core.ai.Max context')}
                         </FormLabel>
                       </Td>
@@ -332,8 +330,7 @@ export const ModelEditModal = ({
                           required
                           color={'myGray.600'}
                           fontSize={'md'}
-                          fontWeight={'normal'}
-                        >
+                          fontWeight={'normal'}>
                           {t('account:model.max_quote')}
                         </FormLabel>
                       </Td>
@@ -735,8 +732,7 @@ export const ModelEditModal = ({
             isLoading={loadingDefaultConfig}
             variant={'whiteBase'}
             mr={4}
-            onClick={() => loadDefaultConfig(modelData.model)}
-          >
+            onClick={() => loadDefaultConfig(modelData.model)}>
             {t('account:reset_default')}
           </Button>
         )}

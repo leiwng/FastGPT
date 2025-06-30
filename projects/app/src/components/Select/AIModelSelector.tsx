@@ -84,8 +84,7 @@ const OneRowSelector = ({ list, onChange, disableTip, ...props }: Props) => {
         span: {
           display: 'block'
         }
-      }}
-    >
+      }}>
       <MyTooltip label={disableTip}>
         <ModelPriceModal>
           {({ onOpen }) => (
@@ -211,8 +210,7 @@ const MultipleRowSelector = ({ list, onChange, disableTip, placeholder, ...props
         span: {
           display: 'block'
         }
-      }}
-    >
+      }}>
       <MyTooltip label={disableTip}>
         <MultipleRowSelect
           label={SelectedModel}

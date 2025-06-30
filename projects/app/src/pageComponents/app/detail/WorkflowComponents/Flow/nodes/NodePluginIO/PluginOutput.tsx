@@ -46,8 +46,7 @@ const NodePluginOutput = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
         copy: true,
         delete: true
       }}
-      {...data}
-    >
+      {...data}>
       <Container mt={1}>
         <Flex className="nodrag" cursor={'default'} alignItems={'center'} position={'relative'}>
           <IOTitle mb={0} text={t('common:core.workflow.Custom outputs')}></IOTitle>
@@ -57,8 +56,7 @@ const NodePluginOutput = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
             leftIcon={<SmallAddIcon />}
             iconSpacing={1}
             size={'sm'}
-            onClick={() => setEditField(defaultOutput)}
-          >
+            onClick={() => setEditField(defaultOutput)}>
             {t('common:add_new')}
           </Button>
         </Flex>

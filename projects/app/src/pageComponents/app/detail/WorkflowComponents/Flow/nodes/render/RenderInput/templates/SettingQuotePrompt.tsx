@@ -190,8 +190,7 @@ const EditModal = ({ onClose, ...props }: RenderInputProps & { onClose: () => vo
         w={'100%'}
         h={['90vh', '85vh']}
         maxW={['90vw', '700px']}
-        isCentered
-      >
+        isCentered>
         <ModalBody flex={'1 0 0'} overflow={'auto'}>
           <Flex {...LabelStyles} alignItems={'center'}>
             <FormLabel>{t('workflow:dataset_quote_role')}</FormLabel>
@@ -240,8 +239,7 @@ const EditModal = ({ onClose, ...props }: RenderInputProps & { onClose: () => vo
                     title: t('common:core.app.Select quote template'),
                     templates: Prompt_QuoteTemplateList
                   })
-                }
-              >
+                }>
                 {t('common:select_template')}
               </Box>
             </Flex>

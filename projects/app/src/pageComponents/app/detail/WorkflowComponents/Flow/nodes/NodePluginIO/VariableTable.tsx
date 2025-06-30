@@ -21,8 +21,7 @@ const VariableTable = ({
       borderRadius={'md'}
       overflow={'hidden'}
       border={'1px solid'}
-      borderColor={'myGray.200'}
-    >
+      borderColor={'myGray.200'}>
       <Table variant={'workflow'}>
         <Thead>
           <Tr>

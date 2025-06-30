@@ -125,8 +125,7 @@ const TTSSelect = ({
           size={'sm'}
           mr={'-5px'}
           onClick={onOpen}
-          color={'myGray.600'}
-        >
+          color={'myGray.600'}>
           {formLabel}
         </Button>
       </MyTooltip>
@@ -135,8 +134,7 @@ const TTSSelect = ({
         title={t('common:core.app.TTS')}
         isOpen={isOpen}
         onClose={onCloseTTSModal}
-        w={'500px'}
-      >
+        w={'500px'}>
         <ModalBody px={[5, 16]} py={[4, 8]}>
           <Flex justifyContent={'space-between'} alignItems={'center'}>
             <FormLabel>{t('common:core.app.tts.Speech model')}</FormLabel>
@@ -179,8 +177,7 @@ const TTSSelect = ({
                     color={'primary.600'}
                     isLoading={audioLoading}
                     leftIcon={<MyIcon name={'core/chat/stopSpeech'} w={'16px'} />}
-                    onClick={cancelAudio}
-                  >
+                    onClick={cancelAudio}>
                     {t('common:core.chat.tts.Stop Speech')}
                   </Button>
                 </Flex>
@@ -192,8 +189,7 @@ const TTSSelect = ({
                     playAudioByText({
                       text: t('common:core.app.tts.Test Listen Text')
                     });
-                  }}
-                >
+                  }}>
                   {t('common:core.app.tts.Test Listen')}
                 </Button>
               )}

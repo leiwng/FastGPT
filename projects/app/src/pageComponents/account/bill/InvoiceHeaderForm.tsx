@@ -42,13 +42,11 @@ export const InvoiceHeaderSingleForm = ({
         gap={'1rem'}
         fontWeight={'500'}
         color={'myGray.900'}
-        fontSize={'14px'}
-      >
+        fontSize={'14px'}>
         <Flex
           justify={'space-between'}
           alignItems={['flex-start', 'center']}
-          flexDir={['column', 'row']}
-        >
+          flexDir={['column', 'row']}>
           <FormLabel required={required}>{t('account_bill:organization_name')}</FormLabel>
           <Input
             {...styles}
@@ -59,8 +57,7 @@ export const InvoiceHeaderSingleForm = ({
         <Flex
           justify={'space-between'}
           alignItems={['flex-start', 'center']}
-          flexDir={['column', 'row']}
-        >
+          flexDir={['column', 'row']}>
           <FormLabel required={required}>{t('account_bill:unit_code')}</FormLabel>
           <Input
             {...styles}
@@ -73,8 +70,7 @@ export const InvoiceHeaderSingleForm = ({
         <Flex
           justify={'space-between'}
           alignItems={['flex-start', 'center']}
-          flexDir={['column', 'row']}
-        >
+          flexDir={['column', 'row']}>
           <FormLabel required={!!needSpecialInvoice && required}>
             {t('account_bill:company_address')}
           </FormLabel>
@@ -87,8 +83,7 @@ export const InvoiceHeaderSingleForm = ({
         <Flex
           justify={'space-between'}
           alignItems={['flex-start', 'center']}
-          flexDir={['column', 'row']}
-        >
+          flexDir={['column', 'row']}>
           <FormLabel required={!!needSpecialInvoice && required}>
             {t('account_bill:company_phone')}
           </FormLabel>
@@ -101,8 +96,7 @@ export const InvoiceHeaderSingleForm = ({
         <Flex
           justify={'space-between'}
           alignItems={['flex-start', 'center']}
-          flexDir={['column', 'row']}
-        >
+          flexDir={['column', 'row']}>
           <FormLabel required={!!needSpecialInvoice && required}>
             {t('account_bill:bank_name')}
           </FormLabel>
@@ -115,8 +109,7 @@ export const InvoiceHeaderSingleForm = ({
         <Flex
           justify={'space-between'}
           alignItems={['flex-start', 'center']}
-          flexDir={['column', 'row']}
-        >
+          flexDir={['column', 'row']}>
           <FormLabel required={!!needSpecialInvoice && required}>
             {t('account_bill:bank_account')}
           </FormLabel>
@@ -129,8 +122,7 @@ export const InvoiceHeaderSingleForm = ({
         <Flex
           justify={'space-between'}
           alignItems={['flex-start', 'center']}
-          flexDir={['column', 'row']}
-        >
+          flexDir={['column', 'row']}>
           <FormLabel required={required}>{t('account_bill:need_special_invoice')}</FormLabel>
           {/* @ts-ignore */}
           <RadioGroup
@@ -138,8 +130,7 @@ export const InvoiceHeaderSingleForm = ({
             onChange={(e) => {
               inputForm.setValue('needSpecialInvoice', e === 'true');
             }}
-            w={'21.25rem'}
-          >
+            w={'21.25rem'}>
             <HStack h={'2rem'}>
               <Radio value="true" pr={'1rem'}>
                 <Box fontSize={'14px'}>{t('account_bill:yes')}</Box>
@@ -156,8 +147,7 @@ export const InvoiceHeaderSingleForm = ({
         <Flex
           justify={'space-between'}
           alignItems={['flex-start', 'center']}
-          flexDir={['column', 'row']}
-        >
+          flexDir={['column', 'row']}>
           <FormLabel required={required}>{t('account_bill:contact_phone')}</FormLabel>
           <Input
             {...styles}
@@ -174,8 +164,7 @@ export const InvoiceHeaderSingleForm = ({
         <Flex
           justify={'space-between'}
           alignItems={['flex-start', 'center']}
-          flexDir={['column', 'row']}
-        >
+          flexDir={['column', 'row']}>
           <FormLabel required={required}>{t('account_bill:email_address')}</FormLabel>
           <Input
             {...styles}
@@ -238,8 +227,7 @@ const InvoiceHeaderForm = () => {
               variant={'primary'}
               px="0"
               onClick={inputForm.handleSubmit(onUpdateHeader)}
-              isLoading={isSubmitting}
-            >
+              isLoading={isSubmitting}>
               <Flex alignItems={'center'} px={'20px'}>
                 <Box px={'1.25rem'} py={'0.5rem'}>
                   {t('account_bill:save')}

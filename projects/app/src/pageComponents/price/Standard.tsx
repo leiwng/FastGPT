@@ -87,8 +87,7 @@ const Standard = ({
               letterSpacing={'0.1px'}
               textTransform={'lowercase'}
               mb={2}
-              mr={'-2'}
-            >
+              mr={'-2'}>
               {t('common:pay_year_tip')}
             </Box>
             <RowTabs
@@ -120,8 +119,7 @@ const Standard = ({
           gap={[4, 6, 8]}
           w={'100%'}
           maxW={'1440px'}
-          minH={'550px'}
-        >
+          minH={'550px'}>
           {standardSubList.map((item) => {
             const isCurrentPlan = item.level === myStandardPlan?.currentSubLevel;
 
@@ -146,8 +144,7 @@ const Standard = ({
                     }
                   : {
                       borderColor: 'myGray.150'
-                    })}
-              >
+                    })}>
                 {isCurrentPlan && (
                   <Box
                     position={'absolute'}
@@ -159,8 +156,7 @@ const Standard = ({
                     fontSize={'xs'}
                     bg={'blue.200'}
                     fontWeight={'500'}
-                    borderLeftRadius={'sm'}
-                  >
+                    borderLeftRadius={'sm'}>
                     {t('common:is_using')}
                   </Box>
                 )}
@@ -187,8 +183,7 @@ const Standard = ({
                         cursor={'default'}
                         w={'100%'}
                         isDisabled
-                        variant={'whiteBase'}
-                      >
+                        variant={'whiteBase'}>
                         {t('common:free')}
                       </Button>
                     );
@@ -208,8 +203,7 @@ const Standard = ({
                             level: item.level,
                             subMode: selectSubMode
                           });
-                        }}
-                      >
+                        }}>
                         {t('user:bill.renew_plan')}
                       </Button>
                     );
@@ -229,8 +223,7 @@ const Standard = ({
                             level: item.level,
                             subMode: selectSubMode
                           });
-                        }}
-                      >
+                        }}>
                         {t('common:support.wallet.subscription.Upgrade plan')}
                       </Button>
                     );
@@ -249,8 +242,7 @@ const Standard = ({
                           level: item.level,
                           subMode: selectSubMode
                         });
-                      }}
-                    >
+                      }}>
                       {t('user:bill.buy_plan')}
                     </Button>
                   );
@@ -299,8 +291,7 @@ const RowTabs = ({
       borderWidth={'1px'}
       borderColor={'primary.300'}
       bg={'primary.50'}
-      gap={'4px'}
-    >
+      gap={'4px'}>
       {list.map((item) => (
         <Flex
           key={item.value}
@@ -320,8 +311,7 @@ const RowTabs = ({
               }
             : {
                 onClick: () => onChange(item.value)
-              })}
-        >
+              })}>
           {item.icon && <MyIcon name={item.icon as any} mr={1} w={'14px'} />}
           <Box fontWeight={'500'}>{item.label}</Box>
         </Flex>

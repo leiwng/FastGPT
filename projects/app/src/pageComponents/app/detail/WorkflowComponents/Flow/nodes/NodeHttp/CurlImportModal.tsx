@@ -114,8 +114,7 @@ const CurlImportModal = ({
       onClose={onClose}
       iconSrc="modal/edit"
       title={t('common:core.module.http.curl import')}
-      w={600}
-    >
+      w={600}>
       <ModalBody>
         <Textarea
           rows={20}

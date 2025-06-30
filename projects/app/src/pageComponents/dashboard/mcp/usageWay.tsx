@@ -74,8 +74,7 @@ const UsageWay = ({ mcp, onClose }: { mcp: McpKeyType; onClose: () => void }) =>
                   userSelect={'all'}
                   flex={'1 0 0'}
                   whiteSpace={'pre-wrap'}
-                  wordBreak={'break-all'}
-                >
+                  wordBreak={'break-all'}>
                   {url}
                 </Box>
                 <CopyBox value={url}>
@@ -90,8 +89,7 @@ const UsageWay = ({ mcp, onClose }: { mcp: McpKeyType; onClose: () => void }) =>
                   bg={'myWhite.500'}
                   border={'base'}
                   borderTopLeftRadius={'md'}
-                  borderTopRightRadius={'md'}
-                >
+                  borderTopRightRadius={'md'}>
                   <Box flex={1}>{t('dashboard_mcp:mcp_json_config')}</Box>
                   <CopyBox value={jsonConfig}>
                     <MyIconButton icon="copy" />

@@ -49,8 +49,7 @@ const ParentPaths = (props: {
                   onClick: () => {
                     onClick(item.parentId);
                   }
-                })}
-          >
+                })}>
             {item.parentName}
           </Box>
           {i !== concatPaths.length - 1 && (

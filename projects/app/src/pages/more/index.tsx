@@ -49,8 +49,7 @@ const More = () => {
           bg={'white'}
           mt={5}
           borderRadius={'md'}
-          onClick={() => router.push(item.link)}
-        >
+          onClick={() => router.push(item.link)}>
           <MyIcon name={item.icon as any} w={'22px'} />
           <Box ml={4} flex={1}>
             {item.label}

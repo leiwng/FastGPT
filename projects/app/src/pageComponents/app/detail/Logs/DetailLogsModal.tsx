@@ -86,8 +86,7 @@ const DetailLogsModal = ({ appId, chatId, onClose }: Props) => {
         boxShadow={'3px 0 20px rgba(0,0,0,0.2)'}
         borderRadius={'md'}
         overflow={'hidden'}
-        transition={'.2s ease'}
-      >
+        transition={'.2s ease'}>
         {/* Header */}
         {isPlugin ? (
           <Flex
@@ -96,8 +95,7 @@ const DetailLogsModal = ({ appId, chatId, onClose }: Props) => {
             px={3}
             pt={3}
             bg={'myGray.25'}
-            borderBottom={'base'}
-          >
+            borderBottom={'base'}>
             <LightRowTabs<PluginRunBoxTabEnum>
               list={[
                 { label: t('common:Input'), value: PluginRunBoxTabEnum.input },
@@ -125,8 +123,7 @@ const DetailLogsModal = ({ appId, chatId, onClose }: Props) => {
             h={['46px', '60px']}
             borderBottom={'base'}
             borderBottomColor={'gray.200'}
-            color={'myGray.900'}
-          >
+            color={'myGray.900'}>
             {isPc ? (
               <>
                 <PcHeader
@@ -180,8 +177,7 @@ const DetailLogsModal = ({ appId, chatId, onClose }: Props) => {
               boxShadow={
                 '0px 4px 10px 0px rgba(19, 51, 107, 0.10), 0px 0px 1px 0px rgba(19, 51, 107, 0.10)'
               }
-              borderRadius={'md'}
-            >
+              borderRadius={'md'}>
               <ChatQuoteList
                 rawSearch={datasetCiteData.rawSearch}
                 metadata={datasetCiteData.metadata}
@@ -215,8 +211,7 @@ const Render = (props: Props) => {
       isShowReadRawSource={true}
       isResponseDetail={true}
       // isShowFullText={true}
-      showNodeStatus
-    >
+      showNodeStatus>
       <ChatRecordContextProvider params={params}>
         <DetailLogsModal {...props} />
       </ChatRecordContextProvider>

@@ -21,8 +21,7 @@ const PageContainer = ({
         bg={'myGray.25'}
         borderRadius={[0, '16px']}
         overflowX={'hidden'}
-        {...insertProps}
-      >
+        {...insertProps}>
         {children}
       </MyBox>
     </MyBox>

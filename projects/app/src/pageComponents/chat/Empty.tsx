@@ -28,8 +28,7 @@ const Empty = ({
       m={'auto'}
       py={'5vh'}
       alignItems={'center'}
-      justifyContent={'center'}
-    >
+      justifyContent={'center'}>
       {name && (
         <Card p={4} mb={10}>
           <Flex mb={2} alignItems={'center'} justifyContent={'center'}>

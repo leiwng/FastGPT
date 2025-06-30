@@ -48,8 +48,7 @@ const ConfigPerModal = ({
         isOpen
         iconSrc="keyPrimary"
         onClose={onClose}
-        title={t('common:permission.Permission config')}
-      >
+        title={t('common:permission.Permission config')}>
         <ModalBody>
           <HStack>
             <Avatar src={avatar} w={'1.75rem'} borderRadius={'md'} />
@@ -65,8 +64,7 @@ const ConfigPerModal = ({
               {...managePer}
               refetchResource={refetchResource}
               isInheritPermission={isInheritPermission}
-              hasParent={hasParent}
-            >
+              hasParent={hasParent}>
               {({ MemberListCard, onOpenManageModal, onOpenAddMember }) => {
                 return (
                   <>
@@ -74,24 +72,21 @@ const ConfigPerModal = ({
                       alignItems="center"
                       flexDirection="row"
                       justifyContent="space-between"
-                      w="full"
-                    >
+                      w="full">
                       <Box fontSize={'sm'}>{t('common:permission.Collaborator')}</Box>
                       <Flex flexDirection="row" gap="2">
                         <Button
                           size="sm"
                           variant="whitePrimary"
                           leftIcon={<MyIcon w="4" name="common/settingLight" />}
-                          onClick={onOpenManageModal}
-                        >
+                          onClick={onOpenManageModal}>
                           {t('common:permission.Manage')}
                         </Button>
                         <Button
                           size="sm"
                           variant="whitePrimary"
                           leftIcon={<MyIcon w="4" name="support/permission/collaborator" />}
-                          onClick={onOpenAddMember}
-                        >
+                          onClick={onOpenAddMember}>
                           {t('common:Add')}
                         </Button>
                       </Flex>
@@ -110,8 +105,7 @@ const ConfigPerModal = ({
                 onClick={onOpenChangeOwnerModal}
                 w="full"
                 borderRadius="md"
-                leftIcon={<MyIcon w="4" name="common/lineChange" />}
-              >
+                leftIcon={<MyIcon w="4" name="common/lineChange" />}>
                 {t('common:permission.change_owner')}
               </Button>
             </Box>

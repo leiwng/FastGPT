@@ -138,8 +138,7 @@ const CreateModal = ({ onClose, type }: { type: CreateAppType; onClose: () => vo
       isOpen
       isCentered={!isPc}
       maxW={['90vw', '40rem']}
-      isLoading={isCreating || isRequestTemplates}
-    >
+      isLoading={isCreating || isRequestTemplates}>
       <ModalBody>
         <Box color={'myGray.800'} fontWeight={'bold'}>
           {t('common:input_name')}
@@ -200,8 +199,7 @@ const CreateModal = ({ onClose, type }: { type: CreateAppType; onClose: () => vo
               cursor={'pointer'}
               color={'myGray.600'}
               fontSize={'xs'}
-              _hover={{ color: 'blue.700' }}
-            >
+              _hover={{ color: 'blue.700' }}>
               {t('common:core.app.switch_to_template_market')}
               <ChevronRightIcon w={4} h={4} />
             </Flex>
@@ -214,8 +212,7 @@ const CreateModal = ({ onClose, type }: { type: CreateAppType; onClose: () => vo
             gridTemplateColumns={
               templateList.length > 0 ? ['repeat(1,1fr)', 'repeat(2,1fr)'] : '1fr'
             }
-            gridGap={[2, 4]}
-          >
+            gridGap={[2, 4]}>
             <Card
               borderWidth={'1px'}
               borderRadius={'md'}
@@ -232,8 +229,7 @@ const CreateModal = ({ onClose, type }: { type: CreateAppType; onClose: () => vo
                 color: 'primary.700',
                 borderColor: 'primary.300'
               }}
-              onClick={handleSubmit((data) => onclickCreate(data))}
-            >
+              onClick={handleSubmit((data) => onclickCreate(data))}>
               <MyIcon name={'common/addLight'} w={'1.5rem'} />
               <Box fontSize={'sm'} mt={2}>
                 {t(typeData.emptyCreateText)}
@@ -255,8 +251,7 @@ const CreateModal = ({ onClose, type }: { type: CreateAppType; onClose: () => vo
                   }
                 }}
                 display={'flex'}
-                flexDirection={'column'}
-              >
+                flexDirection={'column'}>
                 <Flex alignItems={'center'}>
                   <Avatar src={item.avatar} borderRadius={'sm'} w={'1.5rem'} />
                   <Box ml={3} color={'myGray.900'} fontWeight={500}>
@@ -282,15 +277,13 @@ const CreateModal = ({ onClose, type }: { type: CreateAppType; onClose: () => vo
                     bottom={1}
                     height={'40px'}
                     bg={'white'}
-                    zIndex={1}
-                  >
+                    zIndex={1}>
                     <Button
                       variant={'whiteBase'}
                       h={6}
                       borderRadius={'sm'}
                       w={'40%'}
-                      onClick={handleSubmit((data) => onclickCreate(data, item.templateId))}
-                    >
+                      onClick={handleSubmit((data) => onclickCreate(data, item.templateId))}>
                       {t('app:templateMarket.Use')}
                     </Button>
                   </Box>

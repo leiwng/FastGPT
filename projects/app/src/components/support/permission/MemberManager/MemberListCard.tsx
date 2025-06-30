@@ -34,8 +34,7 @@ const MemberListCard = ({ tagStyle, ...props }: MemberListCardProps) => {
                 key={member.tmbId || member.groupId || member.orgId}
                 type={'fill'}
                 colorSchema="white"
-                {...tagStyle}
-              >
+                {...tagStyle}>
                 <Avatar src={member.avatar} w="1.25rem" rounded={'50%'} />
                 <Box fontSize={'sm'} ml={1}>
                   {member.name === DefaultGroupName ? userInfo?.team.teamName : member.name}

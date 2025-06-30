@@ -59,8 +59,7 @@ const SelectAppRender = ({ item, nodeId }: RenderInputProps) => {
               w={'100%'}
               justifyContent={loading ? 'center' : 'flex-start'}
               variant={'whiteBase'}
-              leftIcon={<Avatar src={appDetail?.avatar} w={6} />}
-            >
+              leftIcon={<Avatar src={appDetail?.avatar} w={6} />}>
               {appDetail?.name}
             </Button>
           )}

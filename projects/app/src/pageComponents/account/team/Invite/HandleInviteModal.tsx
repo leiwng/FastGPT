@@ -40,8 +40,7 @@ function Invite({ invitelinkid }: { invitelinkid: string }) {
       isOpen={true}
       iconSrc="support/user/usersLight"
       title={t('account_team:handle_invitation')}
-      iconColor={'primary.600'}
-    >
+      iconColor={'primary.600'}>
       <ModalCloseButton onClick={onClose} />
       <ModalBody>
         <Flex
@@ -51,8 +50,7 @@ function Invite({ invitelinkid }: { invitelinkid: string }) {
           borderColor={'myGray.200'}
           borderRadius={'md'}
           px={3}
-          py={2}
-        >
+          py={2}>
           <Avatar src={invitationInfo.teamAvatar} w={['16px', '23px']} />
           <Box mx={2}>{invitationInfo.teamName}</Box>
           <Box flex={1} />
@@ -61,8 +59,7 @@ function Invite({ invitelinkid }: { invitelinkid: string }) {
             variant={'solid'}
             colorScheme="green"
             onClick={acceptInvitation}
-            isLoading={accepting}
-          >
+            isLoading={accepting}>
             {t('account_team:accept')}
           </Button>
           <Button size="sm" ml={2} variant="outline" onClick={onClose} isLoading={accepting}>

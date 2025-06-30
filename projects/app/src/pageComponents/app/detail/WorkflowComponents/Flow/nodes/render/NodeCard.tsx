@@ -172,8 +172,7 @@ const NodeCard = (props: Props) => {
                       key: 'isFolded',
                       value: !isFolded
                     });
-                  }}
-                >
+                  }}>
                   <MyIcon
                     name={!isFolded ? 'core/chat/chevronDown' : 'core/chat/chevronRight'}
                     w={'16px'}
@@ -222,8 +221,7 @@ const NodeCard = (props: Props) => {
                       });
                     }
                   });
-                }}
-              >
+                }}>
                 <MyIcon name={'edit'} w={'14px'} />
               </Button>
               <Box flex={1} mr={1} />
@@ -237,8 +235,7 @@ const NodeCard = (props: Props) => {
                       minH={['auto', '200px']}
                       alt={''}
                     />
-                  }
-                >
+                  }>
                   <Button variant={'grayGhost'} size={'xs'} color={'primary.600'} px={1}>
                     {t('common:core.module.Diagram')}
                   </Button>
@@ -252,8 +249,7 @@ const NodeCard = (props: Props) => {
                   title={nodeTemplate?.name}
                   iconSrc={nodeTemplate?.avatar}
                   text={nodeTemplate?.userGuide}
-                  link={nodeTemplate?.courseUrl}
-                >
+                  link={nodeTemplate?.courseUrl}>
                   {({ onClick }) => (
                     <MyTooltip label={t('workflow:Node.Open_Node_Course')}>
                       <MyIconButton ml={1} icon="book" color={'primary.600'} onClick={onClick} />
@@ -269,8 +265,7 @@ const NodeCard = (props: Props) => {
                   px={2}
                   rounded={'6px'}
                   fontSize={'xs'}
-                  fontWeight={'medium'}
-                >
+                  fontWeight={'medium'}>
                   <MyIcon name={'common/errorFill'} w={'14px'} mr={1} />
                   <Box color={'red.600'}>{t(error as any)}</Box>
                 </Flex>
@@ -357,8 +352,7 @@ const NodeCard = (props: Props) => {
         : {
             outlineColor: selected ? 'primary.600' : 'myGray.250'
           })}
-      {...customStyle}
-    >
+      {...customStyle}>
       {debugResult && <NodeDebugResponse nodeId={nodeId} debugResult={debugResult} />}
       {Header}
       <Flex flexDirection={'column'} flex={1} my={!isFolded ? 3 : 0} gap={2}>
@@ -515,8 +509,7 @@ const MenuRender = React.memo(function MenuRender({
           pl={'20px'}
           pr={'10px'}
           pb={'20px'}
-          pt={'20px'}
-        >
+          pt={'20px'}>
           {menuList.map((item) => (
             <Button
               key={item.icon}
@@ -526,8 +519,7 @@ const MenuRender = React.memo(function MenuRender({
               pr={6}
               variant={item.variant}
               leftIcon={<MyIcon name={item.icon as any} w={'16px'} mr={-1} />}
-              onClick={item.onClick}
-            >
+              onClick={item.onClick}>
               {t(item.label as any)}
             </Button>
           ))}
@@ -601,8 +593,7 @@ const NodeIntro = React.memo(function NodeIntro({
                     });
                   }
                 });
-              }}
-            >
+              }}>
               <MyIcon name={'edit'} w={'18px'} />
             </Flex>
           )}

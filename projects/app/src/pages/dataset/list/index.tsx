@@ -103,8 +103,7 @@ const Dataset = () => {
       flexDirection={'column'}
       h={'100%'}
       overflowY={'auto'}
-      overflowX={'hidden'}
-    >
+      overflowX={'hidden'}>
       <Flex pt={[4, 6]} pl={3} pr={folderDetail ? [3, 6] : [3, 8]}>
         <Flex flexGrow={1} flexDirection="column">
           <Flex alignItems={'center'} justifyContent={'space-between'}>
@@ -117,9 +116,8 @@ const Dataset = () => {
                     letterSpacing={1}
                     fontSize={'1.25rem'}
                     fontWeight={'bold'}
-                    color={'myGray.900'}
-                  >
-                   {t('common:core.dataset.My Dataset')}
+                    color={'myGray.900'}>
+                    {t('common:core.dataset.My Dataset')}
                   </Box>
                 </Flex>
               }

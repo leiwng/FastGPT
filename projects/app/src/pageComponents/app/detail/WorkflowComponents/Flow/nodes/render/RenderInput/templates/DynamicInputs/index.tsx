@@ -70,8 +70,7 @@ const DynamicInputs = (props: RenderInputProps) => {
                 ...defaultInput,
                 ...getInputComponentProps(item)
               })
-            }
-          >
+            }>
             {t('common:add_new')}
           </Button>
         </HStack>

@@ -37,8 +37,7 @@ const EmptyCollectionTip = () => {
                       <Box
                         textDecoration={'underline'}
                         cursor={'pointer'}
-                        onClick={onOpenWebsiteModal}
-                      >
+                        onClick={onOpenWebsiteModal}>
                         {t('common:core.dataset.collection.Click top config website')}
                       </Box>
                     </>

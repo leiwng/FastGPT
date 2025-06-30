@@ -122,8 +122,7 @@ const NavBar = ({ currentTab }: { currentTab: TabEnum }) => {
           justify={'space-between'}
           borderBottom={currentTab === TabEnum.dataCard ? 'none' : theme.borders.base}
           borderColor={'myGray.200'}
-          position={'relative'}
-        >
+          position={'relative'}>
           {currentTab === TabEnum.dataCard ? (
             <>
               <Flex
@@ -144,8 +143,7 @@ const NavBar = ({ currentTab }: { currentTab: TabEnum }) => {
                       currentTab: TabEnum.collectionCard
                     }
                   });
-                }}
-              >
+                }}>
                 <IconButton
                   p={2}
                   mr={2}
@@ -214,15 +212,13 @@ const NavBar = ({ currentTab }: { currentTab: TabEnum }) => {
                 borderRadius={'md'}
                 _hover={{
                   bg: 'myGray.05'
-                }}
-              >
+                }}>
                 <MyIcon name={'common/monitor'} w={'18px'} h={'18px'} color={'myGray.500'} />
                 <Box color={'myGray.600'} ml={1.5} fontWeight={500} userSelect={'none'}>
                   {t('common:core.dataset.training.tag')}
                 </Box>
               </Flex>
-            }
-          >
+            }>
             {({ onClose }) => (
               <Box p={6}>
                 {rebuildingCount > 0 && (

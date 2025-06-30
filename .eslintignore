@@ -24,5 +24,24 @@ scripts/
 deploy/
 docSite/
 
-common_services/
-**/*-data/
+# MinerU
+plugins/model/pdf-mineru/models/
+plugins/model/pdf-mineru/layoutreader_models/
+.venv_bak
+.venv_bak/
+
+# venv
+venv
+venv/
+.venv
+.venv/
+projects/app/*.log
+
+# ssh keyfile
+common_services/mongodb-keyfile
+
+# common_services data
+common_services/mongodb-data
+common_services/postgres-data
+common_services/mongo
+common_services/mongo-replica

@@ -198,8 +198,7 @@ function PermissionManage({
             borderRadius={'md'}
             ml={3}
             leftIcon={<MyIcon name="common/add2" w={'14px'} />}
-            onClick={onOpenAddMember}
-          >
+            onClick={onOpenAddMember}>
             {t('user:permission.Add')}
           </Button>
         )}
@@ -439,8 +438,7 @@ export const Render = ({ Tabs }: { Tabs: React.ReactNode }) => {
       onUpdateCollaborators={updateMemberPermission}
       onDelOneCollaborator={deleteMemberPermission}
       refreshDeps={[userInfo?.team.teamId]}
-      addPermissionOnly={true}
-    >
+      addPermissionOnly={true}>
       {({ onOpenAddMember }) => <PermissionManage Tabs={Tabs} onOpenAddMember={onOpenAddMember} />}
     </CollaboratorContextProvider>
   ) : null;

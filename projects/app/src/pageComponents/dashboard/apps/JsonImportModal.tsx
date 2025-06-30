@@ -147,8 +147,7 @@ const JsonImportModal = ({ onClose }: { onClose: () => void }) => {
         isLoading={isCreating || isFetching}
         title={t('app:type.Import from json')}
         iconSrc="common/importLight"
-        iconColor={'primary.600'}
-      >
+        iconColor={'primary.600'}>
         <ModalBody>
           <Box color={'myGray.800'} fontWeight={'bold'}>
             {t('common:input_name')}

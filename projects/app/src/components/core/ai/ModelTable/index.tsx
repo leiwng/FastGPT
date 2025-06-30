@@ -305,8 +305,7 @@ export const ModelPriceModal = ({
           w={'100%'}
           h={'100%'}
           maxW={'90vw'}
-          maxH={'90vh'}
-        >
+          maxH={'90vh'}>
           <ModalBody flex={'1 0 0'}>
             <ModelTable />
           </ModalBody>

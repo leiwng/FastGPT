@@ -94,8 +94,7 @@ function EditModal({
       onClose={onClose}
       iconSrc="support/team/group"
       iconColor="primary.600"
-      title={defaultData.id ? t('user:team.Update Team') : t('user:team.Create Team')}
-    >
+      title={defaultData.id ? t('user:team.Update Team') : t('user:team.Create Team')}>
       <ModalBody>
         <Box color={'myGray.800'} fontWeight={'bold'}>
           {t('account_team:set_name_avatar')}
@@ -139,8 +138,7 @@ function EditModal({
                 bgColor="red.50"
                 borderRadius="md"
                 fontSize={'sm'}
-                width={'fit-content'}
-              >
+                width={'fit-content'}>
                 <Icon name="common/info" w="1rem" />
                 <Box width="fit-content">{t('account_team:please_bind_contact')}</Box>
               </HStack>
@@ -151,8 +149,7 @@ function EditModal({
             leftIcon={<Icon name="common/setting" w="1rem" />}
             onClick={() => {
               onOpenContact();
-            }}
-          >
+            }}>
             {t('common:Setting')}
           </Button>
         </HStack>
@@ -173,8 +170,7 @@ function EditModal({
           <Button
             w={'100%'}
             isLoading={creating}
-            onClick={handleSubmit((data) => onclickCreate(data))}
-          >
+            onClick={handleSubmit((data) => onclickCreate(data))}>
             {t('common:comfirn_create')}
           </Button>
         )}

@@ -82,8 +82,7 @@ const FolderSlideCard = ({
               size={'sm'}
               fontSize={'mini'}
               mt={4}
-              onClick={onMove}
-            >
+              onClick={onMove}>
               {t('common:Move')}
             </Button>
             {managePer.permission.isOwner && (
@@ -98,8 +97,7 @@ const FolderSlideCard = ({
                     justifyContent={'flex-start'}
                     size={'sm'}
                     fontSize={'mini'}
-                    mt={3}
-                  >
+                    mt={3}>
                     {t('common:delete_folder')}
                   </Button>
                 }
@@ -128,8 +126,7 @@ const FolderSlideCard = ({
                 refreshDeps={refreshDeps}
                 refetchResource={refetchResource}
                 isInheritPermission={isInheritPermission}
-                hasParent={hasParent}
-              >
+                hasParent={hasParent}>
                 {({ MemberListCard, onOpenManageModal, onOpenAddMember }) => {
                   return (
                     <>

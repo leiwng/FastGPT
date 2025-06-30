@@ -113,8 +113,7 @@ const PreviewData = () => {
                   bg: 'primary.50 !important'
                 })}
                 _notLast={{ mb: 3 }}
-                onClick={() => setPreviewFile(source)}
-              >
+                onClick={() => setPreviewFile(source)}>
                 <MyIcon name={source.icon as any} w={'1.25rem'} />
                 <Box ml={1} flex={'1 0 0'} wordBreak={'break-all'} fontSize={'sm'}>
                   {source.sourceName}
@@ -146,8 +145,7 @@ const PreviewData = () => {
                       }}
                       _hover={{
                         bg: 'myGray.100'
-                      }}
-                    >
+                      }}>
                       <Markdown source={item.q} />
                       <Markdown source={item.a} />
                     </Box>

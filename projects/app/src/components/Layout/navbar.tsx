@@ -106,8 +106,7 @@ const Navbar = ({ unread }: { unread: number }) => {
       w={'100%'}
       userSelect={'none'}
       pb={2}
-      bg={isSecondNavbarPage ? 'myGray.50' : 'transparent'}
-    >
+      bg={isSecondNavbarPage ? 'myGray.50' : 'transparent'}>
       {/* logo */}
       <Box
         flex={'0 0 auto'}
@@ -116,8 +115,7 @@ const Navbar = ({ unread }: { unread: number }) => {
         borderRadius={'50%'}
         overflow={'hidden'}
         cursor={'pointer'}
-        onClick={() => router.push('/account/info')}
-      >
+        onClick={() => router.push('/account/info')}>
         <Avatar w={'2rem'} h={'2rem'} src={userInfo?.avatar} borderRadius={'50%'} />
       </Box>
       {/* 导航列表 */}
@@ -145,8 +143,7 @@ const Navbar = ({ unread }: { unread: number }) => {
                 ? {
                     onClick: () => router.push(item.link)
                   }
-                : {})}
-            >
+                : {})}>
               <MyIcon
                 {...(isActive
                   ? {
@@ -165,8 +162,7 @@ const Navbar = ({ unread }: { unread: number }) => {
                 transform={'scale(0.9)'}
                 mt={'5px'}
                 lineHeight={1}
-                color={isActive ? 'primary.700' : 'myGray.500'}
-              >
+                color={isActive ? 'primary.700' : 'myGray.500'}>
                 {item.label}
               </Box>
             </Box>
@@ -184,8 +180,7 @@ const Navbar = ({ unread }: { unread: number }) => {
             href={`/account/inform`}
             mb={0}
             color={'myGray.500'}
-            height={'48px'}
-          >
+            height={'48px'}>
             <Badge count={unread}>
               <MyIcon name={'support/user/informLight'} width={'22px'} height={'22px'} />
             </Badge>
@@ -205,8 +200,7 @@ const Navbar = ({ unread }: { unread: number }) => {
               {...hoverStyle}
               mt={0}
               color={'myGray.400'}
-              height={'48px'}
-            >
+              height={'48px'}>
               <Avatar src={item.avatar} borderRadius={'md'} width={'26px'} height={'26px'} />
             </Link>
           </MyTooltip>
@@ -222,8 +216,7 @@ const Navbar = ({ unread }: { unread: number }) => {
             {...hoverStyle}
             mt={0}
             color={'myGray.400'}
-            height={'48px'}
-          >
+            height={'48px'}>
             <MyIcon name={'common/gitInlight'} width={'26px'} height={'26px'} />
           </Link>
         </MyTooltip>

@@ -103,8 +103,7 @@ const MCPToolsEditModal = ({ onClose }: { onClose: () => void }) => {
         iconSrc="core/app/type/mcpToolsFill"
         title={t('app:type.MCP tools')}
         w={['90vw', '530px']}
-        position={'relative'}
-      >
+        position={'relative'}>
         <ModalBody>
           <Box color={'myGray.900'} fontSize={'14px'} fontWeight={'medium'}>
             {t('common:input_name')}
@@ -149,8 +148,7 @@ const MCPToolsEditModal = ({ onClose }: { onClose: () => void }) => {
               isLoading={isGettingTools}
               onClick={() => {
                 runGetMCPTools({ url: mcpData.url });
-              }}
-            >
+              }}>
               {t('common:Parse')}
             </Button>
           </Flex>
@@ -163,8 +161,7 @@ const MCPToolsEditModal = ({ onClose }: { onClose: () => void }) => {
             borderRadius={'md'}
             overflow={'hidden'}
             borderWidth={'1px'}
-            position={'relative'}
-          >
+            position={'relative'}>
             <TableContainer maxH={360} minH={200} overflowY={'auto'}>
               <Table bg={'white'}>
                 <Thead bg={'myGray.50'}>
@@ -186,8 +183,7 @@ const MCPToolsEditModal = ({ onClose }: { onClose: () => void }) => {
                         maxW={1 / 2}
                         overflow={'hidden'}
                         textOverflow={'ellipsis'}
-                        whiteSpace={'nowrap'}
-                      >
+                        whiteSpace={'nowrap'}>
                         {item.name}
                       </Td>
                       <Td
@@ -198,8 +194,7 @@ const MCPToolsEditModal = ({ onClose }: { onClose: () => void }) => {
                         maxW={1 / 2}
                         overflow={'hidden'}
                         textOverflow={'ellipsis'}
-                        whiteSpace={'nowrap'}
-                      >
+                        whiteSpace={'nowrap'}>
                         {item.description}
                       </Td>
                     </Tr>
@@ -215,8 +210,7 @@ const MCPToolsEditModal = ({ onClose }: { onClose: () => void }) => {
                 right={0}
                 bottom={0}
                 fontSize={'mini'}
-                color={'myGray.500'}
-              >
+                color={'myGray.500'}>
                 {t('app:no_mcp_tools_list')}
               </Center>
             )}
@@ -229,8 +223,7 @@ const MCPToolsEditModal = ({ onClose }: { onClose: () => void }) => {
           <Button
             isDisabled={mcpData.toolList.length === 0}
             isLoading={isCreating}
-            onClick={handleSubmit(onCreate)}
-          >
+            onClick={handleSubmit(onCreate)}>
             {t('common:comfirn_create')}
           </Button>
         </ModalFooter>

@@ -34,16 +34,14 @@ const Edit = ({
       mt={[4, 0]}
       gap={1}
       borderRadius={'lg'}
-      overflowY={['auto', 'unset']}
-    >
+      overflowY={['auto', 'unset']}>
       <Flex
         flexDirection={'column'}
         className={styles.EditAppBox}
         pr={[0, 1]}
         minW={['auto', '580px']}
         mb={3}
-        flex={'1 0 0'}
-      >
+        flex={'1 0 0'}>
         <Box {...cardStyles} boxShadow={'2'}>
           <AppCard />
         </Box>

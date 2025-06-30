@@ -63,8 +63,7 @@ const NodeUserGuide = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
             copy: true,
             delete: true
           }}
-          {...data}
-        >
+          {...data}>
           <Container>
             <WelcomeText {...componentsProps} />
             <Box mt={2} pt={2}>

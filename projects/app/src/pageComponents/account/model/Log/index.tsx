@@ -275,8 +275,7 @@ const ChannelLog = ({ Tab }: { Tab: React.ReactNode }) => {
                         leftIcon={<MyIcon name={'menu'} w={'1rem'} />}
                         size={'sm'}
                         variant={'outline'}
-                        onClick={() => setLogDetail(item)}
-                      >
+                        onClick={() => setLogDetail(item)}>
                         {t('account_model:detail')}
                       </Button>
                     </Td>
@@ -324,8 +323,7 @@ const LogDetail = ({ data, onClose }: { data: LogDetailType; onClose: () => void
         borderRight={'base'}
         p={3}
         flex={'0 0 100px'}
-        {...props}
-      >
+        {...props}>
         {children}
       </Box>
     );
@@ -348,8 +346,7 @@ const LogDetail = ({ data, onClose }: { data: LogDetailType; onClose: () => void
       title={t('account_model:log_detail')}
       onClose={onClose}
       maxW={['90vw', '800px']}
-      w={'100%'}
-    >
+      w={'100%'}>
       {detailData && (
         <ModalBody>
           {/* 基本信息表格 */}
@@ -359,8 +356,7 @@ const LogDetail = ({ data, onClose }: { data: LogDetailType; onClose: () => void
             borderWidth="1px"
             borderRadius="md"
             fontSize={'sm'}
-            overflow={'hidden'}
-          >
+            overflow={'hidden'}>
             {/* 第一行 */}
             <GridItem display={'flex'} borderBottomWidth="1px" borderRightWidth="1px">
               <Title>RequestID</Title>

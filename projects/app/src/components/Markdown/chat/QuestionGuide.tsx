@@ -42,8 +42,7 @@ const QuestionGuide = ({ text }: { text: string }) => {
               }
             }}
             overflow={'hidden'}
-            position={'relative'}
-          >
+            position={'relative'}>
             <Box className="textEllipsis" flex={'1 0 0'}>
               {text}
             </Box>
@@ -58,8 +57,7 @@ const QuestionGuide = ({ text }: { text: string }) => {
               alignItems={'center'}
               h={'100%'}
               lineHeight={0}
-              bg={`linear-gradient(to left, white,white min(60px,100%),rgba(255,255,255,0) 80%)`}
-            >
+              bg={`linear-gradient(to left, white,white min(60px,100%),rgba(255,255,255,0) 80%)`}>
               <MyTooltip label={t('common:core.chat.markdown.Edit Question')}>
                 <MyIcon
                   name={'edit'}

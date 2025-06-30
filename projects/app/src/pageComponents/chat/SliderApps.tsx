@@ -64,8 +64,7 @@ const SliderApps = ({ apps, activeAppId }: { apps: AppListItemType[]; activeAppI
               px={3}
               borderRadius={'md'}
               _hover={{ bg: 'myGray.200' }}
-              onClick={() => router.push('/dashboard/apps')}
-            >
+              onClick={() => router.push('/dashboard/apps')}>
               <IconButton
                 mr={3}
                 icon={<MyIcon name={'common/backFill'} w={'1rem'} color={'primary.500'} />}
@@ -89,8 +88,7 @@ const SliderApps = ({ apps, activeAppId }: { apps: AppListItemType[]; activeAppI
             my={2}
             color={'myGray.500'}
             fontSize={'sm'}
-            justifyContent={'space-between'}
-          >
+            justifyContent={'space-between'}>
             <Box>{t('common:core.chat.Recent use')}</Box>
             <MyPopover
               placement="bottom-end"
@@ -108,13 +106,11 @@ const SliderApps = ({ apps, activeAppId }: { apps: AppListItemType[]; activeAppI
                   userSelect={'none'}
                   _hover={{
                     bg: 'myGray.200'
-                  }}
-                >
+                  }}>
                   <Box>{t('common:More')}</Box>
                   <MyIcon name={'common/select'} w={'1rem'} />
                 </HStack>
-              }
-            >
+              }>
               {({ onClose }) => (
                 <Box minH={'200px'}>
                   <SelectOneResource
@@ -156,8 +152,7 @@ const SliderApps = ({ apps, activeAppId }: { apps: AppListItemType[]; activeAppI
                     bg: 'myGray.200'
                   },
                   onClick: () => onChangeApp(item._id)
-                })}
-          >
+                })}>
             <Avatar src={item.avatar} w={'1.5rem'} borderRadius={'md'} />
             <Box ml={2} className={'textEllipsis'}>
               {item.name}

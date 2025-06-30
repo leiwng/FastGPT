@@ -72,8 +72,7 @@ const QuoteReader = ({
         alignItems={'center'}
         px={5}
         borderBottom={'1px solid'}
-        borderColor={'myGray.150'}
-      >
+        borderColor={'myGray.150'}>
         <Box flex={1} py={4}>
           <Flex gap={2} mr={2} mb={1}>
             {metadata.sourceId ? (
@@ -95,8 +94,7 @@ const QuoteReader = ({
                   wordBreak={'break-all'}
                   fontSize={'sm'}
                   color={'myGray.900'}
-                  fontWeight={'medium'}
-                >
+                  fontWeight={'medium'}>
                   {metadata.sourceName || t('common:unknow_source')}
                 </Box>
               </>
@@ -112,8 +110,7 @@ const QuoteReader = ({
                   className={'textEllipsis'}
                   wordBreak={'break-all'}
                   color={'myGray.900'}
-                  fontWeight={'medium'}
-                >
+                  fontWeight={'medium'}>
                   {t('common:core.chat.Quote Amount', { amount: filterRawSearch.length })}
                 </Box>
               </>
@@ -130,8 +127,7 @@ const QuoteReader = ({
           _hover={{
             bg: 'myGray.100'
           }}
-          onClick={onClose}
-        >
+          onClick={onClose}>
           <MyIcon name="common/closeLight" color={'myGray.900'} w={6} />
         </Box>
       </Flex>

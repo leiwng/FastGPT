@@ -40,8 +40,7 @@ const WhisperConfig = ({
           size={'sm'}
           mr={'-5px'}
           color={'myGray.600'}
-          onClick={onOpen}
-        >
+          onClick={onOpen}>
           {formLabel}
         </Button>
       </MyTooltip>
@@ -49,8 +48,7 @@ const WhisperConfig = ({
         title={t('common:core.app.Whisper config')}
         iconSrc="core/app/simpleMode/whisper"
         isOpen={isOpen}
-        onClose={onClose}
-      >
+        onClose={onClose}>
         <ModalBody px={[5, 16]} py={[4, 8]}>
           <Flex justifyContent={'space-between'} alignItems={'center'}>
             <FormLabel>{t('common:core.app.whisper.Switch')}</FormLabel>

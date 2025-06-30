@@ -59,8 +59,7 @@ const MySlider = ({
           '& .marker': {
             display: 'block'
           }
-        }}
-      >
+        }}>
         {markList?.map((item, i) => (
           <SliderMark
             key={item.value}
@@ -69,8 +68,7 @@ const MySlider = ({
             mt={2}
             whiteSpace={'nowrap'}
             transform={'translateX(-50%)'}
-            color={'myGray.600'}
-          >
+            color={'myGray.600'}>
             <Box px={3} cursor={'pointer'}>
               {item.label}
             </Box>
@@ -89,8 +87,7 @@ const MySlider = ({
           borderRadius={'md'}
           transform={'translate(-50%, -155%)'}
           fontSize={'11px'}
-          display={['block', 'none']}
-        >
+          display={['block', 'none']}>
           <Box transform={'scale(0.9)'}>{value}</Box>
         </SliderMark>
         <SliderTrack
@@ -104,8 +101,7 @@ const MySlider = ({
           _after={{
             ...startEndPointStyle,
             right: '-3px'
-          }}
-        >
+          }}>
           <SliderFilledTrack bg={'primary.500'} />
         </SliderTrack>
         <SliderThumb border={'3px solid'} borderColor={'primary.500'}></SliderThumb>

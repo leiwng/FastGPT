@@ -96,8 +96,7 @@ const InputGuideConfig = ({
           size={'sm'}
           mr={'-5px'}
           color={'myGray.600'}
-          onClick={onOpen}
-        >
+          onClick={onOpen}>
           {formLabel}
         </Button>
       </MyTooltip>
@@ -106,8 +105,7 @@ const InputGuideConfig = ({
         iconSrc="core/app/inputGuides"
         isOpen={isOpen}
         onClose={onClose}
-        w={'500px'}
-      >
+        w={'500px'}>
         <ModalBody px={[5, 16]} py={[4, 8]}>
           <Flex justifyContent={'space-between'} alignItems={'center'}>
             <FormLabel>{t('common:is_open')}</FormLabel>
@@ -135,8 +133,7 @@ const InputGuideConfig = ({
                   leftIcon={<MyIcon boxSize={'4'} name={'common/settingLight'} />}
                   onClick={() => {
                     onOpenLexiconConfig();
-                  }}
-                >
+                  }}>
                   {t('chat:config_input_guide_lexicon')}
                 </Button>
               </Flex>
@@ -147,8 +144,7 @@ const InputGuideConfig = ({
                     onClick={() => window.open(getDocPath('/docs/guide/course/chat_input_guide/'))}
                     color={'primary.700'}
                     alignItems={'center'}
-                    cursor={'pointer'}
-                  >
+                    cursor={'pointer'}>
                     <MyIcon name={'book'} w={'17px'} ml={4} mr={1} color={'myGray.600'} />
                     {t('common:Documents')}
                   </Flex>
@@ -300,8 +296,7 @@ const LexiconConfigModal = ({ appId, onClose }: { appId: string; onClose: () => 
       onClose={onClose}
       isLoading={isLoading}
       h={'600px'}
-      w={'500px'}
-    >
+      w={'500px'}>
       <Flex gap={4} px={8} py={4} mb={4} alignItems={'center'} borderBottom={'base'}>
         <Box flex={1}>
           <MyInput
@@ -317,8 +312,7 @@ const LexiconConfigModal = ({ appId, onClose }: { appId: string; onClose: () => 
           onClick={onOpenSelectFile}
           variant={'whiteBase'}
           size={'sm'}
-          leftIcon={<MyIcon name={'common/importLight'} boxSize={4} />}
-        >
+          leftIcon={<MyIcon name={'common/importLight'} boxSize={4} />}>
           {t('common:Import')}
         </Button>
         <Box
@@ -329,8 +323,7 @@ const LexiconConfigModal = ({ appId, onClose }: { appId: string; onClose: () => 
               type: 'text/csv;charset=utf-8',
               filename: 'questionGuide_template.csv'
             });
-          }}
-        >
+          }}>
           <QuestionTip ml={-2} label={t('chat:csv_input_lexicon_tip')} />
         </Box>
       </Flex>
@@ -347,8 +340,7 @@ const LexiconConfigModal = ({ appId, onClose }: { appId: string; onClose: () => 
               onClick={() => {
                 onDeleteData(selectedRows);
                 setSelectedRows([]);
-              }}
-            >
+              }}>
               {t('common:Delete')}
             </Button>
 
@@ -358,8 +350,7 @@ const LexiconConfigModal = ({ appId, onClose }: { appId: string; onClose: () => 
                   variant={'whiteBase'}
                   display={selectedRows.length !== 0 ? 'none' : 'flex'}
                   size={'sm'}
-                  leftIcon={<MyIcon name={'delete'} boxSize={4} />}
-                >
+                  leftIcon={<MyIcon name={'delete'} boxSize={4} />}>
                   {t('chat:Delete_all')}
                 </Button>
               }
@@ -377,8 +368,7 @@ const LexiconConfigModal = ({ appId, onClose }: { appId: string; onClose: () => 
                 setNewData('');
               }}
               size={'sm'}
-              leftIcon={<MyIcon name={'common/addLight'} boxSize={4} />}
-            >
+              leftIcon={<MyIcon name={'common/addLight'} boxSize={4} />}>
               {t('common:Add')}
             </Button>
           </Flex>
@@ -406,8 +396,7 @@ const LexiconConfigModal = ({ appId, onClose }: { appId: string; onClose: () => 
         px={8}
         flex={'1 0 0'}
         fontSize={'sm'}
-        EmptyChildren={<EmptyTip text={t('chat:chat_input_guide_lexicon_is_empty')} />}
-      >
+        EmptyChildren={<EmptyTip text={t('chat:chat_input_guide_lexicon_is_empty')} />}>
         {scrollDataList.map((data, index) => {
           const item = data.data;
 
@@ -424,8 +413,7 @@ const LexiconConfigModal = ({ appId, onClose }: { appId: string; onClose: () => 
                 '& .icon-list': {
                   display: 'flex'
                 }
-              }}
-            >
+              }}>
               <Checkbox
                 mr={2}
                 isChecked={selected}
@@ -470,8 +458,7 @@ const LexiconConfigModal = ({ appId, onClose }: { appId: string; onClose: () => 
                   bg={'myGray.50'}
                   alignItems={'center'}
                   border={'base'}
-                  _hover={{ borderColor: 'primary.300' }}
-                >
+                  _hover={{ borderColor: 'primary.300' }}>
                   <Box className="textEllipsis" w={0} flex={'1 0 0'}>
                     <HighlightText rawText={item.text} matchText={searchKey} />
                   </Box>

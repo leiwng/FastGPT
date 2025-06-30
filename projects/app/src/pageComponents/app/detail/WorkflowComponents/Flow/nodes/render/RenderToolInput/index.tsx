@@ -52,8 +52,7 @@ const RenderToolInput = ({
             leftIcon={<SmallAddIcon />}
             iconSpacing={1}
             size={'sm'}
-            onClick={() => setEditField(defaultEditFormData)}
-          >
+            onClick={() => setEditField(defaultEditFormData)}>
             {t('common:add_new')}
           </Button>
         )}
@@ -76,8 +75,7 @@ const RenderToolInput = ({
                   key={index}
                   position={'relative'}
                   whiteSpace={'pre-wrap'}
-                  wordBreak={'break-all'}
-                >
+                  wordBreak={'break-all'}>
                   <Td>{item.key}</Td>
                   <Td>{item.toolDescription}</Td>
                   <Td>{item.required ? '✔' : ''}</Td>

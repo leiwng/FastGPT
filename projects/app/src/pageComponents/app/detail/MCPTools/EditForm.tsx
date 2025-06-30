@@ -67,8 +67,7 @@ const EditForm = ({
             isLoading={isGettingTools}
             onClick={() => {
               runGetMCPTools({ url });
-            }}
-          >
+            }}>
             {t('common:Parse')}
           </Button>
         </Flex>
@@ -112,8 +111,7 @@ const EditForm = ({
                 cursor={'pointer'}
                 onClick={() => {
                   setCurrentTool(tool);
-                }}
-              >
+                }}>
                 <Flex alignItems={'center'} py={2} px={3}>
                   <Box w={'20px'} fontSize={'14px'} color={'myGray.500'} fontWeight={'medium'}>
                     {index + 1 < 10 ? `0${index + 1}` : index + 1}
@@ -124,8 +122,7 @@ const EditForm = ({
                       color={'myGray.900'}
                       whiteSpace="nowrap"
                       overflow="hidden"
-                      textOverflow="ellipsis"
-                    >
+                      textOverflow="ellipsis">
                       {tool.name}
                     </Box>
                     <Box
@@ -133,8 +130,7 @@ const EditForm = ({
                       color={'myGray.500'}
                       whiteSpace="nowrap"
                       overflow="hidden"
-                      textOverflow="ellipsis"
-                    >
+                      textOverflow="ellipsis">
                       {tool.description || t('app:tools_no_description')}
                     </Box>
                   </Box>
@@ -150,8 +146,7 @@ const EditForm = ({
                   display="none"
                   _groupHover={{ display: 'flex' }}
                   background="linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 100%)"
-                  paddingLeft="20px"
-                >
+                  paddingLeft="20px">
                   <MyIconButton
                     size={'16px'}
                     icon={'common/detail'}
@@ -191,8 +186,7 @@ const ToolDetailModal = ({ tool, onClose }: { tool: McpToolConfigType; onClose: 
       iconColor={'primary.600'}
       title={t('app:tool_detail')}
       onClose={onClose}
-      w={'530px'}
-    >
+      w={'530px'}>
       <ModalBody>
         <Flex pb={6} borderBottom={'1px solid'} borderColor={'myGray.200'}>
           <Avatar src={appDetail.avatar} borderRadius={'md'} w={'40px'} />
@@ -232,8 +226,7 @@ const ToolDetailModal = ({ tool, onClose }: { tool: McpToolConfigType; onClose: 
                     bg={'myGray.25'}
                     borderRadius={'sm'}
                     border={'1px solid'}
-                    borderColor={'myGray.200'}
-                  >
+                    borderColor={'myGray.200'}>
                     {paramInfo.type}
                   </Box>
                 </Flex>

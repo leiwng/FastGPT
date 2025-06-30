@@ -151,8 +151,7 @@ const Test = ({ datasetId }: { datasetId: string }) => {
         flexDirection={'column'}
         flex={1}
         maxW={'500px'}
-        py={4}
-      >
+        py={4}>
         <Box
           border={'2px solid'}
           p={3}
@@ -165,8 +164,7 @@ const Test = ({ datasetId }: { datasetId: string }) => {
               }
             : {
                 borderColor: 'primary.300'
-              })}
-        >
+              })}>
           {/* header */}
           <Flex alignItems={'center'} justifyContent={'space-between'}>
             <MySelect<'text' | 'file'>
@@ -203,8 +201,7 @@ const Test = ({ datasetId }: { datasetId: string }) => {
               variant={'whitePrimary'}
               leftIcon={<MyIcon name={searchModeData.icon as any} w={'14px'} />}
               size={'sm'}
-              onClick={onOpenSelectMode}
-            >
+              onClick={onOpenSelectMode}>
               {t(searchModeData.title as any)}
             </Button>
           </Flex>
@@ -242,8 +239,7 @@ const Test = ({ datasetId }: { datasetId: string }) => {
                     borderColor: 'primary.500',
                     borderStyle: 'solid'
                   }}
-                  onClick={onOpen}
-                >
+                  onClick={onOpen}>
                   <MyIcon mr={2} name={'file/csv'} w={'24px'} />
                   <Box>
                     {selectFile
@@ -263,8 +259,7 @@ const Test = ({ datasetId }: { datasetId: string }) => {
                         type: 'text/csv',
                         filename: 'Test Template'
                       });
-                    }}
-                  >
+                    }}>
                     {t('common:info.csv_download')}
                   </Box>
                 </Box>
@@ -283,8 +278,7 @@ const Test = ({ datasetId }: { datasetId: string }) => {
                 } else {
                   // handleSubmit((data) => onFileTest(data))();
                 }
-              }}
-            >
+              }}>
               {t('common:core.dataset.test.Test')}
             </Button>
           </Flex>
@@ -373,8 +367,7 @@ const TestHistories = React.memo(function TestHistories({
             {...(item.id === datasetTestItem?.id && {
               bg: 'primary.50'
             })}
-            onClick={() => setDatasetTestItem(item)}
-          >
+            onClick={() => setDatasetTestItem(item)}>
             <Box flex={'0 0 auto'} mr={2}>
               {DatasetSearchModeMap[item.searchMode] ? (
                 <Flex alignItems={'center'} fontWeight={'500'} color={'myGray.500'}>

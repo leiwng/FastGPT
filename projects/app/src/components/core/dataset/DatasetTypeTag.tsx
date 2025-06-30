@@ -20,8 +20,7 @@ const DatasetTypeTag = ({ type, ...props }: { type: `${DatasetTypeEnum}` } & Fle
       borderRadius={'sm'}
       fontSize={'xs'}
       alignItems={'center'}
-      {...props}
-    >
+      {...props}>
       <MyIcon name={item.icon as any} w={'16px'} mr={2} color={'myGray.400'} />
       <Box>{t(item.label as any)}</Box>
     </Flex>

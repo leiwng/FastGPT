@@ -87,8 +87,7 @@ const ChatHistorySlider = ({ confirmClearText }: { confirmClearText: string }) =
       h={'100%'}
       bg={'white'}
       borderRight={['', theme.borders.base]}
-      whiteSpace={'nowrap'}
-    >
+      whiteSpace={'nowrap'}>
       {isPc && (
         <MyTooltip label={canRouteToDetail ? t('app:app_detail') : ''} offset={[0, 0]}>
           <Flex
@@ -104,8 +103,7 @@ const ChatHistorySlider = ({ confirmClearText }: { confirmClearText: string }) =
                 pathname: '/app/detail',
                 query: { appId }
               })
-            }
-          >
+            }>
             <Avatar src={appAvatar} borderRadius={'md'} />
             <Box flex={'1 0 0'} w={0} ml={2} fontWeight={'bold'} className={'textEllipsis'}>
               {appName}
@@ -121,8 +119,7 @@ const ChatHistorySlider = ({ confirmClearText }: { confirmClearText: string }) =
         h={'36px'}
         my={5}
         justify={['space-between', '']}
-        alignItems={'center'}
-      >
+        alignItems={'center'}>
         {!isPc && (
           <Flex height={'100%'} align={'center'} justify={'center'}>
             <MyIcon ml={2} name="core/chat/sideLine" />
@@ -144,8 +141,7 @@ const ChatHistorySlider = ({ confirmClearText }: { confirmClearText: string }) =
           onClick={() => {
             onChangeChatId();
             setCiteModalData(undefined);
-          }}
-        >
+          }}>
           {t('common:core.chat.New Chat')}
         </Button>
         {/* Clear */}
@@ -206,8 +202,7 @@ const ChatHistorySlider = ({ confirmClearText }: { confirmClearText: string }) =
                   })}
               {...(i !== concatHistory.length - 1 && {
                 mb: '8px'
-              })}
-            >
+              })}>
               <MyIcon
                 name={item.id === activeChatId ? 'core/chat/chatFill' : 'core/chat/chatLight'}
                 w={'16px'}
@@ -222,8 +217,7 @@ const ChatHistorySlider = ({ confirmClearText }: { confirmClearText: string }) =
                     display={'block'}
                     fontWeight={'400'}
                     fontSize={'mini'}
-                    color={'myGray.500'}
-                  >
+                    color={'myGray.500'}>
                     {t(formatTimeToChatTime(item.updateTime) as any).replace('#', ':')}
                   </Box>
                   <Box className="more" display={['block', 'none']}>
@@ -298,8 +292,7 @@ const ChatHistorySlider = ({ confirmClearText }: { confirmClearText: string }) =
           alignItems={'center'}
           cursor={'pointer'}
           p={3}
-          onClick={() => router.push('/dashboard/apps')}
-        >
+          onClick={() => router.push('/dashboard/apps')}>
           <IconButton
             mr={3}
             icon={<MyIcon name={'common/backFill'} w={'18px'} color={'primary.500'} />}

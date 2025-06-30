@@ -175,8 +175,7 @@ const MobileVoiceInput = ({
         onTouchCancel={() => {
           stopSpeak(true);
         }}
-        zIndex={4}
-      >
+        zIndex={4}>
         <Box visibility={isSpeaking ? 'hidden' : 'visible'}>{t('chat:press_to_speak')}</Box>
         <Box
           position="absolute"
@@ -200,8 +199,7 @@ const MobileVoiceInput = ({
           right={0}
           bottom={maskBottom}
           h={'200px'}
-          bg="linear-gradient(to top, white, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0))"
-        >
+          bg="linear-gradient(to top, white, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0))">
           <Box fontSize="sm" color="myGray.500" position="absolute" bottom={'10px'}>
             {isCancel ? t('chat:release_cancel') : t('chat:release_send')}
           </Box>
@@ -327,8 +325,7 @@ const VoiceInput = forwardRef<VoiceInputComponentRef, VoiceInputProps>(
         bg="white"
         zIndex={5}
         borderRadius={isPc ? 'md' : ''}
-        onContextMenu={(e) => e.preventDefault()}
-      >
+        onContextMenu={(e) => e.preventDefault()}>
         {isMobileDevice ? (
           <MobileVoiceInput
             isSpeaking={isSpeaking}
@@ -356,8 +353,7 @@ const VoiceInput = forwardRef<VoiceInputComponentRef, VoiceInputProps>(
             alignItems={'center'}
             bg={'white'}
             color={'primary.500'}
-            zIndex={6}
-          >
+            zIndex={6}>
             <Spinner size={'sm'} mr={4} />
             {t('common:core.chat.Converting to text')}
           </Flex>

@@ -16,14 +16,12 @@ function OrgTags({ orgs, type = 'simple' }: { orgs?: string[]; type?: 'simple' |
               fontWeight={400}
               color="myGray.500"
               maxW={'300px'}
-              className="textEllipsis"
-            >
+              className="textEllipsis">
               {org.slice(1)}
             </Box>
           ))}
         </VStack>
-      }
-    >
+      }>
       {type === 'simple' ? (
         <Box
           className="textEllipsis"
@@ -31,8 +29,7 @@ function OrgTags({ orgs, type = 'simple' }: { orgs?: string[]; type?: 'simple' |
           fontWeight={400}
           w="full"
           color="myGray.400"
-          whiteSpace={'nowrap'}
-        >
+          whiteSpace={'nowrap'}>
           {orgs
             .map((org) => org.split('/').pop())
             .join(', ')

@@ -123,8 +123,7 @@ const RegisterForm = ({ setPageType, loginSuccess }: Props) => {
           if (e.key === 'Enter' && !e.shiftKey && !requesting) {
             handleSubmit(onclickRegister, onSubmitErr)();
           }
-        }}
-      >
+        }}>
         <FormControl isInvalid={!!errors.username}>
           <Input
             bg={'myGray.50'}
@@ -137,16 +136,14 @@ const RegisterForm = ({ setPageType, loginSuccess }: Props) => {
                   /(^1[3456789]\d{9}$)|(^[A-Za-z0-9]+([_\.][A-Za-z0-9]+)*@([A-Za-z0-9\-]+\.)+[A-Za-z]{2,6}$)/,
                 message: t('user:password.email_phone_error')
               }
-            })}
-          ></Input>
+            })}></Input>
         </FormControl>
         <FormControl
           mt={6}
           isInvalid={!!errors.code}
           display={'flex'}
           alignItems={'center'}
-          position={'relative'}
-        >
+          position={'relative'}>
           <Input
             size={'lg'}
             bg={'myGray.50'}
@@ -155,8 +152,7 @@ const RegisterForm = ({ setPageType, loginSuccess }: Props) => {
             placeholder={t('user:password.verification_code')}
             {...register('code', {
               required: t('user:password.code_required')
-            })}
-          ></Input>
+            })}></Input>
           <SendCodeBox username={username} />
         </FormControl>
         <FormControl mt={6} isInvalid={!!errors.password}>
@@ -173,8 +169,7 @@ const RegisterForm = ({ setPageType, loginSuccess }: Props) => {
                 }
                 return true;
               }
-            })}
-          ></Input>
+            })}></Input>
         </FormControl>
         <FormControl mt={6} isInvalid={!!errors.password2}>
           <Input
@@ -198,8 +193,7 @@ const RegisterForm = ({ setPageType, loginSuccess }: Props) => {
           fontWeight={['medium', 'medium']}
           colorScheme="blue"
           isLoading={requesting}
-          onClick={handleSubmit(onclickRegister, onSubmitErr)}
-        >
+          onClick={handleSubmit(onclickRegister, onSubmitErr)}>
           {t('user:register.confirm')}
         </Button>
         <Box
@@ -211,8 +205,7 @@ const RegisterForm = ({ setPageType, loginSuccess }: Props) => {
           color={'primary.700'}
           cursor={'pointer'}
           _hover={{ textDecoration: 'underline' }}
-          onClick={() => setPageType(LoginPageTypeEnum.passwordLogin)}
-        >
+          onClick={() => setPageType(LoginPageTypeEnum.passwordLogin)}>
           {t('user:register.to_login')}
         </Box>
       </Box>

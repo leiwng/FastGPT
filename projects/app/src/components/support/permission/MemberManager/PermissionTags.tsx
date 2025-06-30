@@ -28,8 +28,7 @@ function PermissionTags({ permission }: PermissionTagsProp) {
           border="none"
           py={2}
           px={3}
-          fontSize={'xs'}
-        >
+          fontSize={'xs'}>
           {t(item as any)}
         </Tag>
       ))}

@@ -51,8 +51,7 @@ const SelectAppModal = ({
       iconSrc="/imgs/workflow/ai.svg"
       onClose={onClose}
       position={'relative'}
-      w={'600px'}
-    >
+      w={'600px'}>
       <ModalBody flex={'1 0 0'} overflow={'auto'} minH={'400px'} position={'relative'}>
         <SelectOneResource
           value={selectedApp?.id}
@@ -71,8 +70,7 @@ const SelectAppModal = ({
             if (!selectedApp) return;
             onSuccess(selectedApp);
             onClose();
-          }}
-        >
+          }}>
           {t('common:Confirm')}
         </Button>
       </ModalFooter>

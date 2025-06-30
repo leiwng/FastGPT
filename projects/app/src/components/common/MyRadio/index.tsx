@@ -71,8 +71,7 @@ const MyRadio = ({
             } else {
               onChange(item.value);
             }
-          }}
-        >
+          }}>
           {!!item.icon && (
             <>
               <Avatar src={item.icon} w={iconSize} mr={'14px'} />

@@ -50,16 +50,14 @@ const ExtractFieldModal = ({
       iconSrc="/imgs/workflow/extract.png"
       title={t('common:core.module.extract.Field Setting Title')}
       onClose={onClose}
-      w={['90vw', '500px']}
-    >
+      w={['90vw', '500px']}>
       <ModalBody>
         <Flex mt={2} alignItems={'center'}>
           <Flex alignItems={'center'} flex={['1 0 80px', '1 0 100px']}>
             <FormLabel>{t('common:core.module.extract.Required')}</FormLabel>
             <QuestionTip
               ml={1}
-              label={t('common:core.module.extract.Required Description')}
-            ></QuestionTip>
+              label={t('common:core.module.extract.Required Description')}></QuestionTip>
           </Flex>
           <Switch {...register('required')} />
         </Flex>
@@ -118,8 +116,7 @@ const ExtractFieldModal = ({
               </FormLabel>
               <QuestionTip
                 ml={1}
-                label={t('common:core.module.extract.Enum Description')}
-              ></QuestionTip>
+                label={t('common:core.module.extract.Enum Description')}></QuestionTip>
             </Flex>
 
             <Textarea

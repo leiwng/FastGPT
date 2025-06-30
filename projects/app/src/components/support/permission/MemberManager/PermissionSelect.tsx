@@ -128,8 +128,7 @@ function PermissionSelect({
               setIsOpen(false);
             }, 100);
           }
-        }}
-      >
+        }}>
         <MenuButton
           ref={ref}
           position={'relative'}
@@ -137,8 +136,7 @@ function PermissionSelect({
             if (trigger === 'click') {
               setIsOpen(!isOpen);
             }
-          }}
-        >
+          }}>
           {Button}
         </MenuButton>
         <MenuList
@@ -150,8 +148,7 @@ function PermissionSelect({
           }
           zIndex={99}
           overflowY={'auto'}
-          whiteSpace={'pre-wrap'}
-        >
+          whiteSpace={'pre-wrap'}>
           {/* The list of single select permissions */}
           {permissionSelectList.singleCheckBoxList.map((item) => {
             const change = () => {
@@ -171,8 +168,7 @@ function PermissionSelect({
                   : {})}
                 {...MenuStyle}
                 onClick={change}
-                maxW={['70vw', '260px']}
-              >
+                maxW={['70vw', '260px']}>
                 <Radio isChecked={selectedSingleValue === item.value} />
                 <Box ml={4}>
                   <Box>{t(item.name as any)}</Box>
@@ -236,8 +232,7 @@ function PermissionSelect({
                 onClick={() => {
                   onDelete();
                   setIsOpen(false);
-                }}
-              >
+                }}>
                 <MyIcon name="delete" w="20px" color="red.600" />
                 <Box color="red.600">{t('common:Remove')}</Box>
               </HStack>

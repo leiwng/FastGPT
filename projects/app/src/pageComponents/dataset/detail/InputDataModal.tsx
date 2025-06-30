@@ -227,20 +227,17 @@ const InputDataModal = ({
             color={'myGray.900'}
             whiteSpace={'nowrap'}
             overflow={'hidden'}
-            textOverflow={'ellipsis'}
-          >
+            textOverflow={'ellipsis'}>
             {collection.sourceName || t('common:unknow_source')}
           </Box>
         </Flex>
-      }
-    >
+      }>
       <MyBox
         display={'flex'}
         flexDir={'column'}
         isLoading={isLoading}
         h={'100%'}
-        py={[6, '1.5rem']}
-      >
+        py={[6, '1.5rem']}>
         {/* Tab */}
         <Box px={[5, '3.25rem']}>
           {(currentTab === TabEnum.chunk || currentTab === TabEnum.qa) && (
@@ -268,8 +265,7 @@ const InputDataModal = ({
             gap={3}
             flex={'1 0 0'}
             w={['100%', 0]}
-            overflow={['unset', 'auto']}
-          >
+            overflow={['unset', 'auto']}>
             <Flex flexDir={'column'} flex={'1 0 0'} h={0}>
               {currentTab === TabEnum.image && (
                 <>
@@ -363,8 +359,7 @@ const InputDataModal = ({
             pr={[0, '3.25rem']}
             flex={'1 0 0'}
             w={['100%', 0]}
-            overflow={['unset', 'auto']}
-          >
+            overflow={['unset', 'auto']}>
             <Flex alignItems={'flex-start'} justifyContent={'space-between'} h={'30px'}>
               <FormLabel>
                 {t('common:dataset.data.edit.Index', {
@@ -382,8 +377,7 @@ const InputDataModal = ({
                     text: '',
                     fold: false
                   })
-                }
-              >
+                }>
                 <Flex px={'0.62rem'} py={2}>
                   <MyIcon name={'common/addLight'} w={'1rem'} mr={'0.38rem'} />
                   {t('common:add_new')}
@@ -406,8 +400,7 @@ const InputDataModal = ({
                       '& .delete': {
                         display: 'block'
                       }
-                    }}
-                  >
+                    }}>
                     {/* Header */}
                     <Flex mb={2} alignItems={'center'}>
                       <FormLabel flex={'1 0 0'}>{t(data.label)}</FormLabel>
@@ -451,14 +444,12 @@ const InputDataModal = ({
 
         <ModalFooter px={[5, '3.25rem']} py={0} pt={4}>
           <MyTooltip
-            label={collection.permission.hasWritePer ? '' : t('common:dataset.data.Can not edit')}
-          >
+            label={collection.permission.hasWritePer ? '' : t('common:dataset.data.Can not edit')}>
             <Button
               isDisabled={!collection.permission.hasWritePer}
               isLoading={isImporting || isUpdating}
               // @ts-ignore
-              onClick={handleSubmit(dataId ? onUpdateData : sureImportData)}
-            >
+              onClick={handleSubmit(dataId ? onUpdateData : sureImportData)}>
               {dataId ? t('common:confirm_update') : t('common:comfirm_import')}
             </Button>
           </MyTooltip>
@@ -526,8 +517,7 @@ const DataIndexTextArea = ({
           }
         : {
             maxH: 'auto'
-          })}
-    >
+          })}>
       {disabled ? (
         <Box fontSize={'sm'} color={'myGray.500'} whiteSpace={'pre-wrap'}>
           {value}

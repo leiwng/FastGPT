@@ -187,8 +187,7 @@ const TagManageModal = ({ onClose }: { onClose: () => void }) => {
       w={'580px'}
       h={'600px'}
       closeOnOverlayClick={false}
-      isLoading={isLoading}
-    >
+      isLoading={isLoading}>
       {currentAddTag === undefined ? (
         <>
           <Flex
@@ -197,8 +196,7 @@ const TagManageModal = ({ onClose }: { onClose: () => void }) => {
             pb={2}
             borderBottom={'1px solid #E8EBF0'}
             mx={8}
-            pt={6}
-          >
+            pt={6}>
             <MyIcon name="menu" w={5} />
             <Box ml={2} fontWeight={'semibold'} flex={'1 0 0'}>
               {t('dataset:tag.total_tags', {
@@ -212,8 +210,7 @@ const TagManageModal = ({ onClose }: { onClose: () => void }) => {
               fontSize={'xs'}
               onClick={() => {
                 setNewTag('');
-              }}
-            >
+              }}>
               {t('dataset:tag.add_new')}
             </Button>
           </Flex>
@@ -241,8 +238,7 @@ const TagManageModal = ({ onClose }: { onClose: () => void }) => {
             px={8}
             flex={'1 0 0'}
             fontSize={'sm'}
-            EmptyChildren={<EmptyTip text={t('dataset:dataset.no_tags')} />}
-          >
+            EmptyChildren={<EmptyTip text={t('dataset:dataset.no_tags')} />}>
             {renderTags.map((listItem) => {
               const item = listItem.data;
               const tagUsage = tagUsages?.find((tagUsage) => tagUsage.tagId === item._id);
@@ -258,24 +254,21 @@ const TagManageModal = ({ onClose }: { onClose: () => void }) => {
                       display: 'flex'
                     }
                   }}
-                  key={item._id}
-                >
+                  key={item._id}>
                   <Flex
                     px={2}
                     py={1}
                     flex={'1'}
                     _hover={{ bg: 'myGray.100' }}
                     alignItems={'center'}
-                    borderRadius={'xs'}
-                  >
+                    borderRadius={'xs'}>
                     <Flex
                       flex={'1 0 0'}
                       alignItems={'center'}
                       onClick={() => {
                         setCurrentAddTag({ ...item, collections });
                       }}
-                      cursor={'pointer'}
-                    >
+                      cursor={'pointer'}>
                       {currentEditTag?._id !== item._id ? (
                         <Box
                           px={3}
@@ -283,8 +276,7 @@ const TagManageModal = ({ onClose }: { onClose: () => void }) => {
                           bg={'#DBF3FF'}
                           color={'#0884DD'}
                           fontSize={'xs'}
-                          borderRadius={'sm'}
-                        >
+                          borderRadius={'sm'}>
                           {item.tag}
                         </Box>
                       ) : (
@@ -325,8 +317,7 @@ const TagManageModal = ({ onClose }: { onClose: () => void }) => {
                       onClick={() => {
                         setCurrentAddTag({ ...item, collections });
                       }}
-                      cursor={'pointer'}
-                    >
+                      cursor={'pointer'}>
                       <MyIcon name="common/add2" w={4} />
                     </Box>
                     <Box
@@ -340,8 +331,7 @@ const TagManageModal = ({ onClose }: { onClose: () => void }) => {
                       onClick={(e) => {
                         setCurrentEditTag(item);
                         editInputRef.current?.focus();
-                      }}
-                    >
+                      }}>
                       <MyIcon name="edit" w={4} />
                     </Box>
                     <PopoverConfirm
@@ -355,8 +345,7 @@ const TagManageModal = ({ onClose }: { onClose: () => void }) => {
                           _hover={{ bg: '#1118240D' }}
                           p={1}
                           borderRadius={'sm'}
-                          cursor={'pointer'}
-                        >
+                          cursor={'pointer'}>
                           <MyIcon name="delete" w={4} />
                         </Box>
                       }
@@ -453,16 +442,14 @@ const AddTagToCollections = ({
               bg={'#DBF3FF'}
               color={'#0884DD'}
               fontSize={'sm'}
-              borderRadius={'sm'}
-            >
+              borderRadius={'sm'}>
               {currentAddTag.tag}
             </Box>
             <Box
               as={'span'}
               fontSize={'sm'}
               color={'myGray.500'}
-              ml={2}
-            >{`(${selectedCollections.length})`}</Box>
+              ml={2}>{`(${selectedCollections.length})`}</Box>
           </Flex>
         }
         <Box flex={'1 0 0'}></Box>
@@ -483,8 +470,7 @@ const AddTagToCollections = ({
               collectionIds: selectedCollections
             });
             setOriginCollections(selectedCollections);
-          }}
-        >
+          }}>
           {t('common:Save')}
         </Button>
       </Flex>
@@ -493,8 +479,7 @@ const AddTagToCollections = ({
         mt={2}
         flex={'1 0 0'}
         fontSize={'sm'}
-        EmptyChildren={<EmptyTip text={t('dataset:dataset.no_collections')} />}
-      >
+        EmptyChildren={<EmptyTip text={t('dataset:dataset.no_collections')} />}>
         {formatCollections.map((collection) => {
           return (
             <Flex
@@ -520,8 +505,7 @@ const AddTagToCollections = ({
                     return [...prev, collection.id];
                   }
                 });
-              }}
-            >
+              }}>
               <Checkbox
                 size={'md'}
                 mr={2}

@@ -124,15 +124,13 @@ export const MySourceHandle = React.memo(function MySourceHandle({
           </Flex>
         </Box>
       }
-      shouldWrapChildren={false}
-    >
+      shouldWrapChildren={false}>
       <Handle
         style={styles}
         type="source"
         id={handleId}
         position={position}
-        isConnectableEnd={false}
-      >
+        isConnectableEnd={false}>
         {showAddIcon && (
           <MyIcon
             name={'edgeAdd'}

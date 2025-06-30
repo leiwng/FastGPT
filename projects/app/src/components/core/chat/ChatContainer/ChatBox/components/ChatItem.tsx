@@ -283,8 +283,7 @@ const ChatItem = (props: Props) => {
         '& .time-label': {
           display: 'block'
         }
-      }}
-    >
+      }}>
       {/* control icon */}
       <Flex w={'100%'} alignItems={'center'} gap={2} justifyContent={styleMap.justifyContent}>
         {isChatting && type === ChatRoleEnum.AI && isLastChild ? null : (
@@ -296,8 +295,7 @@ const ChatItem = (props: Props) => {
                 fontSize={styleMap.fontSize}
                 color={styleMap.color}
                 fontWeight={styleMap.fontWeight}
-                display={isChatLog ? 'block' : 'none'}
-              >
+                display={isChatLog ? 'block' : 'none'}>
                 {t(formatTimeToChatItemTime(chat.time) as any, {
                   time: dayjs(chat.time).format('HH:mm')
                 }).replace('#', ':')}
@@ -316,8 +314,7 @@ const ChatItem = (props: Props) => {
             py={'1.5px'}
             borderRadius="md"
             bg={chatStatusMap.bg}
-            fontSize={'sm'}
-          >
+            fontSize={'sm'}>
             <Box
               className={styles.statusAnimation}
               bg={chatStatusMap.color}
@@ -343,14 +340,12 @@ const ChatItem = (props: Props) => {
             '& .footer-copy': {
               display: 'block'
             }
-          }}
-        >
+          }}>
           <Card
             {...MessageCardStyle}
             bg={styleMap.bg}
             borderRadius={styleMap.borderRadius}
-            textAlign={'left'}
-          >
+            textAlign={'left'}>
             {type === ChatRoleEnum.Human && <HumanContentCard chatValue={value} />}
             {type === ChatRoleEnum.AI && (
               <>
@@ -396,8 +391,7 @@ const ChatItem = (props: Props) => {
                   position={'absolute'}
                   bottom={0}
                   right={0}
-                  transform={'translateX(100%)'}
-                >
+                  transform={'translateX(100%)'}>
                   <MyTooltip label={t('common:Copy')}>
                     <MyIcon
                       w={'1rem'}

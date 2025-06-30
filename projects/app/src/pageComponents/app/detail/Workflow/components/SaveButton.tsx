@@ -38,8 +38,7 @@ const SaveButton = ({
         section: {
           width: 'auto'
         }
-      }}
-    >
+      }}>
       <MyPopover
         placement={'bottom-end'}
         hasArrow={false}
@@ -56,12 +55,10 @@ const SaveButton = ({
                 name={isSave ? 'core/chat/chevronUp' : 'core/chat/chevronDown'}
                 w={['14px', '16px']}
               />
-            }
-          >
+            }>
             <Box>{t('common:Save')}</Box>
           </Button>
-        }
-      >
+        }>
         {({ onClose }) => (
           <Box p={1.5}>
             <MyBox
@@ -83,8 +80,7 @@ const SaveButton = ({
                 });
                 onClose();
                 setIsSave(false);
-              }}
-            >
+              }}>
               <MyIcon name={'core/workflow/upload'} w={'1rem'} />
               <Box fontSize={'sm'}>{t('common:core.workflow.Save to cloud')}</Box>
             </MyBox>
@@ -100,8 +96,7 @@ const SaveButton = ({
                 }
                 onClose();
                 setIsSave(false);
-              }}
-            >
+              }}>
               <MyIcon name={'core/workflow/publish'} w={'1rem'} />
               <Box fontSize={'sm'}>{t('common:core.workflow.Save and publish')}</Box>
             </HStack>

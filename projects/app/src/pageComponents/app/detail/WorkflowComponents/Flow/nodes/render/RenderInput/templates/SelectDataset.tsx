@@ -59,13 +59,11 @@ export const SelectDatasetRender = React.memo(function SelectDatasetRender({
           gridTemplateColumns={'repeat(2, minmax(0, 1fr))'}
           gridGap={4}
           minW={'350px'}
-          w={'100%'}
-        >
+          w={'100%'}>
           <Button
             h={10}
             leftIcon={<MyIcon name={'common/selectLight'} w={'14px'} />}
-            onClick={onOpenDatasetSelect}
-          >
+            onClick={onOpenDatasetSelect}>
             {t('common:Choose')}
           </Button>
           {selectedDatasets.map((item) => (
@@ -77,8 +75,7 @@ export const SelectDatasetRender = React.memo(function SelectDatasetRender({
               bg={'white'}
               border={'base'}
               px={2}
-              borderRadius={'md'}
-            >
+              borderRadius={'md'}>
               <Avatar src={item.avatar} w={'18px'} borderRadius={'xs'} />
               <Box
                 ml={1.5}
@@ -86,8 +83,7 @@ export const SelectDatasetRender = React.memo(function SelectDatasetRender({
                 w={0}
                 className="textEllipsis"
                 fontWeight={'bold'}
-                fontSize={['sm', 'sm']}
-              >
+                fontSize={['sm', 'sm']}>
                 {item.name}
               </Box>
             </Flex>

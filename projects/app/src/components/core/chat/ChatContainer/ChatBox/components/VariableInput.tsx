@@ -43,8 +43,7 @@ export const VariableInputItem = ({
         position={'relative'}
         mb={1}
         alignItems={'center'}
-        w={'full'}
-      >
+        w={'full'}>
         {item.label}
         {item.required && (
           <Box position={'absolute'} top={'-2px'} left={'-8px'} color={'red.500'}>
@@ -142,8 +141,7 @@ export const ExternalVariableInputItem = ({
             gap={1}
             ml={2}
             fontSize={'mini'}
-            rounded={'sm'}
-          >
+            rounded={'sm'}>
             <MyIcon name={'common/info'} color={'primary.600'} w={4} />
             {t('chat:variable_invisable_in_share')}
           </Flex>
@@ -231,8 +229,7 @@ const VariableInput = ({
             w={'400px'}
             {...MessageCardStyle}
             bg={'white'}
-            boxShadow={'0 0 8px rgba(0,0,0,0.15)'}
-          >
+            boxShadow={'0 0 8px rgba(0,0,0,0.15)'}>
             <Flex
               color={'primary.600'}
               bg={'primary.100'}
@@ -241,8 +238,7 @@ const VariableInput = ({
               py={1.5}
               gap={1}
               fontSize={'mini'}
-              rounded={'sm'}
-            >
+              rounded={'sm'}>
               <MyIcon name={'common/info'} color={'primary.600'} w={4} />
               {t('chat:variable_invisable_in_share')}
             </Flex>
@@ -257,8 +253,7 @@ const VariableInput = ({
                   maxW={'100px'}
                   onClick={handleSubmitChat(() => {
                     chatForm.setValue('chatStarted', true);
-                  })}
-                >
+                  })}>
                   {t('common:core.chat.Start Chat')}
                 </Button>
               </Box>
@@ -275,8 +270,7 @@ const VariableInput = ({
             w={'400px'}
             {...MessageCardStyle}
             bg={'white'}
-            boxShadow={'0 0 8px rgba(0,0,0,0.15)'}
-          >
+            boxShadow={'0 0 8px rgba(0,0,0,0.15)'}>
             {variableList.map((item) => (
               <VariableInputItem key={item.id} item={item} variablesForm={variablesForm} />
             ))}
@@ -289,8 +283,7 @@ const VariableInput = ({
                   onClick={handleSubmitChat(() => {
                     console.log('start chat');
                     chatForm.setValue('chatStarted', true);
-                  })}
-                >
+                  })}>
                   {t('common:core.chat.Start Chat')}
                 </Button>
               </Box>

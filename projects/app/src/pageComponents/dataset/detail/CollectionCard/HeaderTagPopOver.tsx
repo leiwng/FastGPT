@@ -74,8 +74,7 @@ const HeaderTagPopOver = () => {
             _hover={{
               boxShadow: '0px 0px 0px 2.4px rgba(51, 112, 255, 0.15)',
               borderColor: 'primary.300'
-            }}
-          >
+            }}>
             <Flex flex={'1 0 0'}>
               {t('dataset:tag.tags')}
               <Box as={'span'}>
@@ -88,8 +87,7 @@ const HeaderTagPopOver = () => {
             </Flex>
             <MyIcon name={'core/chat/chevronDown'} w={'14px'} />
           </Flex>
-        }
-      >
+        }>
         {({ onClose }) => (
           <MyBox isLoading={isCreateCollectionTagLoading} onClick={(e) => e.stopPropagation()}>
             <Box px={1.5} pt={1.5}>
@@ -113,8 +111,7 @@ const HeaderTagPopOver = () => {
                     cursor={'pointer'}
                     _hover={{ bg: '#1118240D', color: 'primary.700' }}
                     borderRadius={'xs'}
-                    onClick={() => onCreateCollectionTag(searchTagKey)}
-                  >
+                    onClick={() => onCreateCollectionTag(searchTagKey)}>
                     <MyIcon name={'common/addLight'} w={'16px'} />
                     <Box ml={2} py={2}>
                       {t('dataset:tag.add') + ` "${searchTagKey}"`}
@@ -147,8 +144,7 @@ const HeaderTagPopOver = () => {
                     onClick={(e) => {
                       e.preventDefault();
                       checkTags(item);
-                    }}
-                  >
+                    }}>
                     <Checkbox
                       isChecked={checkedTags.includes(item._id)}
                       onChange={(e) => {
@@ -174,8 +170,7 @@ const HeaderTagPopOver = () => {
                   setSearchTagKey('');
                   setFilterTags([]);
                   onClose();
-                }}
-              >
+                }}>
                 {t('dataset:tag.cancel')}
               </Button>
               <Box w={'1px'} bg={'myGray.200'}></Box>
@@ -188,8 +183,7 @@ const HeaderTagPopOver = () => {
                 variant={'unstyled'}
                 onClick={() => {
                   onOpenTagManageModal();
-                }}
-              >
+                }}>
                 {t('dataset:tag.manage')}
               </Button>
             </Flex>

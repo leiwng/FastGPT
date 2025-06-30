@@ -65,8 +65,7 @@ const EditAPIDatasetInfoModal = ({
               color={'primary.600'}
               fontSize={'sm'}
               cursor={'pointer'}
-              onClick={() => window.open(getDocPath(DatasetTypeMap[type].courseUrl!), '_blank')}
-            >
+              onClick={() => window.open(getDocPath(DatasetTypeMap[type].courseUrl!), '_blank')}>
               <MyIcon name={'book'} w={4} mr={0.5} />
               {t('common:Instructions')}
             </Flex>

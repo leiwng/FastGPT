@@ -43,8 +43,7 @@ const ConversionModal = ({
       onClose={onClose}
       iconSrc="support/bill/wallet"
       iconColor="primary.600"
-      title={t('account_info:usage_balance')}
-    >
+      title={t('account_info:usage_balance')}>
       <ModalBody maxW={'450px'}>
         <VStack px="2.25" gap={2} pb="6">
           <HStack px="4" py="2" color="primary.600" bgColor="primary.50" borderRadius="md">
@@ -88,8 +87,7 @@ const ConversionModal = ({
               fontSize={'sm'}
               minW={'10rem'}
               onClick={onConvert}
-              isLoading={loading}
-            >
+              isLoading={loading}>
               {t('account_info:exchange')}
             </Button>
             <Link fontSize={'sm'} color="primary" mt="2" onClick={onOpenContact}>

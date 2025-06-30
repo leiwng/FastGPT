@@ -84,8 +84,7 @@ const UpdateContactModal = ({
           mode === 'notification_account'
             ? t('common:support.user.info.notification_receiving_hint')
             : t('common:contact_way')
-        }
-      >
+        }>
         <ModalBody px={10}>
           <Flex flexDirection="column">
             <HStack px="6" py="3" color="primary.600" bgColor="primary.50" borderRadius="md">
@@ -98,8 +97,7 @@ const UpdateContactModal = ({
                 flex={1}
                 bg={'myGray.50'}
                 {...register('contact', { required: true })}
-                placeholder={placeholder}
-              ></Input>
+                placeholder={placeholder}></Input>
             </Flex>
             <Flex mt="6" alignItems="center" position={'relative'}>
               <Box flex={'0 0 70px'}>{t('common:support.user.info.verification_code')}</Box>
@@ -107,8 +105,7 @@ const UpdateContactModal = ({
                 flex={1}
                 bg={'myGray.50'}
                 {...register('verifyCode', { required: true })}
-                placeholder={t('common:support.user.info.code_required')}
-              ></Input>
+                placeholder={t('common:support.user.info.code_required')}></Input>
               <SendCodeBox username={account} />
             </Flex>
           </Flex>
@@ -120,8 +117,7 @@ const UpdateContactModal = ({
           <Button
             isLoading={isLoading}
             isDisabled={!account || !verifyCode}
-            onClick={handleSubmit((data) => onSubmit(data))}
-          >
+            onClick={handleSubmit((data) => onSubmit(data))}>
             {t('common:Confirm')}
           </Button>
         </ModalFooter>

@@ -139,16 +139,14 @@ const Header = () => {
             : {
                 bg: 'transparent',
                 borderBottomColor: 'transparent'
-              })}
-        >
+              })}>
           {/* back */}
           <Box
             _hover={{
               bg: 'myGray.200'
             }}
             p={0.5}
-            borderRadius={'sm'}
-          >
+            borderRadius={'sm'}>
             <MyIcon
               name={'common/leftArrowLight'}
               w={6}
@@ -193,8 +191,7 @@ const Header = () => {
                   if (data) {
                     setWorkflowTestData(data);
                   }
-                }}
-              >
+                }}>
                 {t('common:core.workflow.Run')}
               </Button>
               {!showHistoryModal && (
@@ -244,8 +241,7 @@ const Header = () => {
         onClose={onCloseBackConfirm}
         iconSrc="common/warn"
         title={t('common:Exit')}
-        w={'400px'}
-      >
+        w={'400px'}>
         <ModalBody>
           <Box>{t('workflow:workflow.exit_tips')}</Box>
         </ModalBody>
@@ -266,8 +262,7 @@ const Header = () => {
                   position: 'top-right'
                 });
               } catch (error) {}
-            }}
-          >
+            }}>
             {t('common:Save_and_exit')}
           </Button>
         </ModalFooter>

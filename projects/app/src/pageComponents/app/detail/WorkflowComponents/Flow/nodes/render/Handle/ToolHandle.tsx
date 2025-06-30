@@ -50,8 +50,7 @@ export const ToolTargetHandle = ({ show, nodeId }: ToolHandleProps) => {
         type="target"
         id={handleId}
         position={Position.Top}
-        isConnectableEnd={showHandle}
-      >
+        isConnectableEnd={showHandle}>
         <Box
           className="flow-handle"
           w={size}
@@ -114,8 +113,7 @@ export const ToolSourceHandle = ({ nodeId }: { nodeId: string }) => {
           type="source"
           id={NodeOutputKeyEnum.selectedTools}
           position={Position.Bottom}
-          onConnect={onConnect}
-        >
+          onConnect={onConnect}>
           <Box
             w={size}
             h={size}

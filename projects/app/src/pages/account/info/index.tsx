@@ -254,8 +254,7 @@ const MyInfo = ({ onOpenContact }: { onOpenContact: () => void }) => {
                 border={theme.borders.base}
                 overflow={'hidden'}
                 boxShadow={'0 0 5px rgba(0,0,0,0.1)'}
-                onClick={onOpenSelectFile}
-              >
+                onClick={onOpenSelectFile}>
                 <Avatar src={userInfo?.avatar} borderRadius={'50%'} w={'100%'} h={'100%'} />
               </Box>
             </MyTooltip>
@@ -265,8 +264,7 @@ const MyInfo = ({ onOpenContact }: { onOpenContact: () => void }) => {
             flexDirection={'column'}
             alignItems={'center'}
             cursor={'pointer'}
-            onClick={onOpenSelectFile}
-          >
+            onClick={onOpenSelectFile}>
             <MyTooltip label={t('account_info:choose_avatar')}>
               <Box
                 w={['44px', '54px']}
@@ -276,8 +274,7 @@ const MyInfo = ({ onOpenContact }: { onOpenContact: () => void }) => {
                 overflow={'hidden'}
                 p={'2px'}
                 boxShadow={'0 0 5px rgba(0,0,0,0.1)'}
-                mb={2}
-              >
+                mb={2}>
                 <Avatar src={userInfo?.avatar} borderRadius={'50%'} w={'100%'} h={'100%'} />
               </Box>
             </MyTooltip>
@@ -463,8 +460,7 @@ const PlanUsage = () => {
           fontStyle="normal"
           fontWeight={500}
           lineHeight="24px"
-          letterSpacing="0.15px"
-        >
+          letterSpacing="0.15px">
           <MyIcon mr={2} name={'support/account/plans'} w={'20px'} />
           {t('account_info:package_and_usage')}
         </Flex>
@@ -489,8 +485,7 @@ const PlanUsage = () => {
         bg={'white'}
         borderWidth={'1px'}
         borderColor={'borderColor.low'}
-        borderRadius={'md'}
-      >
+        borderRadius={'md'}>
         <Flex px={[5, 7]} pt={[3, 6]}>
           <Box flex={'1 0 0'}>
             <Box color={'myGray.600'} fontSize="sm">
@@ -507,8 +502,7 @@ const PlanUsage = () => {
               );
             }}
             w={'8rem'}
-            size="sm"
-          >
+            size="sm">
             {t('account_info:upgrade_package')}
           </Button>
         </Flex>
@@ -543,8 +537,7 @@ const PlanUsage = () => {
         borderRadius={'md'}
         px={[5, 10]}
         pt={4}
-        pb={[4, 7]}
-      >
+        pb={[4, 7]}>
         <Flex>
           <Flex flex={'1 0 0'} alignItems={'flex-end'}>
             <Box fontSize={'md'} fontWeight={'bold'} color={'myGray.900'}>
@@ -561,8 +554,7 @@ const PlanUsage = () => {
             alignItems={'center'}
             color={'primary.600'}
             cursor={'pointer'}
-            fontSize={'sm'}
-          >
+            fontSize={'sm'}>
             {t('account_info:purchase_extra_package')}
             <MyIcon ml={1} name={'common/rightArrowLight'} w={'12px'} />
           </Link>
@@ -664,8 +656,7 @@ const Other = ({ onOpenContact }: { onOpenContact: () => void }) => {
             href={getDocPath('/docs/intro')}
             target="_blank"
             textDecoration={'none !important'}
-            {...ButtonStyles}
-          >
+            {...ButtonStyles}>
             <MyIcon name={'common/courseLight'} w={'18px'} color={'myGray.600'} />
             <Box ml={2} flex={1}>
               {t('account_info:help_document')}

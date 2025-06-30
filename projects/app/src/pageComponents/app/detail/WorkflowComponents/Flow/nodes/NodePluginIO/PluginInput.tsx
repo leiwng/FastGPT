@@ -95,8 +95,7 @@ const NodePluginInput = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
           copy: true,
           delete: true
         }}
-        {...data}
-      >
+        {...data}>
         <Container mt={1}>
           <HStack className="nodrag" cursor={'default'} mb={3}>
             <IOTitle text={t('common:core.workflow.Custom inputs')} mb={0} />
@@ -106,8 +105,7 @@ const NodePluginInput = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
               leftIcon={<SmallAddIcon />}
               iconSpacing={1}
               size={'sm'}
-              onClick={() => setEditField(defaultInput)}
-            >
+              onClick={() => setEditField(defaultInput)}>
               {t('common:add_new')}
             </Button>
           </HStack>

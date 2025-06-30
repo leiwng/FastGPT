@@ -77,8 +77,7 @@ const McpServer = () => {
                 </Box>
                 <Button
                   isDisabled={!userInfo?.permission.hasApikeyCreatePer}
-                  onClick={() => setEditMcp(defaultForm)}
-                >
+                  onClick={() => setEditMcp(defaultForm)}>
                   {t('dashboard_mcp:create_mcp_server')}
                 </Button>
               </Flex>
@@ -96,8 +95,7 @@ const McpServer = () => {
                 <Flex mt={2} justifyContent={'flex-end'}>
                   <Button
                     isDisabled={!userInfo?.permission.hasApikeyCreatePer}
-                    onClick={() => setEditMcp(defaultForm)}
-                  >
+                    onClick={() => setEditMcp(defaultForm)}>
                     {t('dashboard_mcp:create_mcp_server')}
                   </Button>
                 </Flex>
@@ -126,8 +124,7 @@ const McpServer = () => {
                               mr={4}
                               variant={'whiteBase'}
                               size={'sm'}
-                              onClick={() => setUsageWay(mcp)}
-                            >
+                              onClick={() => setUsageWay(mcp)}>
                               {t('dashboard_mcp:start_use')}
                             </Button>
                             <MyIconButton

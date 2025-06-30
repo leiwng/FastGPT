@@ -94,8 +94,7 @@ const AppCard = ({
           wordBreak={'break-all'}
           color={'myGray.600'}
           fontSize={'xs'}
-          minH={'46px'}
-        >
+          minH={'46px'}>
           {appDetail.intro || t('common:core.app.tip.Add a intro to app')}
         </Box>
         <HStack alignItems={'center'}>
@@ -103,8 +102,7 @@ const AppCard = ({
             size={['sm', 'md']}
             variant={'whitePrimary'}
             leftIcon={<MyIcon name={'core/chat/chatLight'} w={'16px'} />}
-            onClick={() => router.push(`/chat?appId=${appId}`)}
-          >
+            onClick={() => router.push(`/chat?appId=${appId}`)}>
             {t('common:core.Chat')}
           </Button>
           {appDetail.permission.hasManagePer && (
@@ -112,8 +110,7 @@ const AppCard = ({
               size={['sm', 'md']}
               variant={'whitePrimary'}
               leftIcon={<MyIcon name={'common/settingLight'} w={'16px'} />}
-              onClick={onOpenInfoEdit}
-            >
+              onClick={onOpenInfoEdit}>
               {t('common:Setting')}
             </Button>
           )}

@@ -197,8 +197,7 @@ const CustomAPIFileInput = () => {
                 if (!(e.target as HTMLElement).closest('.checkbox')) {
                   handleSelectAll();
                 }
-              }}
-            >
+              }}>
               <Checkbox
                 className="checkbox"
                 mr={2}
@@ -224,8 +223,7 @@ const CustomAPIFileInput = () => {
                     if (!(e.target as HTMLElement).closest('.checkbox')) {
                       handleItemClick(item);
                     }
-                  }}
-                >
+                  }}>
                   <Checkbox
                     className="checkbox"
                     mr={2.5}
@@ -267,13 +265,11 @@ const CustomAPIFileInput = () => {
           bottom={0}
           left={0}
           right={0}
-          p={4}
-        >
+          p={4}>
           <Button
             isDisabled={selectFiles.length === 0}
             isLoading={onNextLoading}
-            onClick={onclickNext}
-          >
+            onClick={onclickNext}>
             {selectFiles.length > 0
               ? `${t('dataset:total_num_files', { total: selectFiles.length })} | `
               : ''}

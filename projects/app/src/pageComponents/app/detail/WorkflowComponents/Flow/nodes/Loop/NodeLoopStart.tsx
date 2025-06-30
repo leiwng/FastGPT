@@ -98,8 +98,7 @@ const NodeLoopStart = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
           copy: true,
           delete: true,
           debug: true
-        }}
-      >
+        }}>
         <Box px={4} pt={2} w={'420px'}>
           <Box bg={'white'} borderRadius={'md'} overflow={'hidden'} border={'base'}>
             <TableContainer>

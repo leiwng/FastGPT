@@ -118,24 +118,21 @@ function OrgMemberManageModal({
       iconSrc={currentOrg?.avatar}
       minW="800px"
       h={'100%'}
-      isCentered
-    >
+      isCentered>
       <ModalBody flex={1}>
         <Grid
           border="1px solid"
           borderColor="myGray.200"
           borderRadius="0.5rem"
           gridTemplateColumns="1fr 1fr"
-          h={'100%'}
-        >
+          h={'100%'}>
           <Flex
             flexDirection="column"
             p="4"
             overflowY="auto"
             overflowX="hidden"
             borderRight={'1px solid'}
-            borderColor={'myGray.200'}
-          >
+            borderColor={'myGray.200'}>
             <SearchInput
               placeholder={t('user:search_user')}
               fontSize="sm"
@@ -171,8 +168,7 @@ function OrgMemberManageModal({
                     borderRadius={'md'}
                     key={member.tmbId}
                     _hover={{ bg: 'myGray.50' }}
-                    _notLast={{ mb: 2 }}
-                  >
+                    _notLast={{ mb: 2 }}>
                     <HStack>
                       <Avatar src={member?.avatar} w="1.5rem" borderRadius={'md'} />
                       <Box>{member?.name}</Box>

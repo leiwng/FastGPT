@@ -123,8 +123,7 @@ const FieldModal = ({
       isOpen={true}
       iconSrc="/imgs/workflow/extract.png"
       title={isEdit ? t('workflow:edit_input') : t('workflow:add_new_input')}
-      overflow={'unset'}
-    >
+      overflow={'unset'}>
       <ModalBody w={'100%'} overflow={'auto'} display={'flex'} flexDirection={['column', 'row']}>
         <Stack w={'100%'} spacing={3}>
           {showValueTypeSelect && (

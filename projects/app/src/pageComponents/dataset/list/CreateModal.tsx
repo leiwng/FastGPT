@@ -104,8 +104,7 @@ const CreateModal = ({
       isOpen
       onClose={onClose}
       isCentered={!isPc}
-      w={'490px'}
-    >
+      w={'490px'}>
       <ModalBody py={6} px={9}>
         <Box>
           <Flex justify={'space-between'}>
@@ -119,8 +118,7 @@ const CreateModal = ({
                 color={'primary.600'}
                 fontSize={'sm'}
                 cursor={'pointer'}
-                onClick={() => window.open(getDocPath(DatasetTypeMap[type].courseUrl!), '_blank')}
-              >
+                onClick={() => window.open(getDocPath(DatasetTypeMap[type].courseUrl!), '_blank')}>
                 <MyIcon name={'book'} w={4} mr={0.5} />
                 {t('common:Instructions')}
               </Flex>
@@ -156,8 +154,7 @@ const CreateModal = ({
           mt={6}
           alignItems={['flex-start', 'center']}
           justify={'space-between'}
-          flexDir={['column', 'row']}
-        >
+          flexDir={['column', 'row']}>
           <HStack
             spacing={1}
             alignItems={'center'}
@@ -165,8 +162,7 @@ const CreateModal = ({
             fontSize={'sm'}
             color={'myGray.900'}
             fontWeight={500}
-            pb={['12px', '0']}
-          >
+            pb={['12px', '0']}>
             <Box>{t('common:core.ai.model.Vector Model')}</Box>
             <QuestionTip label={t('common:core.dataset.embedding model tip')} />
           </HStack>
@@ -189,16 +185,14 @@ const CreateModal = ({
           mt={6}
           alignItems={['flex-start', 'center']}
           justify={'space-between'}
-          flexDir={['column', 'row']}
-        >
+          flexDir={['column', 'row']}>
           <HStack
             spacing={1}
             flex={['', '0 0 110px']}
             fontSize={'sm'}
             color={'myGray.900'}
             fontWeight={500}
-            pb={['12px', '0']}
-          >
+            pb={['12px', '0']}>
             <Box>{t('common:core.ai.model.Dataset Agent Model')}</Box>
             <QuestionTip label={t('dataset:file_model_function_tip')} />
           </HStack>
@@ -221,16 +215,14 @@ const CreateModal = ({
           mt={6}
           alignItems={['flex-start', 'center']}
           justify={'space-between'}
-          flexDir={['column', 'row']}
-        >
+          flexDir={['column', 'row']}>
           <HStack
             spacing={1}
             flex={['', '0 0 110px']}
             fontSize={'sm'}
             color={'myGray.900'}
             fontWeight={500}
-            pb={['12px', '0']}
-          >
+            pb={['12px', '0']}>
             <Box>{t('dataset:vllm_model')}</Box>
           </HStack>
           <Box w={['100%', '300px']}>

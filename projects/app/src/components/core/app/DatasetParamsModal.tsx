@@ -140,8 +140,7 @@ const DatasetParamsModal = ({
       onClose={onClose}
       iconSrc="/imgs/modal/params.svg"
       title={t('common:core.dataset.search.Dataset Search Params')}
-      w={['90vw', '550px']}
-    >
+      w={['90vw', '550px']}>
       <ModalBody flex={'auto'} overflow={'auto'} px={[4, 10]}>
         <LightRowTabs<SearchSettingTabEnum>
           width={'100%'}
@@ -217,8 +216,7 @@ const DatasetParamsModal = ({
                         step={0.01}
                         onChange={(e) => {
                           setValue('embeddingWeight', Number(e.toFixed(2)));
-                        }}
-                      >
+                        }}>
                         <SliderTrack bg={'#F9518E'}>
                           <SliderFilledTrack bg={'#3370FF'} />
                         </SliderTrack>
@@ -384,8 +382,9 @@ const DatasetParamsModal = ({
                     </FormLabel>
                     <QuestionTip
                       ml={1}
-                      label={t('common:core.app.edit.Query extension background tip')}
-                    ></QuestionTip>
+                      label={t(
+                        'common:core.app.edit.Query extension background tip'
+                      )}></QuestionTip>
                   </Flex>
                   <Box mt={1}>
                     <MyTextarea
@@ -410,8 +409,7 @@ const DatasetParamsModal = ({
           onClick={() => {
             onClose();
             handleSubmit(onSuccess)();
-          }}
-        >
+          }}>
           {t('common:Done')}
         </Button>
       </ModalFooter>

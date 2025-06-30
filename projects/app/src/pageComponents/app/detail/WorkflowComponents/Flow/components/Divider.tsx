@@ -23,8 +23,7 @@ const Divider = ({
       py={isDivider ? '0' : 2}
       borderTop={theme.borders.base}
       borderBottom={showBorderBottom ? theme.borders.base : 0}
-      fontWeight={'medium'}
-    >
+      fontWeight={'medium'}>
       {icon}
       {icon && <Box w={1} />}
       {text}

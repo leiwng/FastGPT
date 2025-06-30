@@ -89,8 +89,7 @@ function GroupInfoModal({
     <MyModal
       onClose={onClose}
       title={editGroup ? t('user:team.group.edit') : t('user:team.group.create')}
-      iconSrc={editGroup?.avatar ?? DEFAULT_TEAM_AVATAR}
-    >
+      iconSrc={editGroup?.avatar ?? DEFAULT_TEAM_AVATAR}>
       <ModalBody flex={1} overflow={'auto'} display={'flex'} flexDirection={'column'} gap={4}>
         <FormLabel w="80px">{t('user:team.avatar_and_name')}</FormLabel>
         <HStack>
@@ -116,8 +115,7 @@ function GroupInfoModal({
             } else {
               onCreate(data);
             }
-          })}
-        >
+          })}>
           {editGroup ? t('common:Save') : t('common:new_create')}
         </Button>
       </ModalFooter>

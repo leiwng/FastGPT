@@ -29,8 +29,7 @@ const ValueTypeLabel = ({
         h={6}
         display={'flex'}
         alignItems={'center'}
-        fontSize={'11px'}
-      >
+        fontSize={'11px'}>
         {t(label as any)}
       </Box>
     </MyTooltip>

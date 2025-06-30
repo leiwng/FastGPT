@@ -23,8 +23,7 @@ const ChatTip = ({ type, ...props }: { type: 'chat' | 'dataset' } & BoxProps) =>
       pt={3}
       pb={[3, 0]}
       color={'myGray.400'}
-      {...props}
-    >
+      {...props}>
       {textMap[type]}
     </Box>
   ) : null;

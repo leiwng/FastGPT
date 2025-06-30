@@ -233,8 +233,7 @@ const OutLink = (props: Props) => {
         placement="left"
         autoFocus={false}
         size={'xs'}
-        onClose={onCloseSlider}
-      >
+        onClose={onCloseSlider}>
         <DrawerOverlay backgroundColor={'rgba(255,255,255,0.5)'} />
         <DrawerContent maxWidth={'75vw'} boxShadow={'2px 0 10px rgba(0,0,0,0.15)'}>
           {Children}
@@ -253,8 +252,9 @@ const OutLink = (props: Props) => {
       <Flex
         h={'full'}
         gap={4}
-        {...(isEmbed ? { p: '0 !important', borderRadius: '0', boxShadow: 'none' } : { p: [0, 5] })}
-      >
+        {...(isEmbed
+          ? { p: '0 !important', borderRadius: '0', boxShadow: 'none' }
+          : { p: [0, 5] })}>
         {(!datasetCiteData || isPc) && (
           <PageContainer flex={'1 0 0'} w={0} p={'0 !important'}>
             <Flex h={'100%'} flexDirection={['column', 'row']}>
@@ -266,8 +266,7 @@ const OutLink = (props: Props) => {
                 h={[0, '100%']}
                 w={['100%', 0]}
                 flex={'1 0 0'}
-                flexDirection={'column'}
-              >
+                flexDirection={'column'}>
                 {/* header */}
                 {showHead === '1' ? (
                   <ChatHeader
@@ -386,8 +385,7 @@ const Render = (props: Props) => {
         isShowReadRawSource={props.showRawSource}
         isResponseDetail={props.responseDetail}
         // isShowFullText={props.showFullText}
-        showNodeStatus={props.showNodeStatus}
-      >
+        showNodeStatus={props.showNodeStatus}>
         <ChatRecordContextProvider params={chatRecordProviderParams}>
           <OutLink {...props} />
         </ChatRecordContextProvider>

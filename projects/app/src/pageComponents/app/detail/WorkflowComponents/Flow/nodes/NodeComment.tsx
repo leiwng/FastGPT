@@ -86,8 +86,7 @@ const NodeComment = ({ data }: NodeProps<FlowNodeItemType>) => {
           bg: '#D8E9FF',
           boxShadow:
             '0px 4px 10px 0px rgba(19, 51, 107, 0.10), 0px 0px 1px 0px rgba(19, 51, 107, 0.10)'
-        }}
-      >
+        }}>
         <Box w={'full'} h={'full'} position={'relative'}>
           <Box
             position={'absolute'}
@@ -97,8 +96,7 @@ const NodeComment = ({ data }: NodeProps<FlowNodeItemType>) => {
             cursor={'nwse-resize'}
             px={'2px'}
             className="nodrag"
-            onMouseDown={handleMouseDown}
-          >
+            onMouseDown={handleMouseDown}>
             <MyIcon name={'common/editor/resizer'} width={'14px'} height={'14px'} />
           </Box>
           <Textarea

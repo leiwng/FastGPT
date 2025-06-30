@@ -84,8 +84,7 @@ export const useSendCode = ({ type }: { type: `${UserAuthTypeEnum}` }) => {
                     onOpenCodeAuthModal();
                   }
                 }
-              })}
-        >
+              })}>
           {sendCodeText}
         </Box>
         {openCodeAuthModal && (

@@ -118,16 +118,14 @@ const FlowController = React.memo(function FlowController() {
             gap: '2px',
             boxShadow:
               '0px 0px 1px 0px rgba(19, 51, 107, 0.20), 0px 12px 16px -4px rgba(19, 51, 107, 0.20)'
-          }}
-        >
+          }}>
           {/* Control Mode */}
           <MyTooltip
             label={
               workflowControlMode === 'select'
                 ? t('workflow:pan_priority')
                 : t('workflow:mouse_priority')
-            }
-          >
+            }>
             <ControlButton
               onClick={() => {
                 setWorkflowControlMode(workflowControlMode === 'select' ? 'drag' : 'select');
@@ -135,8 +133,7 @@ const FlowController = React.memo(function FlowController() {
               style={{
                 ...buttonStyle
               }}
-              className={`${styles.customControlButton}`}
-            >
+              className={`${styles.customControlButton}`}>
               <MyIcon
                 name={
                   workflowControlMode === 'select'
@@ -155,8 +152,7 @@ const FlowController = React.memo(function FlowController() {
               onClick={undo}
               style={buttonStyle}
               className={`${styles.customControlButton}`}
-              disabled={!canUndo}
-            >
+              disabled={!canUndo}>
               <MyIcon name={'core/workflow/undo'} />
             </ControlButton>
           </MyTooltip>
@@ -167,8 +163,7 @@ const FlowController = React.memo(function FlowController() {
               onClick={redo}
               style={buttonStyle}
               className={`${styles.customControlButton}`}
-              disabled={!canRedo}
-            >
+              disabled={!canRedo}>
               <MyIcon name={'core/workflow/redo'} />
             </ControlButton>
           </MyTooltip>
@@ -181,8 +176,7 @@ const FlowController = React.memo(function FlowController() {
               onClick={() => zoomOut()}
               style={buttonStyle}
               className={`${styles.customControlButton}`}
-              disabled={zoom <= minZoom}
-            >
+              disabled={zoom <= minZoom}>
               <MyIcon name={'common/subtract'} />
             </ControlButton>
           </MyTooltip>
@@ -193,8 +187,7 @@ const FlowController = React.memo(function FlowController() {
               onClick={() => zoomIn()}
               style={buttonStyle}
               className={`${styles.customControlButton}`}
-              disabled={zoom >= maxZoom}
-            >
+              disabled={zoom >= maxZoom}>
               <MyIcon name={'common/addLight'} />
             </ControlButton>
           </MyTooltip>
@@ -206,8 +199,7 @@ const FlowController = React.memo(function FlowController() {
             <ControlButton
               onClick={() => fitView()}
               style={buttonStyle}
-              className={`custom-workflow-fix_view ${styles.customControlButton}`}
-            >
+              className={`custom-workflow-fix_view ${styles.customControlButton}`}>
               <MyIcon name={'core/modules/fixview'} />
             </ControlButton>
           </MyTooltip>

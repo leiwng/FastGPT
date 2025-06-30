@@ -124,8 +124,7 @@ const FileSelector = ({
           variant={'whiteBase'}
           onClick={() => {
             onOpenSelectFile();
-          }}
-        >
+          }}>
           {t('chat:select')}
         </Button>
       </Flex>
@@ -252,8 +251,7 @@ const RenderPluginInput = ({
               gap={1}
               ml={2}
               fontSize={'mini'}
-              rounded={'sm'}
-            >
+              rounded={'sm'}>
               <MyIcon name={'common/info'} color={'primary.600'} w={4} />
               {t('chat:variable_invisable_in_share')}
             </Flex>

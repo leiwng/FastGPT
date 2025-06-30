@@ -150,8 +150,7 @@ const ThirdParty = () => {
           gridGap={4}
           alignItems={'stretch'}
           mt={5}
-          pb={5}
-        >
+          pb={5}>
           {accountList
             .filter((item) => item.isOpen)
             .map((item) => (
@@ -177,8 +176,7 @@ const ThirdParty = () => {
                           status: 'warning'
                         })
                 }
-                position={'relative'}
-              >
+                position={'relative'}>
                 <Flex>
                   <MyIcon name={item.icon as any} w={'24px'} color={item.iconColor} />
                   <Box ml={2} flex={1} fontWeight={'medium'} fontSize={'16px'} color={'myGray.900'}>
@@ -190,8 +188,7 @@ const ThirdParty = () => {
                     px={2}
                     py={1}
                     borderRadius={'sm'}
-                    fontSize={'10px'}
-                  >
+                    fontSize={'10px'}>
                     {item.active
                       ? t('account_thirdParty:configured')
                       : t('account_thirdParty:not_configured')}
@@ -202,8 +199,7 @@ const ThirdParty = () => {
                   mt={3}
                   fontSize={'mini'}
                   color={'myGray.500'}
-                  lineHeight={'18px'}
-                >
+                  lineHeight={'18px'}>
                   {item.intro}
                 </Box>
                 <Box flex={1} />

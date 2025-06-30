@@ -38,8 +38,7 @@ const CustomTooltip = ({ active, payload }: TooltipProps<ValueType, NameType>) =
         borderColor={'myGray.200'}
         boxShadow={
           '0px 24px 48px -12px rgba(19, 51, 107, 0.20), 0px 0px 1px 0px rgba(19, 51, 107, 0.20)'
-        }
-      >
+        }>
         <Box fontSize={'mini'} color={'myGray.600'} mb={3}>
           {data.date}
         </Box>

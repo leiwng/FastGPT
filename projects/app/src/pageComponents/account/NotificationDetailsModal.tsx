@@ -32,8 +32,7 @@ const NotificationDetailsModal = ({ inform, onClose }: { inform: any; onClose: (
       onClose={onClose}
       iconColor="blue.600"
       maxW="680px"
-      maxH="80vh"
-    >
+      maxH="80vh">
       <Flex flexDirection="column" p={8}>
         <Flex
           {...textStyles.time}
@@ -41,8 +40,7 @@ const NotificationDetailsModal = ({ inform, onClose }: { inform: any; onClose: (
           display="flex"
           justifyContent="space-between"
           alignItems="center"
-          alignSelf="stretch"
-        >
+          alignSelf="stretch">
           <Box {...textStyles.title} fontFamily="PingFang SC">
             {inform.title}
           </Box>
@@ -55,8 +53,7 @@ const NotificationDetailsModal = ({ inform, onClose }: { inform: any; onClose: (
             fontSize="xs"
             fontWeight="medium"
             showDot={false}
-            type="fill"
-          >
+            type="fill">
             {inform.teamId ? t('account_inform:team') : t('account_inform:system')}
           </MyTag>
         </Flex>

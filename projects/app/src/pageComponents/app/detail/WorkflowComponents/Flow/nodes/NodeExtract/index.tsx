@@ -66,8 +66,7 @@ const NodeExtract = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
               px={2}
               color={'myGray.600'}
               leftIcon={<AddIcon fontSize={'10px'} />}
-              onClick={() => setEditExtractField(defaultField)}
-            >
+              onClick={() => setEditExtractField(defaultField)}>
               {t('common:core.module.extract.Add field')}
             </Button>
           </Flex>

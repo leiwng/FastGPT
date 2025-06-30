@@ -22,8 +22,7 @@ const ScoreTag = (score: { primaryScore?: ScoreItemType; secondaryScore: ScoreIt
                         borderWidth={'1px'}
                         borderRadius={'sm'}
                         mr={'2px'}
-                        {...(scoreTheme[i] && scoreTheme[i])}
-                      >
+                        {...(scoreTheme[i] && scoreTheme[i])}>
                         <Box transform={'scale(0.9)'}>#{item.index + 1}</Box>
                       </Box>
                       <Box transform={'scale(0.9)'}>
@@ -51,8 +50,7 @@ const ScoreTag = (score: { primaryScore?: ScoreItemType; secondaryScore: ScoreIt
             ) : (
               t(SearchScoreTypeMap[score.primaryScore.type]?.desc as any)
             )
-          }
-        >
+          }>
           <Flex
             borderRadius={'sm'}
             py={1}
@@ -60,8 +58,7 @@ const ScoreTag = (score: { primaryScore?: ScoreItemType; secondaryScore: ScoreIt
             color={'green.600'}
             bg={'green.50'}
             alignItems={'center'}
-            fontSize={'11px'}
-          >
+            fontSize={'11px'}>
             <Box>
               {t(SearchScoreTypeMap[score.primaryScore.type]?.label as any)}
               {SearchScoreTypeMap[score.primaryScore.type]?.showScore

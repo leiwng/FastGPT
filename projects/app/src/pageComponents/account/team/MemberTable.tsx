@@ -187,8 +187,7 @@ function MemberTable({ Tabs }: { Tabs: React.ReactNode }) {
               leftIcon={<MyIcon name="core/dataset/tag" w={'16px'} />}
               onClick={() => {
                 onOpenTeamTagsAsync();
-              }}
-            >
+              }}>
               {t('account_team:label_sync')}
             </Button>
           )}
@@ -201,8 +200,7 @@ function MemberTable({ Tabs }: { Tabs: React.ReactNode }) {
               leftIcon={<MyIcon name="common/retryLight" w={'16px'} color={'white'} />}
               onClick={() => {
                 onSyncMember();
-              }}
-            >
+              }}>
               {t('account_team:sync_immediately')}
             </Button>
           )}
@@ -213,8 +211,7 @@ function MemberTable({ Tabs }: { Tabs: React.ReactNode }) {
               borderRadius={'md'}
               ml={3}
               leftIcon={<MyIcon name="common/inviteLight" w={'16px'} color={'white'} />}
-              onClick={onOpenInvite}
-            >
+              onClick={onOpenInvite}>
               {t('account_team:user_team_invite_member')}
             </Button>
           )}
@@ -230,8 +227,7 @@ function MemberTable({ Tabs }: { Tabs: React.ReactNode }) {
                   url: '/api/proApi/support/user/team/member/export',
                   filename: `${userInfo.team.teamName}-${format(new Date(), 'yyyyMMddHHmmss')}.csv`
                 });
-              }}
-            >
+              }}>
               {t('account_team:export_members')}
             </Button>
           )}
@@ -243,8 +239,7 @@ function MemberTable({ Tabs }: { Tabs: React.ReactNode }) {
                   size="md"
                   borderRadius={'md'}
                   ml={3}
-                  leftIcon={<MyIcon name={'support/account/loginoutLight'} w={'14px'} />}
-                >
+                  leftIcon={<MyIcon name={'support/account/loginoutLight'} w={'14px'} />}>
                   {t('account_team:user_team_leave_team')}
                 </Button>
               }

@@ -103,8 +103,7 @@ const ExtraPlan = ({ onPaySuccess }: { onPaySuccess?: () => void }) => {
           borderWidth={'1px'}
           borderColor={'myGray.150'}
           boxShadow={'1.5'}
-          w={['100%', '500px']}
-        >
+          w={['100%', '500px']}>
           <Flex borderBottomWidth={'1px'} borderBottomColor={'myGray.200'}>
             <Box flex={'1 0 0'}>
               <Box fontSize={'lg'} color={'primary.700'}>
@@ -171,8 +170,7 @@ const ExtraPlan = ({ onPaySuccess }: { onPaySuccess?: () => void }) => {
             variant={'primaryGhost'}
             isLoading={isLoadingBuyDatasetSize}
             onClick={handleSubmitDatasetSize(onclickBuyDatasetSize)}
-            color={'primary.700'}
-          >
+            color={'primary.700'}>
             {t('common:support.wallet.Buy')}
           </Button>
         </Box>
@@ -185,8 +183,7 @@ const ExtraPlan = ({ onPaySuccess }: { onPaySuccess?: () => void }) => {
           borderRadius={'2xl'}
           borderWidth={'1px'}
           borderColor={'myGray.150'}
-          boxShadow={'1.5'}
-        >
+          boxShadow={'1.5'}>
           <Flex borderBottomWidth={'1px'} borderBottomColor={'myGray.200'}>
             <Box flex={'1 0 0'}>
               <Box fontSize={'lg'} color={'primary.700'}>
@@ -230,8 +227,7 @@ const ExtraPlan = ({ onPaySuccess }: { onPaySuccess?: () => void }) => {
                 mt={1}
                 w={'180px'}
                 position={'relative'}
-                color={'myGray.500'}
-              >
+                color={'myGray.500'}>
                 <MyNumberInput
                   name="points"
                   register={registerExtraPoints}
@@ -251,8 +247,7 @@ const ExtraPlan = ({ onPaySuccess }: { onPaySuccess?: () => void }) => {
             variant={'primaryGhost'}
             isLoading={isLoadingBuyExtraPoints}
             onClick={handleSubmitExtraPoints(onclickBuyExtraPoints)}
-            color={'primary.700'}
-          >
+            color={'primary.700'}>
             {t('common:support.wallet.Buy')}
           </Button>
         </Box>

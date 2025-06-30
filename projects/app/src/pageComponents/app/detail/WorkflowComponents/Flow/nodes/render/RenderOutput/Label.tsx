@@ -31,13 +31,11 @@ const OutputLabel = ({ nodeId, output }: { nodeId: string; output: FlowNodeOutpu
           ? {
               flexDirection: 'row-reverse'
             }
-          : {})}
-      >
+          : {})}>
         <Box
           position={'relative'}
           mr={1}
-          ml={output.type === FlowNodeOutputTypeEnum.source ? 1 : 0}
-        >
+          ml={output.type === FlowNodeOutputTypeEnum.source ? 1 : 0}>
           {t(label as any)}
         </Box>
         {description && <QuestionTip ml={1} label={t(description as any)} />}
@@ -64,8 +62,7 @@ const OutputLabel = ({ nodeId, output }: { nodeId: string; output: FlowNodeOutpu
                     type: 'delOutput',
                     key: output.key
                   });
-                }}
-              >
+                }}>
                 <MyIcon name={'common/info'} color={'adora.600'} w={4} mr={1} />
                 <Box color={'adora.600'}>{t('app:Filed_is_deprecated')}</Box>
               </Flex>

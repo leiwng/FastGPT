@@ -31,14 +31,12 @@ const ContextModal = ({ onClose, dataId }: { onClose: () => void; dataId: string
       title={t('chat:contextual_preview', { num: contextModalData?.length || 0 })}
       h={['90vh', '80vh']}
       minW={['90vw', '600px']}
-      isCentered
-    >
+      isCentered>
       <ModalBody
         whiteSpace={'pre-wrap'}
         textAlign={'justify'}
         wordBreak={'break-all'}
-        fontSize={'sm'}
-      >
+        fontSize={'sm'}>
         {contextModalData?.map((item, i) => (
           <Box
             key={i}
@@ -47,8 +45,7 @@ const ContextModal = ({ onClose, dataId }: { onClose: () => void; dataId: string
             border={'base'}
             _notLast={{ mb: 2 }}
             position={'relative'}
-            bg={i % 2 === 0 ? 'white' : 'myGray.50'}
-          >
+            bg={i % 2 === 0 ? 'white' : 'myGray.50'}>
             <Box fontWeight={'bold'}>{item.obj}</Box>
             <Box>{item.value}</Box>
           </Box>

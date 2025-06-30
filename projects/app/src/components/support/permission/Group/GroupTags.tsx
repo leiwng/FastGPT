@@ -31,8 +31,7 @@ function GroupTags({ max, names }: Props) {
         trigger={'hover'}
         onOpen={onToggle}
         onClose={onClose}
-        placement="bottom"
-      >
+        placement="bottom">
         <PopoverTrigger>
           <Box>
             {length > max && (

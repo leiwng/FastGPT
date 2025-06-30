@@ -82,8 +82,7 @@ const OffiAccount = ({ appId }: { appId: string }) => {
               target={'_blank'}
               ml={2}
               color={'primary.500'}
-              fontSize={'sm'}
-            >
+              fontSize={'sm'}>
               <Flex alignItems={'center'}>
                 <MyIcon name="book" mr="1" w={'1rem'} />
                 {t('common:read_doc')}
@@ -106,8 +105,7 @@ const OffiAccount = ({ appId }: { appId: string }) => {
           onClick={() => {
             setEditOffiAccountData(defaultOutLinkForm as any); // HACK
             setIsEdit(false);
-          }}
-        >
+          }}>
           {t('common:add_new')}
         </Button>
       </Flex>
@@ -164,8 +162,7 @@ const OffiAccount = ({ appId }: { appId: string }) => {
                     }}
                     size={'sm'}
                     mr={3}
-                    variant={'whitePrimary'}
-                  >
+                    variant={'whitePrimary'}>
                     {t('publish:request_address')}
                   </Button>
                   <MyMenu

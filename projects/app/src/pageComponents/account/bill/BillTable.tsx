@@ -109,8 +109,7 @@ const BillTable = () => {
                   onChange={(e) => {
                     setBillType(e);
                   }}
-                  w={'130px'}
-                ></MySelect>
+                  w={'130px'}></MySelect>
               </Th>
               <Th>{t('account_bill:time')}</Th>
               <Th>{t('account_bill:support_wallet_amount')}</Th>
@@ -134,8 +133,7 @@ const BillTable = () => {
                       isLoading={isRefreshing}
                       mr={4}
                       onClick={() => handleRefreshPayOrder(item._id)}
-                      size={'sm'}
-                    >
+                      size={'sm'}>
                       {t('account_bill:update')}
                     </Button>
                   )}
@@ -157,8 +155,7 @@ const BillTable = () => {
             mt={'20vh'}
             flexDirection={'column'}
             alignItems={'center'}
-            justifyContent={'center'}
-          >
+            justifyContent={'center'}>
             <MyIcon name="empty" w={'48px'} h={'48px'} color={'transparent'} />
             <Box mt={2} color={'myGray.500'}>
               {t('account_bill:no_invoice_record')}
@@ -185,8 +182,7 @@ function BillDetailModal({ bill, onClose }: { bill: BillSchemaType; onClose: () 
       onClose={onClose}
       iconSrc="/imgs/modal/bill.svg"
       title={t('account_bill:bill_detail')}
-      maxW={['90vw', '700px']}
-    >
+      maxW={['90vw', '700px']}>
       <ModalBody>
         <Flex alignItems={'center'} pb={4}>
           <FormLabel flex={'0 0 120px'}>{t('account_bill:order_number')}:</FormLabel>
